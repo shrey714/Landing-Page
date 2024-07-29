@@ -2,7 +2,7 @@ import React from "react";
 import { ArrowRightIcon } from "lucide-react";
 const GetStartedBanner = () => {
   return (
-    <section className="py-[4.33vw] flex w-full items-center justify-center bg-white">
+    <section className="pt-[4.33vw] pb-[2.33vw] flex w-full items-center justify-center bg-white">
       <div className="w-11/12 mx-auto mb-0 text-center flex items-center justify-center flex-col rounded-lg sm:rounded-lg bg-gray-300 py-4 md:py-7 px-4">
         <p className="text-xs md:text-base max-w-[510px]">
           There are many variations of passages of Lorem Ipsum available but the
