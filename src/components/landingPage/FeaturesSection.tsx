@@ -2,15 +2,15 @@ import React from "react";
 
 const FeaturesSection = () => {
   return (
-    <section className="pb-2 pt-4 bg-white">
+    <section className="pb-2 pt-8 md:pt-16">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-0 max-w-[510px] text-center">
-              <h2 className="mb-2 text-2xl font-bold leading-[1.2] md:text-3xl">
+              <h2 className="mb-2 text-2xl font-bold leading-[1.2] md:text-3xl text-gray-700">
                 What We Offer
               </h2>
-              <p className="text-sm text-body-color ">
+              <p className="text-sm text-body-color text-gray-500 font-medium">
                 There are many variations of passages of Lorem Ipsum available
                 but the majority have suffered alteration in some form.
               </p>
@@ -18,7 +18,7 @@ const FeaturesSection = () => {
           </div>
         </div>
 
-        <div className="-mx-4 flex flex-wrap">
+        <div className="-mx-4 flex flex-wrap mt-4 md:mt-12">
           <ServiceCard
             title="Refreshing Design"
             details="We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
@@ -49,8 +49,8 @@ const FeaturesSection = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M9.89195 14.625C10.9995 10.1252 13.769 7.875 18.1996 7.875C24.8458 7.875 25.6765 12.9375 28.9996 13.7812C31.2151 14.3439 33.1535 13.5002 34.815 11.25C33.7075 15.7498 30.9379 18 26.5073 18C19.8611 18 19.0304 12.9375 15.7073 12.0938C13.4918 11.5311 11.5535 12.3748 9.89195 14.625ZM1.58423 24.75C2.69174 20.2502 5.46132 18 9.89195 18C16.5381 18 17.3689 23.0625 20.692 23.9062C22.9075 24.4689 24.8458 23.6252 26.5073 21.375C25.3998 25.8748 22.6302 28.125 18.1996 28.125C11.5535 28.125 10.7227 23.0625 7.39963 22.2188C5.18405 21.6561 3.24576 22.4998 1.58423 24.75Z"
                   fill="white"
                 />
@@ -125,10 +125,10 @@ const ServiceCard = ({ icon, title, details }: any) => {
           <div className="mb-5 flex h-[50px] w-[50px] items-center justify-center rounded-md bg-primary">
             {icon}
           </div>
-          <h4 className="mb-[14px] text-xl font-semibold text-dark ">
+          <h4 className="mb-[12px] text-xl font-semibold text-dark text-gray-700">
             {title}
           </h4>
-          <p className="text-base ">{details}</p>
+          <p className="text-base text-gray-500">{details}</p>
         </div>
       </div>
     </>

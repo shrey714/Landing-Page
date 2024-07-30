@@ -1,4 +1,3 @@
-"use client";
 import Head from "next/head";
 import SubscriptionPlans from "@/components/SubscriptionPlans";
 

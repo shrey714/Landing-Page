@@ -7,18 +7,20 @@ import ImageWithTextSection from "@/components/landingPage/ImageWithTextSection"
 import FAQSection from "@/components/landingPage/FAQSection";
 import GetStartedBanner from "@/components/landingPage/GetStartedBanner";
 import MiddleBanner from "@/components/landingPage/MiddleBanner";
+import PricingPlans from "@/components/landingPage/PricingPlans";
 
 export default function Home() {
   return (
-    <main className="min-h-dvh w-full">
+    <main className="min-h-screen w-full">
       <Header />
       <HeroSection />
       <MarqueeSection />
       <FeaturesSection />
       <MiddleBanner />
       <ImageWithTextSection />
-      <GetStartedBanner />
+      <PricingPlans />
       <FAQSection />
+      <GetStartedBanner />
       <Footer />
     </main>
   );

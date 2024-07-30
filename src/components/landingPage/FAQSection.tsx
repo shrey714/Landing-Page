@@ -59,25 +59,25 @@ const faq_data = [
 
 const FAQSection = () => {
   return (
-    <section className="bg-white">
-      <div className="py-6 px-4 mx-auto max-w-screen-xl md:pt-6">
-        <h2 className="mb-4 text-2xl font-bold leading-[1.2] md:text-3xl">
+    <section>
+      <div className="pt-8 md:pt-16 px-4 mx-auto max-w-screen-xl">
+        <h2 className="mb-4 text-2xl font-bold leading-[1.2] md:text-3xl text-gray-700">
           Frequently Asked Questions
         </h2>
 
         <Accordion
           type="single"
           collapsible
-          className="grid text-left border-t border-gray-200 md:gap-16 dark:border-gray-700 md:grid-cols-2"
+          className="grid text-left border-t border-gray-200 md:gap-16 dark:border-gray-700 md:grid-cols-2 pt-4 md:pt-6"
         >
           <div>
             {faq_data.slice(0, 4).map((faq: any, key: number) => {
               return (
                 <AccordionItem key={key} value={faq.id}>
-                  <AccordionTrigger className="text-start py-3 md:py-4">
+                  <AccordionTrigger className="text-start py-3 md:py-4 text-gray-500">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent>{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-gray-500" >{faq.answer}</AccordionContent>
                 </AccordionItem>
               );
             })}
@@ -87,10 +87,10 @@ const FAQSection = () => {
             {faq_data.slice(4, 8).map((faq: any, key: number) => {
               return (
                 <AccordionItem key={key} value={faq.id}>
-                  <AccordionTrigger className="text-start py-3 md:py-4">
+                  <AccordionTrigger className="text-start py-3 md:py-4 text-gray-500">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent>{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-gray-500" >{faq.answer}</AccordionContent>
                 </AccordionItem>
               );
             })}

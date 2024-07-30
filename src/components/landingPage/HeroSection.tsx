@@ -3,7 +3,7 @@ import React from "react";
 const FirstSection = () => {
   return (
     <>
-      <div className="flex w-full min-h-[calc(100vh-1.5rem)] pt-6 items-center justify-center">
+      <div className="flex bg-gray-300 w-full md:min-h-[calc(100vh-1rem)] min-h-[calc(100svh-1rem)] pt-6 items-center justify-center">
         <div className="hero-content text-center">
           <div className="max-w-md">
             <h1 className="text-5xl font-bold">Hello there</h1>

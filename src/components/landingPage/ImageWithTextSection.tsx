@@ -4,15 +4,15 @@ import React from "react";
 const ImageWithTextSection = () => {
   return (
     <>
-      <section className="pb-[calc(100vw*0.15)] pt-2 md:pt-4 bg-white">
+      <section className="pb-[calc(100vw*0.15)] pt-10 md:pt-20">
         <div className="container mx-auto">
-          <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4">
-              <div className="mx-auto mb-0 max-w-[510px] text-center">
-                <h2 className="mb-2 text-2xl font-bold leading-[1.2] md:text-3xl">
+          <div className=" flex flex-wrap">
+            <div className="w-full">
+              <div className="mx-auto max-w-[510px] text-center mb-3 md:mb-5">
+                <h2 className="mb-2 text-2xl font-bold leading-[1.2] md:text-3xl text-gray-700">
                   Dashboard We Offer
                 </h2>
-                <p className="text-sm text-body-color ">
+                <p className="text-sm text-body-color text-gray-500 font-medium">
                   There are many variations of passages of Lorem Ipsum available
                   but the majority have suffered alteration in some form.
                 </p>

@@ -75,7 +75,7 @@ const ReviewCard = ({
 
 export function MarqueeSection() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-white">
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden pt-4 md:pt-12">
       <Marquee className="[--duration:20s]">
         {reviews.map((review) => (
           <ReviewCard key={review.username} {...review} />
