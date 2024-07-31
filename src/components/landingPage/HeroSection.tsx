@@ -1,9 +1,31 @@
+"use client";
 import React from "react";
+import Lottie from "react-lottie";
+import * as animationData from "@/lottieFiles/ScrollDown.json";
 
 const FirstSection = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <>
-      <div className="flex bg-gray-300 w-full md:min-h-[calc(100vh-1rem)] min-h-[calc(100svh-1rem)] pt-6 items-center justify-center">
+      <div className="flex relative bg-gray-300 w-full md:min-h-[calc(100vh-1rem)] min-h-[calc(100svh-1rem)] pt-6 items-center justify-center">
+        <Lottie
+          style={{
+            position: "absolute",
+            bottom: "0px",
+            transform: "rotate(180deg)",
+          }}
+          options={defaultOptions}
+          height={40}
+          width={40}
+        />
         <div className="hero-content text-center">
           <div className="max-w-md">
             <h1 className="text-5xl font-bold">Hello there</h1>
