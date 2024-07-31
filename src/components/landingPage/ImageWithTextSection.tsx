@@ -31,7 +31,7 @@ const ImageWithTextSection = () => {
           }}
           className="w-11/12 overflow-hidden absolute -top-[calc(100vw*0.15-24px)] left-1/2 -translate-x-1/2 rounded-sm sm:rounded-lg bg-white "
         >
-          <img className="w-full" src="/Home.jpg" alt="Filters" />
+          <img className="w-full" src="/DashboardHome.jpg" alt="Filters" />
         </div>
       </section>
     </>
