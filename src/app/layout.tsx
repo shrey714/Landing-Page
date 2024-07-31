@@ -25,6 +25,7 @@ export const metadata: Metadata = {
         alt: "open graph image",
       },
     ],
+    siteName: "DardiBook",
   },
 };
 const roboto = Roboto({
