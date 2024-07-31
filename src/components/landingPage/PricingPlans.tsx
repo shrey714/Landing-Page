@@ -19,17 +19,17 @@ const PricingPlans = () => {
   );
 
   return (
-    <div className="bg-gray-300 overflow-hidden isolate">
+    <div className="bg-gray-800 overflow-hidden isolate">
       <div className="lg:px-8 sm:pt-0 text-center pt-4 pb-96 px-6 max-w-[80rem] mx-auto">
         <div className="max-w-[56rem] mx-auto">
-          <p className=" text-2xl mt-2 md:text-3xl text-gray-700 font-bold">
+          <p className=" text-2xl mt-2 md:text-3xl text-gray-300 font-bold">
             The right price for you,{" "}
             <br className="hidden sm:inline lg:hidden" />
             whoever you are
           </p>
         </div>
         <div className="mt-4 relative">
-          <p className="text-sm max-w-[510px] mx-auto text-gray-500 font-medium">
+          <p className="text-sm max-w-[510px] mx-auto text-gray-400 font-medium">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
             numquam eligendi quos odit doloribus molestiae voluptatum.
           </p>

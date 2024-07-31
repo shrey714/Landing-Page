@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { ArrowRightIcon } from "lucide-react";
+import { ChevronRightIcon } from "lucide-react";
 const GetStartedBanner = () => {
   return (
     <section className="px-4 py-0 antialiased pt-10 md:pt-16">
@@ -26,10 +26,10 @@ const GetStartedBanner = () => {
               boxShadow:
                 "0px 0px 0px 1px #a0aec0, 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
             }}
-            className="text-xs md:text-base mt-4 bg-white rounded-full flex flex-row items-center px-4 py-[6px] text-gray-600 duration-300 font-semibold"
+            className="duration-200 text-base mt-4 bg-white rounded-full flex flex-row items-center px-4 py-[6px] text-gray-600 font-semibold hover:bg-gray-800 hover:text-gray-300"
           >
             <span>GET STARTED</span>
-            <ArrowRightIcon className="ml-1 size-3" />
+            <ChevronRightIcon strokeWidth={3} size={16} className="ml-1" />
           </button>
         </div>
       </div>

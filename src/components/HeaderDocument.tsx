@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
 const HeaderDocument = () => {
   const router = useRouter();
   const pathname = usePathname();
@@ -20,12 +21,7 @@ const HeaderDocument = () => {
   return (
     <nav className=" fixed w-full z-20 top-0 start-0 p-4">
       <div className="rounded-lg shadow-lg bg-gray-800 max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
-        <a
-          onClick={() => {
-            router.push("/");
-          }}
-          className="cursor-pointer flex items-center mr-3"
-        >
+        <Link href={"/"} className="cursor-pointer flex items-center mr-3">
           {/* <img
             src="https://flowbite.com/docs/images/logo.svg"
             className="h-8"
@@ -34,7 +30,7 @@ const HeaderDocument = () => {
           <span className="self-center text-white text-2xl font-semibold whitespace-nowrap">
             DardiBook
           </span>
-        </a>
+        </Link>
         <div className="flex md:hidden items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             onClick={handleMenuToggle}

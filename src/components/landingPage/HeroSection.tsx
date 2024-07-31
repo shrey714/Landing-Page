@@ -2,7 +2,7 @@
 import React, { useMemo } from "react";
 import Lottie from "react-lottie";
 import * as animationData from "@/lottieFiles/ScrollDown.json";
-import { ArrowRightIcon } from "lucide-react";
+import { ChevronRightIcon } from "lucide-react";
 import ShimmerButton from "../magicUiComponents/ShimmerButton";
 
 const MemoizedLottie = React.memo((props: any) => <Lottie {...props} />);
@@ -32,7 +32,7 @@ const FirstSection = () => {
 
   return (
     <>
-      <div className="flex relative bg-gray-300 w-full md:min-h-[calc(100vh-1rem)] min-h-[calc(100svh-1rem)] pt-6 items-center justify-center">
+      <div className="flex relative bg-gray-300 w-full md:min-h-vh min-h-svh pt-6 pb-11 items-center justify-center">
         <button className="absolute bottom-0" onClick={handleScroll}>
           <MemoizedLottie
             style={{
@@ -44,21 +44,22 @@ const FirstSection = () => {
             width={40}
           />
         </button>
-        <div className="hero-content text-center">
-          <div className="max-w-md">
-            <h1 className="text-5xl font-bold text-gray-700">
-              Welcome to DardiBook
-            </h1>
-            <p className="py-6 text-gray-500">
-              Discover our services and get started with ease. Learn how we can
-              assist you with your needs and begin your journey with us today.
-            </p>
-
-            <ShimmerButton className="inline-flex mt-4 text-xs md:text-base bg-white rounded-full px-4 py-[6px] text-gray-600 font-semibold text-center">
-              <span>GET STARTED</span>
-              <ArrowRightIcon className="ml-1 size-3" />
-            </ShimmerButton>
-          </div>
+        <div className="hero-content text-center flex-col justify-around">
+          <h1 className="font-bold text-gray-700 text-[30px] leading-tight max-w-[90%] tracking-wide md:tracking-wider md:text-4xl md:max-w-4xl lg:text-5xl  lg:max-w-6xl">
+            Transform Your Medical Practice with DardiBook: The Patient
+            Management Solution
+          </h1>
+          <p className="tracking-wide py-3 md:py-6 text-gray-500 font-medium text-[18px] leading-5 md:text-lg md:max-w-3xl lg:text-2xl lg:max-w-4xl">
+            Streamline your medical practice with DardiBook, an innovative
+            platform designed to simplify patient management and enhance the
+            healthcare experience. Trusted by doctors worldwide, DardiBook
+            empowers you to efficiently manage appointments, medical records,
+            and patient history, all in one place.
+          </p>
+          <ShimmerButton className="inline-flex mt-4 text-base rounded-full px-4 py-[6px] font-semibold text-center bg-white">
+            <span>GET STARTED</span>
+            <ChevronRightIcon strokeWidth={3} size={16} className="ml-1" />
+          </ShimmerButton>
         </div>
       </div>
     </>

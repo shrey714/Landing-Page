@@ -20,7 +20,7 @@ const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
       shimmerSize = "0.1em",
       shimmerDuration = "2.5s",
       borderRadius = "999999px",
-      background = "rgba(255, 255, 255, 1)",
+      background = "transparent",
       className,
       children,
       ...props
@@ -42,7 +42,7 @@ const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
           } as CSSProperties
         }
         className={cn(
-          "group relative z-0 flex cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap border border-white/10 px-6 py-3 text-white [background:var(--bg)] [border-radius:var(--radius)]",
+          "group relative z-0 flex cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap px-6 py-3 text-gray-600 hover:text-gray-300 [background:var(--bg)] [border-radius:var(--radius)]",
           "transform-gpu transition-transform duration-300 ease-in-out",
           className
         )}
@@ -62,7 +62,7 @@ const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
             <div className="animate-spin-around absolute inset-[-100%] w-auto rotate-0 [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,var(--shimmer-color)_var(--spread),transparent_var(--spread))] [translate:0_0]" />
           </div>
         </div>
-        
+
         {children}
 
         {/* Highlight */}
@@ -73,14 +73,16 @@ const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
             "rounded-2xl px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#ffffff1f]",
 
             // transition
-            "transform-gpu transition-all duration-300 ease-in-out",
+            "transform-gpu transition-all duration-200 ease-in-out"
+            // on hover
+            // "group-hover:bg-gray-800"
           )}
         />
 
         {/* backdrop */}
         <div
           className={cn(
-            "absolute -z-20 [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"
+            "absolute -z-20 group-hover:bg-gray-800 duration-200 bg-white [border-radius:var(--radius)] [inset:var(--cut)]"
           )}
         />
       </button>

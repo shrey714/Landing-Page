@@ -2,7 +2,7 @@ import React from "react";
 
 const FeaturesSection = () => {
   return (
-    <section className="pb-2 pt-8 md:pt-16">
+    <section className="pb-2 pt-4 md:pt-12">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
@@ -24,8 +24,8 @@ const FeaturesSection = () => {
             details="We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
             icon={
               <svg
-                width="36"
-                height="36"
+                width="30"
+                height="30"
                 viewBox="0 0 36 36"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -42,8 +42,8 @@ const FeaturesSection = () => {
             details="We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
             icon={
               <svg
-                width="36"
-                height="36"
+                width="30"
+                height="30"
                 viewBox="0 0 36 36"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,8 +62,8 @@ const FeaturesSection = () => {
             details="We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
             icon={
               <svg
-                width="36"
-                height="36"
+                width="30"
+                height="30"
                 viewBox="0 0 36 36"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -92,8 +92,8 @@ const FeaturesSection = () => {
             details="We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
             icon={
               <svg
-                width="36"
-                height="36"
+                width="30"
+                height="30"
                 viewBox="0 0 36 36"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

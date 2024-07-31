@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Alegreya_Sans } from "next/font/google";
+import {  Roboto } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -12,9 +12,8 @@ export const metadata: Metadata = {
     icon: "/Favicon.svg", // /public path
   },
 };
-const manrope = Alegreya_Sans({
+const roboto = Roboto({
   subsets: ["latin"],
-  display: "swap",
   weight: ["300", "400", "500", "700"],
 });
 
@@ -24,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={manrope.className}>
+    <html lang="en" className={roboto.className}>
       <head>
         <meta name="theme-color" content="#ffffff" />
       </head>

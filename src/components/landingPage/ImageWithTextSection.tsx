@@ -23,7 +23,7 @@ const ImageWithTextSection = () => {
           <div className="-mx-4 flex flex-wrap"></div>
         </div>
       </section>
-      <section className="bg-gray-300 h-[calc(100vw*0.35+24px)] relative">
+      <section className="bg-gray-800 h-[calc(100vw*0.35+24px)] relative">
         <div
           style={{
             boxShadow:
