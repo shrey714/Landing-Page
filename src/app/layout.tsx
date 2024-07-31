@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Alegreya_Sans } from "next/font/google";
-
+import { Analytics } from "@vercel/analytics/react";
 export const metadata: Metadata = {
   title: "DardiBook",
   description:
@@ -28,6 +28,7 @@ export default function RootLayout({
       </head>
       <body className="bg-white" suppressHydrationWarning={true}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
