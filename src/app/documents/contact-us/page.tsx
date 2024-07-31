@@ -1,11 +1,8 @@
-import Head from "next/head";
+
 
 export default function ContactUs() {
   return (
     <div className="flex-1 flex items-center justify-center">
-      <Head>
-        <title>Contact Us - DardiBook</title>
-      </Head>
       <div className="max-w-4xl w-full pb-12 px-4 rounded text-gray-800">
         <h1 className="text-3xl font-bold mb-8 text-center">Contact Us</h1>
         <div
