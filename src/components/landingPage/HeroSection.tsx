@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useMemo } from "react";
 import Lottie from "react-lottie";
@@ -45,10 +46,19 @@ const FirstSection = () => {
           />
         </button>
         <div className="hero-content text-center flex-col justify-around">
-          <h1 className="font-bold text-gray-700 text-[30px] leading-tight max-w-[90%] tracking-wide md:tracking-wider md:text-4xl md:max-w-4xl lg:text-5xl  lg:max-w-6xl">
-            Transform Your Medical Practice with DardiBook: The Patient
-            Management Solution
+          <h1 className="font-bold text-gray-700 text-[30px] leading-tight max-w-[90%] tracking-wide md:tracking-wider md:text-4xl md:max-w-4xl lg:text-5xl lg:max-w-6xl">
+            Transform Your Medical Practice with{" "}
+            <span className="inline-flex items-baseline">
+              <img
+                className="inline-block h-8 md:h-10 lg:h-12 align-middl mr-[0.08em]"
+                src="/Logo.svg"
+                alt="LOGO"
+              />
+              ardiBook
+            </span>{" "}
+            : The Patient Management Solution
           </h1>
+
           <p className="tracking-wide py-3 md:py-6 text-gray-500 font-medium text-[18px] leading-5 md:text-lg md:max-w-3xl lg:text-2xl lg:max-w-4xl">
             Streamline your medical practice with DardiBook, an innovative
             platform designed to simplify patient management and enhance the
