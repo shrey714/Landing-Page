@@ -8,9 +8,24 @@ export const metadata: Metadata = {
   title: "DardiBook",
   description:
     "DardiBook is a comprehensive patient management system designed for doctors to efficiently manage and organize patient data, appointments, and medical histories. Enhance your medical practice with our user-friendly interface and advanced features.",
-  icons: {
-    icon: "/favicon.png",
+  alternates: {
+    canonical: "https://dardibook.in",
   },
+  icons: {
+    icon: "/favicon.ico",
+    apple: [
+      { url: "/apple/apple-touch-icon.png" },
+      { url: "/apple/apple-touch-icon-57x57.png", sizes: "57x57" },
+      { url: "/apple/apple-touch-icon-72x72.png", sizes: "72x72" },
+      { url: "/apple/apple-touch-icon-76x76.png", sizes: "76x76" },
+      { url: "/apple/apple-touch-icon-114x114.png", sizes: "114x114" },
+      { url: "/apple/apple-touch-icon-120x120.png", sizes: "120x120" },
+      { url: "/apple/apple-touch-icon-144x144.png", sizes: "144x144" },
+      { url: "/apple/apple-touch-icon-152x152.png", sizes: "152x152" },
+      { url: "/apple/apple-touch-icon-180x180.png", sizes: "180x180" },
+    ],
+  },
+  manifest: "/manifest.json",
   openGraph: {
     title: "Welcome to dardibook",
     description:

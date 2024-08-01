@@ -45,7 +45,13 @@ const ReviewCard = ({ img, body }: { img: string; body: string }) => {
   return (
     <figure className={cn("relative w-40 sm:w-64 overflow-hidden pb-4 md:p-4")}>
       <div className="flex justify-center">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+        <img
+          className="rounded-full"
+          width="32"
+          height="32"
+          alt={body}
+          src={img}
+        />
       </div>
     </figure>
   );
