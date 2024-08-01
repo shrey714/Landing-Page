@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "DardiBook is a comprehensive patient management system designed for doctors to efficiently manage and organize patient data, appointments, and medical histories. Enhance your medical practice with our user-friendly interface and advanced features.",
   icons: {
-    icon: "/Favicon.svg",
+    icon: "/favicon.png",
   },
   openGraph: {
     title: "Welcome to dardibook",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/OpenGraph.svg",
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "open graph image",
