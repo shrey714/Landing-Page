@@ -46,11 +46,11 @@ const FirstSection = () => {
           />
         </button>
         <div className="hero-content text-center flex-col justify-around">
-          <h1 className="font-bold text-gray-700 text-[30px] leading-tight max-w-[90%] tracking-wide md:tracking-wider md:text-4xl md:max-w-4xl lg:text-5xl lg:max-w-6xl">
+          <h1 className="font-bold text-[#1F2B5B] text-[30px] leading-tight max-w-[90%] tracking-wide md:tracking-wider md:text-4xl md:max-w-4xl lg:text-5xl lg:max-w-6xl">
             Transform Your Medical Practice with{" "}
             <span className="inline-flex items-baseline">
               <img
-                className="inline-block h-8 md:h-10 lg:h-12 align-middl mr-[0.08em]"
+                className="inline-block h-8 md:h-10 lg:h-12 align-middle mr-[0.08em]"
                 src="/Logo.svg"
                 alt="LOGO"
               />

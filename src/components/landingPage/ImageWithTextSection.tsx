@@ -6,15 +6,17 @@ const ImageWithTextSection = () => {
     <>
       <section className="pb-[calc(100vw*0.15)] pt-10 md:pt-20">
         <div className="container mx-auto">
-          <div className=" flex flex-wrap">
+          <div className="flex flex-wrap">
             <div className="w-full">
-              <div className="mx-auto max-w-[510px] text-center mb-3 md:mb-5">
+              <div className="mx-auto max-w-xl text-center mb-3 md:mb-5">
                 <h2 className="mb-2 text-2xl font-bold leading-[1.2] md:text-3xl text-gray-700">
-                  Dashboard We Offer
+                  Powerful Dashboard at Your Fingertips
                 </h2>
                 <p className="text-sm text-body-color text-gray-500 font-medium">
-                  There are many variations of passages of Lorem Ipsum available
-                  but the majority have suffered alteration in some form.
+                  Manage every aspect of your practice with ease using
+                  DardiBook&apos;s comprehensive dashboard. From appointments to
+                  patient records, our intuitive interface puts everything you
+                  need right at your fingertips.
                 </p>
               </div>
             </div>

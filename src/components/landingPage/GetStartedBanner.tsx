@@ -1,25 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
+
 import React from "react";
 import { ChevronRightIcon } from "lucide-react";
+import TokenBox from "../TokenBox";
+
 const GetStartedBanner = () => {
   return (
     <section className="px-4 py-0 antialiased pt-10 md:pt-16">
       <div className="mx-auto grid max-w-screen-xl rounded-lg px-4 md:px-8 md:grid-cols-12 md:gap-8 lg:px-16 xl:gap-16">
-        <div className=" flex items-center justify-center md:col-span-5 md:mt-0">
-          <img
-            className="mb-4 md:h-full max-h-60 md:max-h-full"
-            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-components-dark.svg"
-            alt="peripherals"
-          />
+        <div className="flex mb-4 items-center justify-center md:col-span-5 md:mt-0">
+          <TokenBox />
         </div>
         <div className="flex md:block flex-col items-center me-auto place-self-center md:col-span-7 text-center md:text-start">
           <h1 className="mb-3 text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-3xl">
-            Save $500 today on your purchase <br />
-            of a new iMac computer.
+            Simplify Your Healthcare Management with DardiBook.
           </h1>
           <p className="text-gray-500 text-xs md:text-base">
-            Reserve your new Apple iMac 27” today and enjoy exclusive savings
-            with qualified activation. Pre-order now to secure your discount.
+            Join DardiBook today and experience a seamless healthcare management
+            platform designed to make patient care more efficient and effective.
+            Start now and see the difference.
           </p>
           <button
             style={{
