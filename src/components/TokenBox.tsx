@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Minus, Pause, Play, Plus, Volume2, VolumeX } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -26,30 +26,11 @@ const TokenBox = () => {
     });
   };
 
-  useEffect(() => {
-    if (allowNotification) {
-      if (isPaused) {
-        playNotification();
-      } else {
-        playNotification();
-      }
-    }
-  }, [allowNotification, isPaused]);
-
-  useEffect(() => {
-    if (allowNotification && !isPaused) {
-      if (animationDirection === "up") {
-        playNotification();
-      } else if (animationDirection === "down") {
-        playNotification();
-      }
-    }
-  }, [tokenValue, animationDirection, allowNotification, isPaused]);
-
   const handleIncrement = () => {
     if (!isPaused) {
       setAnimationDirection("up");
       settokenValue((prev) => prev + 1);
+      allowNotification && playNotification();
     }
   };
 
@@ -57,6 +38,7 @@ const TokenBox = () => {
     if (!isPaused && tokenValue > 0) {
       setAnimationDirection("down");
       settokenValue((prev) => prev - 1);
+      allowNotification && playNotification();
     }
   };
 
