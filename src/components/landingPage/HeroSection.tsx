@@ -5,6 +5,7 @@ import Lottie from "react-lottie";
 import * as animationData from "@/lottieFiles/ScrollDown.json";
 import { ChevronRightIcon } from "lucide-react";
 import ShimmerButton from "../magicUiComponents/ShimmerButton";
+import Link from "next/link";
 
 const MemoizedLottie = React.memo((props: any) => <Lottie {...props} />);
 MemoizedLottie.displayName = "MemoizedLottie";
@@ -66,10 +67,12 @@ const FirstSection = () => {
             empowers you to efficiently manage appointments, medical records,
             and patient history, all in one place.
           </p>
-          <ShimmerButton className="inline-flex mt-4 text-base rounded-full px-4 py-[6px] font-semibold text-center bg-white">
-            <span>GET STARTED</span>
-            <ChevronRightIcon strokeWidth={3} size={16} className="ml-1" />
-          </ShimmerButton>
+          <Link href={"https://dashboard.dardibook.in/"}>
+            <ShimmerButton className="inline-flex mt-4 text-base rounded-full px-4 py-[6px] font-semibold text-center bg-white">
+              <span>GET STARTED</span>
+              <ChevronRightIcon strokeWidth={3} size={16} className="ml-1" />
+            </ShimmerButton>
+          </Link>
         </div>
       </div>
     </>

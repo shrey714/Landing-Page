@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const PricingPlans = () => {
@@ -116,13 +117,13 @@ const PricingPlans = () => {
                     </li>
                   </ul>
                 </div>
-                <a
-                  href="#"
+                <Link
+                  href={"https://dashboard.dardibook.in/"}
                   aria-describedby="tier-hobby"
                   className="text-white leading-6 font-semibold text-sm text-center py-2 px-3 bg-[#4a00ff] rounded-md block mt-8"
                 >
                   Get started today
-                </a>
+                </Link>
               </div>
               {/*  */}
             </div>

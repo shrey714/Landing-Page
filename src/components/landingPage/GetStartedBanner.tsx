@@ -3,6 +3,7 @@
 import React from "react";
 import { ChevronRightIcon } from "lucide-react";
 import TokenBox from "../TokenBox";
+import Link from "next/link";
 
 const GetStartedBanner = () => {
   return (
@@ -20,16 +21,17 @@ const GetStartedBanner = () => {
             platform designed to make patient care more efficient and effective.
             Start now and see the difference.
           </p>
-          <button
+          <Link
+            href={"https://dashboard.dardibook.in/"}
             style={{
               boxShadow:
                 "0px 0px 0px 1px #a0aec0, 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
             }}
-            className="duration-200 text-base mt-4 bg-white rounded-full flex flex-row items-center px-4 py-[6px] text-gray-600 font-semibold hover:bg-gray-800 hover:text-gray-300"
+            className="duration-200 text-base mt-4 bg-white rounded-full inline-flex flex-row items-center px-4 py-[6px] text-gray-600 font-semibold hover:bg-gray-800 hover:text-gray-300"
           >
             <span>GET STARTED</span>
             <ChevronRightIcon strokeWidth={3} size={16} className="ml-1" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

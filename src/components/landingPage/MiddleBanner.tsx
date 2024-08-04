@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { ArrowRightIcon, ChevronRightIcon, HeartPulse } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const MiddleBanner = () => {
@@ -43,27 +44,22 @@ const MiddleBanner = () => {
             <HeartPulse size={48} className="mb-4" />
             <figure>
               <p className="text-lg font-medium mb-4 tracking-wide">
-                DardiBook can transfer the way healthcare providers manage
-                their medical practice. The ease of scheduling, managing
+                DardiBook can transfer the way healthcare providers manage their
+                medical practice. The ease of scheduling, managing
                 prescriptions, and tracking patient history is unparalleled.
                 It&apos;s a must-have tool for any healthcare provider.
               </p>
-              <figcaption className="text-base font-medium">
-                <button
-                  style={{
-                    boxShadow:
-                      "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                  }}
-                  className="duration-200 border-2 border-white text-sm mt-4 bg-transparent rounded-full flex flex-row items-center px-3 py-[4px] text-white font-semibold hover:bg-gray-800/20 hover:text-gray-300 hover:border-gray-300"
-                >
-                  <span className="tracking-wide">Go to DashBoard</span>
-                  <ChevronRightIcon
-                    strokeWidth={3}
-                    size={16}
-                    className="ml-1"
-                  />
-                </button>
-              </figcaption>
+              <Link
+                href={"https://dashboard.dardibook.in/"}
+                style={{
+                  boxShadow:
+                    "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                }}
+                className="duration-200 border-2 border-white text-sm mt-4 bg-transparent rounded-full inline-flex flex-row items-center px-3 py-[4px] text-white font-semibold hover:bg-gray-800/20 hover:text-gray-300 hover:border-gray-300"
+              >
+                <span className="tracking-wide">Go to DashBoard</span>
+                <ChevronRightIcon strokeWidth={3} size={16} className="ml-1" />
+              </Link>
             </figure>
           </div>
         </div>
