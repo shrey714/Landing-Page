@@ -43,7 +43,7 @@ const MiddleBanner = () => {
             <HeartPulse size={48} className="mb-4" />
             <figure>
               <p className="text-lg font-medium mb-4 tracking-wide">
-                DardiBook can transfore the way healthcare providers manage
+                DardiBook can transfer the way healthcare providers manage
                 their medical practice. The ease of scheduling, managing
                 prescriptions, and tracking patient history is unparalleled.
                 It&apos;s a must-have tool for any healthcare provider.

@@ -1,0 +1,33 @@
+{
+  "title": "Cancellation Policy",
+  "sections": [
+    {
+      "title": "Introduction",
+      "description": "At DardiBook, we strive to provide our users with the best possible healthcare management experience. However, we understand that there may be circumstances where users need to cancel their subscriptions. This policy outlines the terms and conditions related to the cancellation of subscriptions and the implications thereof."
+    },
+    {
+      "title": "Subscription Requirement",
+      "description": "Access to the DardiBook platform requires an active subscription plan. Users, whether new or returning, must activate one of the available plans to start or continue using the app. The subscription ensures uninterrupted access to all features and services offered by DardiBook."
+    },
+    {
+      "title": "Cancellation Process",
+      "description": "If a user wishes to cancel their subscription, they must contact the DardiBook administrator directly. We do not offer an automated cancellation process through the app. Once the cancellation request is received, our team will process it accordingly."
+    },
+    {
+      "title": "Refund Policy",
+      "description": "Please note that DardiBook does not provide refunds for any cancellations. Users are encouraged to fully utilize their subscription period before opting for cancellation, as refunds will not be issued under any circumstances."
+    },
+    {
+      "title": "Data Retention",
+      "description": "Upon cancellation of a subscription, user data will not be deleted. We retain user information securely, allowing users to reactivate their account in the future without losing any data. Users can resume using DardiBook by subscribing to a new plan at any time."
+    },
+    {
+      "title": "Reactivation",
+      "description": "Users who have previously canceled their subscription and wish to continue using DardiBook can easily do so by subscribing to a new plan. All previously retained data will be accessible upon reactivation, ensuring a seamless transition back into the platform."
+    },
+    {
+      "title": "Contact Information",
+      "description": "For any inquiries regarding subscription cancellations or any other concerns, users can reach out to our support team via the contact details provided in the app. We are here to assist you with any questions or issues you may have."
+    }
+  ]
+}
