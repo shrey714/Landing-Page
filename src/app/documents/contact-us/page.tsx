@@ -1,8 +1,7 @@
 // dashboard/contact-us.js
-
 import React from "react";
 import contactUs from "./contactUs.json";
-
+import ContactForm from "@/components/ContactForm.js";
 export default function ContactUs() {
   return (
     <div className="flex-1 flex items-center justify-center">
@@ -29,6 +28,12 @@ export default function ContactUs() {
             </p>
             <p>{contactUs.contactInfo.emailUs.instructions}</p>
           </div>
+        </div>
+        <div
+          className="rounded-lg shadow-[0px_0px_0px_1px_#a0aec0] bg-white mt-3"
+          style={{ overflowY: "auto" }}
+        >
+          <ContactForm />
         </div>
       </div>
     </div>
