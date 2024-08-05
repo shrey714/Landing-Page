@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
+  manifest: "/manifest.json",
   title: "DardiBook",
   alternates: {
     canonical: "https://dardibook.in",
@@ -51,9 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={roboto.className}>
-      <head>
-        <meta name="theme-color" content="#1f2937" />
-      </head>
+      <head></head>
       <body className="bg-white" suppressHydrationWarning={true}>
         {children}
         <Analytics />
