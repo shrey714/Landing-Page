@@ -14,7 +14,7 @@ export default function Home() {
     <main className="min-h-screen w-full">
       <Header />
       <HeroSection />
-      <MarqueeSection />
+      {/* <MarqueeSection /> */}
       <FeaturesSection />
       <MiddleBanner />
       <ImageWithTextSection />
