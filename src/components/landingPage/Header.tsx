@@ -5,12 +5,11 @@ const Header = () => {
   return (
     <div className="fixed top-0 navbar p-0 min-h-6 h-6 bg-gray-800 justify-center overflow-hidden z-40">
       <div className="navbar-center">
-        {/* <p className="text-base font-medium text-gray-800">DardiBook</p> */}
         <WordRotate
           words={[
-            "DardiBook",
-            "Transform Your Medical Practice with DardiBook",
-            "The Patient Management Solution",
+            "Streamline Your Healthcare Management",
+            "Efficient Patient Data Organization",
+            "Empower Your Medical Practice with DardiBook",
           ]}
           className="text-xs font-normal text-white"
         />
