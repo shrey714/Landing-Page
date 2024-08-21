@@ -10,7 +10,12 @@ const SubscriptionPlans = () => {
     const fetchPlans = async () => {
       try {
         setloading(true);
-        const plans = await fetch("https://backend.dardibook.in/allPlans");
+         const plans = await fetch("https://backend.dardibook.in/allPlans", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
         const parsedPlans = await plans.json();
         setallplans(parsedPlans?.items);
         setloading(false);
