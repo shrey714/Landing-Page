@@ -11,7 +11,7 @@ import PricingPlans from "@/components/landingPage/PricingPlans";
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full carouselMainElement">
+    <main className="min-h-screen w-full">
       <Header />
       <HeroSection />
       {/* <MarqueeSection /> */}
