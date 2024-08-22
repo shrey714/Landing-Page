@@ -52,7 +52,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={roboto.className}>
-      <head></head>
+      <head>
+    <meta name="theme-color" content="#1f2937" />
+  </head>
       <body className="bg-white" suppressHydrationWarning={true}>
         {children}
         <Analytics />
