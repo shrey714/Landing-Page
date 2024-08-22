@@ -33,6 +33,12 @@
   scroll-snap-type: y mandatory;
 }
 
-.carouselMainElement > .subElement {
+.carouselMainElement > div {
+  scroll-snap-align: start;
+}
+.carouselMainElement > section {
+  scroll-snap-align: start;
+}
+.carouselMainElement > footer {
   scroll-snap-align: start;
 }
