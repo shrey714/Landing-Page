@@ -27,18 +27,3 @@
 ::-webkit-scrollbar-track {
   background-color: #d1d5db;
 }
-
-
-.carouselMainElement {
-  scroll-snap-type: y mandatory;
-}
-
-.carouselMainElement > div {
-  scroll-snap-align: start;
-}
-.carouselMainElement > section {
-  scroll-snap-align: start;
-}
-.carouselMainElement > footer {
-  scroll-snap-align: start;
-}
