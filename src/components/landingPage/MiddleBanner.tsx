@@ -57,7 +57,7 @@ const MiddleBanner = () => {
                 }}
                 className="duration-200 border-2 border-white text-sm mt-4 bg-transparent rounded-full inline-flex flex-row items-center px-3 py-[4px] text-white font-semibold hover:bg-gray-800/20 hover:text-gray-300 hover:border-gray-300"
               >
-                <span className="tracking-wide">Go to DashBoard</span>
+                <span className="tracking-wide">Go to Doctor&apos;s DashBoard</span>
                 <ChevronRightIcon strokeWidth={3} size={16} className="ml-1" />
               </Link>
             </figure>

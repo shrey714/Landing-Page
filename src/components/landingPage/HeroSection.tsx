@@ -68,9 +68,15 @@ const FirstSection = () => {
             and patient history, all in one place.
           </p>
           <Link href={"https://dashboard.dardibook.in/"}>
-            <ShimmerButton className="inline-flex mt-4 text-base rounded-full px-4 py-[6px] font-semibold text-center bg-white">
-              <span>GET STARTED</span>
+            <ShimmerButton className="inline-flex mt-4 text-base rounded-full px-6 py-[6px] font-semibold text-center bg-white">
+              <span>Access Doctor Dashboard</span>
               <ChevronRightIcon strokeWidth={3} size={16} className="ml-1" />
+            </ShimmerButton>
+          </Link>
+          <Link href={"https://patient.dardibook.in/"}>
+            <ShimmerButton className="inline-flex mt-4 text-sm rounded-full px-6 py-[6px] font-semibold text-center bg-white">
+              <span>Access Patient Dashboard</span>
+              <ChevronRightIcon strokeWidth={3} size={14} className="ml-1" />
             </ShimmerButton>
           </Link>
         </div>
