@@ -1,7 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import Header from "@/components/HeaderDocument";
+import dynamic from "next/dynamic";
 
 export default function Custom404() {
+  const Header = dynamic(() => import("@/components/HeaderDocument"), {
+    ssr: false, // This ensures the component is not SSR'd
+  });
   return (
     <div className="pt-24 min-h-screen bg-white">
       <Header />
@@ -22,7 +25,10 @@ export default function Custom404() {
             </p>
 
             <div className="flex items-center justify-center mt-6 gap-x-3">
-              <a href="/" className="link bg-gray-800 text-white animate-none btn-neutral btn no-underline">
+              <a
+                href="/"
+                className="link bg-gray-800 text-white animate-none btn-neutral btn no-underline"
+              >
                 Take me home
               </a>
             </div>
