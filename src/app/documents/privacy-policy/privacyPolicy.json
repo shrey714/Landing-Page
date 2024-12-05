@@ -1,0 +1,33 @@
+{
+  "title": "Privacy Policy",
+  "sections": [
+    {
+      "title": "Introduction",
+      "content": "At DardiBook, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your information when you use our services. We value your trust and are dedicated to ensuring the confidentiality and security of your personal information."
+    },
+    {
+      "title": "Information We Collect",
+      "content": "We collect various types of information to provide and enhance our services. This includes personal information about clinics and hospitals required for generating prescriptions, as well as patient information stored in our database to ensure comprehensive patient history management. Additionally, with your consent, we may use information directly from your Google account."
+    },
+    {
+      "title": "How We Use Your Information",
+      "content": "The information collected is used to deliver our services effectively, including generating prescriptions, managing patient records, and providing a seamless healthcare experience. We do not share your information with third parties and use it solely for the purposes outlined in this policy."
+    },
+    {
+      "title": "Data Security",
+      "content": "We take the security of your data seriously and implement appropriate technical and organizational measures to protect it from unauthorized access, alteration, disclosure, or destruction. Our systems and procedures are designed to ensure the confidentiality and integrity of your information."
+    },
+    {
+      "title": "User Rights",
+      "content": "You have the right to access, correct, or delete your personal information held by us. If you wish to exercise these rights, please contact us at help@dardibook.in. We are committed to handling your requests promptly and in accordance with applicable laws."
+    },
+    {
+      "title": "Changes to This Privacy Policy",
+      "content": "We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically."
+    },
+    {
+      "title": "Contact Us",
+      "content": "If you have any questions or concerns about this Privacy Policy or how we handle your information, please contact us at help@dardibook.in. Be sure to include the title of the issue or problem you are facing, and we will respond to your query via email or phone."
+    }
+  ]
+}

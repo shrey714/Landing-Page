@@ -9,51 +9,51 @@ import {
 const faq_data = [
   {
     id: 1,
-    question: "What do you mean by 'Figma assets'?",
+    question: "What services does DardiBook offer?",
     answer:
-      "You will have access to download the full Figma project including all of the pages, the components, responsive pages, and also the icons, illustrations, and images included in the screens.",
+      "DardiBook offers comprehensive healthcare management services including appointment scheduling, prescription management, patient history tracking, and referral services. It’s designed to streamline the workflow for doctors and provide a seamless experience for patients.",
   },
   {
     id: 2,
-    question: "What does 'lifetime access' exactly mean?",
+    question: "Is my data secure with DardiBook?",
     answer:
-      "Once you have purchased either the design, code, or both packages, you will have access to all of the future updates based on the roadmap, free of charge.",
+      "Yes, DardiBook prioritizes the security and privacy of your data. We use advanced encryption protocols to ensure that all patient and doctor information is securely stored and handled in compliance with industry standards.",
   },
   {
     id: 3,
-    question: "How does support work?",
+    question: "How can I schedule an appointment through DardiBook?",
     answer:
-      "We're aware of the importance of well qualified support, that is why we decided that support will only be provided by the authors that actually worked on this project. Feel free to contact us and we'll help you out as soon as we can.",
+      "You can easily schedule appointments through DardiBook by selecting your preferred doctor and choosing an available time slot. The platform also allows you to manage and reschedule appointments if necessary.",
   },
   {
     id: 4,
-    question: "I want to build more than one project. Is that allowed?",
+    question: "Can I access DardiBook on my mobile device?",
     answer:
-      "You can use Windster for an unlimited amount of projects, whether it's a personal website, a SaaS app, or a website for a client. As long as you don't build a product that will directly compete with Windster either as a UI kit, theme, or template, it's fine. Find out more information by reading the license.",
+      "Yes, DardiBook is designed to be fully responsive and accessible on various devices including smartphones, tablets, and desktops, ensuring you can manage healthcare needs on the go.",
   },
   {
     id: 5,
-    question: "What does 'free updates' include?",
+    question: "What kind of support does DardiBook offer?",
     answer:
-      "The free updates that will be provided is based on the roadmap that we have laid out for this project. It is also possible that we will provide extra updates outside of the roadmap as well.",
+      "DardiBook provides direct customer support to assist with any issues or inquiries. Our support team is available to help via email or live chat, ensuring timely and effective assistance.",
   },
   {
     id: 6,
-    question: "What does the free version include?",
+    question: "How does DardiBook handle prescriptions?",
     answer:
-      "The free version of Windster includes a minimal style guidelines, component variants, and a dashboard page with the mobile version alongside it. You can use this version for any purposes, because it is open-source under the MIT license.",
+      "DardiBook allows doctors to generate and manage prescriptions digitally. These prescriptions can be easily shared with patients, ensuring clear communication and reducing the risk of errors.",
   },
   {
     id: 7,
-    question: "What is the difference between Windster and Tailwind UI?",
+    question: "Is there a limit on the number of patient records I can manage?",
     answer:
-      "Although both Windster and Tailwind UI are built for integration with Tailwind CSS, the main difference is in the design, the pages, the extra components and UI elements that Windster includes. Additionally, Windster is a project that is still in development, and later it will include both the application, marketing, and e-commerce UI interfaces.",
+      "No, DardiBook offers unlimited patient record management, allowing you to store and organize as many patient records as you need without any limitations.",
   },
   {
     id: 8,
-    question: "Can I use Windster in open-source projects?",
+    question: "Can I try DardiBook before committing to a subscription?",
     answer:
-      "Generally, it is accepted to use Windster in open-source projects, as long as it is not a UI library, a theme, a template, a page-builder that would be considered as an alternative to Windster itself. With that being said, feel free to use this design kit for your open-source projects. Find out more information by reading the license.",
+      "No, DardiBook does not offer a free trial period. To access and explore the platform’s features and functionality, a subscription plan must be activated. This allows users to fully engage with the platform and ensure it meets their needs.",
   },
 ];
 
@@ -62,7 +62,7 @@ const FAQSection = () => {
     <section>
       <div className="pt-8 md:pt-16 px-4 mx-auto max-w-screen-xl">
         <h2 className="mb-4 text-2xl font-bold leading-[1.2] md:text-3xl text-gray-700">
-          Frequently Asked Questions
+          FAQs
         </h2>
 
         <Accordion
@@ -77,7 +77,9 @@ const FAQSection = () => {
                   <AccordionTrigger className="text-start py-3 md:py-4 text-gray-500">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-500" >{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-gray-500">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               );
             })}
@@ -90,7 +92,9 @@ const FAQSection = () => {
                   <AccordionTrigger className="text-start py-3 md:py-4 text-gray-500">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-500" >{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-gray-500">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               );
             })}

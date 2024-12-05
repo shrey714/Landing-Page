@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Footer = () => {
+const FooterDocuments = () => {
   const allPaths = [
     "about-us",
     "cancellation-policy",
@@ -18,7 +18,7 @@ const Footer = () => {
         <aside className="grid-flow-col items-center">
           <img className="size-10 md:size-16" src="/Logo.svg" alt="LOGO" />
         </aside>
-        <nav className="flex flex-row flex-wrap items-center justify-center justify-self-center gap-x-4 gap-y-0 bg-white">
+        <nav className="flex flex-row flex-wrap items-center justify-center justify-self-center gap-x-4 gap-y-0">
           {allPaths.map((path, key) => {
             return (
               <Link
@@ -41,4 +41,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterDocuments;

@@ -1,20 +1,17 @@
 import { ReactNode } from "react";
-import HeaderDocument from "@/components/HeaderDocument";
-import type { Metadata } from "next";
+import FooterDocuments from "@/components/FooterDocuments";
+import dynamic from "next/dynamic";
 
-export const metadata: Metadata = {
-  title: "DardiBook-Dashboard",
-  description: "App to help doctors to track their patient",
-};
+const Header = dynamic(() => import("@/components/HeaderDocument"), {
+  ssr: false, // This ensures the component is not SSR'd
+});
 
 export default function RootLayout({ children }: { children?: ReactNode }) {
-
-
   return (
     <div className="pt-24 min-h-dvh bg-gray-300">
-      <HeaderDocument />
+      <Header />
       {children}
+      <FooterDocuments />
     </div>
   );
-};
-
+}
