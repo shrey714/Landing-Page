@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-
 export const LogoFooter = () => {
   return (
     <div className="relative">
@@ -8,9 +7,9 @@ export const LogoFooter = () => {
       <Image
         alt="Logo"
         src="/Logo.svg"
-        width={56}
-        height={56}
-        className="aspect-square drop-shadow-md size-14"
+        width={80}
+        height={80}
+        className="aspect-square drop-shadow-md size-20"
         priority
       />
     </div>

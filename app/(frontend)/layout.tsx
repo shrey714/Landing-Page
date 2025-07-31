@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={outfit.className} suppressHydrationWarning>
       <head>
-        <meta name="theme-color" content="#1f2937" />
+        <meta name="theme-color" content="#081C4F" />
       </head>
       <body className="overflow-x-hidden antialiased">
         <ThemeProvider

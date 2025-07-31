@@ -9,7 +9,7 @@ const MarqueFrame = () => {
   // Show at top (0-0.1) and bottom (0.9-1), hide in middle
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.1, 0.92, 1],
+    [0, 0.1, 0.9, 1],
     [0.8, 0, 0, 0.8]
   );
 
@@ -20,10 +20,8 @@ const MarqueFrame = () => {
 
   return (
     <motion.div
-      className="w-full h-svh fixed top-0 pointer-events-none transition-opacity"
+      className="w-full h-screen fixed top-0 pointer-events-none transition-opacity bg-[#081C4F]"
       style={{
-        background:
-          "linear-gradient(160deg, #020617 0%, #081C4F 35%, #0B3B7B 70%, #2A7FD0 100%)",
         opacity: opacity,
       }}
     >
