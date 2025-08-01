@@ -39,7 +39,7 @@ const LogoCloud = () => {
   }, [logoSets.length]);
 
   return (
-    <div className="pt-10 pb-28 px-4 relative">
+    <div className="py-10 px-4 relative">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-white mb-4">
           Trusted by Healthcare Professionals
