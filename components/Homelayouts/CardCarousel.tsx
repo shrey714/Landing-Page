@@ -1,8 +1,58 @@
-import React from "react";
+"use client";
+
+import React, { useState, useRef, useEffect } from "react";
 import { Button } from "../ui/button";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
+import { motion } from "framer-motion";
 
 const CardCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const totalCards = 7;
+
+  const updateScrollButtons = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } =
+        scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+    }
+  };
+
+  const scrollToCard = (index: number) => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.scrollWidth / totalCards;
+      const scrollPosition = cardWidth * index;
+      scrollContainerRef.current.scrollTo({
+        left: scrollPosition,
+        behavior: "smooth",
+      });
+      setCurrentIndex(index);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      scrollToCard(currentIndex - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < totalCards - 1) {
+      scrollToCard(currentIndex + 1);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener("scroll", updateScrollButtons);
+      updateScrollButtons();
+      return () => container.removeEventListener("scroll", updateScrollButtons);
+    }
+  }, []);
   return (
     <section>
       <div className="overflow-hidden relative z-[1] flex justify-center">
@@ -27,18 +77,40 @@ const CardCarousel = () => {
                   </section>
 
                   <nav className="px-4 hidden justify-start gap-1 min-[600px]:flex min-[600px]:justify-end">
-                    <Button
-                      variant={"outline"}
-                      className="relative grid place-items-center w-7 h-7 p-0 rounded-full cursor-pointer"
+                    <motion.div
+                      whileHover={{ scale: canScrollLeft ? 1.1 : 1 }}
+                      whileTap={{ scale: canScrollLeft ? 0.95 : 1 }}
                     >
-                      <ArrowLeftIcon />
-                    </Button>
-                    <Button
-                      variant={"outline"}
-                      className="relative grid place-items-center w-7 h-7 p-0 rounded-full cursor-pointer"
+                      <Button
+                        variant={"outline"}
+                        onClick={handlePrevious}
+                        disabled={!canScrollLeft}
+                        className={`relative grid place-items-center w-7 h-7 p-0 rounded-full transition-opacity ${
+                          canScrollLeft
+                            ? "cursor-pointer opacity-100"
+                            : "cursor-not-allowed opacity-50"
+                        }`}
+                      >
+                        <ArrowLeftIcon size={16} />
+                      </Button>
+                    </motion.div>
+                    <motion.div
+                      whileHover={{ scale: canScrollRight ? 1.1 : 1 }}
+                      whileTap={{ scale: canScrollRight ? 0.95 : 1 }}
                     >
-                      <ArrowRightIcon />
-                    </Button>
+                      <Button
+                        variant={"outline"}
+                        onClick={handleNext}
+                        disabled={!canScrollRight}
+                        className={`relative grid place-items-center w-7 h-7 p-0 rounded-full transition-opacity ${
+                          canScrollRight
+                            ? "cursor-pointer opacity-100"
+                            : "cursor-not-allowed opacity-50"
+                        }`}
+                      >
+                        <ArrowRightIcon size={16} />
+                      </Button>
+                    </motion.div>
                   </nav>
                 </div>
 
@@ -46,11 +118,13 @@ const CardCarousel = () => {
                 <div className="min-w-0">
                   <div className="flex w-[calc(100vw-17px)] -ml-6 min-[1112px]:ml-[calc(calc(calc(100vw-17px)/2-1280px/2)*-1)]">
                     <div
+                      ref={scrollContainerRef}
                       className="relative flex pt-6 pb-32 -mt-8 -mb-32 scroll-px-6 min-[1112px]:scroll-px-[calc(calc(100vw-17px)/2-1280px/2)] overflow-x-scroll overscroll-x-contain"
                       style={{
-                        scrollSnapType: "none",
+                        scrollSnapType: "x mandatory",
                         WebkitOverflowScrolling: "touch",
                       }}
+                      onScroll={updateScrollButtons}
                     >
                       <div className="min-w-6 min-[1112px]:min-w-[calc(calc(100vw-17px)/2-1280px/2)] snap-align-none m-0 h-[1px]"></div>
 
