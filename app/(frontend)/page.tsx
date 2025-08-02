@@ -1,3 +1,4 @@
+import CardCarousel from "@/components/Homelayouts/CardCarousel";
 import Footer from "@/components/Homelayouts/Footer";
 import { StickyScrollReveal } from "@/components/Homelayouts/Front-Door";
 import Hero from "@/components/Homelayouts/Hero";
@@ -14,7 +15,8 @@ export default async function IndexPage() {
       <Hero />
       <LogoCloud />
       <StickyScrollReveal />
-      <div className="h-[5000px] relative w-full">shrey</div>
+      <CardCarousel />
+      <div className="h-[4000px] relative w-full">shrey</div>
       <Footer />
     </main>
   );
