@@ -1,25 +1,80 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Button } from "../ui/button";
-import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
+import { ArrowLeftIcon, ArrowRightIcon, ChevronRightIcon } from "lucide-react";
 import { motion } from "framer-motion";
+
+const cardsData = [
+  {
+    id: 1,
+    title: "Clinics & Hospitals",
+    description:
+      "Streamline appointments, prescriptions, and patient records with an all-in-one solution for healthcare providers.",
+  },
+  {
+    id: 2,
+    title: "Doctors",
+    description:
+      "Manage patient history, schedule visits, generate prescriptions, and stay organized with smart tools built for medical professionals.",
+  },
+  {
+    id: 3,
+    title: "Patients",
+    description:
+      "Easily book appointments, access medical records, and receive digital prescriptions — all in one place.",
+  },
+  {
+    id: 4,
+    title: "Pharmacies",
+    description:
+      "Fulfill prescriptions faster with verified digital access and improve collaboration with doctors and patients.",
+  },
+  {
+    id: 5,
+    title: "Diagnostics",
+    description:
+      "Enable smooth communication between doctors and labs for quicker test referrals and result sharing.",
+  },
+  {
+    id: 6,
+    title: "Healthcare Platforms",
+    description:
+      "Integrate DardiBook's modules into your ecosystem to enhance patient engagement and medical workflow efficiency.",
+  },
+  {
+    id: 7,
+    title: "Medical Institutions",
+    description:
+      "Support training and operational needs of institutions with organized case histories and streamlined patient interaction tools.",
+  },
+];
 
 const CardCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const totalCards = 7;
 
-  const updateScrollButtons = () => {
+  const updateScrollButtons = useCallback(() => {
     if (scrollContainerRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } =
         scrollContainerRef.current;
       setCanScrollLeft(scrollLeft > 0);
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+
+      // Sync currentIndex with actual scroll position
+      const cardWidth = scrollWidth / totalCards;
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      if (newIndex !== currentIndex) {
+        setCurrentIndex(newIndex);
+      }
     }
-  };
+  }, [currentIndex]);
 
   const scrollToCard = (index: number) => {
     if (scrollContainerRef.current) {
@@ -45,6 +100,26 @@ const CardCarousel = () => {
     }
   };
 
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (scrollContainerRef.current) {
+      setIsDragging(true);
+      setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+      setScrollLeft(scrollContainerRef.current.scrollLeft);
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (container) {
@@ -52,7 +127,7 @@ const CardCarousel = () => {
       updateScrollButtons();
       return () => container.removeEventListener("scroll", updateScrollButtons);
     }
-  }, []);
+  }, [updateScrollButtons]);
   return (
     <section>
       <div className="overflow-hidden relative z-[1] flex justify-center">
@@ -65,14 +140,15 @@ const CardCarousel = () => {
                   <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                     <header className="relative pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 grid gap-y-6 grid-cols-[minmax(0,_1fr)] max-w-[calc(calc(1080px*0.25)*3)]">
                       <h1 className="relative font-medium text-[34px] min-[900px]:text-[38px] leading-[1.294117647] min-[900px]:leading-[1.263157895] -tracking-[0.1px] min-[900px]:-tracking-[0.2px] text-white  wrap-break-word">
-                        Support for any business type
+                        Built for every kind of healthcare provider
                       </h1>
                     </header>
 
                     <div className="pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 text-[#a0a0a0] max-w-[calc(calc(1080px*0.25)*3)] font-light text-[18px] leading-[1.555555556]">
-                      From global AI companies to category-defining
-                      marketplaces, successful businesses across industries grow
-                      and scale with Stripe.
+                      From small clinics to large hospitals, and from individual
+                      doctors to diagnostic labs — DardiBook helps streamline
+                      operations, improve patient care, and simplify health
+                      record management across the board.
                     </div>
                   </section>
 
@@ -119,41 +195,42 @@ const CardCarousel = () => {
                   <div className="flex w-[calc(100vw-17px)] -ml-6 min-[1112px]:ml-[calc(calc(calc(100vw-17px)/2-1280px/2)*-1)]">
                     <div
                       ref={scrollContainerRef}
-                      className="relative flex pt-6 pb-32 -mt-8 -mb-32 scroll-px-6 min-[1112px]:scroll-px-[calc(calc(100vw-17px)/2-1280px/2)] overflow-x-scroll overscroll-x-contain"
+                      className={`relative flex pt-6 pb-32 -mt-8 -mb-32 scroll-px-6 min-[1112px]:scroll-px-[calc(calc(100vw-17px)/2-1280px/2)] overflow-x-scroll overscroll-x-contain select-none ${isDragging ? "cursor-grabbing" : ""}`}
                       style={{
                         scrollSnapType: "x mandatory",
                         WebkitOverflowScrolling: "touch",
                       }}
                       onScroll={updateScrollButtons}
+                      onMouseDown={handleMouseDown}
+                      onMouseMove={handleMouseMove}
+                      onMouseUp={handleMouseUp}
+                      onMouseLeave={handleMouseUp}
                     >
                       <div className="min-w-6 min-[1112px]:min-w-[calc(calc(100vw-17px)/2-1280px/2)] snap-align-none m-0 h-[1px]"></div>
 
-                      {Array.from({ length: 7 }).map((_, index) => (
+                      {cardsData.map((card) => (
                         <div
-                          key={index}
+                          key={card.id}
                           className="snap-start grid min-w-[calc(calc(100vw-17px)-16px*2)] min-[1112px]:min-w-[calc(1280px/2)]"
                         >
-                          <div className="border-2 shadow-md bg-[#081C4F] flex flex-col mr-6 relative min-w-[100px] min-h-[72px] rounded-[8px]">
-                            <a
-                              className="font-[425] cursor-pointer outline-none transition-[color,opacity] duration-[150ms] ease-[cubic-bezier(0.215,0.61,0.355,1)]"
-                              href="#"
-                            >
+                          <div className="shadow-lg bg-[#051133] flex flex-col mr-6 relative min-w-[100px] min-h-[72px] rounded-[8px]">
+                            <div className="font-[425] outline-none transition-[color,opacity] duration-[150ms] ease-[cubic-bezier(0.215,0.61,0.355,1)]">
                               <div className="pt-10 pb-10 px-6 min-[900px]:pt-20 min-[900px]:px-10 min-[900px]:pb-[68px]">
                                 <section className="grid gap-y-4 -tracking-[0.2px] scroll-mt-[108px]">
                                   <h1 className="w-full relative text-white tracking-normal wrap-break-word font-[425] text-[28px] leading-[36px]">
-                                    AI
+                                    {card.title}
                                   </h1>
 
                                   <div className="pr-3 text-[#a0a0a0] w-full">
-                                    Stripe supports businesses across the AI
-                                    ecosystem – from usage-based billing for AI
-                                    assistants like Perplexity to premium
-                                    subscriptions for infrastructure providers
-                                    like OpenAI.
+                                    {card.description}
                                   </div>
+
+                                  <p className="pr-4 font-[425] text-[15px] leading-[1.6] flex flex-row gap-1 items-center">
+                                    Learn more <ChevronRightIcon size={18} />
+                                  </p>
                                 </section>
                               </div>
-                            </a>
+                            </div>
                           </div>
                         </div>
                       ))}

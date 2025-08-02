@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+
 import { ProductGrid } from "./ScrollRevealBoxes/First";
 
 export function StickyScrollReveal() {
@@ -304,31 +304,28 @@ export function StickyScrollReveal() {
 
 // Video Player Component
 const VideoPlayer = ({ videoNumber }: { videoNumber: number }) => {
-  if (videoNumber === 1) {
-    return <ProductGrid />;
-  }
+  // if (videoNumber === 1) {
+  //   return <ProductGrid />;
+  // }
 
-  const gifFiles = [
-    "dental-clinic.gif",
-    "Health Online Report.gif",
-    "Live chatbot.gif",
-    "Medical Shield.gif",
-    "registro.gif",
-  ];
+  const videoFiles = ["1.mp4", "2.mp4", "3.mp4", "4.mp4", "5.mp4"];
 
-  const gifSrc = gifFiles[videoNumber - 1];
+  const videoSrc = videoFiles[videoNumber - 1];
 
-  if (!gifSrc || videoNumber < 1 || videoNumber > 5) {
+  if (!videoSrc || videoNumber < 1 || videoNumber > 5) {
     return null;
   }
 
   return (
-    <Image
+    <video
       width={540}
       height={540}
       className="w-full h-full object-cover"
-      src={`/${gifSrc}`}
-      alt={`Animation ${videoNumber}`}
+      src={`/${videoSrc}`}
+      autoPlay
+      loop
+      muted
+      playsInline
     />
   );
 };
