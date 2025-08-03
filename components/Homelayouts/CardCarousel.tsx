@@ -213,7 +213,7 @@ const CardCarousel = () => {
                           key={card.id}
                           className="snap-start grid min-w-[calc(calc(100vw-17px)-16px*2)] min-[1112px]:min-w-[calc(1280px/2)]"
                         >
-                          <div className="shadow-lg bg-[#051133] flex flex-col mr-6 relative min-w-[100px] min-h-[72px] rounded-[8px]">
+                          <div className="shadow-lg bg-background/70 flex flex-col mr-6 relative min-w-[100px] min-h-[72px] rounded-[8px]">
                             <div className="font-[425] outline-none transition-[color,opacity] duration-[150ms] ease-[cubic-bezier(0.215,0.61,0.355,1)]">
                               <div className="pt-10 pb-10 px-6 min-[900px]:pt-20 min-[900px]:px-10 min-[900px]:pb-[68px]">
                                 <section className="grid gap-y-4 -tracking-[0.2px] scroll-mt-[108px]">

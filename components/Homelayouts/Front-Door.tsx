@@ -2,8 +2,6 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { ProductGrid } from "./ScrollRevealBoxes/First";
-
 export function StickyScrollReveal() {
   const [divHeight, setDivHeight] = useState(0);
   const [activeGif, setActiveGif] = useState(1);
@@ -88,7 +86,7 @@ export function StickyScrollReveal() {
                   </div>
                 </section>
 
-                <figure className="relative self-start">
+                <figure className="relative self-start hidden min-[900px]:block">
                   <div
                     className="absolute top-0 left-0 w-full"
                     style={{ height: divHeight }}
@@ -109,6 +107,9 @@ export function StickyScrollReveal() {
                       </AnimatePresence>
                     </div>
                   </div>
+                </figure>
+                <figure className="relative self-start grid min-[900px]:hidden">
+                  xxx
                 </figure>
               </div>
 
