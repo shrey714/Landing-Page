@@ -138,13 +138,13 @@ const CardCarousel = () => {
                 {/* carousel header */}
                 <div className="items-end grid gap-y-8 min-[900px]:grid-cols-[3fr_1fr]">
                   <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
-                    <header className="relative pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 grid gap-y-6 grid-cols-[minmax(0,_1fr)] max-w-[calc(calc(1080px*0.25)*3)]">
+                    <header className="relative pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 grid gap-y-6 grid-cols-[minmax(0,_1fr)] max-w-[calc(calc(1280px*0.25)*3)]">
                       <h1 className="relative font-medium text-[34px] min-[900px]:text-[38px] leading-[1.294117647] min-[900px]:leading-[1.263157895] -tracking-[0.1px] min-[900px]:-tracking-[0.2px] text-white  wrap-break-word">
                         Built for every kind of healthcare provider
                       </h1>
                     </header>
 
-                    <div className="pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 text-[#a0a0a0] max-w-[calc(calc(1080px*0.25)*3)] font-light text-[18px] leading-[1.555555556]">
+                    <div className="pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 text-[#a0a0a0] max-w-[calc(calc(1280px*0.25)*3)] font-light text-[18px] leading-[1.555555556]">
                       From small clinics to large hospitals, and from individual
                       doctors to diagnostic labs — DardiBook helps streamline
                       operations, improve patient care, and simplify health
@@ -192,7 +192,7 @@ const CardCarousel = () => {
 
                 {/* carousel code */}
                 <div className="min-w-0">
-                  <div className="flex w-[calc(100vw-17px)] -ml-6 min-[1112px]:ml-[calc(calc(calc(100vw-17px)/2-1280px/2)*-1)]">
+                  <div className="flex w-screen min-[1112px]:ml-[calc(calc(calc(100vw-17px)/2-1280px/2)*-1)]">
                     <div
                       ref={scrollContainerRef}
                       className={`relative flex pt-6 pb-32 -mt-8 -mb-32 scroll-px-6 min-[1112px]:scroll-px-[calc(calc(100vw-17px)/2-1280px/2)] overflow-x-scroll overscroll-x-contain select-none ${isDragging ? "cursor-grabbing" : ""}`}

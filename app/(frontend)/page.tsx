@@ -1,7 +1,9 @@
+import CallToAction from "@/components/Homelayouts/CallToAction";
 import CardCarousel from "@/components/Homelayouts/CardCarousel";
 import FeaturesSquence from "@/components/Homelayouts/FeaturesSquence";
 import Footer from "@/components/Homelayouts/Footer";
 import { StickyScrollReveal } from "@/components/Homelayouts/Front-Door";
+import GridCarousel from "@/components/Homelayouts/GridCarousel";
 import Hero from "@/components/Homelayouts/Hero";
 import LogoCloud from "@/components/Homelayouts/Logo-Cloud";
 import { Navbar } from "@/components/Homelayouts/Navbar";
@@ -9,7 +11,7 @@ import MarqueFrame from "@/components/subs/MarqueFrame";
 
 export default async function IndexPage() {
   return (
-    <main className="relative min-h-screen w-full bg-[#081C4F]">
+    <main className="relative min-h-screen overflow-x-hidden min-[900px]:overflow-x-visible w-full bg-[#081C4F]">
       {process.env.NEXT_PUBLIC_NODE_ENV === "development" && <Section_Masked />}
       <MarqueFrame />
       <Navbar />
@@ -18,7 +20,9 @@ export default async function IndexPage() {
       <StickyScrollReveal />
       <CardCarousel />
       <FeaturesSquence />
+      <GridCarousel />
       <div className="h-[4000px] relative w-full">shrey</div>
+      <CallToAction />
       <Footer />
     </main>
   );
@@ -36,13 +40,13 @@ const Section_Masked = () => {
       >
         <div className="absolute h-full w-full top-0 left-0 py-0 px-4 pointer-events-none">
           <div className="grid relative max-w-7xl grid-rows-1 grid-cols-2 sm:grid-cols-4 md:grid-cols-6 h-full mx-auto my-0">
-            <div className="bg-[rgba(255,255,255,0.3)] w-[1px]"></div>
-            <div className="w-[1px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.3),_rgba(255,255,255,0.3)_50%,_transparent_0,_transparent)] bg-[length:1px_8px]"></div>
-            <div className="w-[1px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.3),_rgba(255,255,255,0.3)_50%,_transparent_0,_transparent)] bg-[length:1px_8px]"></div>
-            <div className="w-[1px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.3),_rgba(255,255,255,0.3)_50%,_transparent_0,_transparent)] bg-[length:1px_8px]"></div>
-            <div className="w-[1px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.3),_rgba(255,255,255,0.3)_50%,_transparent_0,_transparent)] bg-[length:1px_8px]"></div>
-            <div className="w-[1px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.3),_rgba(255,255,255,0.3)_50%,_transparent_0,_transparent)] bg-[length:1px_8px]"></div>
-            <div className="bg-[rgba(255,255,255,0.3)] w-[1px] absolute top-0 right-0 h-full"></div>
+            <div className="bg-[rgba(255,255,255,0.1)] w-[1px]"></div>
+            <div className="w-[1px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.1),_rgba(255,255,255,0.1)_50%,_transparent_0,_transparent)] bg-[length:1px_8px]"></div>
+            <div className="w-[1px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.1),_rgba(255,255,255,0.1)_50%,_transparent_0,_transparent)] bg-[length:1px_8px]"></div>
+            <div className="w-[1px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.1),_rgba(255,255,255,0.1)_50%,_transparent_0,_transparent)] bg-[length:1px_8px]"></div>
+            <div className="w-[1px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.1),_rgba(255,255,255,0.1)_50%,_transparent_0,_transparent)] bg-[length:1px_8px]"></div>
+            <div className="w-[1px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.1),_rgba(255,255,255,0.1)_50%,_transparent_0,_transparent)] bg-[length:1px_8px]"></div>
+            <div className="bg-[rgba(255,255,255,0.1)] w-[1px] absolute top-0 right-0 h-full"></div>
           </div>
         </div>
       </div>
