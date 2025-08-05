@@ -1,8 +1,48 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 import { ChevronRightIcon } from "lucide-react";
 
 const GridCarousel = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const slides = [
+    {
+      id: 0,
+      title: "BMW",
+      stats: "Millions",
+      description: "BMW owners using ConnectedDrive Store",
+      color: "#0066B1",
+    },
+    {
+      id: 1,
+      title: "Amazon",
+      stats: "350+",
+      description: "US dealerships",
+      color: "#EFA82E",
+    },
+    {
+      id: 2,
+      title: "Maersk",
+      stats: "Global",
+      description: "Container logistics leader",
+      color: "#42B0D5",
+    },
+    {
+      id: 3,
+      title: "Twilio",
+      stats: "Platform",
+      description: "Customer engagement solutions",
+      color: "#C54647",
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [slides.length]);
   return (
     <section className="relative">
       <div className="overflow-hidden">
@@ -47,38 +87,34 @@ const GridCarousel = () => {
                 <div>
                   <div className="grid gap-y-8 items-start min-[900px]:grid-cols-[1fr_minmax(0,_3fr)]">
                     <div className="overflow-hidden">
-                      <div className="w-full items-start translateX(0%) transition-transform duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
-                        <aside className="min-w-full grid grid-cols-1 grid-flow-row gap-y-12 min-[900px]:pr-8">
+                      <div className="w-full items-start transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${activeSlide * 100}%)` }}>
+                        <div className="flex w-[400%]">
+                          {slides.map((slide, index) => (
+                            <aside key={index} className="min-w-[25%] grid grid-cols-1 grid-flow-row gap-y-12 min-[900px]:pr-8">
                           <div className="grid gap-y-12 grid-cols-1 grid-flow-row min-[600px]:grid-cols-2 min-[600px]:grid-flow-col min-[600px]:gap-y-0 min-[900px]:grid-cols-1 min-[900px]:grid-flow-row min-[900px]:gap-y-12">
                             <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-2 min-w-full items-start">
                               <header className="relative gap-y-2 grid grid-cols-[minmax(0,_1fr)] pl-4 pr-4 min-[60px]:pr-16 min-[900px]:pr-28 maw-w-[calc(calc(1280px*0.25)*3)]">
                                 <h1 className="relative text-white tracking-[0.2px] wrap-break-word font-medium text-[24px] leading-[1.33]">
-                                  <span
-                                    className="block absolute top-[4.46px] -left-4 w-[1px] h-6 bg-[#635bff]"
-                                    style={{ content: "" }}
-                                  ></span>
-                                  Millions
+                                  <span className="block absolute top-[4.46px] -left-4 w-[1px] h-6" style={{ backgroundColor: slide.color }}></span>
+                                  {slide.stats}
                                 </h1>
                               </header>
 
                               <div className="pl-4 pr-5 maw-w-[calc(calc(1280px*0.25)*3)] text-[#a0a0a0] font-light text-[15px] leading-[1.6]">
-                                BMW owners using ConnectedDrive Store
+                                {slide.description}
                               </div>
                             </section>
 
                             <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-2 min-w-full items-start">
                               <header className="relative gap-y-2 grid grid-cols-[minmax(0,_1fr)] pl-4 pr-4 min-[60px]:pr-16 min-[900px]:pr-28 maw-w-[calc(calc(1280px*0.25)*3)]">
                                 <h1 className="relative text-white tracking-[0.2px] wrap-break-word font-medium text-[24px] leading-[1.33]">
-                                  <span
-                                    className="block absolute top-[4.46px] -left-4 w-[1px] h-6 bg-[#635bff]"
-                                    style={{ content: "" }}
-                                  ></span>
-                                  350+
+                                  <span className="block absolute top-[4.46px] -left-4 w-[1px] h-6" style={{ backgroundColor: slide.color }}></span>
+                                  {slide.title}
                                 </h1>
                               </header>
 
                               <div className="pl-4 pr-5 maw-w-[calc(calc(1280px*0.25)*3)] text-[#a0a0a0] font-light text-[15px] leading-[1.6]">
-                                US dealerships
+                                Enterprise solutions
                               </div>
                             </section>
                           </div>
@@ -87,10 +123,7 @@ const GridCarousel = () => {
                             <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-2 min-w-full">
                               <header className="grid grid-cols-[minmax(0,_1fr)] gap-y-2 relative pr-4 min-[600px]:pr-8 pl-4 max-w-[calc(calc(1280px*0.25)*3)]">
                                 <h1 className="relative text-white tracking-[0.2px] wrap-break-word font-[425] text-[15px] leading-[1.6]">
-                                  <span
-                                    className="block absolute top-[5px] -left-4 w-[1px] h-[15px] bg-[#635bff]"
-                                    style={{ content: "" }}
-                                  ></span>
+                                  <span className="block absolute top-[5px] -left-4 w-[1px] h-[15px]" style={{ backgroundColor: slide.color }}></span>
                                   Products used
                                 </h1>
                               </header>
@@ -98,126 +131,11 @@ const GridCarousel = () => {
                               <footer className="grid gap-y-6 px-4">
                                 <ul className="list-none grid p-0 mt-4 overflow-hidden gap-y-3 grid-cols-none">
                                   <li className="grid grid-rows-[1fr] grid-cols-[20px_1fr] gap-x-[14px] gap-y-0 items-center">
-                                    <svg
-                                      className="h-5 w-auto"
-                                      width="40"
-                                      height="40"
-                                      viewBox="0 0 40 40"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <title>Payments</title>
-
-                                      <path
-                                        d="M34.61 11.28a2.56 2.56 0 0 0-1.22-1.04L8.54.2A2.57 2.57 0 0 0 5 2.6V15c0 1.05.64 2 1.61 2.4l6.44 2.6 21.56 8.72c.26-.4.4-.88.39-1.36V12.64c0-.48-.13-.96-.39-1.37z"
-                                        fill="url(#product-icon-payments-CustomerProfile-BMW-a)"
-                                      ></path>
-                                      <path
-                                        d="M34.63 11.28L13.06 20l-6.45 2.6A2.58 2.58 0 0 0 5 25v12.42a2.58 2.58 0 0 0 3.54 2.39L33.4 29.76c.5-.21.93-.57 1.21-1.04.26-.41.4-.88.39-1.36V12.64c0-.48-.12-.95-.37-1.36z"
-                                        fill="#96F"
-                                      ></path>
-                                      <path
-                                        d="M34.62 11.28l.1.17c.18.37.28.77.28 1.19v-.03 14.75c0 .48-.13.95-.39 1.36L13.06 20l21.56-8.72z"
-                                        fill="url(#product-icon-payments-CustomerProfile-BMW-b)"
-                                      ></path>
-                                      <defs>
-                                        <linearGradient
-                                          id="product-icon-payments-CustomerProfile-BMW-a"
-                                          x1="20"
-                                          y1="4.13"
-                                          x2="20"
-                                          y2="21.13"
-                                          gradientUnits="userSpaceOnUse"
-                                        >
-                                          <stop stopColor="#11EFE3"></stop>
-                                          <stop
-                                            offset="1"
-                                            stopColor="#21CFE0"
-                                          ></stop>
-                                        </linearGradient>
-                                        <linearGradient
-                                          id="product-icon-payments-CustomerProfile-BMW-b"
-                                          x1="35"
-                                          y1="11.28"
-                                          x2="35"
-                                          y2="28.72"
-                                          gradientUnits="userSpaceOnUse"
-                                        >
-                                          <stop stopColor="#0048E5"></stop>
-                                          <stop
-                                            offset="1"
-                                            stopColor="#9B66FF"
-                                          ></stop>
-                                        </linearGradient>
-                                      </defs>
-                                    </svg>
-
+                                    <div className="w-5 h-5 rounded" style={{ backgroundColor: slide.color }}></div>
                                     <span>Payments</span>
                                   </li>
-
                                   <li className="grid grid-rows-[1fr] grid-cols-[20px_1fr] gap-x-[14px] gap-y-0 items-center">
-                                    <svg
-                                      className="h-5 w-auto"
-                                      width="40"
-                                      height="40"
-                                      viewBox="0 0 40 40"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <title>Connect</title>
-
-                                      <path
-                                        d="M12.47.01a13.01 13.01 0 0 0 .5 25.99h10.55c1.37 0 2.48-1.1 2.48-2.48V13.01a12.99 12.99 0 0 0-13.53-13z"
-                                        fill="url(#product-icon-connect-CustomerProfile-BMW-a)"
-                                      ></path>
-                                      <path
-                                        d="M27.53 39.99a13.01 13.01 0 0 0-.5-25.99H16.48A2.48 2.48 0 0 0 14 16.48v10.51a12.99 12.99 0 0 0 13.53 13z"
-                                        fill="#0073E6"
-                                      ></path>
-                                      <path
-                                        d="M26 14v9.52A2.48 2.48 0 0 1 23.52 26H14v-9.52A2.48 2.48 0 0 1 16.32 14l.16-.01H26z"
-                                        fill="url(#product-icon-connect-CustomerProfile-BMW-b)"
-                                      ></path>
-                                      <defs>
-                                        <linearGradient
-                                          id="product-icon-connect-CustomerProfile-BMW-a"
-                                          x1="13"
-                                          y1="1.71"
-                                          x2="13"
-                                          y2="15.25"
-                                          gradientUnits="userSpaceOnUse"
-                                        >
-                                          <stop stopColor="#11EFE3"></stop>
-                                          <stop
-                                            offset=".33"
-                                            stopColor="#15E8E2"
-                                          ></stop>
-                                          <stop
-                                            offset=".74"
-                                            stopColor="#1FD3E0"
-                                          ></stop>
-                                          <stop
-                                            offset="1"
-                                            stopColor="#21CFE0"
-                                          ></stop>
-                                        </linearGradient>
-                                        <linearGradient
-                                          id="product-icon-connect-CustomerProfile-BMW-b"
-                                          x1="20"
-                                          y1="15.72"
-                                          x2="20"
-                                          y2="27.24"
-                                          gradientUnits="userSpaceOnUse"
-                                        >
-                                          <stop stopColor="#00299C"></stop>
-                                          <stop
-                                            offset="1"
-                                            stopColor="#0073E6"
-                                          ></stop>
-                                        </linearGradient>
-                                      </defs>
-                                    </svg>
-
+                                    <div className="w-5 h-5 rounded" style={{ backgroundColor: slide.color }}></div>
                                     <span>Connect</span>
                                   </li>
                                 </ul>
@@ -225,19 +143,24 @@ const GridCarousel = () => {
                             </section>
                           </div>
                         </aside>
-                        {/* same 3 more aside component - each based on button and image */}
+                          ))}
+                        </div>
                       </div>
                     </div>
 
                     {/* picture */}
-                    <div
-                      className="relative min-w-[100px] min-h-[72px] rounded-[8px] border border-dashed h-full overflow-hidden"
-                      style={{
-                        boxShadow:
-                          "0 13px 27px -5px rgba(50,50,93,0.25),0 8px 16px -8px rgba(0,0,0,0.3)",
-                      }}
-                    >
-                      {/* 4 images - each based on button and aside component */}
+                    <div className="relative min-w-[100px] min-h-[72px] rounded-[8px] border border-dashed h-[410px] overflow-hidden" style={{ boxShadow: "0 13px 27px -5px rgba(50,50,93,0.25),0 8px 16px -8px rgba(0,0,0,0.3)" }}>
+                      <div className="flex w-[400%] h-full transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${activeSlide * 25}%)` }}>
+                        {slides.map((slide, index) => (
+                          <div
+                            key={index}
+                            className="min-w-[25%] h-full flex items-center justify-center text-white text-xl font-medium"
+                            style={{ backgroundColor: `${slide.color}20` }}
+                          >
+                            {slide.title} Dashboard
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
@@ -246,26 +169,32 @@ const GridCarousel = () => {
                       <div className="overflow-hidden min-w-full">
                         <div className="w-full items-start flex gap-0 transition-transform duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] translate-x-0">
                           <div className="relative min-w-full">
-                            <div
-                              aria-hidden="true"
-                              className="grid auto-cols-fr grid-flow-col absolute top-0 left-0 w-full h-[1px] [clip-path:inset(0px_75%_0px_0%)]"
-                            >
-                              <div className="bg-[rgb(0,102,177)]"></div>
-                              <div className="bg-[rgb(239,168,46)]"></div>
-                              <div className="bg-[rgb(66,176,213)]"></div>
-                              <div className="bg-[rgb(197,70,71)]"></div>
-                            </div>
-                            <ul className="flex items-centerjustify-center list-none m-0 p-0 min-w-full min-[900px]:grid min-[900px]:grid-flow-col min-[900px]:auto-cols-fr min-[900px]:items-stretch">
+                            <ul className="flex items-center justify-center list-none m-0 p-0 min-w-full min-[900px]:grid min-[900px]:grid-flow-col min-[900px]:auto-cols-fr min-[900px]:items-stretch">
                               {/* 4 buttons for 4 aside component and 4 images */}
                               <li
                                 className="relative flex items-center justify-center mt-5 min-[900px]:w-full"
                                 data-js-accent-color="#0066B1"
                               >
-                                <div className="w-full h-[1px] left-0 absolute bg-[#ffffffcc] -top-5 max-[899px]:hidden">
-                                  <div className="bg-[#0066B1] origin-left scale-x-0 h-full w-full top-0 left-0 absolute"></div>
+                                <div className="w-full h-[1px] left-0 absolute -top-5 max-[899px]:hidden">
+                                  <div
+                                    className="bg-[#0066B1] origin-left h-full w-full top-0 left-0 absolute transition-transform duration-500"
+                                    style={{
+                                      transform:
+                                        activeSlide === 0
+                                          ? "scaleX(1)"
+                                          : "scaleX(0)",
+                                    }}
+                                  ></div>
                                 </div>
 
-                                <button className="cursor-pointer outline-none border-none bg-transparent py-5 max-[899px]:hidden">
+                                <button
+                                  className={`cursor-pointer outline-none border-none bg-transparent py-5 max-[899px]:hidden transition-opacity duration-300 ${
+                                    activeSlide === 0
+                                      ? "opacity-100"
+                                      : "opacity-60 hover:opacity-80"
+                                  }`}
+                                  onClick={() => setActiveSlide(0)}
+                                >
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="200"
@@ -295,17 +224,37 @@ const GridCarousel = () => {
                                   </svg>
                                 </button>
 
-                                <div className="size-6 rounded-[1px] bg-[#0101014d] mx-0.5 min-[900px]:hidden"></div>
+                                <button 
+                                  className={`w-6 h-0.5 rounded-[1px] mx-0.5 min-[900px]:hidden cursor-pointer border-none transition-all duration-300 ${
+                                    activeSlide === 0 ? 'bg-[#0066B1]' : 'bg-[#0101014d] hover:bg-[#01010180]'
+                                  }`}
+                                  onClick={() => setActiveSlide(0)}
+                                ></button>
                               </li>
                               <li
                                 className="relative flex items-center justify-center mt-5 min-[900px]:w-full"
                                 data-js-accent-color="#EFA82E"
                               >
-                                <div className="w-full h-[1px] left-0 absolute bg-[#ffffffcc] -top-5 max-[899px]:hidden">
-                                  <div className="bg-[#EFA82E] origin-left scale-x-0 h-full w-full top-0 left-0 absolute"></div>
+                                <div className="w-full h-[1px] left-0 absolute -top-5 max-[899px]:hidden">
+                                  <div
+                                    className="bg-[#EFA82E] origin-left h-full w-full top-0 left-0 absolute transition-transform duration-500"
+                                    style={{
+                                      transform:
+                                        activeSlide === 1
+                                          ? "scaleX(1)"
+                                          : "scaleX(0)",
+                                    }}
+                                  ></div>
                                 </div>
 
-                                <button className="cursor-pointer outline-none border-none bg-transparent py-5 max-[899px]:hidden">
+                                <button
+                                  className={`cursor-pointer outline-none border-none bg-transparent py-5 max-[899px]:hidden transition-opacity duration-300 ${
+                                    activeSlide === 1
+                                      ? "opacity-100"
+                                      : "opacity-60 hover:opacity-80"
+                                  }`}
+                                  onClick={() => setActiveSlide(1)}
+                                >
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="200"
@@ -332,17 +281,37 @@ const GridCarousel = () => {
                                   </svg>
                                 </button>
 
-                                <div className="size-6 rounded-[1px] bg-[#0101014d] mx-0.5 min-[900px]:hidden"></div>
+                                <button 
+                                  className={`w-6 h-0.5 rounded-[1px] mx-0.5 min-[900px]:hidden cursor-pointer border-none transition-all duration-300 ${
+                                    activeSlide === 1 ? 'bg-[#EFA82E]' : 'bg-[#0101014d] hover:bg-[#01010180]'
+                                  }`}
+                                  onClick={() => setActiveSlide(1)}
+                                ></button>
                               </li>
                               <li
                                 className="relative flex items-center justify-center mt-5 min-[900px]:w-full"
                                 data-js-accent-color="#42B0D5"
                               >
-                                <div className="w-full h-[1px] left-0 absolute bg-[#ffffffcc] -top-5 max-[899px]:hidden">
-                                  <div className="bg-[#42B0D5] origin-left scale-x-0 h-full w-full top-0 left-0 absolute"></div>
+                                <div className="w-full h-[1px] left-0 absolute -top-5 max-[899px]:hidden">
+                                  <div
+                                    className="bg-[#42B0D5] origin-left h-full w-full top-0 left-0 absolute transition-transform duration-500"
+                                    style={{
+                                      transform:
+                                        activeSlide === 2
+                                          ? "scaleX(1)"
+                                          : "scaleX(0)",
+                                    }}
+                                  ></div>
                                 </div>
 
-                                <button className="cursor-pointer outline-none border-none bg-transparent py-5 max-[899px]:hidden">
+                                <button
+                                  className={`cursor-pointer outline-none border-none bg-transparent py-5 max-[899px]:hidden transition-opacity duration-300 ${
+                                    activeSlide === 2
+                                      ? "opacity-100"
+                                      : "opacity-60 hover:opacity-80"
+                                  }`}
+                                  onClick={() => setActiveSlide(2)}
+                                >
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="200"
@@ -368,17 +337,37 @@ const GridCarousel = () => {
                                   </svg>
                                 </button>
 
-                                <div className="size-6 rounded-[1px] bg-[#0101014d] mx-0.5 min-[900px]:hidden"></div>
+                                <button 
+                                  className={`w-6 h-0.5 rounded-[1px] mx-0.5 min-[900px]:hidden cursor-pointer border-none transition-all duration-300 ${
+                                    activeSlide === 2 ? 'bg-[#42B0D5]' : 'bg-[#0101014d] hover:bg-[#01010180]'
+                                  }`}
+                                  onClick={() => setActiveSlide(2)}
+                                ></button>
                               </li>
                               <li
                                 className="relative flex items-center justify-center mt-5 min-[900px]:w-full"
                                 data-js-accent-color="#C54647"
                               >
-                                <div className="w-full h-[1px] left-0 absolute bg-[#ffffffcc] -top-5 max-[899px]:hidden">
-                                  <div className="bg-[#C54647] origin-left scale-x-0 h-full w-full top-0 left-0 absolute"></div>
+                                <div className="w-full h-[1px] left-0 absolute -top-5 max-[899px]:hidden">
+                                  <div
+                                    className="bg-[#C54647] origin-left h-full w-full top-0 left-0 absolute transition-transform duration-500"
+                                    style={{
+                                      transform:
+                                        activeSlide === 3
+                                          ? "scaleX(1)"
+                                          : "scaleX(0)",
+                                    }}
+                                  ></div>
                                 </div>
 
-                                <button className="cursor-pointer outline-none border-none bg-transparent py-5 max-[899px]:hidden">
+                                <button
+                                  className={`cursor-pointer outline-none border-none bg-transparent py-5 max-[899px]:hidden transition-opacity duration-300 ${
+                                    activeSlide === 3
+                                      ? "opacity-100"
+                                      : "opacity-60 hover:opacity-80"
+                                  }`}
+                                  onClick={() => setActiveSlide(3)}
+                                >
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="200"
@@ -396,7 +385,12 @@ const GridCarousel = () => {
                                   </svg>
                                 </button>
 
-                                <div className="size-6 rounded-[1px] bg-[#0101014d] mx-0.5 min-[900px]:hidden"></div>
+                                <button 
+                                  className={`w-6 h-0.5 rounded-[1px] mx-0.5 min-[900px]:hidden cursor-pointer border-none transition-all duration-300 ${
+                                    activeSlide === 3 ? 'bg-[#C54647]' : 'bg-[#0101014d] hover:bg-[#01010180]'
+                                  }`}
+                                  onClick={() => setActiveSlide(3)}
+                                ></button>
                               </li>
                             </ul>
                           </div>
