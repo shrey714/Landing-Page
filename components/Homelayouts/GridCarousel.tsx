@@ -49,37 +49,57 @@ const GridCarousel = () => {
                     <div className="overflow-hidden">
                       <div className="w-full items-start translateX(0%) transition-transform duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                         <aside className="min-w-full grid grid-cols-1 grid-flow-row gap-y-12 min-[900px]:pr-8">
-                          <div className="">
-                            <section className="">
-                              <header className="">
-                                <h1 className="">Millions</h1>
+                          <div className="grid gap-y-12 grid-cols-1 grid-flow-row min-[600px]:grid-cols-2 min-[600px]:grid-flow-col min-[600px]:gap-y-0 min-[900px]:grid-cols-1 min-[900px]:grid-flow-row min-[900px]:gap-y-12">
+                            <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-2 min-w-full items-start">
+                              <header className="relative gap-y-2 grid grid-cols-[minmax(0,_1fr)] pl-4 pr-4 min-[60px]:pr-16 min-[900px]:pr-28 maw-w-[calc(calc(1280px*0.25)*3)]">
+                                <h1 className="relative text-white tracking-[0.2px] wrap-break-word font-medium text-[24px] leading-[1.33]">
+                                  <span
+                                    className="block absolute top-[4.46px] -left-4 w-[1px] h-6 bg-[#635bff]"
+                                    style={{ content: "" }}
+                                  ></span>
+                                  Millions
+                                </h1>
                               </header>
 
-                              <div className="">
+                              <div className="pl-4 pr-5 maw-w-[calc(calc(1280px*0.25)*3)] text-[#a0a0a0] font-light text-[15px] leading-[1.6]">
                                 BMW owners using ConnectedDrive Store
                               </div>
                             </section>
 
-                            <section className="">
-                              <header className="">
-                                <h1 className="">350+</h1>
+                            <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-2 min-w-full items-start">
+                              <header className="relative gap-y-2 grid grid-cols-[minmax(0,_1fr)] pl-4 pr-4 min-[60px]:pr-16 min-[900px]:pr-28 maw-w-[calc(calc(1280px*0.25)*3)]">
+                                <h1 className="relative text-white tracking-[0.2px] wrap-break-word font-medium text-[24px] leading-[1.33]">
+                                  <span
+                                    className="block absolute top-[4.46px] -left-4 w-[1px] h-6 bg-[#635bff]"
+                                    style={{ content: "" }}
+                                  ></span>
+                                  350+
+                                </h1>
                               </header>
 
-                              <div className="">US dealerships</div>
+                              <div className="pl-4 pr-5 maw-w-[calc(calc(1280px*0.25)*3)] text-[#a0a0a0] font-light text-[15px] leading-[1.6]">
+                                US dealerships
+                              </div>
                             </section>
                           </div>
 
-                          <div className="">
-                            <section className="">
-                              <header className="">
-                                <h1 className="">Products used</h1>
+                          <div className="max-[899px]:hidden">
+                            <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-2 min-w-full">
+                              <header className="grid grid-cols-[minmax(0,_1fr)] gap-y-2 relative pr-4 min-[600px]:pr-8 pl-4 max-w-[calc(calc(1280px*0.25)*3)]">
+                                <h1 className="relative text-white tracking-[0.2px] wrap-break-word font-[425] text-[15px] leading-[1.6]">
+                                  <span
+                                    className="block absolute top-[5px] -left-4 w-[1px] h-[15px] bg-[#635bff]"
+                                    style={{ content: "" }}
+                                  ></span>
+                                  Products used
+                                </h1>
                               </header>
 
-                              <footer className="">
-                                <ul className=" ">
-                                  <li className=" ">
+                              <footer className="grid gap-y-6 px-4">
+                                <ul className="list-none grid p-0 mt-4 overflow-hidden gap-y-3 grid-cols-none">
+                                  <li className="grid grid-rows-[1fr] grid-cols-[20px_1fr] gap-x-[14px] gap-y-0 items-center">
                                     <svg
-                                      className=""
+                                      className="h-5 w-auto"
                                       width="40"
                                       height="40"
                                       viewBox="0 0 40 40"
@@ -135,9 +155,9 @@ const GridCarousel = () => {
                                     <span>Payments</span>
                                   </li>
 
-                                  <li className=" ">
+                                  <li className="grid grid-rows-[1fr] grid-cols-[20px_1fr] gap-x-[14px] gap-y-0 items-center">
                                     <svg
-                                      className=""
+                                      className="h-5 w-auto"
                                       width="40"
                                       height="40"
                                       viewBox="0 0 40 40"
@@ -205,10 +225,20 @@ const GridCarousel = () => {
                             </section>
                           </div>
                         </aside>
+                        {/* same 3 more aside component - each based on button and image */}
                       </div>
                     </div>
 
                     {/* picture */}
+                    <div
+                      className="relative min-w-[100px] min-h-[72px] rounded-[8px] border border-dashed h-full overflow-hidden"
+                      style={{
+                        boxShadow:
+                          "0 13px 27px -5px rgba(50,50,93,0.25),0 8px 16px -8px rgba(0,0,0,0.3)",
+                      }}
+                    >
+                      {/* 4 images - each based on button and aside component */}
+                    </div>
                   </div>
 
                   <div className="grid items-start gap-y-8 min-[600px]:grid-cols-2 min-[900px]:grid-cols-4">
@@ -226,6 +256,7 @@ const GridCarousel = () => {
                               <div className="bg-[rgb(197,70,71)]"></div>
                             </div>
                             <ul className="flex items-centerjustify-center list-none m-0 p-0 min-w-full min-[900px]:grid min-[900px]:grid-flow-col min-[900px]:auto-cols-fr min-[900px]:items-stretch">
+                                {/* 4 buttons for 4 aside component and 4 images */}
                               <li
                                 className="relative flex items-center justify-center mt-5 min-[900px]:w-full"
                                 data-js-accent-color="#0066B1"
