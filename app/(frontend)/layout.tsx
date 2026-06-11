@@ -33,7 +33,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-            {children}
+          <a href="#main" className="skip-link sr-only">
+            Skip to content
+          </a>
+          {children}
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />

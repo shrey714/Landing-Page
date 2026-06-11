@@ -48,6 +48,15 @@ const footerColumns = [
       { title: "Contact", href: "#demo" },
     ],
   },
+  {
+    title: "Legal",
+    links: [
+      { title: "About", href: "/docs/about-us" },
+      { title: "Pricing", href: "/docs/pricing" },
+      { title: "Privacy Policy", href: "/docs/privacy-policy" },
+      { title: "Terms & Conditions", href: "/docs/terms-conditions" },
+    ],
+  },
 ];
 
 const proofItems = [

@@ -1,8 +1,5 @@
-import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-// import Image from "next/image";
-
 export default function Hero() {
   return (
     <section className="relative w-full overflow-x-hidden flex justify-center">
@@ -11,12 +8,12 @@ export default function Hero() {
           <div className="grid sm:grid-cols-2 gap-y-8 items-start">
             <section className="grid gap-y-8 tracking-[0.2px] scroll-mt-[108px]">
               <header className="relative min-w-0 pl-4 mt-4 md:mt-8">
-                <h1 className="sm:min-h-[200px] leading-[1.04] sm:min-w-[calc(100%+90px)] relative flex items-end tracking-[-0.04em] text-6xl md:text-7xl lg:text-8xl font-extrabold">
+                <h1 className="sm:min-h-[200px] leading-[1.04] sm:min-w-[calc(100%+90px)] relative flex items-end tracking-[-0.04em] text-[clamp(2.2rem,7.5vw,6.5rem)] font-extrabold">
                   Digitize your medical practice with DardiBook
                 </h1>
               </header>
 
-              <div className="text-pretty px-4 font-light leading-[1.555555556] text-xl max-w-[calc(calc(1080px*0.25)*3)] sm:pr-8">
+              <div className="text-pretty px-4 font-light leading-[1.555555556] text-base sm:text-lg max-w-[calc(calc(1080px*0.25)*3)] sm:pr-8">
                 Manage appointments, patient records, prescriptions, lab
                 requests, and follow-ups from one secure workspace built for
                 doctors and clinic teams.
@@ -24,7 +21,7 @@ export default function Hero() {
 
               <div className="pl-4 mt-2 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
                 <Button asChild size="lg" className="px-5 text-base">
-                  <Link href="#demo">
+                  <Link href="#demo" aria-label="Request a demo of DardiBook">
                     <span className="text-nowrap">Request Demo</span>
                   </Link>
                 </Button>

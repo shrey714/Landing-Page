@@ -183,13 +183,8 @@ export const Navbar = () => {
               </div>
 
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <Button
-                  asChild
-                  variant={"outline"}
-                  size="sm"
-                  className="rounded-full h-9"
-                >
-                  <Link href="#demo">
+                <Button asChild size="sm" className="rounded-full h-9 bg-[#635bff] text-white hover:opacity-95">
+                  <Link href="#demo" aria-label="Request a demo of DardiBook">
                     <span>Request Demo</span>
                   </Link>
                 </Button>
@@ -198,6 +193,13 @@ export const Navbar = () => {
           </div>
         </div>
       </nav>
+      {isScrolled && (
+        <div className="fixed z-50 right-6 bottom-6 lg:right-10 lg:bottom-8">
+          <Link href="#demo" aria-label="Request a demo of DardiBook" className="inline-flex items-center rounded-full bg-[#635bff] text-white px-4 py-2 shadow-lg hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[#cfc8ff]">
+            Request Demo
+          </Link>
+        </div>
+      )}
     </header>
   );
 };
