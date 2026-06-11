@@ -6,35 +6,33 @@ import {
   FlaskConicalIcon,
   LockKeyholeIcon,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const FeaturesSquence = () => {
+  const t = useTranslations("FeaturesSequence");
   const features = [
     {
-      title: "Digital Patient Records",
-      description:
-        "Keep medical history, visits, prescriptions, files, and notes organized for quick review during every consultation.",
-      cta: "View records",
+      title: t("f1Title"),
+      description: t("f1Desc"),
+      cta: t("f1Cta"),
       icon: ClipboardPlusIcon,
     },
     {
-      title: "Appointment Workflow",
-      description:
-        "Manage bookings, queues, reminders, and follow-ups from one place without losing track of the day.",
-      cta: "See scheduling",
+      title: t("f2Title"),
+      description: t("f2Desc"),
+      cta: t("f2Cta"),
       icon: CalendarDaysIcon,
     },
     {
-      title: "Prescription & Lab Flow",
-      description:
-        "Create digital prescriptions and connect recommended tests with diagnostics for smoother patient handoffs.",
-      cta: "Explore care flow",
+      title: t("f3Title"),
+      description: t("f3Desc"),
+      cta: t("f3Cta"),
       icon: FlaskConicalIcon,
     },
     {
-      title: "Secure Practice Data",
-      description:
-        "Protect clinic information with role-aware access and a digital workflow built for responsible healthcare use.",
-      cta: "Review access",
+      title: t("f4Title"),
+      description: t("f4Desc"),
+      cta: t("f4Cta"),
       icon: LockKeyholeIcon,
     },
   ];
@@ -53,18 +51,15 @@ const FeaturesSquence = () => {
                   <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-6">
                     <header className="gris gap-y-6 max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-16 pl-4 relative grid-cols-[minmax(0,_1fr)]">
                       <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
-                        Designed for care teams
+                        {t("headerSubtitle")}
                       </h2>
                       <h1 className="relative text-white -tracking-[0.1px] min-[1112px]:-tracking-[0.2px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
-                        Run your practice with less admin and more clarity
+                        {t("headerTitle")}
                       </h1>
                     </header>
 
                     <div className="pr-4 min-[600px]:pr-16 pl-4 text-[#adbdcc] max-w-[calc(calc(1280px*0.25)*3)] font-light text-lg leading-[1.555555556]">
-                      DardiBook brings appointments, patient records,
-                      prescriptions, lab requests, follow-ups, and clinic
-                      activity into one simple workspace so doctors and staff
-                      can spend more time on patient care.
+                      {t("headerDesc")}
                     </div>
 
                     <footer className="pr-4 min-[600px]:pr-16 pl-4">
@@ -73,7 +68,7 @@ const FeaturesSquence = () => {
                         className="rounded-full"
                         size={"sm"}
                       >
-                        Explore modules
+                        {t("exploreModules")}
                       </Button>
                     </footer>
                   </section>
@@ -83,22 +78,22 @@ const FeaturesSquence = () => {
                         <div className="flex items-center justify-between border-b border-[#e6ebf1] pb-4">
                           <div>
                             <p className="text-xs uppercase text-[#727f96]">
-                              Today
+                              {t("todayLabel")}
                             </p>
                             <h3 className="mt-1 text-2xl font-semibold leading-snug">
-                              Clinic desk
+                              {t("clinicDeskTitle")}
                             </h3>
                           </div>
                           <span className="rounded bg-[#00d4ff24] px-2 py-1 text-xs text-[#0a728a]">
-                            Live
+                            {t("liveLabel")}
                           </span>
                         </div>
 
                         <div className="mt-5 grid gap-3">
                           {[
-                            ["Waiting", "12 patients"],
-                            ["Prescriptions", "28 issued"],
-                            ["Lab reports", "7 pending"],
+                            [t("waitingLabel"), t("waitingValue")],
+                            [t("prescriptionsLabel"), t("prescriptionsValue")],
+                            [t("labReportsLabel"), t("labReportsValue")],
                           ].map(([label, value]) => (
                             <div
                               key={label}
@@ -116,7 +111,7 @@ const FeaturesSquence = () => {
 
                         <div className="mt-auto rounded-[8px] bg-[#081C4F] p-4 text-white">
                           <p className="text-sm text-gray-300">
-                            Next consultation
+                            {t("nextConsultationLabel")}
                           </p>
                           <div className="mt-2 flex items-center justify-between">
                             <span className="font-medium">Riya Patel</span>

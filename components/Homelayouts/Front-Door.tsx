@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 import {
   CalendarDaysIcon,
   ClipboardListIcon,
@@ -14,6 +15,7 @@ import {
 } from "lucide-react";
 
 export function StickyScrollReveal() {
+  const t = useTranslations("FrontDoor");
   const [divHeight, setDivHeight] = useState(0);
   const [activeGif, setActiveGif] = useState(1);
   const heightOfDivRef = useRef<HTMLDivElement>(null);
@@ -77,20 +79,17 @@ export function StickyScrollReveal() {
                 <section className="grid gap-y-8 tracking-[0.2px] scroll-mt-[108px]">
                   <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-8 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
                     <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
-                      Practice operating system
+                      {t("h1Title")}
                     </h2>
 
                     <h1 className="relative text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-[#fff] -tracking-[0.02em] wrap-break-word">
-                      One connected workspace for modern healthcare teams
+                      {t("h1Subtitle")}
                     </h1>
                   </header>
 
                   <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
                     <p>
-                      DardiBook helps clinics digitize daily operations,
-                      organize patient journeys, and keep doctors, staff,
-                      pharmacies, and diagnostics aligned from registration to
-                      follow-up.
+                      {t("h1Desc")}
                     </p>
                   </div>
                 </section>
@@ -132,35 +131,33 @@ export function StickyScrollReveal() {
                 <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                   <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
                     <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
-                      Patient Management
+                      {t("h2Title")}
                     </h2>
 
                     <h2 className="relative text-3xl md:text-4xl font-extrabold leading-tight text-[#fff] -tracking-[0.02em] wrap-break-word">
-                      Keep every patient interaction easy to find
+                      {t("h2Subtitle")}
                     </h2>
                   </header>
 
                   <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
                     <p>
-                      Create patient profiles, view visit history, store
-                      clinical notes, and access prescriptions without digging
-                      through paper files or scattered spreadsheets.
+                      {t("h2Desc")}
                     </p>
                   </div>
 
                   <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-base leading-[1.6]">
                     <h1 className="mb-2 text-white text-2xl font-semibold -tracking-[0.2px]">
-                      See also
+                      {t("seeAlso")}
                     </h1>
                     <ul className="list-none">
                       <div className="my-1 text-gray-300">
-                        Digital case history for every consultation
+                        {t("h2List1")}
                       </div>
                       <div className="my-1 text-gray-300">
-                        Quick search across patient records and visits
+                        {t("h2List2")}
                       </div>
                       <div className="my-1 text-gray-300">
-                        Staff-friendly workflows for reception and doctors
+                        {t("h2List3")}
                       </div>
                     </ul>
                   </footer>
@@ -180,35 +177,33 @@ export function StickyScrollReveal() {
                 <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                   <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
                     <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
-                      Appointments
+                      {t("h3Title")}
                     </h2>
 
                     <h2 className="relative font-medium text-3xl leading-[1.294117647] text-[#fff] -tracking-[0.02em] wrap-break-word">
-                      Manage bookings, queues, and follow-ups
+                      {t("h3Subtitle")}
                     </h2>
                   </header>
 
                   <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
                     <p>
-                      Plan clinic schedules, track walk-ins, reduce missed
-                      visits, and keep every patient moving through the right
-                      stage of care.
+                      {t("h3Desc")}
                     </p>
                   </div>
 
                   <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-base leading-[1.6]">
                     <h1 className="mb-2 text-white font-[425] -tracking-[0.2px]">
-                      See also
+                      {t("seeAlso")}
                     </h1>
                     <ul className="list-none">
                       <div className="my-1 text-gray-300">
-                        Daily appointment list for doctors and reception
+                        {t("h3List1")}
                       </div>
                       <div className="my-1 text-gray-300">
-                        Visit status updates from waiting to completed
+                        {t("h3List2")}
                       </div>
                       <div className="my-1 text-gray-300">
-                        Follow-up reminders for continued patient care
+                        {t("h3List3")}
                       </div>
                     </ul>
                   </footer>
@@ -228,29 +223,27 @@ export function StickyScrollReveal() {
                 <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                   <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
                     <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
-                      Prescriptions
+                      {t("h4Title")}
                     </h2>
 
                     <h2 className="relative font-medium text-3xl leading-[1.294117647] text-[#fff] -tracking-[0.02em] wrap-break-word">
-                      Create clearer prescriptions and care instructions
+                      {t("h4Subtitle")}
                     </h2>
                   </header>
 
                   <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
                     <p>
-                      Generate digital prescriptions, record medication advice,
-                      and make it easier for patients and pharmacies to
-                      understand the next step.
+                      {t("h4Desc")}
                     </p>
                   </div>
 
                   <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-base leading-[1.6]">
                     <h1 className="mb-2 text-white font-[425] -tracking-[0.2px]">
-                      See also
+                      {t("seeAlso")}
                     </h1>
                     <ul className="list-none">
                       <div className="my-1 text-gray-300">
-                        Repeat medicine and dosage references
+                        {t("h4List1")}
                       </div>
                       <div className="my-1 text-gray-300">
                         Pharmacy-ready prescription details
@@ -276,35 +269,33 @@ export function StickyScrollReveal() {
                 <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                   <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
                     <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
-                      Diagnostics
+                      {t("h5Title")}
                     </h2>
 
                     <h2 className="relative font-medium text-3xl leading-[1.294117647] text-[#fff] -tracking-[0.02em] wrap-break-word">
-                      Coordinate lab requests and reports smoothly
+                      {t("h5Subtitle")}
                     </h2>
                   </header>
 
                   <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
                     <p>
-                      Share test recommendations, keep reports attached to the
-                      patient record, and help doctors review results with
-                      context during the next visit.
+                      {t("h5Desc")}
                     </p>
                   </div>
 
                   <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-base leading-[1.6]">
                     <h1 className="mb-2 text-white font-[425] -tracking-[0.2px]">
-                      See also
+                      {t("seeAlso")}
                     </h1>
                     <ul className="list-none">
                       <div className="my-1 text-gray-300">
-                        Lab requests linked to patient visits
+                        {t("h5List1")}
                       </div>
                       <div className="my-1 text-gray-300">
-                        Reports stored alongside medical history
+                        {t("h5List2")}
                       </div>
                       <div className="my-1 text-gray-300">
-                        Better coordination between clinics and diagnostics
+                        {t("h5List3")}
                       </div>
                     </ul>
                   </footer>
@@ -323,75 +314,76 @@ export function StickyScrollReveal() {
   );
 }
 
-const panels = [
-  {
-    title: "Clinic Command Center",
-    subtitle: "Today across reception, doctors, pharmacy, and diagnostics",
-    icon: ClipboardListIcon,
-    stat: "42",
-    statLabel: "scheduled visits",
-    accent: "#00D4FF",
-    rows: [
-      ["Waiting", "12 patients", "Reception"],
-      ["In consultation", "6 patients", "Doctors"],
-      ["Reports pending", "7 files", "Diagnostics"],
-    ],
-  },
-  {
-    title: "Patient Timeline",
-    subtitle: "One profile for history, notes, prescriptions, and files",
-    icon: UserRoundIcon,
-    stat: "8",
-    statLabel: "linked visits",
-    accent: "#27C17B",
-    rows: [
-      ["Last visit", "Fever and cough", "12 Jun"],
-      ["Prescription", "3 medicines", "Active"],
-      ["Attached files", "CBC report", "Reviewed"],
-    ],
-  },
-  {
-    title: "Appointment Desk",
-    subtitle: "Bookings, walk-ins, queue status, and follow-up reminders",
-    icon: CalendarDaysIcon,
-    stat: "14:00",
-    statLabel: "next consultation",
-    accent: "#F2B84B",
-    rows: [
-      ["Riya Patel", "Waiting", "14:00"],
-      ["Amit Shah", "In room 2", "14:15"],
-      ["Mira Joshi", "Follow-up", "14:30"],
-    ],
-  },
-  {
-    title: "Digital Prescription",
-    subtitle: "Medication advice that stays attached to the visit record",
-    icon: PillIcon,
-    stat: "28",
-    statLabel: "issued today",
-    accent: "#F26D6D",
-    rows: [
-      ["Paracetamol", "500 mg", "After food"],
-      ["Cough syrup", "10 ml", "Night"],
-      ["Review", "3 days", "Follow-up"],
-    ],
-  },
-  {
-    title: "Diagnostics Review",
-    subtitle: "Lab requests and reports available in clinical context",
-    icon: FlaskConicalIcon,
-    stat: "7",
-    statLabel: "reports pending",
-    accent: "#9B8CFF",
-    rows: [
-      ["CBC", "Received", "Needs review"],
-      ["Lipid profile", "Requested", "Lab"],
-      ["X-ray chest", "Uploaded", "Reviewed"],
-    ],
-  },
-];
 
 const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
+  const t = useTranslations("FrontDoor");
+  const panels = [
+    {
+      title: t("p1Title"),
+      subtitle: t("p1Subtitle"),
+      icon: ClipboardListIcon,
+      stat: "42",
+      statLabel: t("p1StatLabel"),
+      accent: "#00D4FF",
+      rows: [
+        [t("p1R1C1"), t("p1R1C2"), t("p1R1C3")],
+        [t("p1R2C1"), t("p1R2C2"), t("p1R2C3")],
+        [t("p1R3C1"), t("p1R3C2"), t("p1R3C3")],
+      ],
+    },
+    {
+      title: t("p2Title"),
+      subtitle: t("p2Subtitle"),
+      icon: UserRoundIcon,
+      stat: "8",
+      statLabel: t("p2StatLabel"),
+      accent: "#27C17B",
+      rows: [
+        [t("p2R1C1"), t("p2R1C2"), t("p2R1C3")],
+        [t("p2R2C1"), t("p2R2C2"), t("p2R2C3")],
+        [t("p2R3C1"), t("p2R3C2"), t("p2R3C3")],
+      ],
+    },
+    {
+      title: t("p3Title"),
+      subtitle: t("p3Subtitle"),
+      icon: CalendarDaysIcon,
+      stat: "14:00",
+      statLabel: t("p3StatLabel"),
+      accent: "#F2B84B",
+      rows: [
+        [t("p3R1C1"), t("p3R1C2"), t("p3R1C3")],
+        [t("p3R2C1"), t("p3R2C2"), t("p3R2C3")],
+        [t("p3R3C1"), t("p3R3C2"), t("p3R3C3")],
+      ],
+    },
+    {
+      title: t("p4Title"),
+      subtitle: t("p4Subtitle"),
+      icon: PillIcon,
+      stat: "28",
+      statLabel: t("p4StatLabel"),
+      accent: "#F26D6D",
+      rows: [
+        [t("p4R1C1"), t("p4R1C2"), t("p4R1C3")],
+        [t("p4R2C1"), t("p4R2C2"), t("p4R2C3")],
+        [t("p4R3C1"), t("p4R3C2"), t("p4R3C3")],
+      ],
+    },
+    {
+      title: t("p5Title"),
+      subtitle: t("p5Subtitle"),
+      icon: FlaskConicalIcon,
+      stat: "7",
+      statLabel: t("p5StatLabel"),
+      accent: "#9B8CFF",
+      rows: [
+        [t("p5R1C1"), t("p5R1C2"), t("p5R1C3")],
+        [t("p5R2C1"), t("p5R2C2"), t("p5R2C3")],
+        [t("p5R3C1"), t("p5R3C2"), t("p5R3C3")],
+      ],
+    },
+  ];
   const panel = panels[panelNumber - 1] ?? panels[0];
 
   return (
@@ -418,14 +410,14 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
             </div>
           </div>
           <div className="hidden rounded-full bg-[#eef3f8] px-3 py-1 text-xs text-[#425466] min-[480px]:block">
-            Live
+            {t("panelLive")}
           </div>
         </div>
 
         <div className="grid flex-1 gap-4 p-5">
           <div className="grid grid-cols-[1fr_auto] gap-4">
             <div className="rounded-[8px] bg-white p-4 shadow-sm">
-              <p className="text-xs uppercase text-[#727f96]">Focus metric</p>
+              <p className="text-xs uppercase text-[#727f96]">{t("panelFocusMetric")}</p>
               <div className="mt-4 flex items-end gap-3">
                 <span className="text-4xl font-medium">{panel.stat}</span>
                 <span className="pb-1 text-sm text-[#727f96]">
@@ -436,7 +428,7 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
             <div className="hidden w-24 rounded-[8px] bg-[#081C4F] p-4 text-white min-[480px]:grid">
               <ShieldCheckIcon className="text-[#00d4ff]" size={20} />
               <span className="self-end text-xs leading-5 text-gray-300">
-                Role-based access
+                {t("panelRoleBasedAccess")}
               </span>
             </div>
           </div>
@@ -444,7 +436,7 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
           <div className="rounded-[8px] bg-white shadow-sm">
             <div className="flex items-center gap-2 border-b border-[#e6ebf1] px-4 py-3 text-sm text-[#727f96]">
               <SearchIcon size={14} />
-              Patient, visit, report, prescription
+              {t("panelSearchPlaceholder")}
             </div>
             <div className="grid">
               {panel.rows.map(([label, value, meta]) => (
@@ -468,9 +460,9 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
 
           <div className="grid grid-cols-3 gap-3">
             {[
-              [StethoscopeIcon, "Doctor"],
-              [FileTextIcon, "Records"],
-              [FlaskConicalIcon, "Labs"],
+              [StethoscopeIcon, t("panelIconDoctor")],
+              [FileTextIcon, t("panelIconRecords")],
+              [FlaskConicalIcon, t("panelIconLabs")],
             ].map(([Icon, label]) => {
               const IconComponent = Icon as typeof StethoscopeIcon;
 

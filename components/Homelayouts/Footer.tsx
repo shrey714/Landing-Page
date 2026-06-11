@@ -1,3 +1,5 @@
+"use client";
+
 import { LogoFooter } from "@/components/logo";
 import { cn } from "@/lib/utils";
 import {
@@ -10,74 +12,90 @@ import {
 import Link from "next/link";
 import ThemeSwitch from "@/components/subs/ThemeSwitch";
 import { Separator } from "@/components/ui/separator";
+import {useTranslations, useLocale} from 'next-intl';
+import {useRouter, usePathname} from '@/i18n/routing';
 
 const footerColumns = [
   {
-    title: "Product",
+    title: "productTitle",
     links: [
-      { title: "Patient Records", href: "#modules" },
-      { title: "Appointments", href: "#workflow" },
-      { title: "Prescriptions", href: "#modules" },
-      { title: "Diagnostics", href: "#modules" },
+      { title: "productPatientRecords", href: "#modules" },
+      { title: "productAppointments", href: "#workflow" },
+      { title: "productPrescriptions", href: "#modules" },
+      { title: "productDiagnostics", href: "#modules" },
     ],
   },
   {
-    title: "Solutions",
+    title: "solutionsTitle",
     links: [
-      { title: "Solo Doctors", href: "#workflow" },
-      { title: "Clinics", href: "#modules" },
-      { title: "Hospitals", href: "#trust" },
-      { title: "Care Teams", href: "#trust" },
+      { title: "solutionsSoloDoctors", href: "#workflow" },
+      { title: "solutionsClinics", href: "#modules" },
+      { title: "solutionsHospitals", href: "#trust" },
+      { title: "solutionsCareTeams", href: "#trust" },
     ],
   },
   {
-    title: "Workflows",
+    title: "workflowsTitle",
     links: [
-      { title: "Patient Journey", href: "#workflow" },
-      { title: "Clinic Queue", href: "#modules" },
-      { title: "Lab & Pharmacy", href: "#workflow" },
-      { title: "Follow-ups", href: "#demo" },
+      { title: "workflowsPatientJourney", href: "#workflow" },
+      { title: "workflowsClinicQueue", href: "#modules" },
+      { title: "workflowsLabPharmacy", href: "#workflow" },
+      { title: "workflowsFollowups", href: "#demo" },
     ],
   },
   {
-    title: "Company",
+    title: "companyTitle",
     links: [
-      { title: "Book Demo", href: "#demo" },
-      { title: "Implementation", href: "#demo" },
-      { title: "Trust & Access", href: "#trust" },
-      { title: "Contact", href: "#demo" },
+      { title: "companyBookDemo", href: "#demo" },
+      { title: "companyImplementation", href: "#demo" },
+      { title: "companyTrustAccess", href: "#trust" },
+      { title: "companyContact", href: "#demo" },
     ],
   },
   {
-    title: "Legal",
+    title: "legalTitle",
     links: [
-      { title: "About", href: "/docs/about-us" },
-      { title: "Pricing", href: "/docs/pricing" },
-      { title: "Privacy Policy", href: "/docs/privacy-policy" },
-      { title: "Terms & Conditions", href: "/docs/terms-conditions" },
+      { title: "legalAbout", href: "/docs/about-us" },
+      { title: "legalPricing", href: "/docs/pricing" },
+      { title: "legalPrivacyPolicy", href: "/docs/privacy-policy" },
+      { title: "legalTermsConditions", href: "/docs/terms-conditions" },
     ],
   },
 ];
 
 const proofItems = [
-  {
-    title: "Privacy-first workflows",
-    description: "Built around responsible handling of clinic and patient data.",
-    icon: ShieldCheckIcon,
-  },
-  {
-    title: "Guided setup",
-    description: "Map your current reception, consultation, and follow-up flow.",
-    icon: HeadsetIcon,
-  },
-  {
-    title: "Fast daily use",
-    description: "Designed for busy teams that need clarity during OPD hours.",
-    icon: Clock3Icon,
-  },
 ];
 
 export default function Footer() {
+  const t = useTranslations('Footer');
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleLocaleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLocale = e.target.value;
+    router.replace(pathname, {locale: newLocale});
+  };
+
+  // Define proofItems here to use the translation function 't'
+  const translatedProofItems = [
+    {
+      title: t("proof1Title"),
+      description: t("proof1Desc"),
+      icon: ShieldCheckIcon,
+    },
+    {
+      title: t("proof2Title"),
+      description: t("proof2Desc"),
+      icon: HeadsetIcon,
+    },
+    {
+      title: t("proof3Title"),
+      description: t("proof3Desc"),
+      icon: Clock3Icon,
+    },
+  ];
+
   return (
     <footer className="w-full min-h-[calc(100vh-66px)] relative overflow-hidden p-4 sm:p-5 md:p-6 lg:p-10 box-border">
       <div className="p-6 sm:p-8 size-full min-h-[calc(100vh-114px)] bg-background/50 backdrop-blur-lg rounded-2xl shadow-md flex flex-col gap-8">
@@ -90,12 +108,10 @@ export default function Footer() {
 
               <div className="grid gap-4">
                 <h2 className="max-w-xl text-4xl md:text-5xl font-extrabold leading-tight text-foreground sm:text-5xl">
-                  Digitize every clinic touchpoint with DardiBook.
+                  {t('title')}
                 </h2>
                 <p className="max-w-xl text-sm leading-6 text-muted-foreground">
-                  Practice management software for appointments, patient
-                  records, prescriptions, diagnostics, pharmacy coordination,
-                  and follow-ups.
+                  {t('description')}
                 </p>
               </div>
 
@@ -103,19 +119,19 @@ export default function Footer() {
                 href="#demo"
                 className="inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
               >
-                Book a product walkthrough <ArrowRightIcon size={16} />
+                {t('bookWalkthrough')} <ArrowRightIcon size={16} />
               </Link>
             </section>
 
             <div className="grid gap-6 sm:grid-cols-3">
-              {proofItems.map((item) => (
+              {translatedProofItems.map((item) => (
                 <section key={item.title} className="grid gap-3">
                   <div className="grid h-9 w-9 place-items-center rounded bg-[#00d4ff24] text-[#00d4ff]">
                     <item.icon size={18} />
                   </div>
                   <h3 className="text-sm font-medium text-foreground">
                     {item.title}
-                  </h3>
+                  </h3> 
                   <p className="text-sm leading-6 text-muted-foreground">
                     {item.description}
                   </p>
@@ -129,17 +145,17 @@ export default function Footer() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {footerColumns.map((column) => (
               <section key={column.title} className="grid content-start gap-4">
-                <h3 className="text-sm font-medium text-foreground">
-                  {column.title}
+                <h3 className="text-sm font-medium text-foreground"> 
+                  {t(column.title as any)}
                 </h3>
                 <ul className="grid gap-3 text-sm">
                   {column.links.map((link) => (
                     <li key={link.title}>
                       <Link
-                        href={link.href}
+                        href={link.href} 
                         className="text-muted-foreground transition-colors hover:text-primary"
                       >
-                        {link.title}
+                        {t(link.title)}
                       </Link>
                     </li>
                   ))}
@@ -152,7 +168,7 @@ export default function Footer() {
         <Separator />
 
         <div className="flex flex-wrap items-center justify-between gap-6 text-sm text-muted-foreground">
-          <span>© {new Date().getFullYear()} DardiBook, All rights reserved</span>
+          <span>{t('copyright', { year: new Date().getFullYear() })}</span>
 
           <div className="flex flex-wrap items-center gap-4">
             <div className="relative">
@@ -167,10 +183,12 @@ export default function Footer() {
                   "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                 )}
                 name="language"
+                value={locale}
+                onChange={handleLocaleChange}
               >
-                <option value="1">English</option>
-                <option value="2">हिन्दी</option>
-                <option value="3">ગુજરાતી</option>
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="gu">ગુજરાતી</option>
               </select>
             </div>
             <ThemeSwitch />

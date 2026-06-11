@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
+import { useTranslations } from "next-intl";
 import {
   ActivityIcon,
   Building2Icon,
@@ -15,94 +16,93 @@ import {
   StethoscopeIcon,
 } from "lucide-react";
 
-const slides: {
-  id: number;
-  title: string;
-  stats: string;
-  description: string;
-  products: string[];
-  color: string;
-  icon: LucideIcon;
-  metric: string;
-  metricLabel: string;
-  action: string;
-  queue: string[][];
-}[] = [
-  {
-    id: 0,
-    title: "Multi-speciality Clinics",
-    stats: "One desk",
-    description:
-      "Appointments, visits, prescriptions, and reports coordinated across departments.",
-    products: ["Patient Records", "Appointments"],
-    color: "#00D4FF",
-    icon: Building2Icon,
-    metric: "6",
-    metricLabel: "departments aligned",
-    action: "Route patient to cardiology",
-    queue: [
-      ["Reception", "12 waiting"],
-      ["Doctors", "6 in consultation"],
-      ["Diagnostics", "7 reports pending"],
-    ],
-  },
-  {
-    id: 1,
-    title: "Growing Hospitals",
-    stats: "Central view",
-    description:
-      "Daily operations organized for doctors, reception, pharmacy, and diagnostic teams.",
-    products: ["Queue Flow", "Care Tasks"],
-    color: "#27C17B",
-    icon: HospitalIcon,
-    metric: "124",
-    metricLabel: "visits tracked today",
-    action: "Review pending care tasks",
-    queue: [
-      ["OPD queue", "34 active"],
-      ["Pharmacy", "18 prescriptions"],
-      ["Follow-ups", "22 due"],
-    ],
-  },
-  {
-    id: 2,
-    title: "Diagnostics Networks",
-    stats: "Linked reports",
-    description:
-      "Lab requests and reports stay attached to the right patient and consultation.",
-    products: ["Lab Requests", "Reports"],
-    color: "#F2B84B",
-    icon: FlaskConicalIcon,
-    metric: "41",
-    metricLabel: "reports connected",
-    action: "Send CBC report for review",
-    queue: [
-      ["Requested", "19 tests"],
-      ["Uploaded", "14 reports"],
-      ["Doctor review", "8 pending"],
-    ],
-  },
-  {
-    id: 3,
-    title: "Independent Doctors",
-    stats: "Less admin",
-    description:
-      "A simple digital practice workflow for doctors who want clarity without complexity.",
-    products: ["Prescriptions", "Follow-ups"],
-    color: "#F26D6D",
-    icon: StethoscopeIcon,
-    metric: "28",
-    metricLabel: "prescriptions issued",
-    action: "Schedule 3-day revisit",
-    queue: [
-      ["Today", "16 appointments"],
-      ["Notes", "9 updated"],
-      ["Reminders", "5 follow-ups"],
-    ],
-  },
-];
+
 
 const GridCarousel = () => {
+  const t = useTranslations("GridCarousel");
+
+  const slides: {
+    id: number;
+    title: string;
+    stats: string;
+    description: string;
+    products: string[];
+    color: string;
+    icon: LucideIcon;
+    metric: string;
+    metricLabel: string;
+    action: string;
+    queue: string[][];
+  }[] = [
+    {
+      id: 0,
+      title: t("s0Title"),
+      stats: t("s0Stats"),
+      description: t("s0Desc"),
+      products: [t("s0P1"), t("s0P2")],
+      color: "#00D4FF",
+      icon: Building2Icon,
+      metric: t("s0Metric"),
+      metricLabel: t("s0MetricLabel"),
+      action: t("s0Action"),
+      queue: [
+        [t("s0Q1L"), t("s0Q1V")],
+        [t("s0Q2L"), t("s0Q2V")],
+        [t("s0Q3L"), t("s0Q3V")],
+      ],
+    },
+    {
+      id: 1,
+      title: t("s1Title"),
+      stats: t("s1Stats"),
+      description: t("s1Desc"),
+      products: [t("s1P1"), t("s1P2")],
+      color: "#27C17B",
+      icon: HospitalIcon,
+      metric: t("s1Metric"),
+      metricLabel: t("s1MetricLabel"),
+      action: t("s1Action"),
+      queue: [
+        [t("s1Q1L"), t("s1Q1V")],
+        [t("s1Q2L"), t("s1Q2V")],
+        [t("s1Q3L"), t("s1Q3V")],
+      ],
+    },
+    {
+      id: 2,
+      title: t("s2Title"),
+      stats: t("s2Stats"),
+      description: t("s2Desc"),
+      products: [t("s2P1"), t("s2P2")],
+      color: "#F2B84B",
+      icon: FlaskConicalIcon,
+      metric: t("s2Metric"),
+      metricLabel: t("s2MetricLabel"),
+      action: t("s2Action"),
+      queue: [
+        [t("s2Q1L"), t("s2Q1V")],
+        [t("s2Q2L"), t("s2Q2V")],
+        [t("s2Q3L"), t("s2Q3V")],
+      ],
+    },
+    {
+      id: 3,
+      title: t("s3Title"),
+      stats: t("s3Stats"),
+      description: t("s3Desc"),
+      products: [t("s3P1"), t("s3P2")],
+      color: "#F26D6D",
+      icon: StethoscopeIcon,
+      metric: t("s3Metric"),
+      metricLabel: t("s3MetricLabel"),
+      action: t("s3Action"),
+      queue: [
+        [t("s3Q1L"), t("s3Q1V")],
+        [t("s3Q2L"), t("s3Q2V")],
+        [t("s3Q3L"), t("s3Q3V")],
+      ],
+    },
+  ];
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
@@ -126,19 +126,16 @@ const GridCarousel = () => {
                   <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                     <header className="grid gap-y-6 max-w-[calc(calc(1280px*0.25)*3)] grid-cols-[minmax(0,_1fr)] pr-4 min-[600px]:pr-8 pl-4">
                       <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
-                        Scale care operations
+                        {t("headerTitle1")}
                       </h2>
                       <h1 className="relative text-white -tracking-[0.2px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
-                        Built for clinics that want to grow without chaos
+                        {t("headerTitle2")}
                       </h1>
                     </header>
 
                     <div className="text-gray-300 font-light text-lg leading-[1.555555556] max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-8 pl-4">
                       <p>
-                        DardiBook helps healthcare teams reduce manual work,
-                        strengthen patient connect, keep care information
-                        secure, and maintain a clear operational rhythm as the
-                        practice expands.
+                        {t("headerDescription")}
                       </p>
                     </div>
 
@@ -148,7 +145,7 @@ const GridCarousel = () => {
                         size={"sm"}
                         className="rounded-full"
                       >
-                        Explore DardiBook for teams <ChevronRightIcon />
+                        {t("exploreDardiBookForTeams")} <ChevronRightIcon />
                       </Button>
                     </footer>
                   </section>
@@ -185,7 +182,7 @@ const GridCarousel = () => {
                         </header>
 
                         <div className="pl-4 pr-5 text-gray-300 font-light text-base leading-[1.6]">
-                          DardiBook workflow
+                          {t("dardibookWorkflow")}
                         </div>
                       </section>
 
@@ -196,7 +193,7 @@ const GridCarousel = () => {
                               className="block absolute top-[5px] -left-4 w-[1px] h-[15px]"
                               style={{ backgroundColor: active.color }}
                             ></span>
-                            Modules used
+                            {t("modulesUsed")}
                           </h4>
                         </header>
 
@@ -225,7 +222,7 @@ const GridCarousel = () => {
                               className="block absolute top-[5px] -left-4 w-[1px] h-[15px]"
                               style={{ backgroundColor: active.color }}
                             ></span>
-                            Next best action
+                            {t("nextBestAction")}
                           </h4>
                         </header>
 
@@ -301,10 +298,10 @@ const GridCarousel = () => {
                                   <div className="hidden rounded-[8px] bg-[#081C4F] p-4 text-white min-[700px]:grid">
                                     <ActivityIcon
                                       className="text-[#00d4ff]"
-                                      size={20}
+                                      size={20} 
                                     />
                                     <span className="self-end text-xs leading-5 text-gray-300">
-                                      Care flow visible
+                                      {t("careFlowVisible")}
                                     </span>
                                   </div>
                                 </div>
@@ -312,7 +309,7 @@ const GridCarousel = () => {
                                 <div className="grid gap-3 min-[700px]:grid-cols-[1.1fr_0.9fr]">
                                   <div className="rounded-[8px] bg-white shadow-sm">
                                     <div className="border-b border-[#e6ebf1] px-4 py-3 text-sm font-medium">
-                                      Live flow
+                                      {t("liveFlow")}
                                     </div>
                                     <div>
                                       {slide.queue.map(([label, value]) => (
@@ -373,7 +370,7 @@ const GridCarousel = () => {
 
                                 <div className="rounded-[8px] bg-[#081C4F] p-4 text-white">
                                   <p className="text-xs uppercase text-gray-300">
-                                    Next best action
+                                    {t("nextBestAction")}
                                   </p>
                                   <div className="mt-2 flex items-center justify-between gap-4">
                                     <span className="text-sm font-medium">

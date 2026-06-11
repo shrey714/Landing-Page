@@ -16,91 +16,82 @@ import {
   StethoscopeIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
-const cardsData: {
-  id: number;
-  title: string;
-  eyebrow: string;
-  description: string;
-  stat: string;
-  tags: string[];
-  icon: LucideIcon;
-}[] = [
-  {
-    id: 1,
-    title: "Clinics & Hospitals",
-    eyebrow: "Operations",
-    description:
-      "Digitize front-desk, consultation, prescription, and follow-up workflows in one practical clinic management system.",
-    stat: "One connected desk",
-    tags: ["Queues", "Records", "Reports"],
-    icon: HospitalIcon,
-  },
-  {
-    id: 2,
-    title: "Doctors",
-    eyebrow: "Consultation",
-    description:
-      "Review patient history, write prescriptions, request tests, and continue care with fewer administrative interruptions.",
-    stat: "Faster visits",
-    tags: ["History", "Rx", "Notes"],
-    icon: StethoscopeIcon,
-  },
-  {
-    id: 3,
-    title: "Patients",
-    eyebrow: "Care journey",
-    description:
-      "Give patients a smoother journey with organized visits, clearer instructions, digital prescriptions, and timely follow-ups.",
-    stat: "Better continuity",
-    tags: ["Visits", "Advice", "Follow-up"],
-    icon: HeartHandshakeIcon,
-  },
-  {
-    id: 4,
-    title: "Pharmacies",
-    eyebrow: "Medicine flow",
-    description:
-      "Read prescription details clearly, reduce manual clarification, and support faster medicine fulfillment.",
-    stat: "Clearer Rx",
-    tags: ["Dosage", "Medicine", "Refills"],
-    icon: PillIcon,
-  },
-  {
-    id: 5,
-    title: "Diagnostics",
-    eyebrow: "Lab workflow",
-    description:
-      "Link lab requests and reports with patient visits so doctors can review results in the right clinical context.",
-    stat: "Linked reports",
-    tags: ["Tests", "Reports", "Review"],
-    icon: FlaskConicalIcon,
-  },
-  {
-    id: 6,
-    title: "Healthcare Platforms",
-    eyebrow: "Ecosystem",
-    description:
-      "Extend patient engagement and care coordination with modules built around real clinic workflows.",
-    stat: "Modular setup",
-    tags: ["Integrations", "Teams", "Care"],
-    icon: Building2Icon,
-  },
-  {
-    id: 7,
-    title: "Medical Institutions",
-    eyebrow: "Institutional care",
-    description:
-      "Support institutional operations with structured case histories, visit records, and repeatable care processes.",
-    stat: "Structured cases",
-    tags: ["Training", "Cases", "Records"],
-    icon: GraduationCapIcon,
-  },
-];
+
+
+
+const CardCarousel = () => {
+  const t = useTranslations("CardCarousel");
+
+  const cardsData = [
+    {
+      id: 1,
+      title: t("c1Title"),
+      eyebrow: t("c1Eyebrow"),
+      description: t("c1Desc"),
+      stat: t("c1Stat"),
+      tags: [t("c1T1"), t("c1T2"), t("c1T3")],
+      icon: HospitalIcon,
+    },
+    {
+      id: 2,
+      title: t("c2Title"),
+      eyebrow: t("c2Eyebrow"),
+      description: t("c2Desc"),
+      stat: t("c2Stat"),
+      tags: [t("c2T1"), t("c2T2"), t("c2T3")],
+      icon: StethoscopeIcon,
+    },
+    {
+      id: 3,
+      title: t("c3Title"),
+      eyebrow: t("c3Eyebrow"),
+      description: t("c3Desc"),
+      stat: t("c3Stat"),
+      tags: [t("c3T1"), t("c3T2"), t("c3T3")],
+      icon: HeartHandshakeIcon,
+    },
+    {
+      id: 4,
+      title: t("c4Title"),
+      eyebrow: t("c4Eyebrow"),
+      description: t("c4Desc"),
+      stat: t("c4Stat"),
+      tags: [t("c4T1"), t("c4T2"), t("c4T3")],
+      icon: PillIcon,
+    },
+    {
+      id: 5,
+      title: t("c5Title"),
+      eyebrow: t("c5Eyebrow"),
+      description: t("c5Desc"),
+      stat: t("c5Stat"),
+      tags: [t("c5T1"), t("c5T2"), t("c5T3")],
+      icon: FlaskConicalIcon,
+    },
+    {
+      id: 6,
+      title: t("c6Title"),
+      eyebrow: t("c6Eyebrow"),
+      description: t("c6Desc"),
+      stat: t("c6Stat"),
+      tags: [t("c6T1"), t("c6T2"), t("c6T3")],
+      icon: Building2Icon,
+    },
+    {
+      id: 7,
+      title: t("c7Title"),
+      eyebrow: t("c7Eyebrow"),
+      description: t("c7Desc"),
+      stat: t("c7Stat"),
+      tags: [t("c7T1"), t("c7T2"), t("c7T3")],
+      icon: GraduationCapIcon,
+    },
+  ];
 
 const totalCards = cardsData.length;
 
-const CardCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -189,15 +180,12 @@ const CardCarousel = () => {
                   <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                     <header className="relative pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 grid gap-y-6 grid-cols-[minmax(0,_1fr)] max-w-[calc(calc(1280px*0.25)*3)]">
                       <h1 className="relative text-4xl md:text-5xl font-extrabold leading-tight -tracking-[0.1px] min-[900px]:-tracking-[0.2px] text-white wrap-break-word">
-                        Built for every kind of healthcare provider
+                        {t("headerTitle")}
                       </h1>
                     </header>
 
                     <div className="pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 text-gray-300 max-w-[calc(calc(1280px*0.25)*3)] font-light text-lg leading-[1.555555556]">
-                      From small clinics to growing hospitals, and from
-                      individual doctors to diagnostic labs, DardiBook helps
-                      reduce administrative workload while improving patient
-                      continuity.
+                      {t("headerDescription")}
                     </div>
                   </section>
 

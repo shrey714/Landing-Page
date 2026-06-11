@@ -19,6 +19,7 @@ import {
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -32,78 +33,23 @@ import {
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 
-const menuItems = [
-  { name: "Workflow", href: "#workflow" },
-  { name: "Modules", href: "#modules" },
-  { name: "Trust", href: "#trust" },
-  { name: "Demo", href: "#demo" },
-];
 
-const modules: {
-  title: string;
-  href: string;
-  description: string;
-  icon: LucideIcon;
-}[] = [
-  {
-    title: "Patient Records",
-    href: "#modules",
-    description: "Profiles, medical history, visit notes, files, and case context in one place.",
-    icon: ClipboardPlusIcon,
-  },
-  {
-    title: "Appointments",
-    href: "#workflow",
-    description: "Clinic schedules, walk-ins, queues, visit status, and follow-up planning.",
-    icon: CalendarDaysIcon,
-  },
-  {
-    title: "Prescriptions",
-    href: "#modules",
-    description: "Digital prescriptions with medicine, dosage, advice, and revisit instructions.",
-    icon: PillIcon,
-  },
-  {
-    title: "Diagnostics",
-    href: "#modules",
-    description: "Lab requests and reports connected to the right patient visit.",
-    icon: FlaskConicalIcon,
-  },
-];
 
-const solutions: {
-  title: string;
-  href: string;
-  description: string;
-  icon: LucideIcon;
-}[] = [
-  {
-    title: "Solo Doctors",
-    href: "#workflow",
-    description: "A simple digital workflow for independent practices.",
-    icon: StethoscopeIcon,
-  },
-  {
-    title: "Clinics",
-    href: "#modules",
-    description: "Reception, doctors, pharmacy, and lab teams working from one system.",
-    icon: Building2Icon,
-  },
-  {
-    title: "Hospitals",
-    href: "#trust",
-    description: "Structured records and role-aware workflows for larger teams.",
-    icon: HospitalIcon,
-  },
-  {
-    title: "Care Teams",
-    href: "#trust",
-    description: "Better coordination across staff, patients, pharmacies, and diagnostics.",
-    icon: UsersRoundIcon,
-  },
-];
+
+
+
 
 export const Navbar = () => {
+  const t = useTranslations("Navbar");
+
+  const menuItems = [
+    { name: t("menuWorkflow"), href: "#workflow" },
+    { name: t("menuModules"), href: "#modules" },
+    { name: t("menuTrust"), href: "#trust" },
+    { name: t("menuDemo"), href: "#demo" },
+  ];
+
+  
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -185,7 +131,7 @@ export const Navbar = () => {
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Button asChild size="sm" className="rounded-full h-9 bg-[#635bff] text-white hover:opacity-95">
                   <Link href="#demo" aria-label="Request a demo of DardiBook">
-                    <span>Request Demo</span>
+                    <span>{t("requestDemo")}</span>
                   </Link>
                 </Button>
               </div>
@@ -196,7 +142,7 @@ export const Navbar = () => {
       {isScrolled && (
         <div className="fixed z-50 right-6 bottom-6 lg:right-10 lg:bottom-8">
           <Link href="#demo" aria-label="Request a demo of DardiBook" className="inline-flex items-center rounded-full bg-[#635bff] text-white px-4 py-2 shadow-lg hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[#cfc8ff]">
-            Request Demo
+            {t("requestDemo")}
           </Link>
         </div>
       )}
@@ -204,7 +150,13 @@ export const Navbar = () => {
   );
 };
 
-function MenuCard({ item }: { item: (typeof modules)[number] }) {
+type MenuItemType = {
+  title: string;
+  href: string;
+  description: string;
+  icon: LucideIcon;
+};
+function MenuCard({ item }: { item: MenuItemType }) {
   return (
     <li>
       <NavigationMenuLink asChild>
@@ -226,6 +178,72 @@ function MenuCard({ item }: { item: (typeof modules)[number] }) {
 }
 
 function RichNavigationMenu() {
+  const t = useTranslations("Navbar");
+
+  const modules: {
+    title: string;
+    href: string;
+    description: string;
+    icon: LucideIcon;
+  }[] = [
+    {
+      title: t("modPatientRecordsTitle"),
+      href: "#modules",
+      description: t("modPatientRecordsDesc"),
+      icon: ClipboardPlusIcon,
+    },
+    {
+      title: t("modAppointmentsTitle"),
+      href: "#workflow",
+      description: t("modAppointmentsDesc"),
+      icon: CalendarDaysIcon,
+    },
+    {
+      title: t("modPrescriptionsTitle"),
+      href: "#modules",
+      description: t("modPrescriptionsDesc"),
+      icon: PillIcon,
+    },
+    {
+      title: t("modDiagnosticsTitle"),
+      href: "#modules",
+      description: t("modDiagnosticsDesc"),
+      icon: FlaskConicalIcon,
+    },
+  ];
+
+  const solutions: {
+    title: string;
+    href: string;
+    description: string;
+    icon: LucideIcon;
+  }[] = [
+    {
+      title: t("solSoloDoctorsTitle"),
+      href: "#workflow",
+      description: t("solSoloDoctorsDesc"),
+      icon: StethoscopeIcon,
+    },
+    {
+      title: t("solClinicsTitle"),
+      href: "#modules",
+      description: t("solClinicsDesc"),
+      icon: Building2Icon,
+    },
+    {
+      title: t("solHospitalsTitle"),
+      href: "#trust",
+      description: t("solHospitalsDesc"),
+      icon: HospitalIcon,
+    },
+    {
+      title: t("solCareTeamsTitle"),
+      href: "#trust",
+      description: t("solCareTeamsDesc"),
+      icon: UsersRoundIcon,
+    },
+  ];
+
   return (
     <NavigationMenu className="z-20">
       <NavigationMenuList>

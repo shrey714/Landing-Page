@@ -1,30 +1,33 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 const LogoCloud = () => {
+  const t = useTranslations("LogoCloud");
+
   // Different sets of company logos that cycle through
   const logoSets = [
     [
-      { name: "Clinics", logo: "Clinics" },
-      { name: "Hospitals", logo: "Hospitals" },
-      { name: "Solo Doctors", logo: "Solo Doctors" },
-      { name: "Reception Teams", logo: "Reception Teams" },
-      { name: "Care Coordinators", logo: "Care Coordinators" },
+      { name: "Clinics", logo: t("l1") },
+      { name: "Hospitals", logo: t("l2") },
+      { name: "Solo Doctors", logo: t("l3") },
+      { name: "Reception Teams", logo: t("l4") },
+      { name: "Care Coordinators", logo: t("l5") },
     ],
     [
-      { name: "Patient Records", logo: "Patient Records" },
-      { name: "Appointments", logo: "Appointments" },
-      { name: "Prescriptions", logo: "Prescriptions" },
-      { name: "Lab Requests", logo: "Lab Requests" },
-      { name: "Follow-ups", logo: "Follow-ups" },
+      { name: "Patient Records", logo: t("l6") },
+      { name: "Appointments", logo: t("l7") },
+      { name: "Prescriptions", logo: t("l8") },
+      { name: "Lab Requests", logo: t("l9") },
+      { name: "Follow-ups", logo: t("l10") },
     ],
     [
-      { name: "Pharmacies", logo: "Pharmacies" },
-      { name: "Diagnostics", logo: "Diagnostics" },
-      { name: "Specialists", logo: "Specialists" },
-      { name: "Medical Staff", logo: "Medical Staff" },
-      { name: "Patients", logo: "Patients" },
+      { name: "Pharmacies", logo: t("l11") },
+      { name: "Diagnostics", logo: t("l12") },
+      { name: "Specialists", logo: t("l13") },
+      { name: "Medical Staff", logo: t("l14") },
+      { name: "Patients", logo: t("l15") },
     ],
   ];
 
@@ -42,12 +45,10 @@ const LogoCloud = () => {
     <div className="py-10 px-4 relative">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
-          Trusted by Healthcare Professionals
+          {t("title")}
         </h2>
         <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-          DardiBook supports clinics, hospitals, pharmacies, diagnostics, and solo practitioners.
-          <br />
-          Designed for modern medical workflows.
+          {t("description")}
         </p>
 
         {/* Logo container with animation */}

@@ -4,35 +4,33 @@ import {
   ShieldCheckIcon,
   UsersRoundIcon,
 } from "lucide-react";
-
-const trustItems = [
-  {
-    title: "Secure clinic records",
-    description:
-      "Keep sensitive patient information organized with privacy-first digital workflows.",
-    icon: ShieldCheckIcon,
-  },
-  {
-    title: "Role-based staff access",
-    description:
-      "Give reception, doctors, and operations teams the right view for their work.",
-    icon: LockKeyholeIcon,
-  },
-  {
-    title: "Fast onboarding",
-    description:
-      "Start with core clinic workflows first, then expand into pharmacy, labs, and follow-ups.",
-    icon: Clock3Icon,
-  },
-  {
-    title: "Built for teams",
-    description:
-      "Works for solo doctors, growing clinics, hospitals, pharmacies, and diagnostics.",
-    icon: UsersRoundIcon,
-  },
-];
+import { useTranslations } from "next-intl";
 
 const TrustProof = () => {
+  const t = useTranslations("TrustProof");
+
+  const trustItems = [
+    {
+      title: t("i1Title"),
+      description: t("i1Desc"),
+      icon: ShieldCheckIcon,
+    },
+    {
+      title: t("i2Title"),
+      description: t("i2Desc"),
+      icon: LockKeyholeIcon,
+    },
+    {
+      title: t("i3Title"),
+      description: t("i3Desc"),
+      icon: Clock3Icon,
+    },
+    {
+      title: t("i4Title"),
+      description: t("i4Desc"),
+      icon: UsersRoundIcon,
+    },
+  ];
   return (
     <section id="trust" className="relative scroll-mt-28">
       <div className="relative z-[1] flex justify-center">
@@ -41,15 +39,13 @@ const TrustProof = () => {
             <div className="grid gap-y-10 rounded-[8px] border border-white/10 bg-white/[0.05] px-6 py-10 min-[900px]:grid-cols-[1.1fr_2fr] min-[900px]:gap-x-12 min-[900px]:px-10">
               <section className="grid content-start gap-y-5">
                 <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
-                  Why clinics choose DardiBook
+                  {t("title")}
                 </h2>
                 <h1 className="text-white text-4xl md:text-5xl font-extrabold leading-tight">
-                  Less manual work, better patient continuity
+                  {t("subtitle")}
                 </h1>
                 <p className="text-gray-300 font-light text-lg leading-[1.6]">
-                  The strongest healthcare software feels calm during a busy
-                  clinic day. DardiBook keeps the essentials visible without
-                  forcing teams into a complicated enterprise system.
+                  {t("description")}
                 </p>
               </section>
 

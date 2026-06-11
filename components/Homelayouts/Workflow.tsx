@@ -5,41 +5,39 @@ import {
   PillIcon,
   UserRoundCheckIcon,
 } from "lucide-react";
-
-const workflowSteps = [
-  {
-    title: "Register Patient",
-    description:
-      "Create a patient profile once and keep demographics, visits, files, and care notes organized.",
-    icon: UserRoundCheckIcon,
-  },
-  {
-    title: "Consultation",
-    description:
-      "Doctors can review history, capture clinical notes, and keep each visit linked to the patient record.",
-    icon: ClipboardPlusIcon,
-  },
-  {
-    title: "Prescription",
-    description:
-      "Generate clear digital prescriptions with medicine, dosage, advice, and revisit instructions.",
-    icon: PillIcon,
-  },
-  {
-    title: "Lab & Pharmacy",
-    description:
-      "Connect test requests, pharmacy details, and reports back to the same visit for better continuity.",
-    icon: FlaskConicalIcon,
-  },
-  {
-    title: "Follow-up",
-    description:
-      "Track pending care tasks and follow-up reminders so patients do not disappear after the visit.",
-    icon: FileTextIcon,
-  },
-];
+import { useTranslations } from "next-intl";
 
 const Workflow = () => {
+  const t = useTranslations("Workflow");
+
+  const workflowSteps = [
+    {
+      title: t("s1Title"),
+      description: t("s1Desc"),
+      icon: UserRoundCheckIcon,
+    },
+    {
+      title: t("s2Title"),
+      description: t("s2Desc"),
+      icon: ClipboardPlusIcon,
+    },
+    {
+      title: t("s3Title"),
+      description: t("s3Desc"),
+      icon: PillIcon,
+    },
+    {
+      title: t("s4Title"),
+      description: t("s4Desc"),
+      icon: FlaskConicalIcon,
+    },
+    {
+      title: t("s5Title"),
+      description: t("s5Desc"),
+      icon: FileTextIcon,
+    },
+  ];
+
   return (
     <section id="workflow" className="relative scroll-mt-28">
       <div className="relative z-[1] flex justify-center">
@@ -48,15 +46,13 @@ const Workflow = () => {
             <div className="grid gap-y-12">
               <section className="grid gap-y-6 max-w-3xl px-4">
                 <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
-                  How DardiBook works
+                  {t("title")}
                 </h2>
                 <h1 className="text-white text-4xl md:text-5xl font-extrabold leading-tight">
-                  A complete patient journey from entry to follow-up
+                  {t("subtitle")}
                 </h1>
                 <p className="text-gray-300 font-light text-lg leading-[1.555555556]">
-                  DardiBook is built around the way clinics actually move:
-                  reception, consultation, prescription, diagnostics, and
-                  continued care.
+                  {t("description")}
                 </p>
               </section>
 
