@@ -53,7 +53,7 @@ const Workflow = () => {
                 <h1 className="text-white text-4xl md:text-5xl font-extrabold leading-tight">
                   A complete patient journey from entry to follow-up
                 </h1>
-                <p className="text-[#a0a0a0] font-light text-lg leading-[1.555555556]">
+                <p className="text-gray-300 font-light text-lg leading-[1.555555556]">
                   DardiBook is built around the way clinics actually move:
                   reception, consultation, prescription, diagnostics, and
                   continued care.
@@ -70,14 +70,14 @@ const Workflow = () => {
                       <div className="grid h-10 w-10 place-items-center rounded bg-[#00d4ff24] text-[#00d4ff]">
                         <step.icon size={20} />
                       </div>
-                      <span className="text-sm text-[#a0a0a0]">
+                      <span className="text-sm text-gray-300">
                         0{index + 1}
                       </span>
                     </div>
                     <h3 className="mt-8 text-white text-2xl font-semibold leading-snug">
                       {step.title}
                     </h3>
-                    <p className="mt-3 text-[#a0a0a0] font-light text-base leading-[1.6]">
+                    <p className="mt-3 text-gray-300 font-light text-base leading-[1.6]">
                       {step.description}
                     </p>
                   </article>

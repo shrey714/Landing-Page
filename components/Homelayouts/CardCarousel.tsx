@@ -193,7 +193,7 @@ const CardCarousel = () => {
                       </h1>
                     </header>
 
-                    <div className="pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 text-[#a0a0a0] max-w-[calc(calc(1280px*0.25)*3)] font-light text-lg leading-[1.555555556]">
+                    <div className="pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 text-gray-300 max-w-[calc(calc(1280px*0.25)*3)] font-light text-lg leading-[1.555555556]">
                       From small clinics to growing hospitals, and from
                       individual doctors to diagnostic labs, DardiBook helps
                       reduce administrative workload while improving patient
@@ -269,7 +269,7 @@ const CardCarousel = () => {
                                 <div className="grid h-12 w-12 place-items-center rounded-[8px] bg-[#00d4ff24] text-[#00d4ff]">
                                   <card.icon size={24} />
                                 </div>
-                                <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-[#a0a0a0]">
+                                <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-gray-300">
                                   0{index + 1}
                                 </span>
                               </div>
@@ -282,14 +282,14 @@ const CardCarousel = () => {
                                   {card.title}
                                 </h3>
 
-                                <div className="pr-3 text-[#a0a0a0] w-full leading-7">
+                                <div className="pr-3 text-gray-300 w-full leading-7">
                                   {card.description}
                                 </div>
                               </section>
 
                               <div className="grid gap-y-5">
                                 <div className="rounded-[8px] bg-[#081C4F]/70 p-4">
-                                  <p className="text-xs uppercase text-[#a0a0a0]">
+                                  <p className="text-xs uppercase text-gray-300">
                                     Best outcome
                                   </p>
                                   <p className="mt-2 text-white font-medium">

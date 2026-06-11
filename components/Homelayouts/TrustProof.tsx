@@ -46,7 +46,7 @@ const TrustProof = () => {
                 <h1 className="text-white text-4xl md:text-5xl font-extrabold leading-tight">
                   Less manual work, better patient continuity
                 </h1>
-                <p className="text-[#a0a0a0] font-light text-lg leading-[1.6]">
+                <p className="text-gray-300 font-light text-lg leading-[1.6]">
                   The strongest healthcare software feels calm during a busy
                   clinic day. DardiBook keeps the essentials visible without
                   forcing teams into a complicated enterprise system.
@@ -65,7 +65,7 @@ const TrustProof = () => {
                     <h3 className="text-white text-2xl font-semibold leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-[#a0a0a0] font-light text-base leading-[1.6]">
+                    <p className="text-gray-300 font-light text-base leading-[1.6]">
                       {item.description}
                     </p>
                   </article>

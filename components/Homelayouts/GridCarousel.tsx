@@ -133,7 +133,7 @@ const GridCarousel = () => {
                       </h1>
                     </header>
 
-                    <div className="text-[#a0a0a0] font-light text-lg leading-[1.555555556] max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-8 pl-4">
+                    <div className="text-gray-300 font-light text-lg leading-[1.555555556] max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-8 pl-4">
                       <p>
                         DardiBook helps healthcare teams reduce manual work,
                         strengthen patient connect, keep care information
@@ -168,7 +168,7 @@ const GridCarousel = () => {
                           </h4>
                         </header>
 
-                        <div className="pl-4 pr-5 text-[#a0a0a0] font-light text-base leading-[1.6]">
+                        <div className="pl-4 pr-5 text-gray-300 font-light text-base leading-[1.6]">
                           {active.description}
                         </div>
                       </section>
@@ -184,7 +184,7 @@ const GridCarousel = () => {
                           </h4>
                         </header>
 
-                        <div className="pl-4 pr-5 text-[#a0a0a0] font-light text-base leading-[1.6]">
+                        <div className="pl-4 pr-5 text-gray-300 font-light text-base leading-[1.6]">
                           DardiBook workflow
                         </div>
                       </section>
@@ -229,7 +229,7 @@ const GridCarousel = () => {
                           </h4>
                         </header>
 
-                        <div className="pl-4 pr-5 text-[#a0a0a0] font-light text-base leading-[1.6]">
+                        <div className="pl-4 pr-5 text-gray-300 font-light text-base leading-[1.6]">
                           {active.action}
                         </div>
                       </section>
@@ -303,7 +303,7 @@ const GridCarousel = () => {
                                       className="text-[#00d4ff]"
                                       size={20}
                                     />
-                                    <span className="self-end text-xs leading-5 text-[#a0a0a0]">
+                                    <span className="self-end text-xs leading-5 text-gray-300">
                                       Care flow visible
                                     </span>
                                   </div>
@@ -372,7 +372,7 @@ const GridCarousel = () => {
                                 </div>
 
                                 <div className="rounded-[8px] bg-[#081C4F] p-4 text-white">
-                                  <p className="text-xs uppercase text-[#a0a0a0]">
+                                  <p className="text-xs uppercase text-gray-300">
                                     Next best action
                                   </p>
                                   <div className="mt-2 flex items-center justify-between gap-4">

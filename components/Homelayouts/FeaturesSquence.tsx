@@ -115,7 +115,7 @@ const FeaturesSquence = () => {
                         </div>
 
                         <div className="mt-auto rounded-[8px] bg-[#081C4F] p-4 text-white">
-                          <p className="text-sm text-[#a0a0a0]">
+                          <p className="text-sm text-gray-300">
                             Next consultation
                           </p>
                           <div className="mt-2 flex items-center justify-between">

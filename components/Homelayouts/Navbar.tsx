@@ -249,7 +249,7 @@ function RichNavigationMenu() {
                 <h3 className="mt-5 text-2xl font-semibold leading-snug">
                   One workspace for care
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-[#a0a0a0]">
+                <p className="mt-3 text-sm leading-6 text-gray-300">
                   Keep reception, consultation, prescription, labs, and
                   follow-up connected through the patient record.
                 </p>

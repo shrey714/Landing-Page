@@ -85,7 +85,7 @@ export function StickyScrollReveal() {
                     </h1>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
                     <p>
                       DardiBook helps clinics digitize daily operations,
                       organize patient journeys, and keep doctors, staff,
@@ -140,7 +140,7 @@ export function StickyScrollReveal() {
                     </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
                     <p>
                       Create patient profiles, view visit history, store
                       clinical notes, and access prescriptions without digging
@@ -153,13 +153,13 @@ export function StickyScrollReveal() {
                       See also
                     </h1>
                     <ul className="list-none">
-                      <div className="my-1 text-[#a0a0a0]">
+                      <div className="my-1 text-gray-300">
                         Digital case history for every consultation
                       </div>
-                      <div className="my-1 text-[#a0a0a0]">
+                      <div className="my-1 text-gray-300">
                         Quick search across patient records and visits
                       </div>
-                      <div className="my-1 text-[#a0a0a0]">
+                      <div className="my-1 text-gray-300">
                         Staff-friendly workflows for reception and doctors
                       </div>
                     </ul>
@@ -188,7 +188,7 @@ export function StickyScrollReveal() {
                     </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
                     <p>
                       Plan clinic schedules, track walk-ins, reduce missed
                       visits, and keep every patient moving through the right
@@ -201,13 +201,13 @@ export function StickyScrollReveal() {
                       See also
                     </h1>
                     <ul className="list-none">
-                      <div className="my-1 text-[#a0a0a0]">
+                      <div className="my-1 text-gray-300">
                         Daily appointment list for doctors and reception
                       </div>
-                      <div className="my-1 text-[#a0a0a0]">
+                      <div className="my-1 text-gray-300">
                         Visit status updates from waiting to completed
                       </div>
-                      <div className="my-1 text-[#a0a0a0]">
+                      <div className="my-1 text-gray-300">
                         Follow-up reminders for continued patient care
                       </div>
                     </ul>
@@ -236,7 +236,7 @@ export function StickyScrollReveal() {
                     </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
                     <p>
                       Generate digital prescriptions, record medication advice,
                       and make it easier for patients and pharmacies to
@@ -249,13 +249,13 @@ export function StickyScrollReveal() {
                       See also
                     </h1>
                     <ul className="list-none">
-                      <div className="my-1 text-[#a0a0a0]">
+                      <div className="my-1 text-gray-300">
                         Repeat medicine and dosage references
                       </div>
-                      <div className="my-1 text-[#a0a0a0]">
+                      <div className="my-1 text-gray-300">
                         Pharmacy-ready prescription details
                       </div>
-                      <div className="my-1 text-[#a0a0a0]">
+                      <div className="my-1 text-gray-300">
                         Patient instructions stored with the visit
                       </div>
                     </ul>
@@ -284,7 +284,7 @@ export function StickyScrollReveal() {
                     </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
                     <p>
                       Share test recommendations, keep reports attached to the
                       patient record, and help doctors review results with
@@ -297,13 +297,13 @@ export function StickyScrollReveal() {
                       See also
                     </h1>
                     <ul className="list-none">
-                      <div className="my-1 text-[#a0a0a0]">
+                      <div className="my-1 text-gray-300">
                         Lab requests linked to patient visits
                       </div>
-                      <div className="my-1 text-[#a0a0a0]">
+                      <div className="my-1 text-gray-300">
                         Reports stored alongside medical history
                       </div>
-                      <div className="my-1 text-[#a0a0a0]">
+                      <div className="my-1 text-gray-300">
                         Better coordination between clinics and diagnostics
                       </div>
                     </ul>
@@ -435,7 +435,7 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
             </div>
             <div className="hidden w-24 rounded-[8px] bg-[#081C4F] p-4 text-white min-[480px]:grid">
               <ShieldCheckIcon className="text-[#00d4ff]" size={20} />
-              <span className="self-end text-xs leading-5 text-[#a0a0a0]">
+              <span className="self-end text-xs leading-5 text-gray-300">
                 Role-based access
               </span>
             </div>

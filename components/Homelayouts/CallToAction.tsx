@@ -17,7 +17,7 @@ const CallToAction = () => {
                     </h1>
                   </header>
 
-                  <div className="pr-4 min-[600px]:pr-16 min-[900px]:pr-28 pl-4 max-w-[calc(calc(1280px*0.25)*3)] text-[#a0a0a0] font-light text-lg leading-[1.555555556]">
+                  <div className="pr-4 min-[600px]:pr-16 min-[900px]:pr-28 pl-4 max-w-[calc(calc(1280px*0.25)*3)] text-gray-300 font-light text-lg leading-[1.555555556]">
                     <p>
                       Book a walkthrough for your team. We will map your
                       current reception, consultation, prescription, lab, and
@@ -49,7 +49,7 @@ const CallToAction = () => {
                     </h3>
                   </header>
 
-                  <div className="max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-8 pl-4 text-[#a0a0a0] font-light text-base leading-[1.6]">
+                  <div className="max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-8 pl-4 text-gray-300 font-light text-base leading-[1.6]">
                     Choose a plan around your users, branches, and workflow
                     needs without paying for modules you do not use.
                   </div>
@@ -68,7 +68,7 @@ const CallToAction = () => {
                     </h4>
                   </header>
 
-                  <div className="max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-8 pl-4 text-[#a0a0a0] font-light text-base leading-[1.6]">
+                  <div className="max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-8 pl-4 text-gray-300 font-light text-base leading-[1.6]">
                     Get help setting up patient records, staff roles,
                     appointment flow, prescriptions, and diagnostics from day
                     one.
