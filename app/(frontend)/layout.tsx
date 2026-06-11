@@ -4,7 +4,6 @@ import { Outfit } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/wrappers/theme-provider";
-import { SmoothScrolling } from "@/wrappers/SmoothScrolling";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -34,9 +33,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <SmoothScrolling> */}
             {children}
-            {/* </SmoothScrolling> */}
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
