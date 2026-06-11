@@ -14,6 +14,7 @@ import ThemeSwitch from "@/components/subs/ThemeSwitch";
 import { Separator } from "@/components/ui/separator";
 import {useTranslations, useLocale} from 'next-intl';
 import {useRouter, usePathname} from '@/i18n/routing';
+import GoogleTranslate from '@/GoogleTranslate';
 
 const footerColumns = [
   {
@@ -171,6 +172,9 @@ export default function Footer() {
           <span>{t('copyright', { year: new Date().getFullYear() })}</span>
 
           <div className="flex flex-wrap items-center gap-4">
+
+<         GoogleTranslate />
+
             <div className="relative">
               <ChevronsUpDown
                 className="pointer-events-none absolute inset-y-0 right-2 my-auto opacity-75"
