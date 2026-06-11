@@ -76,16 +76,16 @@ export function StickyScrollReveal() {
               >
                 <section className="grid gap-y-8 tracking-[0.2px] scroll-mt-[108px]">
                   <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-8 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
-                    <h2 className="text-[#635bff] font-medium text-[18px] leading-[1.555555556]">
+                    <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
                       Practice operating system
                     </h2>
 
-                    <h1 className="relative font-medium text-[42px] leading-[50px] min-[600px]:text-[48px] min-[600px]:leading-[56px] min-[900px]:text-[56px] min-[900px]:leading-[68px] text-[#fff] -tracking-[0.02em] wrap-break-word">
+                    <h1 className="relative text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-[#fff] -tracking-[0.02em] wrap-break-word">
                       One connected workspace for modern healthcare teams
                     </h1>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-[18px] leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
                     <p>
                       DardiBook helps clinics digitize daily operations,
                       organize patient journeys, and keep doctors, staff,
@@ -131,16 +131,16 @@ export function StickyScrollReveal() {
               >
                 <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                   <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
-                    <h2 className="text-[#635bff] font-medium text-[18px] leading-[1.555555556]">
+                    <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
                       Patient Management
                     </h2>
 
-                    <h1 className="relative font-medium text-[34px] leading-[1.294117647] text-[#fff] -tracking-[0.02em] wrap-break-word">
+                    <h2 className="relative text-3xl md:text-4xl font-extrabold leading-tight text-[#fff] -tracking-[0.02em] wrap-break-word">
                       Keep every patient interaction easy to find
-                    </h1>
+                    </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-[18px] leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
                     <p>
                       Create patient profiles, view visit history, store
                       clinical notes, and access prescriptions without digging
@@ -148,8 +148,8 @@ export function StickyScrollReveal() {
                     </p>
                   </div>
 
-                  <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-[15px] leading-[1.6]">
-                    <h1 className="mb-2 text-white font-[425] -tracking-[0.2px]">
+                  <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-base leading-[1.6]">
+                    <h1 className="mb-2 text-white text-2xl font-semibold -tracking-[0.2px]">
                       See also
                     </h1>
                     <ul className="list-none">
@@ -179,16 +179,16 @@ export function StickyScrollReveal() {
               >
                 <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                   <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
-                    <h2 className="text-[#635bff] font-medium text-[18px] leading-[1.555555556]">
+                    <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
                       Appointments
                     </h2>
 
-                    <h1 className="relative font-medium text-[34px] leading-[1.294117647] text-[#fff] -tracking-[0.02em] wrap-break-word">
+                    <h2 className="relative font-medium text-3xl leading-[1.294117647] text-[#fff] -tracking-[0.02em] wrap-break-word">
                       Manage bookings, queues, and follow-ups
-                    </h1>
+                    </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-[18px] leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
                     <p>
                       Plan clinic schedules, track walk-ins, reduce missed
                       visits, and keep every patient moving through the right
@@ -196,7 +196,7 @@ export function StickyScrollReveal() {
                     </p>
                   </div>
 
-                  <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-[15px] leading-[1.6]">
+                  <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-base leading-[1.6]">
                     <h1 className="mb-2 text-white font-[425] -tracking-[0.2px]">
                       See also
                     </h1>
@@ -227,16 +227,16 @@ export function StickyScrollReveal() {
               >
                 <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                   <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
-                    <h2 className="text-[#635bff] font-medium text-[18px] leading-[1.555555556]">
+                    <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
                       Prescriptions
                     </h2>
 
-                    <h1 className="relative font-medium text-[34px] leading-[1.294117647] text-[#fff] -tracking-[0.02em] wrap-break-word">
+                    <h2 className="relative font-medium text-3xl leading-[1.294117647] text-[#fff] -tracking-[0.02em] wrap-break-word">
                       Create clearer prescriptions and care instructions
-                    </h1>
+                    </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-[18px] leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
                     <p>
                       Generate digital prescriptions, record medication advice,
                       and make it easier for patients and pharmacies to
@@ -244,7 +244,7 @@ export function StickyScrollReveal() {
                     </p>
                   </div>
 
-                  <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-[15px] leading-[1.6]">
+                  <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-base leading-[1.6]">
                     <h1 className="mb-2 text-white font-[425] -tracking-[0.2px]">
                       See also
                     </h1>
@@ -275,16 +275,16 @@ export function StickyScrollReveal() {
               >
                 <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                   <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
-                    <h2 className="text-[#635bff] font-medium text-[18px] leading-[1.555555556]">
+                    <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
                       Diagnostics
                     </h2>
 
-                    <h1 className="relative font-medium text-[34px] leading-[1.294117647] text-[#fff] -tracking-[0.02em] wrap-break-word">
+                    <h2 className="relative font-medium text-3xl leading-[1.294117647] text-[#fff] -tracking-[0.02em] wrap-break-word">
                       Coordinate lab requests and reports smoothly
-                    </h1>
+                    </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-[18px] leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-[#a0a0a0] max-w-[810px]">
                     <p>
                       Share test recommendations, keep reports attached to the
                       patient record, and help doctors review results with
@@ -292,7 +292,7 @@ export function StickyScrollReveal() {
                     </p>
                   </div>
 
-                  <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-[15px] leading-[1.6]">
+                  <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-base leading-[1.6]">
                     <h1 className="mb-2 text-white font-[425] -tracking-[0.2px]">
                       See also
                     </h1>
@@ -411,7 +411,7 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
               <panel.icon size={20} />
             </div>
             <div>
-              <h3 className="text-[17px] font-medium leading-tight">
+              <h3 className="text-lg font-medium leading-tight">
                 {panel.title}
               </h3>
               <p className="mt-1 text-xs text-[#727f96]">{panel.subtitle}</p>

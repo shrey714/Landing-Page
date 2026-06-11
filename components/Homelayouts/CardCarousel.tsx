@@ -188,12 +188,12 @@ const CardCarousel = () => {
                 <div className="items-end grid gap-y-8 min-[900px]:grid-cols-[3fr_1fr]">
                   <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                     <header className="relative pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 grid gap-y-6 grid-cols-[minmax(0,_1fr)] max-w-[calc(calc(1280px*0.25)*3)]">
-                      <h1 className="relative font-medium text-[34px] min-[900px]:text-[38px] leading-[1.294117647] min-[900px]:leading-[1.263157895] -tracking-[0.1px] min-[900px]:-tracking-[0.2px] text-white  wrap-break-word">
+                      <h1 className="relative text-4xl md:text-5xl font-extrabold leading-tight -tracking-[0.1px] min-[900px]:-tracking-[0.2px] text-white wrap-break-word">
                         Built for every kind of healthcare provider
                       </h1>
                     </header>
 
-                    <div className="pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 text-[#a0a0a0] max-w-[calc(calc(1280px*0.25)*3)] font-light text-[18px] leading-[1.555555556]">
+                    <div className="pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 text-[#a0a0a0] max-w-[calc(calc(1280px*0.25)*3)] font-light text-lg leading-[1.555555556]">
                       From small clinics to growing hospitals, and from
                       individual doctors to diagnostic labs, DardiBook helps
                       reduce administrative workload while improving patient
@@ -278,9 +278,9 @@ const CardCarousel = () => {
                                 <p className="text-[#00d4ff] text-sm font-medium leading-none">
                                   {card.eyebrow}
                                 </p>
-                                <h1 className="w-full relative text-white tracking-normal wrap-break-word font-[425] text-[28px] leading-[36px]">
+                                <h3 className="w-full relative text-white tracking-normal wrap-break-word text-2xl font-semibold leading-[36px]">
                                   {card.title}
-                                </h1>
+                                </h3>
 
                                 <div className="pr-3 text-[#a0a0a0] w-full leading-7">
                                   {card.description}
@@ -308,7 +308,7 @@ const CardCarousel = () => {
                                   ))}
                                 </div>
 
-                                <p className="font-[425] text-[15px] leading-[1.6] flex flex-row gap-1 items-center text-white">
+                                <p className="font-[425] text-base leading-[1.6] flex flex-row gap-1 items-center text-white">
                                   Explore workflow{" "}
                                   <ChevronRightIcon size={18} />
                                 </p>

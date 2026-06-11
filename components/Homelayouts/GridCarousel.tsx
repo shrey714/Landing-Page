@@ -125,15 +125,15 @@ const GridCarousel = () => {
                 <div className="items-start gap-y-8 grid min-[900px]:grid-cols-[3fr_1fr]">
                   <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                     <header className="grid gap-y-6 max-w-[calc(calc(1280px*0.25)*3)] grid-cols-[minmax(0,_1fr)] pr-4 min-[600px]:pr-8 pl-4">
-                      <h2 className="text-[#00d4ff] font-medium text-[18px] leading-[1.555555556]">
+                      <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
                         Scale care operations
                       </h2>
-                      <h1 className="relative text-white min-[1112px]:-tracking-[0.2px] wrap-break-word font-medium text-[34px] min-[1112px]:text-[38px] leading-[1.294117647] min-[1112px]:leading-[1.263157895]">
+                      <h1 className="relative text-white -tracking-[0.2px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
                         Built for clinics that want to grow without chaos
                       </h1>
                     </header>
 
-                    <div className="text-[#a0a0a0] font-light text-[18px] leading-[1.555555556] max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-8 pl-4">
+                    <div className="text-[#a0a0a0] font-light text-lg leading-[1.555555556] max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-8 pl-4">
                       <p>
                         DardiBook helps healthcare teams reduce manual work,
                         strengthen patient connect, keep care information
@@ -159,45 +159,45 @@ const GridCarousel = () => {
                     <aside className="grid gap-y-8 grid-cols-1 grid-flow-row min-[600px]:grid-cols-2 min-[600px]:grid-flow-col min-[600px]:gap-y-0 min-[900px]:grid-cols-1 min-[900px]:grid-flow-row min-[900px]:gap-y-8">
                       <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-2 min-w-full items-start">
                         <header className="relative gap-y-2 grid grid-cols-[minmax(0,_1fr)] pl-4 pr-4 min-[60px]:pr-16 min-[900px]:pr-28">
-                          <h1 className="relative text-white tracking-[0.2px] wrap-break-word font-medium text-[24px] leading-[1.33]">
+                          <h4 className="relative text-white tracking-[0.2px] wrap-break-word font-medium text-xl leading-[1.33]">
                             <span
                               className="block absolute top-[4.46px] -left-4 w-[1px] h-6"
                               style={{ backgroundColor: active.color }}
                             ></span>
                             {active.stats}
-                          </h1>
+                          </h4>
                         </header>
 
-                        <div className="pl-4 pr-5 text-[#a0a0a0] font-light text-[15px] leading-[1.6]">
+                        <div className="pl-4 pr-5 text-[#a0a0a0] font-light text-base leading-[1.6]">
                           {active.description}
                         </div>
                       </section>
 
                       <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-2 min-w-full items-start">
                         <header className="relative gap-y-2 grid grid-cols-[minmax(0,_1fr)] pl-4 pr-4 min-[60px]:pr-16 min-[900px]:pr-28">
-                          <h1 className="relative text-white tracking-[0.2px] wrap-break-word font-medium text-[24px] leading-[1.33]">
+                          <h4 className="relative text-white tracking-[0.2px] wrap-break-word font-medium text-xl leading-[1.33]">
                             <span
                               className="block absolute top-[4.46px] -left-4 w-[1px] h-6"
                               style={{ backgroundColor: active.color }}
                             ></span>
                             {active.title}
-                          </h1>
+                          </h4>
                         </header>
 
-                        <div className="pl-4 pr-5 text-[#a0a0a0] font-light text-[15px] leading-[1.6]">
+                        <div className="pl-4 pr-5 text-[#a0a0a0] font-light text-base leading-[1.6]">
                           DardiBook workflow
                         </div>
                       </section>
 
                       <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-2 min-w-full">
                         <header className="grid grid-cols-[minmax(0,_1fr)] gap-y-2 relative pr-4 min-[600px]:pr-8 pl-4 max-w-[calc(calc(1280px*0.25)*3)]">
-                          <h1 className="relative text-white tracking-[0.2px] wrap-break-word font-[425] text-[15px] leading-[1.6]">
+                          <h4 className="relative text-white tracking-[0.2px] wrap-break-word font-[425] text-base leading-[1.6]">
                             <span
                               className="block absolute top-[5px] -left-4 w-[1px] h-[15px]"
                               style={{ backgroundColor: active.color }}
                             ></span>
                             Modules used
-                          </h1>
+                          </h4>
                         </header>
 
                         <footer className="grid gap-y-6 px-4">
@@ -220,16 +220,16 @@ const GridCarousel = () => {
 
                       <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-2 min-w-full">
                         <header className="grid grid-cols-[minmax(0,_1fr)] gap-y-2 relative pr-4 min-[600px]:pr-8 pl-4 max-w-[calc(calc(1280px*0.25)*3)]">
-                          <h1 className="relative text-white tracking-[0.2px] wrap-break-word font-[425] text-[15px] leading-[1.6]">
+                          <h4 className="relative text-white tracking-[0.2px] wrap-break-word font-[425] text-base leading-[1.6]">
                             <span
                               className="block absolute top-[5px] -left-4 w-[1px] h-[15px]"
                               style={{ backgroundColor: active.color }}
                             ></span>
                             Next best action
-                          </h1>
+                          </h4>
                         </header>
 
-                        <div className="pl-4 pr-5 text-[#a0a0a0] font-light text-[15px] leading-[1.6]">
+                        <div className="pl-4 pr-5 text-[#a0a0a0] font-light text-base leading-[1.6]">
                           {active.action}
                         </div>
                       </section>
@@ -270,7 +270,7 @@ const GridCarousel = () => {
                                     <slide.icon size={20} />
                                   </div>
                                   <div>
-                                    <h3 className="text-[17px] font-medium leading-tight">
+                                    <h3 className="text-lg font-medium leading-tight">
                                       {slide.title}
                                     </h3>
                                     <p className="mt-1 text-xs text-[#727f96]">

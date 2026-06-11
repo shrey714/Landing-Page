@@ -11,7 +11,7 @@ export default function Hero() {
           <div className="grid sm:grid-cols-2 gap-y-8 items-start">
             <section className="grid gap-y-8 tracking-[0.2px] scroll-mt-[108px]">
               <header className="relative min-w-0 pl-4 mt-4 md:mt-8">
-                <h1 className="sm:min-h-[200px] leading-[1.04] sm:min-w-[calc(100%+90px)] relative flex items-end tracking-[-0.04em] font-medium text-4xl md:text-6xl lg:text-8xl">
+                <h1 className="sm:min-h-[200px] leading-[1.04] sm:min-w-[calc(100%+90px)] relative flex items-end tracking-[-0.04em] text-6xl md:text-7xl lg:text-8xl font-extrabold">
                   Digitize your medical practice with DardiBook
                 </h1>
               </header>
@@ -62,7 +62,7 @@ const DummyPlaceHolder = () => {
   "
       >
         <div
-          className="grid grid-rows-[auto] grid-cols-[132px_1fr] gap-6 w-[975px] p-6 pr-0 rounded-[8px] text-[11px] font-light tracking-[0.2px] leading-[14px] text-[#425466] select-none absolute top-0 left-[253px]"
+          className="grid grid-rows-[auto] grid-cols-[132px_1fr] gap-6 w-[975px] p-6 pr-0 rounded-[8px] text-xs font-light tracking-[0.2px] leading-[14px] text-[#425466] select-none absolute top-0 left-[253px]"
           style={{
             background:
               "linear-gradient(hsla(0,0%,100%,.4),hsla(0,0%,100%,.3) 25%,rgba(246,249,252,.3) 50%,#f6f9fc 60%)",
@@ -122,7 +122,7 @@ const DummyPlaceHolder = () => {
             <div className="grid grid-rows-[auto] grid-cols-[1fr_20px] gap-3 mr-3">
               <div className="grid gap-3">
                 <div className="bg-white rounded pt-[18px] px-[20px] pb-[20px]">
-                  <div className="font-medium text-[17px] leading-[22.9px] pb-[5px] border-b text-[#414552] border-[#ebeef1]">
+                  <div className="font-medium text-lg leading-[22.9px] pb-[5px] border-b text-[#414552] border-[#ebeef1]">
                     <span>Today</span>
                   </div>
 
@@ -131,7 +131,7 @@ const DummyPlaceHolder = () => {
                       <div className="flex justify-between w-[255px]">
                         <div>
                           <div className="flex gap-[6px] items-baseline">
-                            <span className="font-light text-[11px] leading-[14px] -tracking-[0.1px] text-[#727f96]">
+                            <span className="font-light text-xs leading-[14px] -tracking-[0.1px] text-[#727f96]">
                               <b>Appointments</b>
                             </span>
                             <svg
@@ -149,16 +149,16 @@ const DummyPlaceHolder = () => {
                               ></path>
                             </svg>
                           </div>
-                          <div className="font-light text-[14px] leading-[18px] text-[#0a2540] mt-1">
+                          <div className="font-light text-sm leading-[18px] text-[#0a2540] mt-1">
                             42 scheduled
                           </div>
-                          <div className="font-light text-[10px] leading-[12px] text-[#727f96] mt-1">
+                          <div className="font-light text-xs leading-[12px] text-[#727f96] mt-1">
                             Next: 14:00
                           </div>
                         </div>
                         <div>
                           <div className="flex gap-[6px] items-baseline">
-                            <span className="font-light text-[11px] leading-[14px] -tracking-[0.1px] text-[#727f96]">
+                            <span className="font-light text-xs leading-[14px] -tracking-[0.1px] text-[#727f96]">
                               <b>Yesterday</b>
                             </span>
                             <svg
@@ -176,7 +176,7 @@ const DummyPlaceHolder = () => {
                               ></path>
                             </svg>
                           </div>
-                          <div className="font-light text-[12px] leading-[15px] -tracking-[0.1px] text-[#727f96] mt-1">
+                          <div className="font-light text-sm leading-[15px] -tracking-[0.1px] text-[#727f96] mt-1">
                             37 visits
                           </div>
                         </div>
@@ -221,13 +221,13 @@ const DummyPlaceHolder = () => {
                           ></path>
                         </svg>
                         <div className="flex justify-between">
-                          <span className="font-light text-[10px] leading-[12px] text-[#727f96]">
+                          <span className="font-light text-xs leading-[12px] text-[#727f96]">
                             00:00
                           </span>
-                          <span className="font-light text-[10px] leading-[12px] text-[#635bff]">
+                          <span className="font-light text-xs leading-[12px] text-[#635bff]">
                             Now, 14:00
                           </span>
-                          <span className="font-light text-[10px] leading-[12px] text-[#727f96]">
+                          <span className="font-light text-xs leading-[12px] text-[#727f96]">
                             23:59
                           </span>
                         </div>
@@ -238,7 +238,7 @@ const DummyPlaceHolder = () => {
                       <div className="flex items-center justify-between">
                         <div>
                           <div className="flex gal-[6px] items-baseline">
-                            <span className="font-light text-[11px] leading-[14px] -tracking-[0.1px] text-[#727f96]">
+                            <span className="font-light text-xs leading-[14px] -tracking-[0.1px] text-[#727f96]">
                               <b>Open Visits</b>
                             </span>
                             <svg
@@ -256,31 +256,31 @@ const DummyPlaceHolder = () => {
                               ></path>
                             </svg>
                           </div>
-                          <div className="mt-1 font-light text-[14px] leading-[18px] text-[#0a2540]">
+                          <div className="mt-1 font-light text-sm leading-[18px] text-[#0a2540]">
                             12 patients
                           </div>
-                          <div className="mt-1 font-light text-[10px] leading-[12px] text-[#727f96]">
+                          <div className="mt-1 font-light text-xs leading-[12px] text-[#727f96]">
                             In consultation queue
                           </div>
                         </div>
-                        <span className="font-[425] text-[11px] leading-[14px] -tracking-[0.1px] self-start mt-0.5 text-[#635bff]">
+                        <span className="font-[425] text-xs leading-[14px] -tracking-[0.1px] self-start mt-0.5 text-[#635bff]">
                           View
                         </span>
                       </div>
                       <div className="w-full h-[1px] bg-[#ebeef1]"></div>
                       <div className="flex items-center justify-between">
                         <div>
-                          <span className="font-light text-[11px] leading-[14px] -tracking-[0.1px] text-[#727f96]">
+                          <span className="font-light text-xs leading-[14px] -tracking-[0.1px] text-[#727f96]">
                             <b>Follow-ups</b>
                           </span>
-                          <div className="mt-1 font-light text-[14px] leading-[18px] -tracking-[0.1px] text-[#0a2540]">
+                          <div className="mt-1 font-light text-sm leading-[18px] -tracking-[0.1px] text-[#0a2540]">
                             18 due
                           </div>
-                          <div className="mt-1 font-light text-[10px] leading-[12px] -tracking-[0.1px] text-[#727f96]">
+                          <div className="mt-1 font-light text-xs leading-[12px] -tracking-[0.1px] text-[#727f96]">
                             Scheduled today
                           </div>
                         </div>
-                        <span className="font-light text-[11px] leading-[14px] -tracking-[0.1px] text-[#727f96] HomepageDashboardGraphic__copy--smallHeaderFancy">
+                        <span className="font-light text-xs leading-[14px] -tracking-[0.1px] text-[#727f96] HomepageDashboardGraphic__copy--smallHeaderFancy">
                           View
                         </span>
                       </div>
@@ -810,433 +810,97 @@ const DummyPlaceHolder = () => {
         </div>
 
         <figure
-          className="w-[270px] text-[#0a2540] h-[536px] p-2 rounded-[36px] bg-[#f6f9fc] select-none text-base relative mt-[60px] left-[140px]"
-          style={{
-            boxShadow:
-              "0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3), inset 0 -2px 6px 0 rgba(10, 37, 64, 0.35)",
-          }}
+          className="w-[270px] h-[536px] p-2 rounded-[36px] bg-[#f6f9fc] select-none text-base relative mt-[60px] left-[140px] shadow-[0_50px_100px_-20px_rgba(50,50,93,0.25),0_30px_60px_-30px_rgba(0,0,0,0.3),inset_0_-2px_6px_0_rgba(10,37,64,0.35)]"
           aria-hidden="true"
         >
-          <div
-            className="relative h-full rounded-[29px] bg-[#fff]"
-            style={{
-              WebkitMaskImage: "-webkit-radial-gradient(#fff, #000)",
-            }}
-          >
-            <div className="h-full px-4 py-6 rounded-[28px] bg-[#fff] text-[11px] font-light tracking-[0.2px]">
-              <div className="flex justify-around h-[80px]">
+          <div className="relative h-full rounded-[29px] bg-white overflow-hidden">
+            <div className="h-full px-5 py-6 rounded-[28px] bg-white text-xs font-light tracking-[0.2px]">
+              <div className="flex items-center justify-between mb-5">
                 <div>
-                  <svg
-                    width="72"
-                    height="91"
-                    viewBox="0 0 72 91"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M47.2675.5H3.25289C1.45637.5 0 1.95637 0 3.75289V69.9255c0 1.7965 1.45637 3.2529 3.25289 3.2529H47.2675c1.7965 0 3.2529-1.4564 3.2529-3.2529V3.75289C50.5204 1.95637 49.064.5 47.2675.5Z"
-                      fill="url(#homepage-abstraction-phone-path-a)"
-                    ></path>
-                    <path
-                      d="M50.5204 38.9151C31.3754 20.6207 16.6356 13.7735.45563 12.2929L0 12.2512v10.0435c13.8831 1.3733 27.2888 7.4539 46.9645 27.1295L50.5 52.9598l.0204-.0204V38.9151Z"
-                      fill="#FAB000"
-                    ></path>
-                    <path
-                      d="M12.5919 51.9737c3.5202 0 6.3738-2.8536 6.3738-6.3738s-2.8536-6.3738-6.3738-6.3738c-3.52017 0-6.37382 2.8536-6.37382 6.3738s2.85365 6.3738 6.37382 6.3738Z"
-                      fill="url(#homepage-abstraction-phone-path-b)"
-                    ></path>
-                    <path
-                      d="M6.32072 62.9735v4.6711h-.83274v-4.6711h.83274Zm.4923 4.0206.58552-.4685c.20168.3318.59203.553.98888.553.3318 0 .63757-.1171.63757-.4228 0-.2928-.28626-.3253-.82624-.4359-.53998-.1106-1.15803-.2473-1.15803-.9759 0-.6246.54649-1.08 1.33369-1.08.59853 0 1.13201.2668 1.37923.6441l-.52697.4749c-.19517-.3057-.52046-.4814-.8978-.4814-.31878 0-.52697.1431-.52697.3708 0 .2473.24722.2928.6766.3839.57902.1236 1.30767.2472 1.30767 1.0279 0 .6896-.63106 1.132-1.40525 1.132-.63107 0-1.26213-.2537-1.5679-.7221Zm3.21478 0 .5855-.4685c.2017.3318.5921.553.9889.553.3318 0 .6376-.1171.6376-.4228 0-.2928-.2863-.3253-.8263-.4359-.5399-.1106-1.158-.2473-1.158-.9759 0-.6246.5465-1.08 1.3337-1.08.5985 0 1.132.2668 1.3792.6441l-.5269.4749c-.1952-.3057-.5205-.4814-.8978-.4814-.3188 0-.527.1431-.527.3708 0 .2473.2472.2928.6766.3839.579.1236 1.3077.2472 1.3077 1.0279 0 .6896-.6311 1.132-1.4053 1.132-.6311 0-1.2621-.2537-1.5679-.7221Zm6.4156-2.765v3.4155h-.7807v-.3643c-.1951.2277-.4879.4359-.9303.4359-.7156 0-1.158-.4879-1.158-1.2231v-2.264h.7807v2.0949c0 .4163.1821.6831.605.6831.3513 0 .7026-.2603.7026-.7482v-2.0298h.7807Zm2.2672 3.4871c-.9759 0-1.659-.7221-1.659-1.7761 0-1.0019.6766-1.7761 1.6264-1.7761.9889 0 1.5159.7482 1.5159 1.685v.2603h-2.3942c.0586.5855.4099.9433.9109.9433.3838 0 .6896-.1952.7937-.5465l.6701.2537c-.2408.5986-.7807.9564-1.4638.9564Zm-.0391-2.8951c-.4033 0-.7156.2407-.8327.7026h1.5679c-.0065-.3773-.2407-.7026-.7352-.7026Zm3.26.488c0-1.4248.6766-2.4072 1.8347-2.4072 1.158 0 1.8346.9824 1.8346 2.4072 0 1.4247-.6766 2.4071-1.8346 2.4071-1.1581 0-1.8347-.9824-1.8347-2.4071Zm.8328 0c0 .9823.3122 1.685 1.0019 1.685.6896 0 1.0019-.7027 1.0019-1.685 0-.9824-.3123-1.685-1.0019-1.685-.6897 0-1.0019.7026-1.0019 1.685Zm3.2778 0c0-1.4248.6766-2.4072 1.8346-2.4072 1.1581 0 1.8347.9824 1.8347 2.4072 0 1.4247-.6766 2.4071-1.8347 2.4071-1.158 0-1.8346-.9824-1.8346-2.4071Zm.8328 0c0 .9823.3122 1.685 1.0018 1.685.6897 0 1.0019-.7027 1.0019-1.685 0-.9824-.3122-1.685-1.0019-1.685-.6896 0-1.0018.7026-1.0018 1.685Zm3.2338 1.6589 1.171-.9628c.6376-.5205 1.2101-.9824 1.2101-1.5679 0-.4815-.2993-.8263-.7937-.8263-.4879 0-.8067.3839-.8067.8458 0 .1496.026.2993.0781.4424h-.7742c-.0651-.1887-.0846-.3123-.0846-.4879 0-.8783.7221-1.5094 1.6069-1.5094.9759 0 1.6004.605 1.6004 1.4833 0 .8263-.6245 1.3923-1.2816 1.9127l-.7807.6181h2.1209v.7286h-3.2659v-.6766Z"
-                      fill="#fff"
-                    ></path>
-                    <g filter="url(#homepage-abstraction-phone-path-c)">
-                      <path
-                        d="M62.2166 9H18.7867c-1.958 0-3.5452 1.5873-3.5452 3.5453v65.5878c0 1.958 1.5872 3.5453 3.5452 3.5453h43.4299c1.958 0 3.5453-1.5873 3.5453-3.5453V12.5453c0-1.958-1.5873-3.5453-3.5453-3.5453Z"
-                        fill="#F6F9FC"
-                      ></path>
-                    </g>
-                    <path
-                      d="M40.5692 49.2909c-7.5153 0-13.6798 5.7842-14.2844 13.1436-.0538.6549.4841 1.1895 1.1412 1.1895h26.2865c.6571 0 1.195-.5346 1.1412-1.1895-.6046-7.3594-6.7691-13.1436-14.2845-13.1436Z"
-                      fill="#FAB000"
-                    ></path>
-                    <path
-                      d="M40.3331 33.5c-7.5154 0-13.6798 5.7842-14.2844 13.1436-.0538.6549.484 1.1895 1.1412 1.1895h26.2864c.6572 0 1.195-.5346 1.1412-1.1895C54.0129 39.2842 47.8485 33.5 40.3331 33.5Z"
-                      fill="#F6F9FC"
-                    ></path>
-                    <mask
-                      id="homepage-abstraction-phone-path-d"
-                      style={{ maskType: "alpha" }}
-                      maskUnits="userSpaceOnUse"
-                      x="26"
-                      y="34"
-                      width="29"
-                      height="15"
-                    >
-                      <path
-                        d="M40.3331 34.5c-7.5154 0-13.6798 5.7842-14.2844 13.1436-.0538.6549.484 1.1895 1.1412 1.1895h26.2864c.6572 0 1.195-.5346 1.1412-1.1895C54.0129 40.2842 47.8485 34.5 40.3331 34.5Z"
-                        fill="#F6F9FC"
-                      ></path>
-                    </mask>
-                    <g mask="url(#homepage-abstraction-phone-path-d)">
-                      <g filter="url(#homepage-abstraction-phone-path-e)">
-                        <ellipse
-                          cx="33.498"
-                          cy="34.062"
-                          rx="11.4684"
-                          ry="11.6778"
-                          fill="#2C09F1"
-                        ></ellipse>
-                      </g>
-                      <g filter="url(#homepage-abstraction-phone-path-f)">
-                        <ellipse
-                          cx="33.5026"
-                          cy="49.3713"
-                          rx="9.09451"
-                          ry="9.29176"
-                          transform="rotate(-1.83252 33.5026 49.3713)"
-                          fill="#FAC300"
-                        ></ellipse>
-                      </g>
-                      <g filter="url(#homepage-abstraction-phone-path-g)">
-                        <ellipse
-                          cx="46.3983"
-                          cy="32.4332"
-                          rx="8.73365"
-                          ry="9.19056"
-                          fill="#FF4FD8"
-                        ></ellipse>
-                      </g>
-                    </g>
-                    <path
-                      d="M21.5647 15.8288h-.8327V20.5h.8327v-4.6712Zm.4923 4.0206c.3058.4684.9368.7222 1.5679.7222.7742 0 1.4052-.4424 1.4052-1.132 0-.7807-.7286-.9043-1.3076-1.028-.4294-.091-.6766-.1366-.6766-.3838 0-.2277.2082-.3708.5269-.3708.3774 0 .7027.1756.8978.4814l.527-.4749c-.2472-.3774-.7807-.6441-1.3792-.6441-.7872 0-1.3337.4554-1.3337 1.08 0 .7286.6181.8652 1.158.9758.54.1106.8263.1432.8263.4359 0 .3058-.3058.4229-.6376.4229-.3969 0-.7872-.2212-.9889-.553l-.5855.4684Zm3.2148 0c.3057.4684.9368.7222 1.5679.7222.7742 0 1.4052-.4424 1.4052-1.132 0-.7807-.7286-.9043-1.3076-1.028-.4294-.091-.6766-.1366-.6766-.3838 0-.2277.2081-.3708.5269-.3708.3774 0 .7026.1756.8978.4814l.527-.4749c-.2472-.3774-.7807-.6441-1.3792-.6441-.7872 0-1.3337.4554-1.3337 1.08 0 .7286.618.8652 1.158.9758.54.1106.8262.1432.8262.4359 0 .3058-.3057.4229-.6375.4229-.3969 0-.7872-.2212-.9889-.553l-.5855.4684Zm6.4156-2.7649h-.7807v2.0298c0 .4879-.3513.7481-.7026.7481-.4229 0-.6051-.2667-.6051-.6831v-2.0948h-.7807v2.264c0 .7351.4424 1.2231 1.1581 1.2231.4424 0 .7351-.2082.9303-.4359V20.5h.7807v-3.4155Zm2.2671 3.4871c.6831 0 1.2231-.3579 1.4638-.9564l-.6701-.2537c-.1041.3513-.4098.5465-.7937.5465-.5009 0-.8522-.3578-.9108-.9434h2.3941v-.2602c0-.9368-.5269-1.685-1.5158-1.685-.9499 0-1.6265.7742-1.6265 1.7761 0 1.0539.6831 1.7761 1.659 1.7761Zm-.039-2.8951c.4944 0 .7286.3253.7351.7026h-1.5679c.1171-.4619.4294-.7026.8328-.7026Zm3.26.4879c0 1.4248.6766 2.4072 1.8346 2.4072s1.8346-.9824 1.8346-2.4072c0-1.4247-.6766-2.4071-1.8346-2.4071s-1.8346.9824-1.8346 2.4071Zm.8327 0c0-.9824.3123-1.685 1.0019-1.685s1.0019.7026 1.0019 1.685-.3123 1.685-1.0019 1.685-1.0019-.7026-1.0019-1.685Zm3.2779 0c0 1.4248.6766 2.4072 1.8346 2.4072s1.8346-.9824 1.8346-2.4072c0-1.4247-.6766-2.4071-1.8346-2.4071s-1.8346.9824-1.8346 2.4071Zm.8327 0c0-.9824.3123-1.685 1.0019-1.685s1.0019.7026 1.0019 1.685-.3123 1.685-1.0019 1.685-1.0019-.7026-1.0019-1.685Zm4.4822-2.3681c-.0455.553-.2863.7547-.8718.8067l-.4554.0391v.618h1.1255V20.5h.8328v-4.7037h-.6311Z"
-                      fill="#4C555F"
-                    ></path>
-                    <defs>
-                      <filter
-                        id="homepage-abstraction-phone-path-c"
-                        x="9.0372"
-                        y="5.01155"
-                        width="62.9289"
-                        height="85.0869"
-                        filterUnits="userSpaceOnUse"
-                        colorInterpolationFilters="sRGB"
-                      >
-                        <feFlood
-                          floodOpacity="0"
-                          result="BackgroundImageFix"
-                        ></feFlood>
-                        <feColorMatrix
-                          in="SourceAlpha"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                          result="hardAlpha"
-                        ></feColorMatrix>
-                        <feOffset dy="1.32948"></feOffset>
-                        <feGaussianBlur stdDeviation="1.32948"></feGaussianBlur>
-                        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"></feColorMatrix>
-                        <feBlend
-                          in2="BackgroundImageFix"
-                          result="effect1_dropShadow_990_4682"
-                        ></feBlend>
-                        <feColorMatrix
-                          in="SourceAlpha"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                          result="hardAlpha"
-                        ></feColorMatrix>
-                        <feOffset dy="2.21581"></feOffset>
-                        <feGaussianBlur stdDeviation="3.10213"></feGaussianBlur>
-                        <feColorMatrix values="0 0 0 0 0.196078 0 0 0 0 0.196078 0 0 0 0 0.364706 0 0 0 0.25 0"></feColorMatrix>
-                        <feBlend
-                          in2="effect1_dropShadow_990_4682"
-                          result="effect2_dropShadow_990_4682"
-                        ></feBlend>
-                        <feBlend
-                          in="SourceGraphic"
-                          in2="effect2_dropShadow_990_4682"
-                          result="shape"
-                        ></feBlend>
-                      </filter>
-                      <filter
-                        id="homepage-abstraction-phone-path-e"
-                        x="11.567"
-                        y="11.9216"
-                        width="43.8619"
-                        height="44.2808"
-                        filterUnits="userSpaceOnUse"
-                        colorInterpolationFilters="sRGB"
-                      >
-                        <feFlood
-                          floodOpacity="0"
-                          result="BackgroundImageFix"
-                        ></feFlood>
-                        <feBlend
-                          in="SourceGraphic"
-                          in2="BackgroundImageFix"
-                          result="shape"
-                        ></feBlend>
-                        <feGaussianBlur
-                          stdDeviation="5.23126"
-                          result="effect1_foregroundBlur_990_4682"
-                        ></feGaussianBlur>
-                      </filter>
-                      <filter
-                        id="homepage-abstraction-phone-path-f"
-                        x="13.9453"
-                        y="29.6172"
-                        width="39.1147"
-                        height="39.5083"
-                        filterUnits="userSpaceOnUse"
-                        colorInterpolationFilters="sRGB"
-                      >
-                        <feFlood
-                          floodOpacity="0"
-                          result="BackgroundImageFix"
-                        ></feFlood>
-                        <feBlend
-                          in="SourceGraphic"
-                          in2="BackgroundImageFix"
-                          result="shape"
-                        ></feBlend>
-                        <feGaussianBlur
-                          stdDeviation="5.23126"
-                          result="effect1_foregroundBlur_990_4682"
-                        ></feGaussianBlur>
-                      </filter>
-                      <filter
-                        id="homepage-abstraction-phone-path-g"
-                        x="27.2718"
-                        y="12.8499"
-                        width="38.2528"
-                        height="39.1666"
-                        filterUnits="userSpaceOnUse"
-                        colorInterpolationFilters="sRGB"
-                      >
-                        <feFlood
-                          floodOpacity="0"
-                          result="BackgroundImageFix"
-                        ></feFlood>
-                        <feBlend
-                          in="SourceGraphic"
-                          in2="BackgroundImageFix"
-                          result="shape"
-                        ></feBlend>
-                        <feGaussianBlur
-                          stdDeviation="5.19639"
-                          result="effect1_foregroundBlur_990_4682"
-                        ></feGaussianBlur>
-                      </filter>
-                      <radialGradient
-                        id="homepage-abstraction-phone-path-b"
-                        cx="0"
-                        cy="0"
-                        r="1"
-                        gradientUnits="userSpaceOnUse"
-                        gradientTransform="matrix(33.10171119 35.23199341 -676.24595427 635.35713152 -1.56642 27.6897)"
-                      >
-                        <stop stopColor="#2C09F1"></stop>
-                        <stop offset=".328125" stopColor="#ED8EF8"></stop>
-                        <stop offset=".578125" stopColor="#F7CE5D"></stop>
-                      </radialGradient>
-                      <linearGradient
-                        id="homepage-abstraction-phone-path-a"
-                        x1="47.861"
-                        y1="73.1784"
-                        x2="27.2626"
-                        y2="-18.3913"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stopColor="#6237D5"></stop>
-                        <stop offset="1" stopColor="#E28CDF"></stop>
-                      </linearGradient>
-                    </defs>
-                  </svg>
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-[#62788d]">
+                    DardiBook
+                  </p>
+                  <p className="mt-1 text-sm font-semibold text-[#0a2540]">
+                    Clinic dashboard
+                  </p>
+                </div>
+                <span className="rounded-2xl bg-[#eef2f8] px-3 py-1 text-[10px] font-medium text-[#0a2540]">
+                  Live
+                </span>
+              </div>
+
+              <div className="rounded-[24px] bg-[#f6f9fc] p-4 mb-5">
+                <div className="flex items-center justify-between mb-3 text-[10px] uppercase tracking-[0.24em] text-[#7d8a9a]">
+                  <span>Today</span>
+                  <span>08:30</span>
+                </div>
+                <div className="flex items-center justify-between gap-4">
+                  <p className="text-[15px] font-semibold text-[#0a2540]">
+                    42 appointments
+                  </p>
+                  <span className="rounded-full bg-[#eaf3ff] px-2 py-1 text-[10px] font-semibold text-[#2563eb]">
+                    +12%
+                  </span>
                 </div>
               </div>
-              <div className="mt-[15px] text-center text-[#0a2540] font-[425]">
-                Abstraction Magazine
-              </div>
-              <div className="mt-0.5 mb-4 mx-0 text-center">₹19 per month</div>
-              <div className="flex flex-col gap-2">
-                <div
-                  className="grid place-items-center rounded py-[5px] text-center font-[425] text-[#fff] bg-[#0a2540]"
-                  style={{
-                    boxShadow:
-                      "0 2px 4px -1px rgba(50,50,93,.25),0 1px 3px -1px rgba(0,0,0,.3)",
-                  }}
-                >
-                  <svg
-                    className="block h-[14] my-0 mx-auto"
-                    viewBox="0 0 32 14"
-                  >
-                    <path
-                      fill="#FFF"
-                      d="M25.94 4.22l1.62 5.23h.03l1.62-5.23h1.4l-2.41 6.77c-.56 1.55-1.19 2.06-2.52 2.06-.1 0-.44 0-.53-.03v-1.06l.4.02c.6 0 .95-.26 1.16-.92l.12-.4-2.32-6.44h1.43zM7.4 3.43c.31.03 1.2.12 1.76.96C9.1 4.43 8.1 5 8.1 6.22c.01 1.45 1.27 1.94 1.29 1.95-.02.04-.2.69-.66 1.36-.4.59-.82 1.17-1.47 1.18-.64.01-.85-.38-1.58-.38-.73 0-.97.37-1.57.4-.63.01-1.11-.64-1.51-1.23-.83-1.19-1.45-3.36-.6-4.83a2.32 2.32 0 0 1 1.97-1.2c.63-.01 1.2.41 1.58.41.38 0 1.05-.5 1.83-.45zm14 .71c1.57 0 2.6.82 2.6 2.1v4.4h-1.27V9.6h-.03a2.26 2.26 0 0 1-2.02 1.12c-1.28 0-2.17-.76-2.17-1.9 0-1.13.87-1.78 2.46-1.88l1.7-.1v-.5c0-.72-.46-1.11-1.3-1.11-.7 0-1.2.36-1.3.9h-1.24c.04-1.15 1.12-1.98 2.57-1.98zm-6.13-2.35c1.71 0 2.9 1.18 2.9 2.9a2.8 2.8 0 0 1-2.95 2.93h-1.9v3.03h-1.36V1.79h3.3zm7.4 5.95l-1.52.1c-.85.06-1.3.38-1.3.93s.46.9 1.2.9c.92 0 1.63-.6 1.63-1.43v-.5zm-7.76-4.8h-1.58v3.53h1.57c1.2 0 1.87-.65 1.87-1.77 0-1.11-.68-1.75-1.86-1.75zM7.4 1.12c.06.57-.16 1.13-.5 1.54-.34.4-.88.73-1.42.68-.07-.55.2-1.13.5-1.48.35-.42.94-.71 1.42-.74z"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-              <div
-                className="mt-4 mx-0 mb-3 text-center"
-                style={{
-                  background:
-                    "linear-gradient(#e6ebf1,#e6ebf1) no-repeat 0 50%/100% 1px",
-                }}
-              >
-                <div className="inline py-0 px-[6px] bg-[#fff]">
-                  Or pay with card
-                </div>
-              </div>
-              Email
-              <div
-                className="min-h-6 leading-6 mt-[6px] mx-0 mb-[16px] text-[#62788d] rounded"
-                style={{
-                  boxShadow:
-                    "0 0 0 1px rgba(50,50,93,.07),0 2px 3px -1px rgba(50,50,93,.12),0 1px 3px -1px rgba(0,0,0,.12)",
-                }}
-              ></div>
-              Card Information
-              <div
-                className="grid grid-cols-2 auto-rows-auto min-h-6 leading-6 mt-[6px] mx-0 mb-[16px] text-[#62788d]"
-                style={{
-                  boxShadow:
-                    "0 0 0 1px rgba(50,50,93,.07),0 2px 3px -1px rgba(50,50,93,.12),0 1px 3px -1px rgba(0,0,0,.12)",
-                }}
-              >
-                <div className="gap-x-[6px] gap-y-0 col-span-2 items-center pr-[6px] border-b border-[#e6ebf1] grid grid-cols-1 grid-flow-col pl-2">
-                  Number
-                  <svg width="17" viewBox="0 0 17 12">
-                    <path
-                      fill="#FFF"
-                      stroke="#000"
-                      strokeOpacity=".2"
-                      strokeWidth=".5"
-                      d="M1.6.18h13.8c.79 0 1.42.63 1.42 1.41v8.74c0 .78-.63 1.42-1.41 1.42H1.59c-.78 0-1.41-.64-1.41-1.42V1.6C.18.81.8.18 1.59.18z"
-                    ></path>
-                    <path
-                      fill="#1434cb"
-                      d="M1.98 4.39A5.1 5.1 0 0 0 .7 3.9l.02-.09h1.93c.27 0 .48.1.55.37l.42 2.01.13.6 1.18-2.97h1.28l-1.9 4.35H3.05l-1.07-3.8zm5.17 3.8h-1.2l.75-4.37h1.2l-.75 4.37zm4.37-4.26l-.16.95-.11-.05c-.21-.09-.5-.18-.9-.17-.48 0-.69.19-.7.38 0 .2.27.33.68.54.7.3 1.02.69 1.02 1.19-.01.9-.83 1.48-2.1 1.48-.54 0-1.06-.1-1.34-.22l.16-.99.17.07c.39.17.64.24 1.13.24.34 0 .71-.14.72-.43 0-.19-.16-.33-.63-.54-.45-.22-1.06-.57-1.05-1.2 0-.84.85-1.44 2.03-1.44.47 0 .85.1 1.08.19zm1.6 2.72h1l-.27-1.27-.09-.38-.15.43-.48 1.22zm1.5-2.83l.96 4.37h-1.12l-.14-.65h-1.54l-.26.65h-1.26l1.79-4c.13-.3.34-.36.63-.36h.93v-.01z"
-                    ></path>
-                  </svg>
-                  <svg width="17" viewBox="0 0 17 12">
-                    <rect width="17" height="12" fill="#0A2540" rx="2"></rect>
-                    <circle cx="6" cy="6" r="3.6" fill="#ED0006"></circle>
-                    <circle cx="10.8" cy="6" r="3.6" fill="#F9A000"></circle>
-                    <path
-                      fill="#FF5D00"
-                      d="M8.4 3.32a3.6 3.6 0 0 1 0 5.36 3.58 3.58 0 0 1-.08-5.29z"
-                    ></path>
-                  </svg>
-                  <svg width="17" viewBox="0 0 17 12">
-                    <rect width="17" height="12" fill="#016FD0" rx="2"></rect>
-                    <polygon
-                      fill="#FFF"
-                      points="9.347 10.101 9.347 5.801 17 5.808 17 6.996 16.115 7.941 17 8.895 17 10.108 15.588 10.108 14.837 9.28 14.092 10.111"
-                    ></polygon>
-                    <polygon
-                      fill="#016FD0"
-                      points="9.858 9.63 9.858 6.275 12.703 6.275 12.703 7.047 10.779 7.047 10.779 7.572 12.657 7.572 12.657 8.332 10.779 8.332 10.779 8.847 12.703 8.847 12.703 9.63"
-                    ></polygon>
-                    <polygon
-                      fill="#016FD0"
-                      points="12.689 9.63 14.263 7.95 12.689 6.275 13.907 6.275 14.869 7.338 15.834 6.275 17 6.275 17 6.301 15.459 7.95 17 9.582 17 9.63 15.822 9.63 14.843 8.556 13.874 9.63"
-                    ></polygon>
-                    <polygon
-                      fill="#FFF"
-                      points="9.704 1.985 11.549 1.985 12.197 3.456 12.197 1.985 14.474 1.985 14.867 3.087 15.261 1.985 17 1.985 17 6.285 7.809 6.285"
-                    ></polygon>
-                    <path
-                      fill="#016FD0"
-                      d="M10.05 2.45L8.56 5.8H9.6l.28-.67h1.52l.28.67h1.05l-1.49-3.35h-1.18zm.13 1.93l.45-1.07.44 1.07h-.89z"
-                    ></path>
-                    <polygon
-                      fill="#016FD0"
-                      points="12.701 5.804 12.701 2.451 14.137 2.457 14.875 4.517 15.619 2.451 17 2.451 17 5.804 16.111 5.812 16.111 3.509 15.272 5.804 14.461 5.804 13.604 3.501 13.604 5.804"
-                    ></polygon>
-                  </svg>
-                  <svg width="17" viewBox="0 0 17 12">
-                    <path
-                      fill="#FFF"
-                      stroke="#000"
-                      strokeOpacity=".2"
-                      strokeWidth=".5"
-                      d="M15.58 11.75c.68 0 1.24-.55 1.24-1.24V1.4c0-.32-.14-.64-.37-.87a1.22 1.22 0 0 0-.87-.36H1.42C1.09.18.78.3.55.53a1.3 1.3 0 0 0-.37.89v9.09c0 .32.14.64.37.88.23.23.54.36.87.36h14.16z"
-                    ></path>
-                    <path
-                      fill="#F27712"
-                      d="M8.93 12.07h6.65c.78 0 1.41-.62 1.42-1.4V9a27.44 27.44 0 0 1-8.07 3.07z"
-                    ></path>
-                    <path
-                      fill="#000"
-                      d="M16.41 6.79h-.6l-.68-.9h-.07v.9h-.49V4.56h.73c.57 0 .9.23.9.65 0 .35-.21.57-.57.64l.78.94zm-.72-1.56c0-.21-.17-.33-.47-.33h-.15v.68h.14c.31 0 .48-.12.48-.35zm-2.83-.67h1.38v.37h-.9v.5h.87v.38h-.87v.6h.9v.38h-1.4V4.56h.02zm-1.6 2.28l-1.06-2.3h.54l.67 1.51.68-1.5h.53l-1.07 2.3h-.28zm-4.46 0c-.75 0-1.34-.51-1.34-1.17 0-.65.6-1.17 1.35-1.17.21 0 .39.04.6.13v.52a.88.88 0 0 0-.61-.25c-.47 0-.83.34-.83.77 0 .44.36.77.85.77.23 0 .4-.07.6-.25v.52c-.23.1-.41.13-.62.13zM5.31 6.1c0 .43-.35.73-.88.73-.37 0-.63-.13-.87-.43l.33-.26c.1.2.3.3.53.3.22 0 .38-.15.38-.32 0-.1-.05-.18-.15-.23-.1-.05-.22-.1-.34-.13-.46-.15-.62-.3-.62-.62 0-.36.34-.63.79-.63.28 0 .53.08.74.24l-.25.3a.54.54 0 0 0-.4-.18c-.21 0-.37.11-.37.25 0 .12.1.18.38.28.57.18.73.34.73.7zM2.9 4.56h.5v2.23h-.5V4.56zM1.3 6.79H.59V4.56h.72c.8 0 1.35.46 1.35 1.1 0 .35-.16.66-.45.87-.25.18-.52.26-.9.26zm.57-1.67c-.16-.13-.35-.18-.67-.18h-.13v1.48h.14c.31 0 .5-.06.66-.18a.7.7 0 0 0 0-1.12z"
-                    ></path>
-                    <path
-                      fill="#F27712"
-                      d="M8.79 4.5c-.64 0-1.17.52-1.17 1.15 0 .68.5 1.2 1.17 1.2.66 0 1.18-.52 1.18-1.18 0-.65-.51-1.17-1.18-1.17z"
-                    ></path>
-                  </svg>
-                </div>
-                <div className="grid grid-cols-1 grid-flow-col pl-2">
-                  MM / YY
-                </div>
-                <div className="grid grid-cols-1 grid-flow-col pl-2 pr-1 border-l whitespace-nowrap border-[#e6ebf1]">
-                  CVC
-                  <svg
-                    className="mt-1 mr-0 mb-0 ml-1"
-                    width="19"
-                    viewBox="0 0 19 14"
-                  >
-                    <rect
-                      width="17"
-                      height="12"
-                      y="2"
-                      fill="#E6EBF1"
-                      rx="2"
-                    ></rect>
-                    <rect
-                      width="13"
-                      height="2"
-                      x="2"
-                      y="4"
-                      fill="#FFF"
-                      rx="1"
-                    ></rect>
-                    <circle cx="14.5" cy="4.5" r="4.5" fill="#B4C2D0"></circle>
-                    <path
-                      fill="#FFF"
-                      d="M12.5 5.96V3.03H12c-.04.33-.2.46-.58.5l-.24.01v.51h.66v1.9h.67zm1.61.04c.65 0 1.07-.4 1.07-.87 0-.36-.2-.57-.46-.67a.65.65 0 0 0 .4-.62c0-.48-.38-.84-.99-.84-.63 0-1.02.4-1.09.92l.62.07c.04-.25.2-.43.44-.43.23 0 .37.13.37.32 0 .22-.17.32-.42.32h-.26v.54h.27c.27 0 .46.1.46.33 0 .24-.18.37-.42.37-.25 0-.44-.16-.48-.45l-.65.1c.08.6.54.91 1.14.91zm2.53 0c.6 0 1.07-.43 1.07-1.02 0-.56-.36-.98-.95-.98-.2 0-.37.07-.48.16l.05-.54h1.2v-.58h-1.7l-.14 1.6.6.07c.07-.1.2-.18.37-.18.26 0 .42.2.42.46 0 .27-.2.45-.45.45s-.42-.17-.46-.44l-.65.1c.09.58.52.9 1.12.9z"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-              Country or region
-              <div
-                className="mb-6 min-h-6 min-w-6 mt-[6px] mx-0 text-[#62788d] rounded"
-                style={{
-                  boxShadow:
-                    "0 0 0 1px rgba(50,50,93,.07),0 2px 3px -1px rgba(50,50,93,.12),0 1px 3px -1px rgba(0,0,0,.12)",
-                }}
-              >
-                <div className="items-center pr-[9px] border-b border-[#e6ebf1] grid grid-cols-1 grid-flow-col pl-2">
-                  United States
-                  <svg width="9" viewBox="0 0 9 6">
-                    <polyline
-                      fill="none"
-                      stroke="#62788D"
-                      strokeWidth="1.2"
-                      points="1 1 4.5 4.5 8 1"
-                    ></polyline>
-                  </svg>
+
+              <div className="space-y-3">
+                <div className="rounded-[22px] border border-[#e6ebf1] bg-white p-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.24em] text-[#7d8a9a]">
+                        Next patient
+                      </p>
+                      <p className="mt-1 text-sm font-medium text-[#0a2540]">
+                        Sara Khan
+                      </p>
+                    </div>
+                    <span className="rounded-full bg-[#eaf3ff] px-2 py-1 text-[10px] font-semibold text-[#2563eb]">
+                      09:20
+                    </span>
+                  </div>
+                  <p className="mt-3 text-[11px] leading-5 text-[#62788d]">
+                    Follow-up review with prescription and lab notes synced automatically.
+                  </p>
                 </div>
 
-                <div className="grid grid-cols-1 grid-flow-col pl-2">ZIP</div>
-              </div>
-              <div
-                className="grid place-items-center rounded px-0 py-[5px] text-center font-[425] text-[#fff] bg-[#0a2540]"
-                style={{
-                  boxShadow:
-                    "0 2px 4px -1px rgba(50,50,93,.25),0 1px 3px -1px rgba(0,0,0,.3)",
-                }}
-              >
-                Pay
+                <div className="rounded-[22px] border border-[#e6ebf1] bg-white p-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.24em] text-[#7d8a9a]">
+                        Recent record
+                      </p>
+                      <p className="mt-1 text-sm font-medium text-[#0a2540]">
+                        Khurram Ahmed
+                      </p>
+                    </div>
+                    <span className="rounded-full bg-[#fff0f6] px-2 py-1 text-[10px] font-semibold text-[#be185d]">
+                      New
+                    </span>
+                  </div>
+                  <p className="mt-3 text-[11px] leading-5 text-[#62788d]">
+                    Prescription, insurance notes, and referral details captured in one place.
+                  </p>
+                </div>
+
+                <div className="rounded-[22px] border border-[#e6ebf1] bg-white p-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.24em] text-[#7d8a9a]">
+                        Billing
+                      </p>
+                      <p className="mt-1 text-sm font-medium text-[#0a2540]">
+                        ₹1.2L collected
+                      </p>
+                    </div>
+                    <span className="rounded-full bg-[#eff6ff] px-2 py-1 text-[10px] font-semibold text-[#1d4ed8]">
+                      Invoice
+                    </span>
+                  </div>
+                  <p className="mt-3 text-[11px] leading-5 text-[#62788d]">
+                    Secure payments, receipts, and clinic revenue tracked instantly.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

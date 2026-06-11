@@ -47,13 +47,13 @@ const Workflow = () => {
           <div className="py-28">
             <div className="grid gap-y-12">
               <section className="grid gap-y-6 max-w-3xl px-4">
-                <h2 className="text-[#00d4ff] font-medium text-[18px] leading-[1.555555556]">
+                <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
                   How DardiBook works
                 </h2>
-                <h1 className="text-white font-medium text-[34px] min-[900px]:text-[42px] leading-[1.2]">
+                <h1 className="text-white text-4xl md:text-5xl font-extrabold leading-tight">
                   A complete patient journey from entry to follow-up
                 </h1>
-                <p className="text-[#a0a0a0] font-light text-[18px] leading-[1.555555556]">
+                <p className="text-[#a0a0a0] font-light text-lg leading-[1.555555556]">
                   DardiBook is built around the way clinics actually move:
                   reception, consultation, prescription, diagnostics, and
                   continued care.
@@ -74,10 +74,10 @@ const Workflow = () => {
                         0{index + 1}
                       </span>
                     </div>
-                    <h3 className="mt-8 text-white font-[425] text-[18px] leading-[1.4]">
+                    <h3 className="mt-8 text-white text-2xl font-semibold leading-snug">
                       {step.title}
                     </h3>
-                    <p className="mt-3 text-[#a0a0a0] font-light text-[15px] leading-[1.6]">
+                    <p className="mt-3 text-[#a0a0a0] font-light text-base leading-[1.6]">
                       {step.description}
                     </p>
                   </article>

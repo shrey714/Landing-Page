@@ -40,13 +40,13 @@ const TrustProof = () => {
           <div className="py-20">
             <div className="grid gap-y-10 rounded-[8px] border border-white/10 bg-white/[0.05] px-6 py-10 min-[900px]:grid-cols-[1.1fr_2fr] min-[900px]:gap-x-12 min-[900px]:px-10">
               <section className="grid content-start gap-y-5">
-                <h2 className="text-[#00d4ff] font-medium text-[18px] leading-[1.555555556]">
+                <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
                   Why clinics choose DardiBook
                 </h2>
-                <h1 className="text-white font-medium text-[30px] leading-[1.25]">
+                <h1 className="text-white text-4xl md:text-5xl font-extrabold leading-tight">
                   Less manual work, better patient continuity
                 </h1>
-                <p className="text-[#a0a0a0] font-light text-[17px] leading-[1.6]">
+                <p className="text-[#a0a0a0] font-light text-lg leading-[1.6]">
                   The strongest healthcare software feels calm during a busy
                   clinic day. DardiBook keeps the essentials visible without
                   forcing teams into a complicated enterprise system.
@@ -62,10 +62,10 @@ const TrustProof = () => {
                     <div className="grid h-9 w-9 place-items-center rounded bg-[#00d4ff24] text-[#00d4ff]">
                       <item.icon size={18} />
                     </div>
-                    <h3 className="text-white font-[425] text-[16px] leading-[1.5]">
+                    <h3 className="text-white text-2xl font-semibold leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-[#a0a0a0] font-light text-[15px] leading-[1.6]">
+                    <p className="text-[#a0a0a0] font-light text-base leading-[1.6]">
                       {item.description}
                     </p>
                   </article>

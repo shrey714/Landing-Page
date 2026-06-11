@@ -80,7 +80,7 @@ export default function Footer() {
               </Link>
 
               <div className="grid gap-4">
-                <h2 className="max-w-xl text-3xl font-medium leading-tight text-foreground sm:text-4xl">
+                <h2 className="max-w-xl text-4xl md:text-5xl font-extrabold leading-tight text-foreground sm:text-5xl">
                   Digitize every clinic touchpoint with DardiBook.
                 </h2>
                 <p className="max-w-xl text-sm leading-6 text-muted-foreground">

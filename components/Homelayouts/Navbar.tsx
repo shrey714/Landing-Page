@@ -145,7 +145,7 @@ export const Navbar = () => {
                     className="aspect-square size-9"
                     priority
                   />
-                  <p className="text-[24px] font-medium text-pretty tracking-wide text-foreground leading-normal">
+                  <p className="text-xl font-medium text-pretty tracking-wide text-foreground leading-normal">
                     DardiBook
                   </p>
                 </div>
@@ -246,7 +246,7 @@ function RichNavigationMenu() {
 
               <div className="rounded-[8px] bg-[#081C4F] p-5 text-white">
                 <HeartPulseIcon className="h-8 w-8 text-[#00d4ff]" />
-                <h3 className="mt-5 text-lg font-medium">
+                <h3 className="mt-5 text-2xl font-semibold leading-snug">
                   One workspace for care
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-[#a0a0a0]">

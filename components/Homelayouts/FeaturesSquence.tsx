@@ -52,15 +52,15 @@ const FeaturesSquence = () => {
                 <div className="grid gap-y-8 items-start min-[600px]:grid-cols-2">
                   <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-6">
                     <header className="gris gap-y-6 max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-16 pl-4 relative grid-cols-[minmax(0,_1fr)]">
-                      <h2 className="text-[#00d4ff] font-medium text-[18px] leading-[1.555555556]">
+                      <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
                         Designed for care teams
                       </h2>
-                      <h1 className="relative text-white -tracking-[0.1px] min-[1112px]:-tracking-[0.2px] wrap-break-word font-medium text-[34px] min-[1112px]:text-[38px] leading-[1.294117647] min-[1112px]:leading-[1.263157895]">
+                      <h1 className="relative text-white -tracking-[0.1px] min-[1112px]:-tracking-[0.2px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
                         Run your practice with less admin and more clarity
                       </h1>
                     </header>
 
-                    <div className="pr-4 min-[600px]:pr-16 pl-4 text-[#adbdcc] max-w-[calc(calc(1280px*0.25)*3)] font-light text-[18px] leading-[1.555555556]">
+                    <div className="pr-4 min-[600px]:pr-16 pl-4 text-[#adbdcc] max-w-[calc(calc(1280px*0.25)*3)] font-light text-lg leading-[1.555555556]">
                       DardiBook brings appointments, patient records,
                       prescriptions, lab requests, follow-ups, and clinic
                       activity into one simple workspace so doctors and staff
@@ -85,7 +85,7 @@ const FeaturesSquence = () => {
                             <p className="text-xs uppercase text-[#727f96]">
                               Today
                             </p>
-                            <h3 className="mt-1 text-lg font-medium">
+                            <h3 className="mt-1 text-2xl font-semibold leading-snug">
                               Clinic desk
                             </h3>
                           </div>
@@ -141,11 +141,11 @@ const FeaturesSquence = () => {
                               <feature.icon size={24} />
                             </div>
                           </div>
-                          <h1 className="relative text-white tracking-[0.2px] wrap-break-word font-[425] text-[15px] leading-[1.6]">
+                          <h3 className="relative text-white tracking-[0.2px] wrap-break-word text-2xl font-semibold leading-snug">
                             {feature.title}
-                          </h1>
+                          </h3>
                         </header>
-                        <div className="pr-4 min-[600px]:pr-8 pl-4 text-[#adbdcc] max-w-[calc(calc(1280px*0.25)*3)] font-light text-[15px] leading-[1.6]">
+                        <div className="pr-4 min-[600px]:pr-8 pl-4 text-[#adbdcc] max-w-[calc(calc(1280px*0.25)*3)] font-light text-base leading-[1.6]">
                           {feature.description}
                         </div>
                         <footer className="pr-4 min-[600px]:pr-8 pl-4">

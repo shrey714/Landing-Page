@@ -41,7 +41,7 @@ const LogoCloud = () => {
   return (
     <div className="py-10 px-4 relative">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-white mb-4">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
           Trusted by Healthcare Professionals
         </h2>
         <p className="text-gray-300 mb-8 max-w-2xl mx-auto">

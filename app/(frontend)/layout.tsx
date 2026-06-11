@@ -34,7 +34,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SmoothScrolling>{children}</SmoothScrolling>
+          {/* <SmoothScrolling> */}
+            {children}
+            {/* </SmoothScrolling> */}
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
