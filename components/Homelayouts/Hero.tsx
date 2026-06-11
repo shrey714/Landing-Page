@@ -12,20 +12,20 @@ export default function Hero() {
             <section className="grid gap-y-8 tracking-[0.2px] scroll-mt-[108px]">
               <header className="relative min-w-0 pl-4 mt-4 md:mt-8">
                 <h1 className="sm:min-h-[200px] leading-[1.04] sm:min-w-[calc(100%+90px)] relative flex items-end tracking-[-0.04em] font-medium text-4xl md:text-6xl lg:text-8xl">
-                  Transform your Medical Practice with DardiBook
+                  Digitize your medical practice with DardiBook
                 </h1>
               </header>
 
               <div className="text-pretty px-4 font-light leading-[1.555555556] text-xl max-w-[calc(calc(1080px*0.25)*3)] sm:pr-8">
-                Streamline your medical practice with DardiBook, an innovative
-                platform designed to simplify patient management and enhance the
-                healthcare experience.
+                Manage appointments, patient records, prescriptions, lab
+                requests, and follow-ups from one secure workspace built for
+                doctors and clinic teams.
               </div>
 
               <div className="pl-4 mt-2 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
                 <Button asChild size="lg" className="px-5 text-base">
-                  <Link href="#link">
-                    <span className="text-nowrap">Start Building</span>
+                  <Link href="#demo">
+                    <span className="text-nowrap">Request Demo</span>
                   </Link>
                 </Button>
                 <Button
@@ -35,8 +35,8 @@ export default function Hero() {
                   variant="ghost"
                   className="px-5 text-base"
                 >
-                  <Link href="#link">
-                    <span className="text-nowrap">Request a demo</span>
+                  <Link href="#workflow">
+                    <span className="text-nowrap">See Workflow</span>
                   </Link>
                 </Button>
               </div>
@@ -77,7 +77,7 @@ const DummyPlaceHolder = () => {
                 d="M10 0a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm3.3 6.11H4.34a.41.41 0 0 0 0 .83h8.94a2.89 2.89 0 0 1 0 5.77H7.65a.41.41 0 0 0 0 .83h5.64a3.71 3.71 0 0 0 0-7.43zm0 1.65a2.06 2.06 0 1 0 2.05 2.06c0-1.13-.92-2.06-2.06-2.06zm-2.83 3.3h-4.7a.41.41 0 0 0 0 .83h4.7a.41.41 0 0 0 0-.83zM13.3 8.6a1.24 1.24 0 1 1 0 2.47 1.24 1.24 0 0 1 0-2.47zm-3.3.8H3.41a.41.41 0 1 0 0 .83h6.6c.22 0 .4-.19.4-.42a.41.41 0 0 0-.41-.4zm.47-1.65H6.24a.41.41 0 1 0 0 .83h4.23a.41.41 0 1 0 0-.83z"
               ></path>
             </svg>
-            Rocket Rides
+            DardiBook Clinic
             <svg width="10" height="4" viewBox="0 0 10 4">
               <polyline
                 fill="none"
@@ -132,7 +132,7 @@ const DummyPlaceHolder = () => {
                         <div>
                           <div className="flex gap-[6px] items-baseline">
                             <span className="font-light text-[11px] leading-[14px] -tracking-[0.1px] text-[#727f96]">
-                              <b>Net volume</b>
+                              <b>Appointments</b>
                             </span>
                             <svg
                               className="shrink-0"
@@ -150,10 +150,10 @@ const DummyPlaceHolder = () => {
                             </svg>
                           </div>
                           <div className="font-light text-[14px] leading-[18px] text-[#0a2540] mt-1">
-                            ₹35,28,198.72
+                            42 scheduled
                           </div>
                           <div className="font-light text-[10px] leading-[12px] text-[#727f96] mt-1">
-                            14:00
+                            Next: 14:00
                           </div>
                         </div>
                         <div>
@@ -177,7 +177,7 @@ const DummyPlaceHolder = () => {
                             </svg>
                           </div>
                           <div className="font-light text-[12px] leading-[15px] -tracking-[0.1px] text-[#727f96] mt-1">
-                            ₹29,31,556.34
+                            37 visits
                           </div>
                         </div>
                       </div>
@@ -239,7 +239,7 @@ const DummyPlaceHolder = () => {
                         <div>
                           <div className="flex gal-[6px] items-baseline">
                             <span className="font-light text-[11px] leading-[14px] -tracking-[0.1px] text-[#727f96]">
-                              <b>INR Balance</b>
+                              <b>Open Visits</b>
                             </span>
                             <svg
                               className="shrink-0"
@@ -257,10 +257,10 @@ const DummyPlaceHolder = () => {
                             </svg>
                           </div>
                           <div className="mt-1 font-light text-[14px] leading-[18px] text-[#0a2540]">
-                            ₹5,53,257.51
+                            12 patients
                           </div>
                           <div className="mt-1 font-light text-[10px] leading-[12px] text-[#727f96]">
-                            Available to pay out
+                            In consultation queue
                           </div>
                         </div>
                         <span className="font-[425] text-[11px] leading-[14px] -tracking-[0.1px] self-start mt-0.5 text-[#635bff]">
@@ -271,13 +271,13 @@ const DummyPlaceHolder = () => {
                       <div className="flex items-center justify-between">
                         <div>
                           <span className="font-light text-[11px] leading-[14px] -tracking-[0.1px] text-[#727f96]">
-                            <b>Payouts</b>
+                            <b>Follow-ups</b>
                           </span>
                           <div className="mt-1 font-light text-[14px] leading-[18px] -tracking-[0.1px] text-[#0a2540]">
-                            ₹1,02,633.07
+                            18 due
                           </div>
                           <div className="mt-1 font-light text-[10px] leading-[12px] -tracking-[0.1px] text-[#727f96]">
-                            Expected today
+                            Scheduled today
                           </div>
                         </div>
                         <span className="font-light text-[11px] leading-[14px] -tracking-[0.1px] text-[#727f96] HomepageDashboardGraphic__copy--smallHeaderFancy">
@@ -291,7 +291,7 @@ const DummyPlaceHolder = () => {
                   <div className="HomepageDashboardGraphic__column">
                     <div className="HomepageDashboardGraphic__flexGroup--gap HomepageDashboardGraphic__flexGroup--baseline">
                       <span className="HomepageDashboardGraphic__copy--medium">
-                        <b>Net volume from sales</b>
+                        <b>Patient visits</b>
                       </span>
                       <span className="HomepageDashboardGraphic__copy--XSmall">
                         <b>+32.8%</b>
@@ -299,10 +299,10 @@ const DummyPlaceHolder = () => {
                     </div>
                     <div className="HomepageDashboardGraphic__flexGroup--gap HomepageDashboardGraphic__flexGroup--baseline HomepageDashboardGraphic__verticalSpacing">
                       <span className="HomepageDashboardGraphic__copy--large">
-                        <b>₹39,274.29</b>
+                        <b>124</b>
                       </span>
                       <span className="HomepageDashboardGraphic__copy--small">
-                        ₹29,573.54
+                        96
                       </span>
                     </div>
                     <div className="HomepageDashboardGraphic__sectionGraph">
@@ -379,7 +379,7 @@ const DummyPlaceHolder = () => {
                   <div className="HomepageDashboardGraphic__column">
                     <div className="HomepageDashboardGraphic__flexGroup--gap HomepageDashboardGraphic__flexGroup--baseline">
                       <span className="HomepageDashboardGraphic__copy--medium">
-                        <b>New customers</b>
+                        <b>New patients</b>
                       </span>
                       <span className="HomepageDashboardGraphic__copy--XSmall">
                         <b>+32.1%</b>
@@ -526,7 +526,7 @@ const DummyPlaceHolder = () => {
                   </div>
                   <div className="HomepageDashboardGraphic__column">
                     <span className="HomepageDashboardGraphic__copy--medium">
-                      <b>Invoices</b>
+                      <b>Care tasks</b>
                     </span>
                     <div className="HomepageDashboardGraphic__paymentsBar">
                       <div className="HomepageDashboardGraphic__paymentsBar--purple"></div>
@@ -536,10 +536,10 @@ const DummyPlaceHolder = () => {
                     <div className="HomepageDashboardGraphic__lineItem HomepageDashboardGraphic__flexGroup">
                       <div className="HomepageDashboardGraphic__flexGroup--gap HomepageDashboardGraphic__copy--lineItem HomepageDashboardGraphic__copy--smallInvoices">
                         <div className="HomepageDashboardGraphic__block"></div>
-                        Paid
+                        Completed
                       </div>
                       <span className="HomepageDashboardGraphic__copy--small">
-                        <b>₹25,000.00</b>
+                        <b>62</b>
                       </span>
                     </div>
                     <div className="HomepageDashboardGraphic__lineItem HomepageDashboardGraphic__flexGroup">
@@ -548,16 +548,16 @@ const DummyPlaceHolder = () => {
                         Open
                       </div>
                       <span className="HomepageDashboardGraphic__copy--small">
-                        <b>₹20,000.00</b>
+                        <b>24</b>
                       </span>
                     </div>
                     <div className="HomepageDashboardGraphic__lineItem HomepageDashboardGraphic__flexGroup">
                       <div className="HomepageDashboardGraphic__flexGroup--gap HomepageDashboardGraphic__copy--lineItem HomepageDashboardGraphic__copy--smallInvoices">
                         <div className="HomepageDashboardGraphic__block HomepageDashboardGraphic__block--teal"></div>
-                        Past due
+                        Urgent
                       </div>
                       <span className="HomepageDashboardGraphic__copy--small">
-                        <b>₹1,000.00</b>
+                        <b>6</b>
                       </span>
                     </div>
                     <div className="HomepageDashboardGraphic__updatedTime HomepageDashboardGraphic__flexGroup--gap">

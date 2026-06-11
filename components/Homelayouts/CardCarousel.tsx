@@ -2,53 +2,103 @@
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Button } from "../ui/button";
-import { ArrowLeftIcon, ArrowRightIcon, ChevronRightIcon } from "lucide-react";
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  Building2Icon,
+  ChevronRightIcon,
+  FlaskConicalIcon,
+  GraduationCapIcon,
+  HeartHandshakeIcon,
+  HospitalIcon,
+  LucideIcon,
+  PillIcon,
+  StethoscopeIcon,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
-const cardsData = [
+const cardsData: {
+  id: number;
+  title: string;
+  eyebrow: string;
+  description: string;
+  stat: string;
+  tags: string[];
+  icon: LucideIcon;
+}[] = [
   {
     id: 1,
     title: "Clinics & Hospitals",
+    eyebrow: "Operations",
     description:
-      "Streamline appointments, prescriptions, and patient records with an all-in-one solution for healthcare providers.",
+      "Digitize front-desk, consultation, prescription, and follow-up workflows in one practical clinic management system.",
+    stat: "One connected desk",
+    tags: ["Queues", "Records", "Reports"],
+    icon: HospitalIcon,
   },
   {
     id: 2,
     title: "Doctors",
+    eyebrow: "Consultation",
     description:
-      "Manage patient history, schedule visits, generate prescriptions, and stay organized with smart tools built for medical professionals.",
+      "Review patient history, write prescriptions, request tests, and continue care with fewer administrative interruptions.",
+    stat: "Faster visits",
+    tags: ["History", "Rx", "Notes"],
+    icon: StethoscopeIcon,
   },
   {
     id: 3,
     title: "Patients",
+    eyebrow: "Care journey",
     description:
-      "Easily book appointments, access medical records, and receive digital prescriptions — all in one place.",
+      "Give patients a smoother journey with organized visits, clearer instructions, digital prescriptions, and timely follow-ups.",
+    stat: "Better continuity",
+    tags: ["Visits", "Advice", "Follow-up"],
+    icon: HeartHandshakeIcon,
   },
   {
     id: 4,
     title: "Pharmacies",
+    eyebrow: "Medicine flow",
     description:
-      "Fulfill prescriptions faster with verified digital access and improve collaboration with doctors and patients.",
+      "Read prescription details clearly, reduce manual clarification, and support faster medicine fulfillment.",
+    stat: "Clearer Rx",
+    tags: ["Dosage", "Medicine", "Refills"],
+    icon: PillIcon,
   },
   {
     id: 5,
     title: "Diagnostics",
+    eyebrow: "Lab workflow",
     description:
-      "Enable smooth communication between doctors and labs for quicker test referrals and result sharing.",
+      "Link lab requests and reports with patient visits so doctors can review results in the right clinical context.",
+    stat: "Linked reports",
+    tags: ["Tests", "Reports", "Review"],
+    icon: FlaskConicalIcon,
   },
   {
     id: 6,
     title: "Healthcare Platforms",
+    eyebrow: "Ecosystem",
     description:
-      "Integrate DardiBook's modules into your ecosystem to enhance patient engagement and medical workflow efficiency.",
+      "Extend patient engagement and care coordination with modules built around real clinic workflows.",
+    stat: "Modular setup",
+    tags: ["Integrations", "Teams", "Care"],
+    icon: Building2Icon,
   },
   {
     id: 7,
     title: "Medical Institutions",
+    eyebrow: "Institutional care",
     description:
-      "Support training and operational needs of institutions with organized case histories and streamlined patient interaction tools.",
+      "Support institutional operations with structured case histories, visit records, and repeatable care processes.",
+    stat: "Structured cases",
+    tags: ["Training", "Cases", "Records"],
+    icon: GraduationCapIcon,
   },
 ];
+
+const totalCards = cardsData.length;
 
 const CardCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,7 +108,6 @@ const CardCarousel = () => {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const totalCards = 7;
 
   const updateScrollButtons = useCallback(() => {
     if (scrollContainerRef.current) {
@@ -129,7 +178,7 @@ const CardCarousel = () => {
     }
   }, [updateScrollButtons]);
   return (
-    <section>
+    <section id="modules" className="scroll-mt-28">
       <div className="overflow-hidden relative z-[1] flex justify-center">
         <div className="w-full max-w-7xl mx-auto">
           <div className="py-28">
@@ -145,10 +194,10 @@ const CardCarousel = () => {
                     </header>
 
                     <div className="pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 text-[#a0a0a0] max-w-[calc(calc(1280px*0.25)*3)] font-light text-[18px] leading-[1.555555556]">
-                      From small clinics to large hospitals, and from individual
-                      doctors to diagnostic labs — DardiBook helps streamline
-                      operations, improve patient care, and simplify health
-                      record management across the board.
+                      From small clinics to growing hospitals, and from
+                      individual doctors to diagnostic labs, DardiBook helps
+                      reduce administrative workload while improving patient
+                      continuity.
                     </div>
                   </section>
 
@@ -208,27 +257,61 @@ const CardCarousel = () => {
                     >
                       <div className="min-w-6 min-[1112px]:min-w-[calc(calc(100vw-17px)/2-1280px/2)] snap-align-none m-0 h-[1px]"></div>
 
-                      {cardsData.map((card) => (
+                      {cardsData.map((card, index) => (
                         <div
                           key={card.id}
                           className="snap-start grid min-w-[calc(calc(100vw-17px)-16px*2)] min-[1112px]:min-w-[calc(1280px/2)]"
                         >
-                          <div className="shadow-lg bg-background/70 flex flex-col mr-6 relative min-w-[100px] min-h-[72px] rounded-[8px]">
-                            <div className="font-[425] outline-none transition-[color,opacity] duration-[150ms] ease-[cubic-bezier(0.215,0.61,0.355,1)]">
-                              <div className="pt-10 pb-10 px-6 min-[900px]:pt-20 min-[900px]:px-10 min-[900px]:pb-[68px]">
-                                <section className="grid gap-y-4 -tracking-[0.2px] scroll-mt-[108px]">
-                                  <h1 className="w-full relative text-white tracking-normal wrap-break-word font-[425] text-[28px] leading-[36px]">
-                                    {card.title}
-                                  </h1>
+                          <div className="mr-6 relative min-w-[100px] min-h-[72px] rounded-[8px] border border-white/10 bg-white/[0.06] shadow-2xl shadow-black/20 overflow-hidden">
+                            <div className="absolute inset-x-0 top-0 h-1 bg-[#00d4ff] opacity-80"></div>
+                            <div className="relative grid min-h-[390px] grid-rows-[auto_1fr_auto] gap-y-8 p-6 min-[900px]:min-h-[430px] min-[900px]:p-10">
+                              <div className="flex items-start justify-between gap-4">
+                                <div className="grid h-12 w-12 place-items-center rounded-[8px] bg-[#00d4ff24] text-[#00d4ff]">
+                                  <card.icon size={24} />
+                                </div>
+                                <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-[#a0a0a0]">
+                                  0{index + 1}
+                                </span>
+                              </div>
 
-                                  <div className="pr-3 text-[#a0a0a0] w-full">
-                                    {card.description}
-                                  </div>
+                              <section className="grid content-start gap-y-4 -tracking-[0.2px] scroll-mt-[108px]">
+                                <p className="text-[#00d4ff] text-sm font-medium leading-none">
+                                  {card.eyebrow}
+                                </p>
+                                <h1 className="w-full relative text-white tracking-normal wrap-break-word font-[425] text-[28px] leading-[36px]">
+                                  {card.title}
+                                </h1>
 
-                                  <p className="pr-4 font-[425] text-[15px] leading-[1.6] flex flex-row gap-1 items-center">
-                                    Learn more <ChevronRightIcon size={18} />
+                                <div className="pr-3 text-[#a0a0a0] w-full leading-7">
+                                  {card.description}
+                                </div>
+                              </section>
+
+                              <div className="grid gap-y-5">
+                                <div className="rounded-[8px] bg-[#081C4F]/70 p-4">
+                                  <p className="text-xs uppercase text-[#a0a0a0]">
+                                    Best outcome
                                   </p>
-                                </section>
+                                  <p className="mt-2 text-white font-medium">
+                                    {card.stat}
+                                  </p>
+                                </div>
+
+                                <div className="flex flex-wrap gap-2">
+                                  {card.tags.map((tag) => (
+                                    <span
+                                      key={tag}
+                                      className="rounded-full bg-white/10 px-3 py-1 text-xs text-[#d6e2ef]"
+                                    >
+                                      {tag}
+                                    </span>
+                                  ))}
+                                </div>
+
+                                <p className="font-[425] text-[15px] leading-[1.6] flex flex-row gap-1 items-center text-white">
+                                  Explore workflow{" "}
+                                  <ChevronRightIcon size={18} />
+                                </p>
                               </div>
                             </div>
                           </div>

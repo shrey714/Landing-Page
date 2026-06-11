@@ -6,25 +6,25 @@ const LogoCloud = () => {
   // Different sets of company logos that cycle through
   const logoSets = [
     [
-      { name: "OpenAI", logo: "OpenAI" },
-      { name: "Bolt", logo: "Bolt" },
-      { name: "Cisco", logo: "Cisco" },
-      { name: "Hulu", logo: "Hulu" },
-      { name: "Spotify", logo: "Spotify" },
+      { name: "Clinics", logo: "Clinics" },
+      { name: "Hospitals", logo: "Hospitals" },
+      { name: "Solo Doctors", logo: "Solo Doctors" },
+      { name: "Reception Teams", logo: "Reception Teams" },
+      { name: "Care Coordinators", logo: "Care Coordinators" },
     ],
     [
-      { name: "Stripe", logo: "Stripe" },
-      { name: "PayPal", logo: "PayPal" },
-      { name: "Leap", logo: "Leap" },
-      { name: "Beacon", logo: "Beacon" },
-      { name: "Vercel", logo: "Vercel" },
+      { name: "Patient Records", logo: "Patient Records" },
+      { name: "Appointments", logo: "Appointments" },
+      { name: "Prescriptions", logo: "Prescriptions" },
+      { name: "Lab Requests", logo: "Lab Requests" },
+      { name: "Follow-ups", logo: "Follow-ups" },
     ],
     [
-      { name: "Prime Video", logo: "Prime Video" },
-      { name: "Supabase", logo: "Supabase" },
-      { name: "GitHub", logo: "GitHub" },
-      { name: "Discord", logo: "Discord" },
-      { name: "Notion", logo: "Notion" },
+      { name: "Pharmacies", logo: "Pharmacies" },
+      { name: "Diagnostics", logo: "Diagnostics" },
+      { name: "Specialists", logo: "Specialists" },
+      { name: "Medical Staff", logo: "Medical Staff" },
+      { name: "Patients", logo: "Patients" },
     ],
   ];
 
@@ -45,7 +45,7 @@ const LogoCloud = () => {
           Trusted by Healthcare Professionals
         </h2>
         <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-          DardiBook supports clinics, hospitals, and solo practitioners.
+          DardiBook supports clinics, hospitals, pharmacies, diagnostics, and solo practitioners.
           <br />
           Designed for modern medical workflows.
         </p>

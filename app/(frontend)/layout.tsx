@@ -14,7 +14,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "DardiBook",
   description:
-    "DardiBook is a comprehensive patient management system designed for doctors to efficiently manage and organize patient data, appointments, and medical histories. Enhance your medical practice with our user-friendly interface and advanced features.",
+    "DardiBook is a healthcare practice management platform for doctors and clinic teams to manage appointments, patient records, prescriptions, lab requests, follow-ups, and daily care workflows.",
 };
 
 export default function RootLayout({

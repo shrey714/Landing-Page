@@ -7,6 +7,8 @@ import GridCarousel from "@/components/Homelayouts/GridCarousel";
 import Hero from "@/components/Homelayouts/Hero";
 import LogoCloud from "@/components/Homelayouts/Logo-Cloud";
 import { Navbar } from "@/components/Homelayouts/Navbar";
+import TrustProof from "@/components/Homelayouts/TrustProof";
+import Workflow from "@/components/Homelayouts/Workflow";
 import MarqueFrame from "@/components/subs/MarqueFrame";
 
 export default async function IndexPage() {
@@ -17,11 +19,12 @@ export default async function IndexPage() {
       <Navbar />
       <Hero />
       <LogoCloud />
+      <Workflow />
       <StickyScrollReveal />
       <CardCarousel />
+      <TrustProof />
       <FeaturesSquence />
       <GridCarousel />
-      <div className="h-[4000px] relative w-full">shrey</div>
       <CallToAction />
       <Footer />
     </main>

@@ -1,10 +1,25 @@
 "use client";
-import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import React from "react";
-import { cn } from "@/lib/utils";
+
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import {
+  Building2Icon,
+  CalendarDaysIcon,
+  ClipboardPlusIcon,
+  FlaskConicalIcon,
+  HeartPulseIcon,
+  HospitalIcon,
+  LucideIcon,
+  Menu,
+  PillIcon,
+  ShieldCheckIcon,
+  StethoscopeIcon,
+  UsersRoundIcon,
+  X,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -18,10 +33,74 @@ import {
 } from "@/components/ui/navigation-menu";
 
 const menuItems = [
-  { name: "Features", href: "#link" },
-  { name: "Solution", href: "#link" },
-  { name: "Pricing", href: "#link" },
-  { name: "About", href: "#link" },
+  { name: "Workflow", href: "#workflow" },
+  { name: "Modules", href: "#modules" },
+  { name: "Trust", href: "#trust" },
+  { name: "Demo", href: "#demo" },
+];
+
+const modules: {
+  title: string;
+  href: string;
+  description: string;
+  icon: LucideIcon;
+}[] = [
+  {
+    title: "Patient Records",
+    href: "#modules",
+    description: "Profiles, medical history, visit notes, files, and case context in one place.",
+    icon: ClipboardPlusIcon,
+  },
+  {
+    title: "Appointments",
+    href: "#workflow",
+    description: "Clinic schedules, walk-ins, queues, visit status, and follow-up planning.",
+    icon: CalendarDaysIcon,
+  },
+  {
+    title: "Prescriptions",
+    href: "#modules",
+    description: "Digital prescriptions with medicine, dosage, advice, and revisit instructions.",
+    icon: PillIcon,
+  },
+  {
+    title: "Diagnostics",
+    href: "#modules",
+    description: "Lab requests and reports connected to the right patient visit.",
+    icon: FlaskConicalIcon,
+  },
+];
+
+const solutions: {
+  title: string;
+  href: string;
+  description: string;
+  icon: LucideIcon;
+}[] = [
+  {
+    title: "Solo Doctors",
+    href: "#workflow",
+    description: "A simple digital workflow for independent practices.",
+    icon: StethoscopeIcon,
+  },
+  {
+    title: "Clinics",
+    href: "#modules",
+    description: "Reception, doctors, pharmacy, and lab teams working from one system.",
+    icon: Building2Icon,
+  },
+  {
+    title: "Hospitals",
+    href: "#trust",
+    description: "Structured records and role-aware workflows for larger teams.",
+    icon: HospitalIcon,
+  },
+  {
+    title: "Care Teams",
+    href: "#trust",
+    description: "Better coordination across staff, patients, pharmacies, and diagnostics.",
+    icon: UsersRoundIcon,
+  },
 ];
 
 export const Navbar = () => {
@@ -32,9 +111,11 @@ export const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <header>
       <nav
@@ -43,12 +124,12 @@ export const Navbar = () => {
       >
         <div
           className={cn(
-            "mx-auto mt-2 max-w-6xl px-6 transition-all rounded-full duration-300 lg:px-12",
+            "mx-auto mt-2 max-w-6xl px-6 transition-all rounded-full duration-300 lg:px-10",
             isScrolled &&
-              "bg-background/50 max-w-4xl shadow-md backdrop-blur-lg lg:pl-5 lg:pr-2.5"
+              "bg-background/65 max-w-4xl shadow-md backdrop-blur-lg lg:pl-5 lg:pr-2.5"
           )}
         >
-          <div className="relative flex flex-wrap items-center justify-between gap-6 py-2.5 lg:gap-0 lg:py-2.5">
+          <div className="relative flex flex-wrap items-center justify-between gap-6 py-2.5 lg:gap-0">
             <div className="flex w-full justify-between lg:w-auto">
               <Link
                 href="/"
@@ -72,7 +153,7 @@ export const Navbar = () => {
 
               <button
                 onClick={() => setMenuState(!menuState)}
-                aria-label={menuState == true ? "Close Menu" : "Open Menu"}
+                aria-label={menuState ? "Close Menu" : "Open Menu"}
                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
               >
                 <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
@@ -87,11 +168,12 @@ export const Navbar = () => {
             <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
               <div className="lg:hidden">
                 <ul className="space-y-6 text-base">
-                  {menuItems.map((item, index) => (
-                    <li key={index}>
+                  {menuItems.map((item) => (
+                    <li key={item.name}>
                       <Link
                         href={item.href}
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                        onClick={() => setMenuState(false)}
                       >
                         <span>{item.name}</span>
                       </Link>
@@ -99,18 +181,16 @@ export const Navbar = () => {
                   ))}
                 </ul>
               </div>
+
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Button
                   asChild
                   variant={"outline"}
                   size="sm"
-                  className={cn(
-                    isScrolled ? "lg:inline-flex" : "",
-                    "rounded-full h-9"
-                  )}
+                  className="rounded-full h-9"
                 >
-                  <Link href="#">
-                    <span>Get Started</span>
+                  <Link href="#demo">
+                    <span>Request Demo</span>
                   </Link>
                 </Button>
               </div>
@@ -122,62 +202,26 @@ export const Navbar = () => {
   );
 };
 
-import {
-  CreditCardIcon,
-  Loader,
-  LucideIcon,
-  SquareCheckIcon,
-  SquareChevronUpIcon,
-  SquarePowerIcon,
-  ToggleRight,
-} from "lucide-react";
-
-const components: {
-  title: string;
-  href: string;
-  description: string;
-  icon: LucideIcon;
-}[] = [
-  {
-    title: "Accordion",
-    href: "/components/accordion",
-    description:
-      "A vertically stacked set of interactive headings that each reveal a section of content.",
-    icon: SquareChevronUpIcon,
-  },
-  {
-    title: "Button",
-    href: "/components/button",
-    description: "Displays a button or a component that looks like a button.",
-    icon: SquarePowerIcon,
-  },
-  {
-    title: "Card",
-    href: "/components/card",
-    description: "Displays a card with header, content, and footer.",
-    icon: CreditCardIcon,
-  },
-  {
-    title: "Checkbox",
-    href: "/components/checkbox",
-    description:
-      "A control that allows the user to toggle between checked and not checked.",
-    icon: SquareCheckIcon,
-  },
-  {
-    title: "Spinner",
-    href: "/components/spinner",
-    description: "Informs users about the status of ongoing processes.",
-    icon: Loader,
-  },
-  {
-    title: "Switch",
-    href: "/components/switch",
-    description:
-      "A control that allows the user to toggle between checked and not checked.",
-    icon: ToggleRight,
-  },
-];
+function MenuCard({ item }: { item: (typeof modules)[number] }) {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <Link
+          className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+          href={item.href}
+        >
+          <div className="font-semibold tracking-tight leading-none flex items-center gap-2">
+            <item.icon className="h-5 w-5 text-[#00d4ff]" />
+            {item.title}
+          </div>
+          <p className="mt-2 line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {item.description}
+          </p>
+        </Link>
+      </NavigationMenuLink>
+    </li>
+  );
+}
 
 function RichNavigationMenu() {
   return (
@@ -185,110 +229,69 @@ function RichNavigationMenu() {
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="bg-transparent focus-visible:bg-transparent">
-            Products
+            Modules
           </NavigationMenuTrigger>
           <NavigationMenuContent className="p-4">
-            <div className="grid grid-cols-3 gap-3 p-4 w-[900px] divide-x">
-              <div className="col-span-2">
+            <div className="grid grid-cols-[1fr_280px] gap-4 p-4 w-[760px]">
+              <div>
                 <h6 className="pl-2.5 font-semibold uppercase text-sm text-muted-foreground">
-                  Capabilities
+                  Core workflows
                 </h6>
-                <ul className="mt-2.5 grid grid-cols-1 gap-3">
-                  {components.map((component) => (
-                    <li key={component.title}>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          className={cn(
-                            "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          )}
-                          href={component.href}
-                        >
-                          <div className="font-semibold tracking-tight leading-none flex items-center gap-2">
-                            <component.icon className="h-5 w-5" />
-                            {component.title}
-                          </div>
-                          <p className="mt-2 line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            {component.description}
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
+                <ul className="mt-2.5 grid grid-cols-2 gap-3">
+                  {modules.map((item) => (
+                    <MenuCard key={item.title} item={item} />
                   ))}
                 </ul>
               </div>
 
-              <div className="pl-4">
-                <h6 className="pl-2.5 font-semibold uppercase text-sm text-muted-foreground">
-                  Product & Features
-                </h6>
-                <ul className="mt-2.5 grid gap-3">
-                  {components.slice(0, 3).map((component) => (
-                    <li key={component.title}>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          className={cn(
-                            "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          )}
-                          href={component.href}
-                        >
-                          <div className="font-semibold tracking-tight leading-none flex items-center gap-2">
-                            <component.icon className="h-5 w-5" />
-                            {component.title}
-                          </div>
-                          <p className="mt-2 line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            {component.description}
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
-                </ul>
+              <div className="rounded-[8px] bg-[#081C4F] p-5 text-white">
+                <HeartPulseIcon className="h-8 w-8 text-[#00d4ff]" />
+                <h3 className="mt-5 text-lg font-medium">
+                  One workspace for care
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-[#a0a0a0]">
+                  Keep reception, consultation, prescription, labs, and
+                  follow-up connected through the patient record.
+                </p>
               </div>
             </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
           <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
           <NavigationMenuContent className="px-4 py-6">
             <div className="pl-4">
               <h6 className="pl-2.5 font-semibold uppercase text-sm text-muted-foreground">
-                Solutions
+                Built for healthcare teams
               </h6>
-              <ul className="mt-2.5 grid w-[400px] gap-3 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                {components.map((component) => (
-                  <li key={component.title}>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        className={cn(
-                          "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        )}
-                        href={component.href}
-                      >
-                        <div className="font-semibold tracking-tight leading-none flex items-center gap-2">
-                          <component.icon className="h-5 w-5" />
-                          {component.title}
-                        </div>
-                        <p className="mt-2 line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          {component.description}
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                  </li>
+              <ul className="mt-2.5 grid w-[560px] gap-3 md:grid-cols-2">
+                {solutions.map((item) => (
+                  <MenuCard key={item.title} item={item} />
                 ))}
               </ul>
             </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs" passHref>
-              Developers
+            <Link href="#workflow">Workflow</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link href="#trust">
+              <ShieldCheckIcon className="mr-1 h-4 w-4" />
+              Trust
             </Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
+
         <NavigationMenuIndicator className="transition-[width,transform] duration-[250ms] ease-in-out" />
       </NavigationMenuList>
-      <NavigationMenuViewport className="bg-popover/70 backdrop-blur-md" />
+      <NavigationMenuViewport className="bg-popover/80 backdrop-blur-md" />
     </NavigationMenu>
   );
 }
