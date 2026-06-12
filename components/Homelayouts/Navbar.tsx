@@ -63,9 +63,9 @@ export const Navbar = () => {
       >
         <div
           className={cn(
-            "mx-auto lg:mt-2 max-w-6xl px-6 transition-all lg:rounded-full duration-300 lg:px-10",
+            "mx-auto lg:mt-2 max-w-6xl px-6 transition-all lg:rounded-full duration-300 lg:px-10 bg-background/65 dark:bg-transparent",
             isScrolled &&
-            "bg-background/65 max-w-4xl shadow-md backdrop-blur-lg lg:pl-5 lg:pr-2.5"
+            "bg-background/65! max-w-4xl shadow-md backdrop-blur-lg lg:pl-5 lg:pr-2.5"
           )}
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-2.5 lg:gap-0">

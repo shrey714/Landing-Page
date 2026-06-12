@@ -44,10 +44,10 @@ const LogoCloud = () => {
   return (
     <div className="py-10 px-4 relative">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
           {content.LogoCloud.title}
         </h2>
-        <TypingAnimation className="text-gray-300 mb-8 max-w-2xl mx-auto">
+        <TypingAnimation className="text-accent-foregroundmb-8 max-w-2xl mx-auto">
           {content.LogoCloud.description}
         </TypingAnimation>
 
@@ -68,7 +68,7 @@ const LogoCloud = () => {
               {logoSets[currentSetIndex].map((company) => (
                 <div
                   key={company.name}
-                  className="text-white text-lg md:text-xl font-semibold opacity-70 hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+                  className="text-accent-foreground text-lg md:text-xl font-semibold opacity-70 hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
                 >
                   {company.logo}
                 </div>

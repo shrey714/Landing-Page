@@ -187,12 +187,12 @@ const totalCards = cardsData.length;
                 <div className="items-end grid gap-y-8 min-[900px]:grid-cols-[3fr_1fr]">
                   <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-27">
                     <header className="relative pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 grid gap-y-6 grid-cols-[minmax(0,1fr)] max-w-240">
-                      <h1 className="relative text-4xl md:text-5xl font-extrabold leading-tight tracking-[-0.1px] min-[900px]:tracking-[-0.2px] text-white wrap-break-word">
+                      <h1 className="relative text-4xl md:text-5xl font-extrabold leading-tight tracking-[-0.1px] min-[900px]:tracking-[-0.2px] wrap-break-word">
                         {content.CardCarousel.headerTitle}
                       </h1>
                     </header>
 
-                    <TypingAnimation className="pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 text-gray-300 max-w-240 font-light text-lg leading-[1.555555556]">
+                    <TypingAnimation className="pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 text-accent-foreground max-w-240 font-light text-lg leading-[1.555555556]">
                       {content.CardCarousel.headerDescription}
                     </TypingAnimation>
                   </section>

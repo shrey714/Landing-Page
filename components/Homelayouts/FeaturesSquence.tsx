@@ -53,12 +53,12 @@ const FeaturesSquence = () => {
                       <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
                         {content.FeaturesSequence.headerSubtitle}
                       </h2>
-                      <h1 className="relative text-white tracking-[-0.1px] min-[1112px]:tracking-[-0.2px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
+                      <h1 className="relative tracking-[-0.1px] min-[1112px]:tracking-[-0.2px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
                         {content.FeaturesSequence.headerTitle}
                       </h1>
                     </header>
 
-                    <TypingAnimation className="pr-4 min-[600px]:pr-16 pl-4 text-[#adbdcc] max-w-240 font-light text-lg leading-[1.555555556]">
+                    <TypingAnimation className="pr-4 min-[600px]:pr-16 pl-4 text-accent-foreground max-w-240 font-light text-lg leading-[1.555555556]">
                       {content.FeaturesSequence.headerDesc}
                     </TypingAnimation>
 
@@ -136,11 +136,11 @@ const FeaturesSquence = () => {
                               <feature.icon size={24} />
                             </div>
                           </div>
-                          <h3 className="relative text-white tracking-[0.2px] wrap-break-word text-2xl font-semibold leading-snug">
+                          <h3 className="relative tracking-[0.2px] wrap-break-word text-2xl font-semibold leading-snug">
                             {feature.title}
                           </h3>
                         </header>
-                        <div className="pr-4 min-[600px]:pr-8 pl-4 text-[#adbdcc] max-w-240 font-light text-base leading-[1.6]">
+                        <div className="pr-4 min-[600px]:pr-8 pl-4 text-accent-foreground max-w-240 font-light text-base leading-[1.6] line-clamp-4">
                           {feature.description}
                         </div>
                         <footer className="pr-4 min-[600px]:pr-8 pl-4">

@@ -12,27 +12,31 @@ export default function Hero() {
           <div className="grid sm:grid-cols-2 gap-y-8 items-start">
             <section className="grid gap-y-8 tracking-[0.2px] scroll-mt-27">
               <header className="relative min-w-0 pl-4 mt-4 md:mt-8">
-                <h1 className="sm:min-h-50 leading-[1.04] sm:min-w-[calc(100%+90px)] relative flex items-end tracking-[-0.04em] text-[clamp(2.2rem,7.5vw,6.5rem)] font-extrabold">
+                <h1 className="m:min-h-50 leading-[1.04] sm:min-w-[calc(100%+90px)] relative flex items-end tracking-[-0.04em] text-[clamp(2.2rem,7.5vw,6.5rem)] font-extrabold">
                   {content.Hero.title}
                 </h1>
               </header>
 
-              <TypingAnimation className="text-pretty px-4 font-light leading-[1.555555556] text-base sm:text-lg max-w-202.5 sm:pr-8">
+              <TypingAnimation className="text-accent-foreground text-pretty px-4 font-light leading-[1.555555556] text-base sm:text-lg max-w-202.5 sm:pr-8">
                 {content.Hero.description}
               </TypingAnimation>
 
               <div className="pl-4 mt-2 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                <Button asChild size="lg" className="px-5 text-base">
+
+
+                <Button asChild size="lg" className="rounded-full px-5 text-base border-2 border-[#635bff] bg-[#635bff] dark:bg-[#635bff96] text-white hover:bg-[#635bff96] dark:hover:bg-[#635bff] shadow-none" variant={"default"}>
                   <Link href="#demo" aria-label="Request a demo of DardiBook">
-                    <span className="text-nowrap">{content.Hero.requestDemo}</span>
+                    <span>{content.Hero.requestDemo}</span>
                   </Link>
                 </Button>
+
+
                 <Button
                   key={2}
                   asChild
                   size="lg"
-                  variant="ghost"
-                  className="px-5 text-base"
+                  variant="link"
+                  className="px-5 text-base text-white"
                 >
                   <Link href="#workflow">
                     <span className="text-nowrap">{content.Hero.seeWorkflow}</span>

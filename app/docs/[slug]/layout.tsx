@@ -12,7 +12,7 @@ export default function DocsLayout({
       
       <Navbar />
       
-      <main className="flex-1 mt-[80px]">
+      <main className="flex-1 mt-20">
         <article className="prose dark:prose-invert prose-blue max-w-none">
           {children}
         </article>

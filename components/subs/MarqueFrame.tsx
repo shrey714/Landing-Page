@@ -20,7 +20,7 @@ const MarqueFrame = () => {
 
   return (
     <motion.div
-      className="w-full h-screen fixed top-0 pointer-events-none transition-opacity bg-[#081C4F]"
+      className="w-full h-screen fixed top-0 pointer-events-none transition-opacity dark:bg-[#081C4F]"
       style={{
         opacity: opacity,
       }}

@@ -16,12 +16,12 @@ const CallToAction = () => {
               <div className="grid items-start gap-y-8 min-[600px]:grid-cols-2 min-[900px]:grid-cols-[2fr_repeat(2,1fr)]">
                 <section className="scroll-mt-27 tracking-[0.2px] grid gap-y-6">
                   <header className="grid gap-y-6 max-w-240 grid-cols-[minmax(0,1fr)] pr-4 min-[600px]:pr-16 min-[900px]:pr-28 pl-4">
-                    <h1 className="relative text-white tracking-[0.1px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
+                    <h1 className="relative tracking-[0.1px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
                       {content.CallToAction.title}
                     </h1>
                   </header>
 
-                  <TypingAnimation className="pr-4 min-[600px]:pr-16 min-[900px]:pr-28 pl-4 max-w-240 text-gray-300 font-light text-lg leading-[1.555555556]">
+                  <TypingAnimation className="pr-4 min-[600px]:pr-16 min-[900px]:pr-28 pl-4 max-w-240 text-accent-foreground font-light text-lg leading-[1.555555556]">
                     {content.CallToAction.description}
                   </TypingAnimation>
 
@@ -44,12 +44,12 @@ const CallToAction = () => {
                       </div>
                     </div>
 
-                    <h3 className="relative text-white tracking-[0.2px] wrap-break-word text-2xl font-semibold leading-snug">
+                    <h3 className="relative tracking-[0.2px] wrap-break-word text-2xl font-semibold leading-snug">
                       {content.CallToAction.pricingTitle}
                     </h3>
                   </header>
 
-                  <div className="max-w-240 pr-4 min-[600px]:pr-8 pl-4 text-gray-300 font-light text-base leading-[1.6]">
+                  <div className="max-w-240 pr-4 min-[600px]:pr-8 pl-4 text-accent-foreground font-light text-base leading-[1.6]">
                     {content.CallToAction.pricingDesc}
                   </div>
                 </section>
@@ -62,12 +62,12 @@ const CallToAction = () => {
                       </div>
                     </div>
 
-                    <h4 className="relative text-white tracking-[0.2px] wrap-break-word font-[425] text-base leading-[1.6]">
+                    <h4 className="relative tracking-[0.2px] wrap-break-word font-[425] text-base leading-[1.6]">
                       {content.CallToAction.onboardingTitle}
                     </h4>
                   </header>
 
-                  <div className="max-w-240 pr-4 min-[600px]:pr-8 pl-4 text-gray-300 font-light text-base leading-[1.6]">
+                  <div className="max-w-240 pr-4 min-[600px]:pr-8 pl-4 text-accent-foreground font-light text-base leading-[1.6]">
                     {content.CallToAction.onboardingDesc}
                   </div>
                 </section>

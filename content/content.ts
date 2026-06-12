@@ -37,6 +37,7 @@ const content = {
     legalPricing: "Pricing",
     legalPrivacyPolicy: "Privacy Policy",
     legalTermsConditions: "Terms & Conditions",
+    legalCancellationPolicy: "Cancellation Policy",
     copyright: "© {year} DardiBook, All rights reserved",
   },
   CallToAction: {

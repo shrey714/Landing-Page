@@ -41,10 +41,10 @@ const TrustProof = () => {
                 <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
                   {content.TrustProof.title}
                 </h2>
-                <h1 className="text-white text-4xl md:text-5xl font-extrabold leading-tight">
+                <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
                   {content.TrustProof.subtitle}
                 </h1>
-                <TypingAnimation className="text-gray-300 font-light text-lg leading-[1.6]">
+                <TypingAnimation className="text-accent-foreground font-light text-lg leading-[1.6]">
                   {content.TrustProof.description}
                 </TypingAnimation>
               </section>

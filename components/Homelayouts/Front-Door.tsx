@@ -83,12 +83,12 @@ export function StickyScrollReveal() {
                       {content.FrontDoor.h1Title}
                     </h2>
 
-                    <h1 className="relative text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white tracking-[-0.02em] wrap-break-word">
+                    <h1 className="relative text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-[-0.02em] wrap-break-word">
                       {content.FrontDoor.h1Subtitle}
                     </h1>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-202.5">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-accent-foreground max-w-202.5">
                     <TypingAnimation>
                       {content.FrontDoor.h1Desc}
                     </TypingAnimation>
@@ -135,29 +135,29 @@ export function StickyScrollReveal() {
                       {content.FrontDoor.h2Title}
                     </h2>
 
-                    <h2 className="relative text-3xl md:text-4xl font-extrabold leading-tight text-white tracking-[-0.02em] wrap-break-word">
+                    <h2 className="relative text-3xl md:text-4xl font-extrabold leading-tight tracking-[-0.02em] wrap-break-word">
                       {content.FrontDoor.h2Subtitle}
                     </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-202.5">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-accent-foreground max-w-202.5">
                     <TypingAnimation>
                       {content.FrontDoor.h2Desc}
                     </TypingAnimation>
                   </div>
 
                   <footer className="grid px-4 auto-cols-fr tracking-[0.2px] font-light text-base leading-[1.6]">
-                    <h1 className="mb-2 text-white text-2xl font-semibold tracking-[-0.2px]">
+                    <h1 className="mb-2 text-2xl font-semibold tracking-[-0.2px]">
                       {content.FrontDoor.seeAlso}
                     </h1>
                     <ul className="list-none">
-                      <TypingAnimation className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-accent-foreground">
                         {content.FrontDoor.h2List1}
                       </TypingAnimation>
-                      <TypingAnimation className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-accent-foreground">
                         {content.FrontDoor.h2List2}
                       </TypingAnimation>
-                      <TypingAnimation className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-accent-foreground">
                         {content.FrontDoor.h2List3}
                       </TypingAnimation>
                     </ul>
@@ -181,29 +181,29 @@ export function StickyScrollReveal() {
                       {content.FrontDoor.h3Title}
                     </h2>
 
-                    <h2 className="relative font-medium text-3xl leading-[1.294117647] text-white tracking-[-0.02em] wrap-break-word">
+                    <h2 className="relative font-medium text-3xl leading-[1.294117647] tracking-[-0.02em] wrap-break-word">
                       {content.FrontDoor.h3Subtitle}
                     </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-202.5">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-accent-foreground max-w-202.5">
                     <TypingAnimation>
                       {content.FrontDoor.h3Desc}
                     </TypingAnimation>
                   </div>
 
                   <footer className="grid px-4 auto-cols-fr tracking-[0.2px] font-light text-base leading-[1.6]">
-                    <h1 className="mb-2 text-white font-[425] tracking-[-0.2px]">
+                    <h1 className="mb-2 font-[425] tracking-[-0.2px]">
                       {content.FrontDoor.seeAlso}
                     </h1>
                     <ul className="list-none">
-                      <TypingAnimation className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-accent-foreground">
                         {content.FrontDoor.h3List1}
                       </TypingAnimation>
-                      <TypingAnimation className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-accent-foreground">
                         {content.FrontDoor.h3List2}
                       </TypingAnimation>
-                      <TypingAnimation className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-accent-foreground">
                         {content.FrontDoor.h3List3}
                       </TypingAnimation>
                     </ul>
@@ -227,29 +227,29 @@ export function StickyScrollReveal() {
                       {content.FrontDoor.h4Title}
                     </h2>
 
-                    <h2 className="relative font-medium text-3xl leading-[1.294117647] text-white tracking-[-0.02em] wrap-break-word">
+                    <h2 className="relative font-medium text-3xl leading-[1.294117647] tracking-[-0.02em] wrap-break-word">
                       {content.FrontDoor.h4Subtitle}
                     </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-202.5">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-accent-foreground max-w-202.5">
                     <TypingAnimation>
                       {content.FrontDoor.h4Desc}
                     </TypingAnimation>
                   </div>
 
                   <footer className="grid px-4 auto-cols-fr tracking-[0.2px] font-light text-base leading-[1.6]">
-                    <h1 className="mb-2 text-white font-[425] tracking-[-0.2px]">
+                    <h1 className="mb-2 font-[425] tracking-[-0.2px]">
                       {content.FrontDoor.seeAlso}
                     </h1>
                     <ul className="list-none">
-                      <TypingAnimation className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-accent-foreground">
                         {content.FrontDoor.h4List1}
                       </TypingAnimation>
-                      <TypingAnimation className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-accent-foreground">
                         {content.FrontDoor.h4List2}
                       </TypingAnimation>
-                      <TypingAnimation className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-accent-foreground">
                         {content.FrontDoor.h4List3}
                       </TypingAnimation>
                     </ul>
@@ -273,29 +273,29 @@ export function StickyScrollReveal() {
                       {content.FrontDoor.h5Title}
                     </h2>
 
-                    <h2 className="relative font-medium text-3xl leading-[1.294117647] text-white tracking-[-0.02em] wrap-break-word">
+                    <h2 className="relative font-medium text-3xl leading-[1.294117647] tracking-[-0.02em] wrap-break-word">
                       {content.FrontDoor.h5Subtitle}
                     </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-202.5">
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-accent-foreground max-w-202.5">
                     <TypingAnimation>
                       {content.FrontDoor.h5Desc}
                     </TypingAnimation>
                   </div>
 
                   <footer className="grid px-4 auto-cols-fr tracking-[0.2px] font-light text-base leading-[1.6]">
-                    <h1 className="mb-2 text-white font-[425] tracking-[-0.2px]">
+                    <h1 className="mb-2 font-[425] tracking-[-0.2px]">
                       {content.FrontDoor.seeAlso}
                     </h1>
                     <ul className="list-none">
-                      <TypingAnimation className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-accent-foreground">
                         {content.FrontDoor.h5List1}
                       </TypingAnimation>
-                      <TypingAnimation className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-accent-foreground">
                         {content.FrontDoor.h5List2}
                       </TypingAnimation>
-                      <TypingAnimation className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-accent-foreground">
                         {content.FrontDoor.h5List3}
                       </TypingAnimation>
                     </ul>

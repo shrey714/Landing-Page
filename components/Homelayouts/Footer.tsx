@@ -61,6 +61,12 @@ const footerColumns = [
       { title: content.Footer.legalTermsConditions, href: "/docs/terms-conditions" },
     ],
   },
+  {
+    title: "",
+    links: [
+      { title: content.Footer.legalCancellationPolicy, href: "/docs/cancellation-policy" }
+    ],
+  },
 ];
 
 const proofItems = [
@@ -96,10 +102,10 @@ export default function Footer() {
               </Link>
 
               <div className="grid gap-4">
-                <h2 className="max-w-xl text-4xl md:text-5xl font-extrabold leading-tight text-foreground sm:text-5xl">
+                <h2 className="max-w-xl text-4xl md:text-5xl font-extrabold leading-tight sm:text-5xl">
                   {content.Footer.title}
                 </h2>
-                <TypingAnimation className="max-w-xl text-sm leading-6 text-muted-foreground">
+                <TypingAnimation className="max-w-xl text-sm leading-6 text-accent-foreground">
                   {content.Footer.description}
                 </TypingAnimation>
               </div>
@@ -120,10 +126,10 @@ export default function Footer() {
                   <div className="grid h-9 w-9 place-items-center rounded bg-[#00d4ff24] text-[#00d4ff]">
                     <item.icon size={18} />
                   </div>
-                  <h3 className="text-sm font-medium text-foreground">
+                  <h3 className="text-sm font-medium">
                     {item.title}
                   </h3>
-                  <p className="text-sm leading-6 text-muted-foreground">
+                  <p className="text-sm leading-6 text-accent-foreground">
                     {item.description}
                   </p>
                 </section>
@@ -131,12 +137,12 @@ export default function Footer() {
             </div>
           </div>
 
-          <Separator />
+          <Separator className="bg-muted-foreground" />
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {footerColumns.map((column) => (
-              <section key={column.title} className="grid content-start gap-4">
-                <h3 className="text-sm font-medium text-foreground">
+            {footerColumns.map((column, index) => (
+              <section key={index} className="grid content-start gap-4">
+                <h3 className="text-sm font-medium">
                   {column.title}
                 </h3>
                 <ul className="grid gap-3 text-sm">
@@ -144,7 +150,7 @@ export default function Footer() {
                     <li key={link.title}>
                       <Link
                         href={link.href}
-                        className="text-muted-foreground transition-colors hover:text-primary"
+                        className="text-accent-foreground transition-colors hover:text-primary"
                       >
                         {link.title}
                       </Link>
@@ -161,7 +167,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <Separator />
+        <Separator className="bg-muted-foreground" />
 
         <div className="flex flex-wrap items-center justify-between gap-6 text-sm text-muted-foreground">
           <span>{content.Footer.copyright.replace("{year}", new Date().getFullYear().toString())}</span>
