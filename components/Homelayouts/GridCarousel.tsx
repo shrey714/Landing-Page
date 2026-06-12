@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import content from "@/content/content";
 import TypingAnimation from "../ui/typingText";
+import { motion, AnimatePresence } from "motion/react";
 
 
 
@@ -112,7 +113,7 @@ const GridCarousel = () => {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [activeSlide]); // Added activeSlide dependency so the 4s timer resets when a user clicks a tab
 
   const active = slides[activeSlide];
 
@@ -122,7 +123,7 @@ const GridCarousel = () => {
         <div className="relative z-1 flex justify-center">
           <div className="w-full max-w-7xl mx-4">
             <div className="py-28">
-              <div className="grid gap-y-8 min-[600px]:gap-y-12 min-[900px]:gap-y-16 items-start grid-rows-[auto] grid-cols-[minmax(0,1fr)]">
+              <div className="grid gap-y-6 min-[600px]:gap-y-8 min-[900px]:gap-y-10 items-start grid-rows-[auto] grid-cols-[minmax(0,1fr)]">
                 <div className="items-start gap-y-8 grid min-[900px]:grid-cols-[3fr_1fr]">
                   <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-27">
                     <header className="grid gap-y-6 max-w-240 grid-cols-[minmax(0,1fr)] pr-4 min-[600px]:pr-8 pl-4">
@@ -152,89 +153,136 @@ const GridCarousel = () => {
                   </section>
                 </div>
 
-                <div>
-                  <div className="grid gap-y-8 items-start min-[900px]:grid-cols-[1fr_minmax(0,3fr)]">
-                    <aside className="grid gap-y-8 grid-cols-1 grid-flow-row min-[600px]:grid-cols-2 min-[600px]:grid-flow-col min-[600px]:gap-y-0 min-[900px]:grid-cols-1 min-[900px]:grid-flow-row min-[900px]:gap-y-8">
-                      <section className="scroll-mt-27 tracking-[0.2px] grid gap-y-2 min-w-full items-start">
-                        <header className="relative gap-y-2 grid grid-cols-[minmax(0,1fr)] pl-4 pr-4 min-[60px]:pr-16 min-[900px]:pr-28">
-                          <h4 className="relative text-white tracking-[0.2px] wrap-break-word font-medium text-xl leading-[1.33]">
-                            <span
-                              className="block absolute top-[4.46px] -left-4 w-px h-6"
-                              style={{ backgroundColor: active.color }}
-                            ></span>
-                            {active.stats}
-                          </h4>
-                        </header>
+                <div className="w-full">
+                  <div className="flex flex-col gap-y-6 items-start w-full mt-8">
+                    <aside className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-4 w-full">
+                      <motion.section 
+                        className="relative overflow-hidden bg-[#061233] border rounded-3xl p-6 transition-all duration-500 border-white/20 group shadow-md"
+                      >
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/5 to-transparent rounded-bl-full pointer-events-none" />
+                        <h4 className="flex items-center gap-3 text-white font-semibold text-lg mb-4">
+                          <span
+                            className="w-2.5 h-2.5 rounded-full transition-all duration-500"
+                            style={{ backgroundColor: active.color, boxShadow: `0 0 10px ${active.color}` }}
+                          ></span>
+                          {active.stats}
+                        </h4>
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={active.id}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <div className="flex items-end gap-2 mb-2">
+                              <span className="text-4xl font-bold text-white">{active.metric}</span>
+                              <span className="text-sm text-gray-400 mb-1">{active.metricLabel}</span>
+                            </div>
+                            <p className="text-gray-400 font-light text-sm leading-[1.6] line-clamp-2">
+                              {active.description}
+                            </p>
+                          </motion.div>
+                        </AnimatePresence>
+                      </motion.section>
 
-                        <div className="pl-4 pr-5 text-gray-300 font-light text-base leading-[1.6]">
-                          {active.description}
+                      <motion.section 
+                        className="relative overflow-hidden bg-[#061233] border rounded-3xl p-6 transition-all duration-500 border-white/20 group shadow-md"
+                      >
+                        <div className="absolute -bottom-6 -right-6 opacity-10 transition-opacity duration-500 pointer-events-none" style={{ color: active.color }}>
+                          <active.icon size={120} />
                         </div>
-                      </section>
+                        <h4 className="flex items-center gap-3 text-white font-semibold text-lg mb-4">
+                          <span
+                            className="w-2.5 h-2.5 rounded-full transition-all duration-500"
+                            style={{ backgroundColor: active.color, boxShadow: `0 0 10px ${active.color}` }}
+                          ></span>
+                          {active.title}
+                        </h4>
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={active.id}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <p className="text-gray-400 font-light text-sm leading-[1.6]">
+                              {content.GridCarousel.dardibookWorkflow}
+                            </p>
+                          </motion.div>
+                        </AnimatePresence>
+                      </motion.section>
 
-                      <section className="scroll-mt-27 tracking-[0.2px] grid gap-y-2 min-w-full items-start">
-                        <header className="relative gap-y-2 grid grid-cols-[minmax(0,1fr)] pl-4 pr-4 min-[60px]:pr-16 min-[900px]:pr-28">
-                          <h4 className="relative text-white tracking-[0.2px] wrap-break-word font-medium text-xl leading-[1.33]">
-                            <span
-                              className="block absolute top-[4.46px] -left-4 w-px h-6"
-                              style={{ backgroundColor: active.color }}
-                            ></span>
-                            {active.title}
-                          </h4>
-                        </header>
-
-                        <div className="pl-4 pr-5 text-gray-300 font-light text-base leading-[1.6]">
-                          {content.GridCarousel.dardibookWorkflow}
-                        </div>
-                      </section>
-
-                      <section className="scroll-mt-27 tracking-[0.2px] grid gap-y-2 min-w-full">
-                        <header className="grid grid-cols-[minmax(0,1fr)] gap-y-2 relative pr-4 min-[600px]:pr-8 pl-4 max-w-240">
-                          <h4 className="relative text-white tracking-[0.2px] wrap-break-word font-[425] text-base leading-[1.6]">
-                            <span
-                              className="block absolute top-1.25 -left-4 w-px h-3.75"
-                              style={{ backgroundColor: active.color }}
-                            ></span>
-                            {content.GridCarousel.modulesUsed}
-                          </h4>
-                        </header>
-
-                        <footer className="grid gap-y-6 px-4">
-                          <ul className="list-none grid p-0 mt-4 overflow-hidden gap-y-3 grid-cols-none">
+                      <motion.section 
+                        className="relative overflow-hidden bg-[#061233] border rounded-3xl p-6 transition-all duration-500 border-white/20 group shadow-md"
+                      >
+                        <h4 className="flex items-center gap-3 text-white font-semibold text-lg mb-4">
+                          <span
+                            className="w-2.5 h-2.5 rounded-full transition-all duration-500"
+                            style={{ backgroundColor: active.color, boxShadow: `0 0 10px ${active.color}` }}
+                          ></span>
+                          {content.GridCarousel.modulesUsed}
+                        </h4>
+                        <AnimatePresence mode="wait">
+                          <motion.ul
+                            key={active.id}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3 }}
+                            className="flex flex-wrap gap-2 mt-4"
+                          >
                             {active.products.map((product) => (
                               <li
                                 key={product}
-                                className="grid grid-rows-[1fr] grid-cols-[20px_1fr] gap-x-3.5 gap-y-0 items-center"
+                                className="rounded-lg border px-3 py-1.5 text-xs font-medium backdrop-blur-md transition-colors"
+                                style={{
+                                  backgroundColor: `${active.color}15`,
+                                  borderColor: `${active.color}30`,
+                                  color: "#e2e8f0",
+                                }}
                               >
-                                <div
-                                  className="w-5 h-5 rounded"
-                                  style={{ backgroundColor: active.color }}
-                                ></div>
-                                <span>{product}</span>
+                                {product}
                               </li>
                             ))}
-                          </ul>
-                        </footer>
-                      </section>
+                          </motion.ul>
+                        </AnimatePresence>
+                      </motion.section>
 
-                      <section className="scroll-mt-27 tracking-[0.2px] grid gap-y-2 min-w-full">
-                        <header className="grid grid-cols-[minmax(0,1fr)] gap-y-2 relative pr-4 min-[600px]:pr-8 pl-4 max-w-240">
-                          <h4 className="relative text-white tracking-[0.2px] wrap-break-word font-[425] text-base leading-[1.6]">
-                            <span
-                              className="block absolute top-1.25 -left-4 w-px h-3.75"
-                              style={{ backgroundColor: active.color }}
-                            ></span>
-                            {content.GridCarousel.nextBestAction}
-                          </h4>
-                        </header>
-
-                        <div className="pl-4 pr-5 text-gray-300 font-light text-base leading-[1.6]">
-                          {active.action}
-                        </div>
-                      </section>
+                      <motion.section 
+                        className="relative overflow-hidden bg-[#061233] border rounded-3xl p-6 transition-all duration-500 border-white/20 group shadow-md"
+                      >
+                        <div className="absolute inset-0 opacity-10 transition-opacity duration-700 pointer-events-none" style={{ background: `radial-gradient(circle at 50% 120%, ${active.color}, transparent 70%)` }} />
+                        <h4 className="flex items-center gap-3 text-white font-semibold text-lg mb-4">
+                          <span
+                            className="w-2.5 h-2.5 rounded-full transition-all duration-500"
+                            style={{ backgroundColor: active.color, boxShadow: `0 0 10px ${active.color}` }}
+                          ></span>
+                          {content.GridCarousel.nextBestAction}
+                        </h4>
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={active.id}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3 }}
+                            className="flex flex-col h-full"
+                          >
+                            <p className="text-gray-300 font-medium text-sm leading-[1.6]">
+                              {active.action}
+                            </p>
+                            <div className="mt-4 flex items-center text-sm font-semibold transition-colors" style={{ color: active.color }}>
+                              Review tasks <ChevronRightIcon size={16} className="ml-1" />
+                            </div>
+                          </motion.div>
+                        </AnimatePresence>
+                      </motion.section>
                     </aside>
 
                     <div
-                      className="relative min-w-25 min-h-18 rounded-xl border border-white/10 h-115 overflow-hidden bg-white/6"
+                      className="relative w-[calc(100%-2rem)] mx-auto rounded-2xl border border-white/10 h-115 md:h-[500px] lg:h-[600px] overflow-hidden bg-white/6"
                       style={{
                         boxShadow:
                           "0 13px 27px -5px rgba(50,50,93,0.25),0 8px 16px -8px rgba(0,0,0,0.3)",
@@ -392,27 +440,27 @@ const GridCarousel = () => {
                   </div>
 
                   <div className="flex relative min-w-0 col-span-full mt-10">
-                    <ul className="flex items-center justify-center list-none m-0 p-0 min-w-full min-[900px]:grid min-[900px]:grid-flow-col min-[900px]:auto-cols-fr min-[900px]:items-stretch">
+                    <ul className="relative flex items-center justify-center list-none m-0 p-0 min-w-full min-[900px]:grid min-[900px]:grid-flow-col min-[900px]:auto-cols-fr min-[900px]:items-stretch">
+                      
+                      {/* Faded background line for desktop */}
+                      <div className="absolute -top-5 left-0 w-full h-px bg-white/20 max-[899px]:hidden pointer-events-none" />
+
                       {slides.map((slide, index) => (
                         <li
                           key={slide.id}
                           className="relative flex items-center justify-center min-[900px]:w-full"
                         >
-                          <div className="w-full h-px left-0 absolute -top-5 max-[899px]:hidden">
-                            <div
-                              className="origin-left h-full w-full top-0 left-0 absolute transition-transform duration-500"
-                              style={{
-                                backgroundColor: slide.color,
-                                transform:
-                                  activeSlide === index
-                                    ? "scaleX(1)"
-                                    : "scaleX(0)",
-                              }}
-                            ></div>
-                          </div>
+                          {/* Active moving line */}
+                          <motion.div
+                            key={activeSlide === index ? "active" : "inactive"}
+                            className="absolute -top-5 left-0 h-px max-[899px]:hidden origin-left"
+                            initial={{ width: index < activeSlide ? "100%" : "0%", backgroundColor: slide.color }}
+                            animate={{ width: index <= activeSlide ? "100%" : "0%", backgroundColor: slide.color }}
+                            transition={{ duration: activeSlide === index ? 4 : 0, ease: "linear" }}
+                          />
 
                           <button
-                            className={`cursor-pointer outline-none border-none bg-transparent py-5 px-3 text-sm text-white transition-opacity duration-300 max-[899px]:hidden ${
+                            className={`cursor-pointer outline-none border-none bg-transparent py-2 px-3 text-sm text-white transition-opacity duration-300 max-[899px]:hidden ${
                               activeSlide === index
                                 ? "opacity-100"
                                 : "opacity-60 hover:opacity-80"
@@ -424,15 +472,17 @@ const GridCarousel = () => {
 
                           <button
                             aria-label={`Show ${slide.title}`}
-                            className="w-6 h-0.5 rounded-[1px] mx-0.5 min-[900px]:hidden cursor-pointer border-none transition-all duration-300"
-                            style={{
-                              backgroundColor:
-                                activeSlide === index
-                                  ? slide.color
-                                  : "rgba(255,255,255,0.35)",
-                            }}
+                        className="relative overflow-hidden w-6 h-0.5 rounded-[1px] mx-0.5 min-[900px]:hidden cursor-pointer border-none bg-white/30"
                             onClick={() => setActiveSlide(index)}
-                          ></button>
+                          >
+                            <motion.div
+                              key={activeSlide === index ? "active" : "inactive"}
+                              className="absolute top-0 left-0 h-full origin-left"
+                              initial={{ width: index < activeSlide ? "100%" : "0%", backgroundColor: slide.color }}
+                              animate={{ width: index <= activeSlide ? "100%" : "0%", backgroundColor: slide.color }}
+                              transition={{ duration: activeSlide === index ? 4 : 0, ease: "linear" }}
+                            />
+                          </button>
                         </li>
                       ))}
                     </ul>

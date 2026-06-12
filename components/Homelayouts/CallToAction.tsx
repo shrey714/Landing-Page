@@ -39,7 +39,7 @@ const CallToAction = () => {
                 <section className="grid gap-y-2 tracking-[0.2px] scroll-mt-27">
                   <header className="grid gap-y-2 relative max-w-240 grid-cols-[minmax(0,1fr)] pr-4 min-[600px]:pr-8 pl-4">
                     <div className="flex items-end mb-2">
-                      <div className="bg-[#00d4ff42] rounded p-2">
+                      <div className="bg-[#00d4ff24] text-[#00d4ff] rounded p-2">
                         <IndianRupeeIcon size={24} />
                       </div>
                     </div>
@@ -57,7 +57,7 @@ const CallToAction = () => {
                 <section className="grid gap-y-2 tracking-[0.2px] scroll-mt-27">
                   <header className="grid gap-y-2 relative max-w-240 grid-cols-[minmax(0,1fr)] pr-4 min-[600px]:pr-8 pl-4">
                     <div className="flex items-end mb-2">
-                      <div className="bg-[#00d4ff42] rounded p-2">
+                      <div className="bg-[#00d4ff24] text-[#00d4ff] rounded p-2">
                         <HeadsetIcon size={24} />
                       </div>
                     </div>

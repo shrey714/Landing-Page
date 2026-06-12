@@ -132,7 +132,7 @@ const FeaturesSquence = () => {
                       >
                         <header className="relative grid gap-y-2 max-w-240 pr-4 min-[600px]:pr-8 pl-4 grid-cols-[minmax(0,1fr)]">
                           <div className="min-h-10 flex items-end mb-2">
-                            <div className="bg-[#00d4ff42] rounded p-2">
+                            <div className="rounded p-2 bg-[#00d4ff24] text-[#00d4ff]">
                               <feature.icon size={24} />
                             </div>
                           </div>

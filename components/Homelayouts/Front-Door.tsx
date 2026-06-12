@@ -38,17 +38,18 @@ export function StickyScrollReveal() {
     };
 
     const handleScroll = () => {
-      const scrollY = window.scrollY + window.innerHeight / 2;
+      const triggerLine = window.innerHeight / 2;
+      let activeIndex = 0;
 
       headingRefs.current.forEach((ref, index) => {
+        if (!ref) return;
         const rect = ref.getBoundingClientRect();
-        const elementTop = rect.top + window.scrollY;
-        const elementBottom = elementTop + rect.height;
-
-        if (scrollY >= elementTop && scrollY <= elementBottom) {
-          setActiveGif(index + 1);
+        if (rect.top <= triggerLine) {
+          activeIndex = index;
         }
       });
+
+      setActiveGif(activeIndex + 1);
     };
 
     updateHeight();
@@ -104,10 +105,10 @@ export function StickyScrollReveal() {
                       <AnimatePresence mode="wait">
                         <motion.div
                           key={activeGif}
-                          initial={{ opacity: 0, scale: 0.9 }}
+                          initial={{ opacity: 0.4, scale: 0.9 }}
                           animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0, scale: 0.9 }}
-                          transition={{ duration: 0.2, ease: "easeInOut" }}
+                          exit={{ opacity: 0.4, scale: 0.9 }}
+                          transition={{ duration: 0.15, ease: "easeInOut" }}
                           className="w-full h-full"
                         >
                           <ProductPanel panelNumber={activeGif} />
@@ -126,7 +127,7 @@ export function StickyScrollReveal() {
               <div
                 id="heading2"
                 ref={setHeadingRef(1)}
-                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-225 min-[900px]:h-[90vh]"
+                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-225 min-[900px]:py-10"
               >
                 <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-27">
                   <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-202.5">
@@ -172,7 +173,7 @@ export function StickyScrollReveal() {
               <div
                 id="heading3"
                 ref={setHeadingRef(2)}
-                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-225 min-[900px]:h-[90vh]"
+                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-225 min-[900px]:py-10"
               >
                 <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-27">
                   <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-202.5">
@@ -218,7 +219,7 @@ export function StickyScrollReveal() {
               <div
                 id="heading4"
                 ref={setHeadingRef(3)}
-                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-225 min-[900px]:h-[90vh]"
+                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-225 min-[900px]:py-10"
               >
                 <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-27">
                   <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-202.5">
