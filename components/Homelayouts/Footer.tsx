@@ -12,6 +12,7 @@ import ThemeSwitch from "@/components/subs/ThemeSwitch";
 import { Separator } from "@/components/ui/separator";
 import GoogleTranslate from '@/lib/GoogleTranslate';
 import content from "@/content/content";
+import { Button } from "../ui/button";
 
 const footerColumns = [
   {
@@ -102,12 +103,14 @@ export default function Footer() {
                 </p>
               </div>
 
-              <Link
-                href="#demo"
-                className="inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-              >
-                {content.Footer.bookWalkthrough} <ArrowRightIcon size={16} />
-              </Link>
+              <Button asChild variant="outline" size="lg" className="rounded-full w-min">
+                <Link
+                  href="#demo"
+                >
+                  {content.Footer.bookWalkthrough} <ArrowRightIcon size={16} />
+                </Link>
+              </Button>
+
             </section>
 
             <div className="grid gap-6 sm:grid-cols-3">
@@ -118,7 +121,7 @@ export default function Footer() {
                   </div>
                   <h3 className="text-sm font-medium text-foreground">
                     {item.title}
-                  </h3> 
+                  </h3>
                   <p className="text-sm leading-6 text-muted-foreground">
                     {item.description}
                   </p>
@@ -132,14 +135,14 @@ export default function Footer() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {footerColumns.map((column) => (
               <section key={column.title} className="grid content-start gap-4">
-                <h3 className="text-sm font-medium text-foreground"> 
+                <h3 className="text-sm font-medium text-foreground">
                   {column.title}
                 </h3>
                 <ul className="grid gap-3 text-sm">
                   {column.links.map((link) => (
                     <li key={link.title}>
                       <Link
-                        href={link.href} 
+                        href={link.href}
                         className="text-muted-foreground transition-colors hover:text-primary"
                       >
                         {link.title}
@@ -150,7 +153,7 @@ export default function Footer() {
               </section>
             ))}
 
-            <div className="lg:col-start-4">
+            <div className="lg:col-start-4 flex items-end">
               <GoogleTranslate />
             </div>
 
