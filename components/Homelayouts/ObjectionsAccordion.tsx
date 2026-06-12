@@ -25,9 +25,18 @@ type FAQTopic = {
 
 export default function ObjectionsAccordion() {
   const faqData: FAQTopic[] = content.FAQData;
+  
+  const allTopic: FAQTopic = {
+    id: "all",
+    title: "All",
+    items: faqData.flatMap((topic) => topic.items)
+  };
+
+  const displayTopics = [allTopic, ...faqData];
+  
   const [activeTopic, setActiveTopic] = useState<string>(faqData[0].id);
 
-  const currentTopicData = faqData.find((topic) => topic.id === activeTopic);
+  const currentTopicData = displayTopics.find((topic) => topic.id === activeTopic);
 
   return (
     <section id="faq" className="relative scroll-mt-28 py-20 min-[900px]:py-28">
@@ -44,7 +53,7 @@ export default function ObjectionsAccordion() {
             </TypingAnimation>
 
             <div className="flex flex-col space-y-2">
-              {faqData.map((topic) => (
+              {displayTopics.map((topic) => (
                 <Button
                   variant={"link"}
                   key={topic.id}
