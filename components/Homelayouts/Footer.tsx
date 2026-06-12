@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import GoogleTranslate from '@/lib/GoogleTranslate';
 import content from "@/content/content";
 import { Button } from "../ui/button";
+import TypingAnimation from "../ui/typingText";
 
 const footerColumns = [
   {
@@ -98,9 +99,9 @@ export default function Footer() {
                 <h2 className="max-w-xl text-4xl md:text-5xl font-extrabold leading-tight text-foreground sm:text-5xl">
                   {content.Footer.title}
                 </h2>
-                <p className="max-w-xl text-sm leading-6 text-muted-foreground">
+                <TypingAnimation className="max-w-xl text-sm leading-6 text-muted-foreground">
                   {content.Footer.description}
-                </p>
+                </TypingAnimation>
               </div>
 
               <Button asChild variant="outline" size="lg" className="rounded-full w-min">

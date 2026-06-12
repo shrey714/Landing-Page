@@ -10,7 +10,7 @@ export default function NotFound() {
     <div className="flex min-h-screen flex-col">
       <Navbar />
 
-      <main className="flex-1 mt-[80px] flex flex-col items-center justify-center px-4 py-20 w-full text-center">
+      <main className="flex-1 mt-20 flex flex-col items-center justify-center px-4 py-20 w-full text-center">
         <div className="max-w-md w-full mb-8 relative aspect-video">
           <Image
             src="/404.svg"

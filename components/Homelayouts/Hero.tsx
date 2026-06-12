@@ -1,24 +1,25 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import content from "@/content/content";
+import TypingAnimation from "../ui/typingText";
 
 export default function Hero() {
 
   return (
     <section className="relative w-full overflow-x-hidden flex justify-center">
       <div className="w-full max-w-7xl mx-4">
-        <div className="pt-[116px] pb-[128px]">
+        <div className="pt-29 pb-32">
           <div className="grid sm:grid-cols-2 gap-y-8 items-start">
-            <section className="grid gap-y-8 tracking-[0.2px] scroll-mt-[108px]">
+            <section className="grid gap-y-8 tracking-[0.2px] scroll-mt-27">
               <header className="relative min-w-0 pl-4 mt-4 md:mt-8">
-                <h1 className="sm:min-h-[200px] leading-[1.04] sm:min-w-[calc(100%+90px)] relative flex items-end tracking-[-0.04em] text-[clamp(2.2rem,7.5vw,6.5rem)] font-extrabold">
+                <h1 className="sm:min-h-50 leading-[1.04] sm:min-w-[calc(100%+90px)] relative flex items-end tracking-[-0.04em] text-[clamp(2.2rem,7.5vw,6.5rem)] font-extrabold">
                   {content.Hero.title}
                 </h1>
               </header>
 
-              <div className="text-pretty px-4 font-light leading-[1.555555556] text-base sm:text-lg max-w-[calc(calc(1080px*0.25)*3)] sm:pr-8">
+              <TypingAnimation className="text-pretty px-4 font-light leading-[1.555555556] text-base sm:text-lg max-w-202.5 sm:pr-8">
                 {content.Hero.description}
-              </div>
+              </TypingAnimation>
 
               <div className="pl-4 mt-2 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
                 <Button asChild size="lg" className="px-5 text-base">
@@ -40,7 +41,7 @@ export default function Hero() {
               </div>
             </section>
 
-            <div className="relative z-[2]">
+            <div className="relative z-2">
               <DummyPlaceHolder />
             </div>
           </div>
@@ -60,7 +61,7 @@ const DummyPlaceHolder = () => {
   "
       >
         <div
-          className="grid grid-rows-[auto] grid-cols-[132px_1fr] gap-6 w-[975px] p-6 pr-0 rounded-[8px] text-xs font-light tracking-[0.2px] leading-[14px] text-[#425466] select-none absolute top-0 left-[253px]"
+          className="grid grid-rows-[auto] grid-cols-[132px_1fr] gap-6 w-243.75 p-6 pr-0 rounded-xl text-xs font-light tracking-[0.2px] leading-3.5 text-[#425466] select-none absolute top-0 left-63.25"
           style={{
             background:
               "linear-gradient(hsla(0,0%,100%,.4),hsla(0,0%,100%,.3) 25%,rgba(246,249,252,.3) 50%,#f6f9fc 60%)",
@@ -86,9 +87,9 @@ const DummyPlaceHolder = () => {
           </div>
           <div>
             <div className="flex justify-between items-center mb-6 pr-4">
-              <div className="flex items-center rounded-[4px] h-[20px] w-[278px] bg-white text-[#62788d]">
+              <div className="flex items-center rounded-lg h-5 w-69.5 bg-white text-[#62788d]">
                 <svg
-                  className="w-[10px] mt-[1px] mr-[5px] mb-0 ml-[6px]"
+                  className="w-2.5 mt-px mr-1.25 mb-0 ml-1.5"
                   viewBox="0 0 10 10"
                 >
                   <circle
@@ -119,17 +120,17 @@ const DummyPlaceHolder = () => {
 
             <div className="grid grid-rows-[auto] grid-cols-[1fr_20px] gap-3 mr-3">
               <div className="grid gap-3">
-                <div className="bg-white rounded pt-[18px] px-[20px] pb-[20px]">
-                  <div className="font-medium text-lg leading-[22.9px] pb-[5px] border-b text-[#414552] border-[#ebeef1]">
+                <div className="bg-white rounded pt-4.5 px-5 pb-5">
+                  <div className="font-medium text-lg leading-[22.9px] pb-1.25 border-b text-[#414552] border-[#ebeef1]">
                     <span>Today</span>
                   </div>
 
-                  <div className="grid grid-cols-[2fr_1fr] gap-[46px] pt-5">
+                  <div className="grid grid-cols-[2fr_1fr] gap-11.5 pt-5">
                     <div>
-                      <div className="flex justify-between w-[255px]">
+                      <div className="flex justify-between w-63.75">
                         <div>
-                          <div className="flex gap-[6px] items-baseline">
-                            <span className="font-light text-xs leading-[14px] -tracking-[0.1px] text-[#727f96]">
+                          <div className="flex gap-1.5 items-baseline">
+                            <span className="font-light text-xs leading-3.5 tracking-[-0.1px] text-[#727f96]">
                               <b>Appointments</b>
                             </span>
                             <svg
@@ -147,16 +148,16 @@ const DummyPlaceHolder = () => {
                               ></path>
                             </svg>
                           </div>
-                          <div className="font-light text-sm leading-[18px] text-[#0a2540] mt-1">
+                          <div className="font-light text-sm leading-4.5 text-[#0a2540] mt-1">
                             42 scheduled
                           </div>
-                          <div className="font-light text-xs leading-[12px] text-[#727f96] mt-1">
+                          <div className="font-light text-xs leading-3 text-[#727f96] mt-1">
                             Next: 14:00
                           </div>
                         </div>
                         <div>
-                          <div className="flex gap-[6px] items-baseline">
-                            <span className="font-light text-xs leading-[14px] -tracking-[0.1px] text-[#727f96]">
+                          <div className="flex gap-1.5 items-baseline">
+                            <span className="font-light text-xs leading-3.5 tracking-[-0.1px] text-[#727f96]">
                               <b>Yesterday</b>
                             </span>
                             <svg
@@ -174,12 +175,12 @@ const DummyPlaceHolder = () => {
                               ></path>
                             </svg>
                           </div>
-                          <div className="font-light text-sm leading-[15px] -tracking-[0.1px] text-[#727f96] mt-1">
+                          <div className="font-light text-sm leading-3.75 tracking-[-0.1px] text-[#727f96] mt-1">
                             37 visits
                           </div>
                         </div>
                       </div>
-                      <div className="mt-[6px]">
+                      <div className="mt-1.5">
                         <svg
                           className="mt-2"
                           viewBox="0 0 468 70"
@@ -219,13 +220,13 @@ const DummyPlaceHolder = () => {
                           ></path>
                         </svg>
                         <div className="flex justify-between">
-                          <span className="font-light text-xs leading-[12px] text-[#727f96]">
+                          <span className="font-light text-xs leading-3 text-[#727f96]">
                             00:00
                           </span>
-                          <span className="font-light text-xs leading-[12px] text-[#635bff]">
+                          <span className="font-light text-xs leading-3 text-[#635bff]">
                             Now, 14:00
                           </span>
-                          <span className="font-light text-xs leading-[12px] text-[#727f96]">
+                          <span className="font-light text-xs leading-3 text-[#727f96]">
                             23:59
                           </span>
                         </div>
@@ -236,7 +237,7 @@ const DummyPlaceHolder = () => {
                       <div className="flex items-center justify-between">
                         <div>
                           <div className="flex gal-[6px] items-baseline">
-                            <span className="font-light text-xs leading-[14px] -tracking-[0.1px] text-[#727f96]">
+                            <span className="font-light text-xs leading-3.5 tracking-[-0.1px] text-[#727f96]">
                               <b>Open Visits</b>
                             </span>
                             <svg
@@ -254,31 +255,31 @@ const DummyPlaceHolder = () => {
                               ></path>
                             </svg>
                           </div>
-                          <div className="mt-1 font-light text-sm leading-[18px] text-[#0a2540]">
+                          <div className="mt-1 font-light text-sm leading-4.5 text-[#0a2540]">
                             12 patients
                           </div>
-                          <div className="mt-1 font-light text-xs leading-[12px] text-[#727f96]">
+                          <div className="mt-1 font-light text-xs leading-3 text-[#727f96]">
                             In consultation queue
                           </div>
                         </div>
-                        <span className="font-[425] text-xs leading-[14px] -tracking-[0.1px] self-start mt-0.5 text-[#635bff]">
+                        <span className="font-[425] text-xs leading-3.5 tracking-[-0.1px] self-start mt-0.5 text-[#635bff]">
                           View
                         </span>
                       </div>
-                      <div className="w-full h-[1px] bg-[#ebeef1]"></div>
+                      <div className="w-full h-px bg-[#ebeef1]"></div>
                       <div className="flex items-center justify-between">
                         <div>
-                          <span className="font-light text-xs leading-[14px] -tracking-[0.1px] text-[#727f96]">
+                          <span className="font-light text-xs leading-3.5 tracking-[-0.1px] text-[#727f96]">
                             <b>Follow-ups</b>
                           </span>
-                          <div className="mt-1 font-light text-sm leading-[18px] -tracking-[0.1px] text-[#0a2540]">
+                          <div className="mt-1 font-light text-sm leading-4.5 tracking-[-0.1px] text-[#0a2540]">
                             18 due
                           </div>
-                          <div className="mt-1 font-light text-xs leading-[12px] -tracking-[0.1px] text-[#727f96]">
+                          <div className="mt-1 font-light text-xs leading-3 tracking-[-0.1px] text-[#727f96]">
                             Scheduled today
                           </div>
                         </div>
-                        <span className="font-light text-xs leading-[14px] -tracking-[0.1px] text-[#727f96] HomepageDashboardGraphic__copy--smallHeaderFancy">
+                        <span className="font-light text-xs leading-3.5 tracking-[-0.1px] text-[#727f96] HomepageDashboardGraphic__copy--smallHeaderFancy">
                           View
                         </span>
                       </div>
@@ -808,7 +809,7 @@ const DummyPlaceHolder = () => {
         </div>
 
         <figure
-          className="w-[270px] h-[536px] p-2 rounded-[36px] bg-[#f6f9fc] select-none text-base relative mt-[60px] left-[140px] shadow-[0_50px_100px_-20px_rgba(50,50,93,0.25),0_30px_60px_-30px_rgba(0,0,0,0.3),inset_0_-2px_6px_0_rgba(10,37,64,0.35)]"
+          className="w-67.5 h-134 p-2 rounded-[36px] bg-[#f6f9fc] select-none text-base relative mt-15 left-35 shadow-[0_50px_100px_-20px_rgba(50,50,93,0.25),0_30px_60px_-30px_rgba(0,0,0,0.3),inset_0_-2px_6px_0_rgba(10,37,64,0.35)]"
           aria-hidden="true"
         >
           <div className="relative h-full rounded-[29px] bg-white overflow-hidden">
@@ -827,7 +828,7 @@ const DummyPlaceHolder = () => {
                 </span>
               </div>
 
-              <div className="rounded-[24px] bg-[#f6f9fc] p-4 mb-5">
+              <div className="rounded-3xl bg-[#f6f9fc] p-4 mb-5">
                 <div className="flex items-center justify-between mb-3 text-[10px] uppercase tracking-[0.24em] text-[#7d8a9a]">
                   <span>Today</span>
                   <span>08:30</span>

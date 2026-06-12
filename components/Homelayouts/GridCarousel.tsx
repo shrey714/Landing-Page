@@ -16,6 +16,7 @@ import {
   StethoscopeIcon,
 } from "lucide-react";
 import content from "@/content/content";
+import TypingAnimation from "../ui/typingText";
 
 
 
@@ -118,25 +119,25 @@ const GridCarousel = () => {
   return (
     <section className="relative">
       <div className="overflow-hidden">
-        <div className="relative z-[1] flex justify-center">
+        <div className="relative z-1 flex justify-center">
           <div className="w-full max-w-7xl mx-4">
             <div className="py-28">
-              <div className="grid gap-y-8 min-[600px]:gap-y-12 min-[900px]:gap-y-16 items-start grid-rows-[auto] grid-cols-[minmax(0,_1fr)]">
+              <div className="grid gap-y-8 min-[600px]:gap-y-12 min-[900px]:gap-y-16 items-start grid-rows-[auto] grid-cols-[minmax(0,1fr)]">
                 <div className="items-start gap-y-8 grid min-[900px]:grid-cols-[3fr_1fr]">
-                  <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
-                    <header className="grid gap-y-6 max-w-[calc(calc(1280px*0.25)*3)] grid-cols-[minmax(0,_1fr)] pr-4 min-[600px]:pr-8 pl-4">
+                  <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-27">
+                    <header className="grid gap-y-6 max-w-240 grid-cols-[minmax(0,1fr)] pr-4 min-[600px]:pr-8 pl-4">
                       <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
                         {content.GridCarousel.headerTitle1}
                       </h2>
-                      <h1 className="relative text-white -tracking-[0.2px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
+                      <h1 className="relative text-white tracking-[-0.2px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
                         {content.GridCarousel.headerTitle2}
                       </h1>
                     </header>
 
-                    <div className="text-gray-300 font-light text-lg leading-[1.555555556] max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-8 pl-4">
-                      <p>
+                    <div className="text-gray-300 font-light text-lg leading-[1.555555556] max-w-240 pr-4 min-[600px]:pr-8 pl-4">
+                      <TypingAnimation>
                         {content.GridCarousel.headerDescription}
-                      </p>
+                      </TypingAnimation>
                     </div>
 
                     <footer className="px-4">
@@ -152,13 +153,13 @@ const GridCarousel = () => {
                 </div>
 
                 <div>
-                  <div className="grid gap-y-8 items-start min-[900px]:grid-cols-[1fr_minmax(0,_3fr)]">
+                  <div className="grid gap-y-8 items-start min-[900px]:grid-cols-[1fr_minmax(0,3fr)]">
                     <aside className="grid gap-y-8 grid-cols-1 grid-flow-row min-[600px]:grid-cols-2 min-[600px]:grid-flow-col min-[600px]:gap-y-0 min-[900px]:grid-cols-1 min-[900px]:grid-flow-row min-[900px]:gap-y-8">
-                      <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-2 min-w-full items-start">
-                        <header className="relative gap-y-2 grid grid-cols-[minmax(0,_1fr)] pl-4 pr-4 min-[60px]:pr-16 min-[900px]:pr-28">
+                      <section className="scroll-mt-27 tracking-[0.2px] grid gap-y-2 min-w-full items-start">
+                        <header className="relative gap-y-2 grid grid-cols-[minmax(0,1fr)] pl-4 pr-4 min-[60px]:pr-16 min-[900px]:pr-28">
                           <h4 className="relative text-white tracking-[0.2px] wrap-break-word font-medium text-xl leading-[1.33]">
                             <span
-                              className="block absolute top-[4.46px] -left-4 w-[1px] h-6"
+                              className="block absolute top-[4.46px] -left-4 w-px h-6"
                               style={{ backgroundColor: active.color }}
                             ></span>
                             {active.stats}
@@ -170,11 +171,11 @@ const GridCarousel = () => {
                         </div>
                       </section>
 
-                      <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-2 min-w-full items-start">
-                        <header className="relative gap-y-2 grid grid-cols-[minmax(0,_1fr)] pl-4 pr-4 min-[60px]:pr-16 min-[900px]:pr-28">
+                      <section className="scroll-mt-27 tracking-[0.2px] grid gap-y-2 min-w-full items-start">
+                        <header className="relative gap-y-2 grid grid-cols-[minmax(0,1fr)] pl-4 pr-4 min-[60px]:pr-16 min-[900px]:pr-28">
                           <h4 className="relative text-white tracking-[0.2px] wrap-break-word font-medium text-xl leading-[1.33]">
                             <span
-                              className="block absolute top-[4.46px] -left-4 w-[1px] h-6"
+                              className="block absolute top-[4.46px] -left-4 w-px h-6"
                               style={{ backgroundColor: active.color }}
                             ></span>
                             {active.title}
@@ -186,11 +187,11 @@ const GridCarousel = () => {
                         </div>
                       </section>
 
-                      <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-2 min-w-full">
-                        <header className="grid grid-cols-[minmax(0,_1fr)] gap-y-2 relative pr-4 min-[600px]:pr-8 pl-4 max-w-[calc(calc(1280px*0.25)*3)]">
+                      <section className="scroll-mt-27 tracking-[0.2px] grid gap-y-2 min-w-full">
+                        <header className="grid grid-cols-[minmax(0,1fr)] gap-y-2 relative pr-4 min-[600px]:pr-8 pl-4 max-w-240">
                           <h4 className="relative text-white tracking-[0.2px] wrap-break-word font-[425] text-base leading-[1.6]">
                             <span
-                              className="block absolute top-[5px] -left-4 w-[1px] h-[15px]"
+                              className="block absolute top-1.25 -left-4 w-px h-3.75"
                               style={{ backgroundColor: active.color }}
                             ></span>
                             {content.GridCarousel.modulesUsed}
@@ -202,7 +203,7 @@ const GridCarousel = () => {
                             {active.products.map((product) => (
                               <li
                                 key={product}
-                                className="grid grid-rows-[1fr] grid-cols-[20px_1fr] gap-x-[14px] gap-y-0 items-center"
+                                className="grid grid-rows-[1fr] grid-cols-[20px_1fr] gap-x-3.5 gap-y-0 items-center"
                               >
                                 <div
                                   className="w-5 h-5 rounded"
@@ -215,11 +216,11 @@ const GridCarousel = () => {
                         </footer>
                       </section>
 
-                      <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-2 min-w-full">
-                        <header className="grid grid-cols-[minmax(0,_1fr)] gap-y-2 relative pr-4 min-[600px]:pr-8 pl-4 max-w-[calc(calc(1280px*0.25)*3)]">
+                      <section className="scroll-mt-27 tracking-[0.2px] grid gap-y-2 min-w-full">
+                        <header className="grid grid-cols-[minmax(0,1fr)] gap-y-2 relative pr-4 min-[600px]:pr-8 pl-4 max-w-240">
                           <h4 className="relative text-white tracking-[0.2px] wrap-break-word font-[425] text-base leading-[1.6]">
                             <span
-                              className="block absolute top-[5px] -left-4 w-[1px] h-[15px]"
+                              className="block absolute top-1.25 -left-4 w-px h-3.75"
                               style={{ backgroundColor: active.color }}
                             ></span>
                             {content.GridCarousel.nextBestAction}
@@ -233,7 +234,7 @@ const GridCarousel = () => {
                     </aside>
 
                     <div
-                      className="relative min-w-[100px] min-h-[72px] rounded-[8px] border border-white/10 h-[460px] overflow-hidden bg-white/[0.06]"
+                      className="relative min-w-25 min-h-18 rounded-xl border border-white/10 h-115 overflow-hidden bg-white/6"
                       style={{
                         boxShadow:
                           "0 13px 27px -5px rgba(50,50,93,0.25),0 8px 16px -8px rgba(0,0,0,0.3)",
@@ -249,7 +250,7 @@ const GridCarousel = () => {
                             className="min-w-[25%] h-full p-5 min-[700px]:p-8"
                             style={{ backgroundColor: `${slide.color}20` }}
                           >
-                            <div className="flex h-full flex-col rounded-[8px] bg-[#f6f9fc] text-[#0a2540] overflow-hidden">
+                            <div className="flex h-full flex-col rounded-xl bg-[#f6f9fc] text-[#0a2540] overflow-hidden">
                               <div
                                 className="h-1 w-full"
                                 style={{ backgroundColor: slide.color }}
@@ -258,7 +259,7 @@ const GridCarousel = () => {
                               <div className="flex items-center justify-between border-b border-[#e6ebf1] bg-white px-5 py-4">
                                 <div className="flex items-center gap-3">
                                   <div
-                                    className="grid h-10 w-10 place-items-center rounded-[8px]"
+                                    className="grid h-10 w-10 place-items-center rounded-xl"
                                     style={{
                                       backgroundColor: `${slide.color}24`,
                                       color: slide.color,
@@ -282,7 +283,7 @@ const GridCarousel = () => {
 
                               <div className="grid flex-1 gap-4 p-5">
                                 <div className="grid grid-cols-[1fr_120px] gap-4">
-                                  <div className="rounded-[8px] bg-white p-4 shadow-sm">
+                                  <div className="rounded-xl bg-white p-4 shadow-sm">
                                     <p className="text-xs uppercase text-[#727f96]">
                                       {content.GridCarousel.operationalSignal}
                                     </p>
@@ -295,7 +296,7 @@ const GridCarousel = () => {
                                       </span>
                                     </div>
                                   </div>
-                                  <div className="hidden rounded-[8px] bg-[#081C4F] p-4 text-white min-[700px]:grid">
+                                  <div className="hidden rounded-xl bg-[#081C4F] p-4 text-white min-[700px]:grid">
                                     <ActivityIcon
                                       className="text-[#00d4ff]"
                                       size={20} 
@@ -307,7 +308,7 @@ const GridCarousel = () => {
                                 </div>
 
                                 <div className="grid gap-3 min-[700px]:grid-cols-[1.1fr_0.9fr]">
-                                  <div className="rounded-[8px] bg-white shadow-sm">
+                                  <div className="rounded-xl bg-white shadow-sm">
                                     <div className="border-b border-[#e6ebf1] px-4 py-3 text-sm font-medium">
                                       {content.GridCarousel.liveFlow}
                                     </div>
@@ -332,7 +333,7 @@ const GridCarousel = () => {
                                     {slide.products.map((product) => (
                                       <div
                                         key={product}
-                                        className="rounded-[8px] bg-white p-4 shadow-sm"
+                                        className="rounded-xl bg-white p-4 shadow-sm"
                                       >
                                         <div className="flex items-center gap-2">
                                           {product.includes("Report") ||
@@ -368,7 +369,7 @@ const GridCarousel = () => {
                                   </div>
                                 </div>
 
-                                <div className="rounded-[8px] bg-[#081C4F] p-4 text-white">
+                                <div className="rounded-xl bg-[#081C4F] p-4 text-white">
                                   <p className="text-xs uppercase text-gray-300">
                                     {content.GridCarousel.nextBestAction}
                                   </p>
@@ -397,7 +398,7 @@ const GridCarousel = () => {
                           key={slide.id}
                           className="relative flex items-center justify-center min-[900px]:w-full"
                         >
-                          <div className="w-full h-[1px] left-0 absolute -top-5 max-[899px]:hidden">
+                          <div className="w-full h-px left-0 absolute -top-5 max-[899px]:hidden">
                             <div
                               className="origin-left h-full w-full top-0 left-0 absolute transition-transform duration-500"
                               style={{

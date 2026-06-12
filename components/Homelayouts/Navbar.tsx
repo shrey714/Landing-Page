@@ -237,7 +237,7 @@ function RichNavigationMenu() {
             Modules
           </NavigationMenuTrigger>
           <NavigationMenuContent className="p-4">
-            <div className="grid grid-cols-[1fr_280px] gap-4 p-4 w-[760px]">
+            <div className="grid grid-cols-[1fr_280px] gap-4 p-4 w-190">
               <div>
                 <h6 className="pl-2.5 font-semibold uppercase text-sm text-muted-foreground">
                   Core workflows
@@ -249,7 +249,7 @@ function RichNavigationMenu() {
                 </ul>
               </div>
 
-              <div className="rounded-[8px] bg-[#081C4F] p-5 text-white">
+              <div className="rounded-xl bg-[#081C4F] p-5 text-white">
                 <HeartPulseIcon className="h-8 w-8 text-[#00d4ff]" />
                 <h3 className="mt-5 text-2xl font-semibold leading-snug">
                   One workspace for care
@@ -270,7 +270,7 @@ function RichNavigationMenu() {
               <h6 className="pl-2.5 font-semibold uppercase text-sm text-muted-foreground">
                 Built for healthcare teams
               </h6>
-              <ul className="mt-2.5 grid w-[560px] gap-3 md:grid-cols-2">
+              <ul className="mt-2.5 grid w-140 gap-3 md:grid-cols-2">
                 {solutions.map((item) => (
                   <MenuCard key={item.title} item={item} />
                 ))}
@@ -294,7 +294,7 @@ function RichNavigationMenu() {
           </NavigationMenuLink>
         </NavigationMenuItem>
 
-        <NavigationMenuIndicator className="transition-[width,transform] duration-[250ms] ease-in-out" />
+        <NavigationMenuIndicator className="transition-[width,transform] duration-250 ease-in-out" />
       </NavigationMenuList>
       <NavigationMenuViewport className="bg-popover/80 backdrop-blur-md" />
     </NavigationMenu>

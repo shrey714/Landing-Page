@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import content from "@/content/content";
+import TypingAnimation from "../ui/typingText";
 
 const LogoCloud = () => {
 
@@ -46,9 +47,9 @@ const LogoCloud = () => {
         <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
           {content.LogoCloud.title}
         </h2>
-        <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+        <TypingAnimation className="text-gray-300 mb-8 max-w-2xl mx-auto">
           {content.LogoCloud.description}
-        </p>
+        </TypingAnimation>
 
         {/* Logo container with animation */}
         <div className="relative min-h-20">

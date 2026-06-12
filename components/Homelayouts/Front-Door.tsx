@@ -13,6 +13,7 @@ import {
   UserRoundIcon,
 } from "lucide-react";
 import content from "@/content/content";
+import TypingAnimation from "../ui/typingText";
 
 export function StickyScrollReveal() {
   const [divHeight, setDivHeight] = useState(0);
@@ -62,7 +63,7 @@ export function StickyScrollReveal() {
 
   return (
     <section className="relative">
-      <div className="relative z-[1] flex justify-center">
+      <div className="relative z-1 flex justify-center">
         <div className="w-full max-w-7xl my-0 mx-4">
           <div className="px-0 py-28">
             <div
@@ -73,23 +74,23 @@ export function StickyScrollReveal() {
               <div
                 id="heading1"
                 ref={setHeadingRef(0)}
-                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-[900px]"
+                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-225"
               >
-                <section className="grid gap-y-8 tracking-[0.2px] scroll-mt-[108px]">
-                  <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-8 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
+                <section className="grid gap-y-8 tracking-[0.2px] scroll-mt-27">
+                  <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-8 pl-4 pr-4 min-[600px]:pr-16 max-w-202.5">
                     <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
                       {content.FrontDoor.h1Title}
                     </h2>
 
-                    <h1 className="relative text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-[#fff] -tracking-[0.02em] wrap-break-word">
+                    <h1 className="relative text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white tracking-[-0.02em] wrap-break-word">
                       {content.FrontDoor.h1Subtitle}
                     </h1>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
-                    <p>
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-202.5">
+                    <TypingAnimation>
                       {content.FrontDoor.h1Desc}
-                    </p>
+                    </TypingAnimation>
                   </div>
                 </section>
 
@@ -99,7 +100,7 @@ export function StickyScrollReveal() {
                     style={{ height: divHeight }}
                   >
                     {/* main gif shower */}
-                    <div className="sticky aspect-square top-[calc(50%-270px)] overflow-hidden mx-auto max-w-[540px]">
+                    <div className="sticky aspect-square top-[calc(50%-270px)] overflow-hidden mx-auto max-w-135">
                       <AnimatePresence mode="wait">
                         <motion.div
                           key={activeGif}
@@ -116,7 +117,7 @@ export function StickyScrollReveal() {
                   </div>
                 </figure>
                 <figure className="relative self-start grid min-[900px]:hidden px-4">
-                  <div className="aspect-square overflow-hidden rounded-[8px]">
+                  <div className="aspect-square overflow-hidden rounded-xl">
                     <ProductPanel panelNumber={1} />
                   </div>
                 </figure>
@@ -125,44 +126,44 @@ export function StickyScrollReveal() {
               <div
                 id="heading2"
                 ref={setHeadingRef(1)}
-                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-[900px] min-[900px]:h-[90vh]"
+                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-225 min-[900px]:h-[90vh]"
               >
-                <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
-                  <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
+                <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-27">
+                  <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-202.5">
                     <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
                       {content.FrontDoor.h2Title}
                     </h2>
 
-                    <h2 className="relative text-3xl md:text-4xl font-extrabold leading-tight text-[#fff] -tracking-[0.02em] wrap-break-word">
+                    <h2 className="relative text-3xl md:text-4xl font-extrabold leading-tight text-white tracking-[-0.02em] wrap-break-word">
                       {content.FrontDoor.h2Subtitle}
                     </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
-                    <p>
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-202.5">
+                    <TypingAnimation>
                       {content.FrontDoor.h2Desc}
-                    </p>
+                    </TypingAnimation>
                   </div>
 
-                  <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-base leading-[1.6]">
-                    <h1 className="mb-2 text-white text-2xl font-semibold -tracking-[0.2px]">
+                  <footer className="grid px-4 auto-cols-fr tracking-[0.2px] font-light text-base leading-[1.6]">
+                    <h1 className="mb-2 text-white text-2xl font-semibold tracking-[-0.2px]">
                       {content.FrontDoor.seeAlso}
                     </h1>
                     <ul className="list-none">
-                      <div className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-gray-300">
                         {content.FrontDoor.h2List1}
-                      </div>
-                      <div className="my-1 text-gray-300">
+                      </TypingAnimation>
+                      <TypingAnimation className="my-1 text-gray-300">
                         {content.FrontDoor.h2List2}
-                      </div>
-                      <div className="my-1 text-gray-300">
+                      </TypingAnimation>
+                      <TypingAnimation className="my-1 text-gray-300">
                         {content.FrontDoor.h2List3}
-                      </div>
+                      </TypingAnimation>
                     </ul>
                   </footer>
                 </section>
                 <figure className="relative self-start grid min-[900px]:hidden px-4">
-                  <div className="aspect-square overflow-hidden rounded-[8px]">
+                  <div className="aspect-square overflow-hidden rounded-xl">
                     <ProductPanel panelNumber={2} />
                   </div>
                 </figure>
@@ -171,44 +172,44 @@ export function StickyScrollReveal() {
               <div
                 id="heading3"
                 ref={setHeadingRef(2)}
-                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-[900px] min-[900px]:h-[90vh]"
+                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-225 min-[900px]:h-[90vh]"
               >
-                <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
-                  <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
+                <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-27">
+                  <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-202.5">
                     <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
                       {content.FrontDoor.h3Title}
                     </h2>
 
-                    <h2 className="relative font-medium text-3xl leading-[1.294117647] text-[#fff] -tracking-[0.02em] wrap-break-word">
+                    <h2 className="relative font-medium text-3xl leading-[1.294117647] text-white tracking-[-0.02em] wrap-break-word">
                       {content.FrontDoor.h3Subtitle}
                     </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
-                    <p>
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-202.5">
+                    <TypingAnimation>
                       {content.FrontDoor.h3Desc}
-                    </p>
+                    </TypingAnimation>
                   </div>
 
-                  <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-base leading-[1.6]">
-                    <h1 className="mb-2 text-white font-[425] -tracking-[0.2px]">
+                  <footer className="grid px-4 auto-cols-fr tracking-[0.2px] font-light text-base leading-[1.6]">
+                    <h1 className="mb-2 text-white font-[425] tracking-[-0.2px]">
                       {content.FrontDoor.seeAlso}
                     </h1>
                     <ul className="list-none">
-                      <div className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-gray-300">
                         {content.FrontDoor.h3List1}
-                      </div>
-                      <div className="my-1 text-gray-300">
+                      </TypingAnimation>
+                      <TypingAnimation className="my-1 text-gray-300">
                         {content.FrontDoor.h3List2}
-                      </div>
-                      <div className="my-1 text-gray-300">
+                      </TypingAnimation>
+                      <TypingAnimation className="my-1 text-gray-300">
                         {content.FrontDoor.h3List3}
-                      </div>
+                      </TypingAnimation>
                     </ul>
                   </footer>
                 </section>
                 <figure className="relative self-start grid min-[900px]:hidden px-4">
-                  <div className="aspect-square overflow-hidden rounded-[8px]">
+                  <div className="aspect-square overflow-hidden rounded-xl">
                     <ProductPanel panelNumber={3} />
                   </div>
                 </figure>
@@ -217,44 +218,44 @@ export function StickyScrollReveal() {
               <div
                 id="heading4"
                 ref={setHeadingRef(3)}
-                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-[900px] min-[900px]:h-[90vh]"
+                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-225 min-[900px]:h-[90vh]"
               >
-                <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
-                  <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
+                <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-27">
+                  <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-202.5">
                     <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
                       {content.FrontDoor.h4Title}
                     </h2>
 
-                    <h2 className="relative font-medium text-3xl leading-[1.294117647] text-[#fff] -tracking-[0.02em] wrap-break-word">
+                    <h2 className="relative font-medium text-3xl leading-[1.294117647] text-white tracking-[-0.02em] wrap-break-word">
                       {content.FrontDoor.h4Subtitle}
                     </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
-                    <p>
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-202.5">
+                    <TypingAnimation>
                       {content.FrontDoor.h4Desc}
-                    </p>
+                    </TypingAnimation>
                   </div>
 
-                  <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-base leading-[1.6]">
-                    <h1 className="mb-2 text-white font-[425] -tracking-[0.2px]">
+                  <footer className="grid px-4 auto-cols-fr tracking-[0.2px] font-light text-base leading-[1.6]">
+                    <h1 className="mb-2 text-white font-[425] tracking-[-0.2px]">
                       {content.FrontDoor.seeAlso}
                     </h1>
                     <ul className="list-none">
-                      <div className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-gray-300">
                         {content.FrontDoor.h4List1}
-                      </div>
-                      <div className="my-1 text-gray-300">
+                      </TypingAnimation>
+                      <TypingAnimation className="my-1 text-gray-300">
                         {content.FrontDoor.h4List2}
-                      </div>
-                      <div className="my-1 text-gray-300">
+                      </TypingAnimation>
+                      <TypingAnimation className="my-1 text-gray-300">
                         {content.FrontDoor.h4List3}
-                      </div>
+                      </TypingAnimation>
                     </ul>
                   </footer>
                 </section>
                 <figure className="relative self-start grid min-[900px]:hidden px-4">
-                  <div className="aspect-square overflow-hidden rounded-[8px]">
+                  <div className="aspect-square overflow-hidden rounded-xl">
                     <ProductPanel panelNumber={4} />
                   </div>
                 </figure>
@@ -263,44 +264,44 @@ export function StickyScrollReveal() {
               <div
                 id="heading5"
                 ref={setHeadingRef(4)}
-                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-[900px] pb-20"
+                className="grid items-center min-[600px]:grid-cols-1 min-[900px]:grid-cols-2 gap-y-8 min-[900px]:max-h-225 pb-20"
               >
-                <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
-                  <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-[810px]">
+                <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-27">
+                  <header className="relative grid grid-cols-[minmax(0,1fr)] gap-y-4 pl-4 pr-4 min-[600px]:pr-16 max-w-202.5">
                     <h2 className="text-[#635bff] text-3xl md:text-4xl font-semibold leading-tight">
                       {content.FrontDoor.h5Title}
                     </h2>
 
-                    <h2 className="relative font-medium text-3xl leading-[1.294117647] text-[#fff] -tracking-[0.02em] wrap-break-word">
+                    <h2 className="relative font-medium text-3xl leading-[1.294117647] text-white tracking-[-0.02em] wrap-break-word">
                       {content.FrontDoor.h5Subtitle}
                     </h2>
                   </header>
 
-                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-[810px]">
-                    <p>
+                  <div className="pl-4 pr-4 min-[600px]:pr-16 font-light text-lg leading-[1.555555556] text-gray-300 max-w-202.5">
+                    <TypingAnimation>
                       {content.FrontDoor.h5Desc}
-                    </p>
+                    </TypingAnimation>
                   </div>
 
-                  <footer className="grid px-4 auto-cols-[minmax(0,1fr)] tracking-[0.2px] font-light text-base leading-[1.6]">
-                    <h1 className="mb-2 text-white font-[425] -tracking-[0.2px]">
+                  <footer className="grid px-4 auto-cols-fr tracking-[0.2px] font-light text-base leading-[1.6]">
+                    <h1 className="mb-2 text-white font-[425] tracking-[-0.2px]">
                       {content.FrontDoor.seeAlso}
                     </h1>
                     <ul className="list-none">
-                      <div className="my-1 text-gray-300">
+                      <TypingAnimation className="my-1 text-gray-300">
                         {content.FrontDoor.h5List1}
-                      </div>
-                      <div className="my-1 text-gray-300">
+                      </TypingAnimation>
+                      <TypingAnimation className="my-1 text-gray-300">
                         {content.FrontDoor.h5List2}
-                      </div>
-                      <div className="my-1 text-gray-300">
+                      </TypingAnimation>
+                      <TypingAnimation className="my-1 text-gray-300">
                         {content.FrontDoor.h5List3}
-                      </div>
+                      </TypingAnimation>
                     </ul>
                   </footer>
                 </section>
                 <figure className="relative self-start grid min-[900px]:hidden px-4">
-                  <div className="aspect-square overflow-hidden rounded-[8px]">
+                  <div className="aspect-square overflow-hidden rounded-xl">
                     <ProductPanel panelNumber={5} />
                   </div>
                 </figure>
@@ -385,8 +386,8 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
   const panel = panels[panelNumber - 1] ?? panels[0];
 
   return (
-    <div className="h-full w-full rounded-[8px] border border-white/10 bg-white/[0.06] p-4 shadow-2xl shadow-black/20">
-      <div className="flex h-full flex-col overflow-hidden rounded-[8px] bg-[#f6f9fc] text-[#0a2540]">
+    <div className="h-full w-full rounded-xl border border-white/10 bg-white/6 p-4 shadow-2xl shadow-black/20">
+      <div className="flex h-full flex-col overflow-hidden rounded-xl bg-[#f6f9fc] text-[#0a2540]">
         <div
           className="h-1 w-full"
           style={{ backgroundColor: panel.accent }}
@@ -395,7 +396,7 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
         <div className="flex items-center justify-between border-b border-[#e6ebf1] bg-white px-5 py-4">
           <div className="flex items-center gap-3">
             <div
-              className="grid h-10 w-10 place-items-center rounded-[8px]"
+              className="grid h-10 w-10 place-items-center rounded-xl"
               style={{ backgroundColor: `${panel.accent}24`, color: panel.accent }}
             >
               <panel.icon size={20} />
@@ -414,7 +415,7 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
 
         <div className="grid flex-1 gap-4 p-5">
           <div className="grid grid-cols-[1fr_auto] gap-4">
-            <div className="rounded-[8px] bg-white p-4 shadow-sm">
+            <div className="rounded-xl bg-white p-4 shadow-sm">
               <p className="text-xs uppercase text-[#727f96]">{content.FrontDoor.panelFocusMetric}</p>
               <div className="mt-4 flex items-end gap-3">
                 <span className="text-4xl font-medium">{panel.stat}</span>
@@ -423,7 +424,7 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
                 </span>
               </div>
             </div>
-            <div className="hidden w-24 rounded-[8px] bg-[#081C4F] p-4 text-white min-[480px]:grid">
+            <div className="hidden w-24 rounded-xl bg-[#081C4F] p-4 text-white min-[480px]:grid">
               <ShieldCheckIcon className="text-[#00d4ff]" size={20} />
               <span className="self-end text-xs leading-5 text-gray-300">
                 {content.FrontDoor.panelRoleBasedAccess}
@@ -431,7 +432,7 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
             </div>
           </div>
 
-          <div className="rounded-[8px] bg-white shadow-sm">
+          <div className="rounded-xl bg-white shadow-sm">
             <div className="flex items-center gap-2 border-b border-[#e6ebf1] px-4 py-3 text-sm text-[#727f96]">
               <SearchIcon size={14} />
               {content.FrontDoor.panelSearchPlaceholder}
@@ -467,7 +468,7 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
               return (
                 <div
                   key={label as string}
-                  className="grid gap-y-2 rounded-[8px] bg-white p-3 text-center shadow-sm"
+                  className="grid gap-y-2 rounded-xl bg-white p-3 text-center shadow-sm"
                 >
                   <IconComponent
                     className="mx-auto text-[#62788d]"

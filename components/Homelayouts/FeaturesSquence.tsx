@@ -7,6 +7,7 @@ import {
   LockKeyholeIcon,
 } from "lucide-react";
 import content from "@/content/content";
+import TypingAnimation from "../ui/typingText";
 
 const FeaturesSquence = () => {
   const features = [
@@ -40,26 +41,26 @@ const FeaturesSquence = () => {
     <section className="relative mb-[calc(calc(calc(100vw-17px)*0.106))] my-10 md:my-28">
       <div className="overflow-hidden">
         <div className="absolute w-full h-full overflow-visible">
-          <div className="relative h-full max-h-none w-full top-0 left-0 bg-background/70 overflow-hidden [transform:skewY(-6deg)]"></div>
+          <div className="relative h-full max-h-none w-full top-0 left-0 bg-background/70 overflow-hidden transform-[skewY(-6deg)]"></div>
         </div>
-        <div className="relative z-[1] flex justify-center">
+        <div className="relative z-1 flex justify-center">
           <div className="w-full max-w-[calc(calc(100vw-17px)-16px*2)] min-[1112px]:max-w-7xl mx-4">
             <div className="py-28 lg:py-52">
-              <div className="grid gap-y-24 items-start grid-rows-[auto] grid-cols-[minmax(0,_1fr)]">
+              <div className="grid gap-y-24 items-start grid-rows-[auto] grid-cols-[minmax(0,1fr)]">
                 <div className="grid gap-y-8 items-start min-[600px]:grid-cols-2">
-                  <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-6">
-                    <header className="gris gap-y-6 max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-16 pl-4 relative grid-cols-[minmax(0,_1fr)]">
+                  <section className="scroll-mt-27 tracking-[0.2px] grid gap-y-6">
+                    <header className="gris gap-y-6 max-w-240 pr-4 min-[600px]:pr-16 pl-4 relative grid-cols-[minmax(0,1fr)]">
                       <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
                         {content.FeaturesSequence.headerSubtitle}
                       </h2>
-                      <h1 className="relative text-white -tracking-[0.1px] min-[1112px]:-tracking-[0.2px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
+                      <h1 className="relative text-white tracking-[-0.1px] min-[1112px]:tracking-[-0.2px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
                         {content.FeaturesSequence.headerTitle}
                       </h1>
                     </header>
 
-                    <div className="pr-4 min-[600px]:pr-16 pl-4 text-[#adbdcc] max-w-[calc(calc(1280px*0.25)*3)] font-light text-lg leading-[1.555555556]">
+                    <TypingAnimation className="pr-4 min-[600px]:pr-16 pl-4 text-[#adbdcc] max-w-240 font-light text-lg leading-[1.555555556]">
                       {content.FeaturesSequence.headerDesc}
-                    </div>
+                    </TypingAnimation>
 
                     <footer className="pr-4 min-[600px]:pr-16 pl-4">
                       <Button
@@ -72,8 +73,8 @@ const FeaturesSquence = () => {
                     </footer>
                   </section>
                   <figure className="w-full flex items-center justify-center">
-                    <div className="aspect-square w-4/5 md:w-[490px] rounded-[8px] border border-white/10 bg-[#081C4F]/70 p-5 shadow-2xl shadow-black/20">
-                      <div className="flex h-full flex-col rounded-[8px] bg-white p-5 text-[#0a2540]">
+                    <div className="aspect-square w-4/5 md:w-122.5 rounded-xl border border-white/10 bg-[#081C4F]/70 p-5 shadow-2xl shadow-black/20">
+                      <div className="flex h-full flex-col rounded-xl bg-white p-5 text-[#0a2540]">
                         <div className="flex items-center justify-between border-b border-[#e6ebf1] pb-4">
                           <div>
                             <p className="text-xs uppercase text-[#727f96]">
@@ -96,7 +97,7 @@ const FeaturesSquence = () => {
                           ].map(([label, value]) => (
                             <div
                               key={label}
-                              className="flex items-center justify-between rounded-[8px] bg-[#f6f9fc] px-4 py-3"
+                              className="flex items-center justify-between rounded-xl bg-[#f6f9fc] px-4 py-3"
                             >
                               <span className="text-sm text-[#425466]">
                                 {label}
@@ -108,7 +109,7 @@ const FeaturesSquence = () => {
                           ))}
                         </div>
 
-                        <div className="mt-auto rounded-[8px] bg-[#081C4F] p-4 text-white">
+                        <div className="mt-auto rounded-xl bg-[#081C4F] p-4 text-white">
                           <p className="text-sm text-gray-300">
                             {content.FeaturesSequence.nextConsultationLabel}
                           </p>
@@ -127,9 +128,9 @@ const FeaturesSquence = () => {
                     {features.map((feature, index) => (
                       <section
                         key={index}
-                        className="grid gap-y-2 tracking-[0.2px] scroll-mt-[108px]"
+                        className="grid gap-y-2 tracking-[0.2px] scroll-mt-27"
                       >
-                        <header className="relative grid gap-y-2 max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-8 pl-4 grid-cols-[minmax(0,_1fr)]">
+                        <header className="relative grid gap-y-2 max-w-240 pr-4 min-[600px]:pr-8 pl-4 grid-cols-[minmax(0,1fr)]">
                           <div className="min-h-10 flex items-end mb-2">
                             <div className="bg-[#00d4ff42] rounded p-2">
                               <feature.icon size={24} />
@@ -139,7 +140,7 @@ const FeaturesSquence = () => {
                             {feature.title}
                           </h3>
                         </header>
-                        <div className="pr-4 min-[600px]:pr-8 pl-4 text-[#adbdcc] max-w-[calc(calc(1280px*0.25)*3)] font-light text-base leading-[1.6]">
+                        <div className="pr-4 min-[600px]:pr-8 pl-4 text-[#adbdcc] max-w-240 font-light text-base leading-[1.6]">
                           {feature.description}
                         </div>
                         <footer className="pr-4 min-[600px]:pr-8 pl-4">
