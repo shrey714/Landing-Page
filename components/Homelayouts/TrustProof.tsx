@@ -4,30 +4,29 @@ import {
   ShieldCheckIcon,
   UsersRoundIcon,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import content from "@/content/content";
 
 const TrustProof = () => {
-  const t = useTranslations("TrustProof");
 
   const trustItems = [
     {
-      title: t("i1Title"),
-      description: t("i1Desc"),
+      title: content.TrustProof.i1Title,
+      description: content.TrustProof.i1Desc,
       icon: ShieldCheckIcon,
     },
     {
-      title: t("i2Title"),
-      description: t("i2Desc"),
+      title: content.TrustProof.i2Title,
+      description: content.TrustProof.i2Desc,
       icon: LockKeyholeIcon,
     },
     {
-      title: t("i3Title"),
-      description: t("i3Desc"),
+      title: content.TrustProof.i3Title,
+      description: content.TrustProof.i3Desc,
       icon: Clock3Icon,
     },
     {
-      title: t("i4Title"),
-      description: t("i4Desc"),
+      title: content.TrustProof.i4Title,
+      description: content.TrustProof.i4Desc,
       icon: UsersRoundIcon,
     },
   ];
@@ -39,13 +38,13 @@ const TrustProof = () => {
             <div className="grid gap-y-10 rounded-[8px] border border-white/10 bg-white/[0.05] px-6 py-10 min-[900px]:grid-cols-[1.1fr_2fr] min-[900px]:gap-x-12 min-[900px]:px-10">
               <section className="grid content-start gap-y-5">
                 <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
-                  {t("title")}
+                  {content.TrustProof.title}
                 </h2>
                 <h1 className="text-white text-4xl md:text-5xl font-extrabold leading-tight">
-                  {t("subtitle")}
+                  {content.TrustProof.subtitle}
                 </h1>
                 <p className="text-gray-300 font-light text-lg leading-[1.6]">
-                  {t("description")}
+                  {content.TrustProof.description}
                 </p>
               </section>
 

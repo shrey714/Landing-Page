@@ -1,10 +1,8 @@
 "use client";
 
 import { LogoFooter } from "@/components/logo";
-import { cn } from "@/lib/utils";
 import {
   ArrowRightIcon,
-  ChevronsUpDown,
   Clock3Icon,
   HeadsetIcon,
   ShieldCheckIcon,
@@ -12,54 +10,53 @@ import {
 import Link from "next/link";
 import ThemeSwitch from "@/components/subs/ThemeSwitch";
 import { Separator } from "@/components/ui/separator";
-import {useTranslations, useLocale} from 'next-intl';
-import {useRouter, usePathname} from '@/i18n/routing';
-import GoogleTranslate from '@/GoogleTranslate';
+import GoogleTranslate from '@/lib/GoogleTranslate';
+import content from "@/content/content";
 
 const footerColumns = [
   {
-    title: "productTitle",
+    title: content.Footer.productTitle,
     links: [
-      { title: "productPatientRecords", href: "#modules" },
-      { title: "productAppointments", href: "#workflow" },
-      { title: "productPrescriptions", href: "#modules" },
-      { title: "productDiagnostics", href: "#modules" },
+      { title: content.Footer.productPatientRecords, href: "#modules" },
+      { title: content.Footer.productAppointments, href: "#workflow" },
+      { title: content.Footer.productPrescriptions, href: "#modules" },
+      { title: content.Footer.productDiagnostics, href: "#modules" },
     ],
   },
   {
-    title: "solutionsTitle",
+    title: content.Footer.solutionsTitle,
     links: [
-      { title: "solutionsSoloDoctors", href: "#workflow" },
-      { title: "solutionsClinics", href: "#modules" },
-      { title: "solutionsHospitals", href: "#trust" },
-      { title: "solutionsCareTeams", href: "#trust" },
+      { title: content.Footer.solutionsSoloDoctors, href: "#workflow" },
+      { title: content.Footer.solutionsClinics, href: "#modules" },
+      { title: content.Footer.solutionsHospitals, href: "#trust" },
+      { title: content.Footer.solutionsCareTeams, href: "#trust" },
     ],
   },
   {
-    title: "workflowsTitle",
+    title: content.Footer.workflowsTitle,
     links: [
-      { title: "workflowsPatientJourney", href: "#workflow" },
-      { title: "workflowsClinicQueue", href: "#modules" },
-      { title: "workflowsLabPharmacy", href: "#workflow" },
-      { title: "workflowsFollowups", href: "#demo" },
+      { title: content.Footer.workflowsPatientJourney, href: "#workflow" },
+      { title: content.Footer.workflowsClinicQueue, href: "#modules" },
+      { title: content.Footer.workflowsLabPharmacy, href: "#workflow" },
+      { title: content.Footer.workflowsFollowups, href: "#demo" },
     ],
   },
   {
-    title: "companyTitle",
+    title: content.Footer.companyTitle,
     links: [
-      { title: "companyBookDemo", href: "#demo" },
-      { title: "companyImplementation", href: "#demo" },
-      { title: "companyTrustAccess", href: "#trust" },
-      { title: "companyContact", href: "#demo" },
+      { title: content.Footer.companyBookDemo, href: "#demo" },
+      { title: content.Footer.companyImplementation, href: "#demo" },
+      { title: content.Footer.companyTrustAccess, href: "#trust" },
+      { title: content.Footer.companyContact, href: "#demo" },
     ],
   },
   {
-    title: "legalTitle",
+    title: content.Footer.legalTitle,
     links: [
-      { title: "legalAbout", href: "/docs/about-us" },
-      { title: "legalPricing", href: "/docs/pricing" },
-      { title: "legalPrivacyPolicy", href: "/docs/privacy-policy" },
-      { title: "legalTermsConditions", href: "/docs/terms-conditions" },
+      { title: content.Footer.legalAbout, href: "/docs/about-us" },
+      { title: content.Footer.legalPricing, href: "/docs/pricing" },
+      { title: content.Footer.legalPrivacyPolicy, href: "/docs/privacy-policy" },
+      { title: content.Footer.legalTermsConditions, href: "/docs/terms-conditions" },
     ],
   },
 ];
@@ -68,31 +65,20 @@ const proofItems = [
 ];
 
 export default function Footer() {
-  const t = useTranslations('Footer');
-  const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const handleLocaleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLocale = e.target.value;
-    router.replace(pathname, {locale: newLocale});
-  };
-
-  // Define proofItems here to use the translation function 't'
   const translatedProofItems = [
     {
-      title: t("proof1Title"),
-      description: t("proof1Desc"),
+      title: content.Footer.proof1Title,
+      description: content.Footer.proof1Desc,
       icon: ShieldCheckIcon,
     },
     {
-      title: t("proof2Title"),
-      description: t("proof2Desc"),
+      title: content.Footer.proof2Title,
+      description: content.Footer.proof2Desc,
       icon: HeadsetIcon,
     },
     {
-      title: t("proof3Title"),
-      description: t("proof3Desc"),
+      title: content.Footer.proof3Title,
+      description: content.Footer.proof3Desc,
       icon: Clock3Icon,
     },
   ];
@@ -109,10 +95,10 @@ export default function Footer() {
 
               <div className="grid gap-4">
                 <h2 className="max-w-xl text-4xl md:text-5xl font-extrabold leading-tight text-foreground sm:text-5xl">
-                  {t('title')}
+                  {content.Footer.title}
                 </h2>
                 <p className="max-w-xl text-sm leading-6 text-muted-foreground">
-                  {t('description')}
+                  {content.Footer.description}
                 </p>
               </div>
 
@@ -120,7 +106,7 @@ export default function Footer() {
                 href="#demo"
                 className="inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
               >
-                {t('bookWalkthrough')} <ArrowRightIcon size={16} />
+                {content.Footer.bookWalkthrough} <ArrowRightIcon size={16} />
               </Link>
             </section>
 
@@ -147,7 +133,7 @@ export default function Footer() {
             {footerColumns.map((column) => (
               <section key={column.title} className="grid content-start gap-4">
                 <h3 className="text-sm font-medium text-foreground"> 
-                  {t(column.title as any)}
+                  {column.title}
                 </h3>
                 <ul className="grid gap-3 text-sm">
                   {column.links.map((link) => (
@@ -156,45 +142,27 @@ export default function Footer() {
                         href={link.href} 
                         className="text-muted-foreground transition-colors hover:text-primary"
                       >
-                        {t(link.title)}
+                        {link.title}
                       </Link>
                     </li>
                   ))}
                 </ul>
               </section>
             ))}
+
+            <div className="lg:col-start-4">
+              <GoogleTranslate />
+            </div>
+
           </div>
         </div>
 
         <Separator />
 
         <div className="flex flex-wrap items-center justify-between gap-6 text-sm text-muted-foreground">
-          <span>{t('copyright', { year: new Date().getFullYear() })}</span>
+          <span>{content.Footer.copyright.replace("{year}", new Date().getFullYear().toString())}</span>
 
           <div className="flex flex-wrap items-center gap-4">
-
-<         GoogleTranslate />
-
-            <div className="relative">
-              <ChevronsUpDown
-                className="pointer-events-none absolute inset-y-0 right-2 my-auto opacity-75"
-                size="0.75rem"
-              />
-              <select
-                className={cn(
-                  "border-input file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground shadow-xs flex h-9 w-full min-w-32 appearance-none rounded-md border bg-transparent px-3 py-1 text-base outline-none transition-[color,box-shadow] file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-                  "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
-                  "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
-                )}
-                name="language"
-                value={locale}
-                onChange={handleLocaleChange}
-              >
-                <option value="en">English</option>
-                <option value="hi">हिन्दी</option>
-                <option value="gu">ગુજરાતી</option>
-              </select>
-            </div>
             <ThemeSwitch />
           </div>
         </div>

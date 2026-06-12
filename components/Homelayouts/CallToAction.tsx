@@ -1,10 +1,10 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { HeadsetIcon, IndianRupeeIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
+import content from "@/content/content";
+
 
 const CallToAction = () => {
-  const t = useTranslations("CallToAction");
 
   return (
     <section id="demo" className="relative scroll-mt-28">
@@ -16,12 +16,12 @@ const CallToAction = () => {
                 <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-6">
                   <header className="grid gap-y-6 max-w-[calc(calc(1280px*0.25)*3)] grid-cols-[minmax(0,_1fr)] pr-4 min-[600px]:pr-16 min-[900px]:pr-28 pl-4">
                     <h1 className="relative text-white tracking-[0.1px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
-                      {t("title")}
+                      {content.CallToAction.title}
                     </h1>
                   </header>
 
                   <div className="pr-4 min-[600px]:pr-16 min-[900px]:pr-28 pl-4 max-w-[calc(calc(1280px*0.25)*3)] text-gray-300 font-light text-lg leading-[1.555555556]">
-                    <p>{t("description")}</p>
+                    <p>{content.CallToAction.description}</p>
                   </div>
 
                   <footer className="px-4">
@@ -30,7 +30,7 @@ const CallToAction = () => {
                       size={"sm"}
                       variant={"outline"}
                     >
-                      {t("bookDemo")}
+                      {content.CallToAction.bookDemo}
                     </Button>
                   </footer>
                 </section>
@@ -44,12 +44,12 @@ const CallToAction = () => {
                     </div>
 
                     <h3 className="relative text-white tracking-[0.2px] wrap-break-word text-2xl font-semibold leading-snug">
-                      {t("pricingTitle")}
+                      {content.CallToAction.pricingTitle}
                     </h3>
                   </header>
 
                   <div className="max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-8 pl-4 text-gray-300 font-light text-base leading-[1.6]">
-                    {t("pricingDesc")}
+                    {content.CallToAction.pricingDesc}
                   </div>
                 </section>
 
@@ -62,12 +62,12 @@ const CallToAction = () => {
                     </div>
 
                     <h4 className="relative text-white tracking-[0.2px] wrap-break-word font-[425] text-base leading-[1.6]">
-                      {t("onboardingTitle")}
+                      {content.CallToAction.onboardingTitle}
                     </h4>
                   </header>
 
                   <div className="max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-8 pl-4 text-gray-300 font-light text-base leading-[1.6]">
-                    {t("onboardingDesc")}
+                    {content.CallToAction.onboardingDesc}
                   </div>
                 </section>
               </div>

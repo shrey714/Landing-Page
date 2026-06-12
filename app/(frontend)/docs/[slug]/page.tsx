@@ -60,8 +60,7 @@ export default async function DocPage(props: Props) {
   const description = data.description || "DardiBook documentation page.";
 
   return (
-    <main className="max-w-4xl mx-auto py-16 px-4">
-      <section className="rounded-3xl border border-slate-200/80 bg-white/90 p-8 shadow-lg shadow-slate-900/5 dark:border-slate-800/80 dark:bg-slate-950/90 dark:shadow-none">
+    <main className="max-w-6xl mx-auto py-16 px-4">
         <div className="mb-8 space-y-4">
           <p className="text-sm uppercase tracking-[0.24em] text-slate-500">Documentation</p>
           <h1 className="text-4xl font-semibold tracking-tight text-slate-950 dark:text-white">
@@ -74,7 +73,6 @@ export default async function DocPage(props: Props) {
         <article className="prose prose-slate prose-lg dark:prose-invert max-w-none">
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </article>
-      </section>
     </main>
   );
 }

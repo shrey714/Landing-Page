@@ -15,8 +15,8 @@ export default async function IndexPage() {
   return (
     <main id="main" className="relative min-h-screen overflow-x-hidden min-[900px]:overflow-x-visible w-full bg-[#081C4F]">
       {process.env.NEXT_PUBLIC_NODE_ENV === "development" && <Section_Masked />}
-      <MarqueFrame />
       <Navbar />
+      <MarqueFrame />
       <Hero />
       <LogoCloud />
       <Workflow />

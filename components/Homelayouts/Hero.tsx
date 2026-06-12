@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { useTranslations } from "next-intl";
+import content from "@/content/content";
 
 export default function Hero() {
-  const t = useTranslations("Hero");
 
   return (
     <section className="relative w-full overflow-x-hidden flex justify-center">
@@ -13,18 +12,18 @@ export default function Hero() {
             <section className="grid gap-y-8 tracking-[0.2px] scroll-mt-[108px]">
               <header className="relative min-w-0 pl-4 mt-4 md:mt-8">
                 <h1 className="sm:min-h-[200px] leading-[1.04] sm:min-w-[calc(100%+90px)] relative flex items-end tracking-[-0.04em] text-[clamp(2.2rem,7.5vw,6.5rem)] font-extrabold">
-                  {t("title")}
+                  {content.Hero.title}
                 </h1>
               </header>
 
               <div className="text-pretty px-4 font-light leading-[1.555555556] text-base sm:text-lg max-w-[calc(calc(1080px*0.25)*3)] sm:pr-8">
-                {t("description")}
+                {content.Hero.description}
               </div>
 
               <div className="pl-4 mt-2 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
                 <Button asChild size="lg" className="px-5 text-base">
                   <Link href="#demo" aria-label="Request a demo of DardiBook">
-                    <span className="text-nowrap">{t("requestDemo")}</span>
+                    <span className="text-nowrap">{content.Hero.requestDemo}</span>
                   </Link>
                 </Button>
                 <Button
@@ -35,7 +34,7 @@ export default function Hero() {
                   className="px-5 text-base"
                 >
                   <Link href="#workflow">
-                    <span className="text-nowrap">{t("seeWorkflow")}</span>
+                    <span className="text-nowrap">{content.Hero.seeWorkflow}</span>
                   </Link>
                 </Button>
               </div>
@@ -52,7 +51,6 @@ export default function Hero() {
 }
 
 const DummyPlaceHolder = () => {
-  const t = useTranslations("Hero");
   return (
     <>
       <div
@@ -77,7 +75,7 @@ const DummyPlaceHolder = () => {
                 d="M10 0a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm3.3 6.11H4.34a.41.41 0 0 0 0 .83h8.94a2.89 2.89 0 0 1 0 5.77H7.65a.41.41 0 0 0 0 .83h5.64a3.71 3.71 0 0 0 0-7.43zm0 1.65a2.06 2.06 0 1 0 2.05 2.06c0-1.13-.92-2.06-2.06-2.06zm-2.83 3.3h-4.7a.41.41 0 0 0 0 .83h4.7a.41.41 0 0 0 0-.83zM13.3 8.6a1.24 1.24 0 1 1 0 2.47 1.24 1.24 0 0 1 0-2.47zm-3.3.8H3.41a.41.41 0 1 0 0 .83h6.6c.22 0 .4-.19.4-.42a.41.41 0 0 0-.41-.4zm.47-1.65H6.24a.41.41 0 1 0 0 .83h4.23a.41.41 0 1 0 0-.83z"
               ></path>
             </svg>
-            {t("dummyClinic")}
+            {content.Hero.dummyClinic}
             <svg width="10" height="4" viewBox="0 0 10 4">
               <polyline
                 fill="none"

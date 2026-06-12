@@ -19,7 +19,6 @@ import {
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -32,24 +31,18 @@ import {
   navigationMenuTriggerStyle,
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
-
-
-
-
-
-
+import content from "@/content/content";
 
 export const Navbar = () => {
-  const t = useTranslations("Navbar");
 
   const menuItems = [
-    { name: t("menuWorkflow"), href: "#workflow" },
-    { name: t("menuModules"), href: "#modules" },
-    { name: t("menuTrust"), href: "#trust" },
-    { name: t("menuDemo"), href: "#demo" },
+    { name: content.Navbar.menuWorkflow, href: "#workflow" },
+    { name: content.Navbar.menuModules, href: "#modules" },
+    { name: content.Navbar.menuTrust, href: "#trust" },
+    { name: content.Navbar.menuDemo, href: "#demo" },
   ];
 
-  
+
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -66,13 +59,13 @@ export const Navbar = () => {
     <header>
       <nav
         data-state={menuState && "active"}
-        className="fixed z-20 w-full px-2"
+        className="fixed z-20 w-full lg:px-2"
       >
         <div
           className={cn(
-            "mx-auto mt-2 max-w-6xl px-6 transition-all rounded-full duration-300 lg:px-10",
+            "mx-auto lg:mt-2 max-w-6xl px-6 transition-all lg:rounded-full duration-300 lg:px-10",
             isScrolled &&
-              "bg-background/65 max-w-4xl shadow-md backdrop-blur-lg lg:pl-5 lg:pr-2.5"
+            "bg-background/65 max-w-4xl shadow-md backdrop-blur-lg lg:pl-5 lg:pr-2.5"
           )}
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-2.5 lg:gap-0">
@@ -107,9 +100,7 @@ export const Navbar = () => {
               </button>
             </div>
 
-            <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-              <RichNavigationMenu />
-            </div>
+            
 
             <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
               <div className="lg:hidden">
@@ -131,18 +122,21 @@ export const Navbar = () => {
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Button asChild size="sm" className="rounded-full h-9 bg-[#635bff] text-white hover:opacity-95">
                   <Link href="#demo" aria-label="Request a demo of DardiBook">
-                    <span>{t("requestDemo")}</span>
+                    <span>{content.Navbar.requestDemo}</span>
                   </Link>
                 </Button>
               </div>
             </div>
           </div>
         </div>
+        <div className="absolute inset-0 m-auto hidden size-fit lg:block">
+              <RichNavigationMenu />
+            </div>
       </nav>
       {isScrolled && (
         <div className="fixed z-50 right-6 bottom-6 lg:right-10 lg:bottom-8">
           <Link href="#demo" aria-label="Request a demo of DardiBook" className="inline-flex items-center rounded-full bg-[#635bff] text-white px-4 py-2 shadow-lg hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[#cfc8ff]">
-            {t("requestDemo")}
+            {content.Navbar.requestDemo}
           </Link>
         </div>
       )}
@@ -178,39 +172,37 @@ function MenuCard({ item }: { item: MenuItemType }) {
 }
 
 function RichNavigationMenu() {
-  const t = useTranslations("Navbar");
-
   const modules: {
     title: string;
     href: string;
     description: string;
     icon: LucideIcon;
   }[] = [
-    {
-      title: t("modPatientRecordsTitle"),
-      href: "#modules",
-      description: t("modPatientRecordsDesc"),
-      icon: ClipboardPlusIcon,
-    },
-    {
-      title: t("modAppointmentsTitle"),
-      href: "#workflow",
-      description: t("modAppointmentsDesc"),
-      icon: CalendarDaysIcon,
-    },
-    {
-      title: t("modPrescriptionsTitle"),
-      href: "#modules",
-      description: t("modPrescriptionsDesc"),
-      icon: PillIcon,
-    },
-    {
-      title: t("modDiagnosticsTitle"),
-      href: "#modules",
-      description: t("modDiagnosticsDesc"),
-      icon: FlaskConicalIcon,
-    },
-  ];
+      {
+        title: content.Navbar.modPatientRecordsTitle,
+        href: "#modules",
+        description: content.Navbar.modPatientRecordsDesc,
+        icon: ClipboardPlusIcon,
+      },
+      {
+        title: content.Navbar.modAppointmentsTitle,
+        href: "#workflow",
+        description: content.Navbar.modAppointmentsDesc,
+        icon: CalendarDaysIcon,
+      },
+      {
+        title: content.Navbar.modPrescriptionsTitle,
+        href: "#modules",
+        description: content.Navbar.modPrescriptionsDesc,
+        icon: PillIcon,
+      },
+      {
+        title: content.Navbar.modDiagnosticsTitle,
+        href: "#modules",
+        description: content.Navbar.modDiagnosticsDesc,
+        icon: FlaskConicalIcon,
+      },
+    ];
 
   const solutions: {
     title: string;
@@ -218,31 +210,31 @@ function RichNavigationMenu() {
     description: string;
     icon: LucideIcon;
   }[] = [
-    {
-      title: t("solSoloDoctorsTitle"),
-      href: "#workflow",
-      description: t("solSoloDoctorsDesc"),
-      icon: StethoscopeIcon,
-    },
-    {
-      title: t("solClinicsTitle"),
-      href: "#modules",
-      description: t("solClinicsDesc"),
-      icon: Building2Icon,
-    },
-    {
-      title: t("solHospitalsTitle"),
-      href: "#trust",
-      description: t("solHospitalsDesc"),
-      icon: HospitalIcon,
-    },
-    {
-      title: t("solCareTeamsTitle"),
-      href: "#trust",
-      description: t("solCareTeamsDesc"),
-      icon: UsersRoundIcon,
-    },
-  ];
+      {
+        title: content.Navbar.solSoloDoctorsTitle,
+        href: "#workflow",
+        description: content.Navbar.solSoloDoctorsDesc,
+        icon: StethoscopeIcon,
+      },
+      {
+        title: content.Navbar.solClinicsTitle,
+        href: "#modules",
+        description: content.Navbar.solClinicsDesc,
+        icon: Building2Icon,
+      },
+      {
+        title: content.Navbar.solHospitalsTitle,
+        href: "#trust",
+        description: content.Navbar.solHospitalsDesc,
+        icon: HospitalIcon,
+      },
+      {
+        title: content.Navbar.solCareTeamsTitle,
+        href: "#trust",
+        description: content.Navbar.solCareTeamsDesc,
+        icon: UsersRoundIcon,
+      },
+    ];
 
   return (
     <NavigationMenu className="z-20">

@@ -5,35 +5,34 @@ import {
   PillIcon,
   UserRoundCheckIcon,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import content from "@/content/content";
 
 const Workflow = () => {
-  const t = useTranslations("Workflow");
 
   const workflowSteps = [
     {
-      title: t("s1Title"),
-      description: t("s1Desc"),
+      title: content.Workflow.s1Title,
+      description: content.Workflow.s1Desc,
       icon: UserRoundCheckIcon,
     },
     {
-      title: t("s2Title"),
-      description: t("s2Desc"),
+      title: content.Workflow.s2Title,
+      description: content.Workflow.s2Desc,
       icon: ClipboardPlusIcon,
     },
     {
-      title: t("s3Title"),
-      description: t("s3Desc"),
+      title: content.Workflow.s3Title,
+      description: content.Workflow.s3Desc,
       icon: PillIcon,
     },
     {
-      title: t("s4Title"),
-      description: t("s4Desc"),
+      title: content.Workflow.s4Title,
+      description: content.Workflow.s4Desc,
       icon: FlaskConicalIcon,
     },
     {
-      title: t("s5Title"),
-      description: t("s5Desc"),
+      title: content.Workflow.s5Title,
+      description: content.Workflow.s5Desc,
       icon: FileTextIcon,
     },
   ];
@@ -46,13 +45,13 @@ const Workflow = () => {
             <div className="grid gap-y-12">
               <section className="grid gap-y-6 max-w-3xl px-4">
                 <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
-                  {t("title")}
+                  {content.Workflow.title}
                 </h2>
                 <h1 className="text-white text-4xl md:text-5xl font-extrabold leading-tight">
-                  {t("subtitle")}
+                  {content.Workflow.subtitle}
                 </h1>
                 <p className="text-gray-300 font-light text-lg leading-[1.555555556]">
-                  {t("description")}
+                  {content.Workflow.description}
                 </p>
               </section>
 

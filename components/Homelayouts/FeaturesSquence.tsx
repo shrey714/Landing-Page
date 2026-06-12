@@ -6,33 +6,32 @@ import {
   FlaskConicalIcon,
   LockKeyholeIcon,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import content from "@/content/content";
 
 const FeaturesSquence = () => {
-  const t = useTranslations("FeaturesSequence");
   const features = [
     {
-      title: t("f1Title"),
-      description: t("f1Desc"),
-      cta: t("f1Cta"),
+      title: content.FeaturesSequence.f1Title,
+      description: content.FeaturesSequence.f1Desc,
+      cta: content.FeaturesSequence.f1Cta,
       icon: ClipboardPlusIcon,
     },
     {
-      title: t("f2Title"),
-      description: t("f2Desc"),
-      cta: t("f2Cta"),
+      title: content.FeaturesSequence.f2Title,
+      description: content.FeaturesSequence.f2Desc,
+      cta: content.FeaturesSequence.f2Cta,
       icon: CalendarDaysIcon,
     },
     {
-      title: t("f3Title"),
-      description: t("f3Desc"),
-      cta: t("f3Cta"),
+      title: content.FeaturesSequence.f3Title,
+      description: content.FeaturesSequence.f3Desc,
+      cta: content.FeaturesSequence.f3Cta,
       icon: FlaskConicalIcon,
     },
     {
-      title: t("f4Title"),
-      description: t("f4Desc"),
-      cta: t("f4Cta"),
+      title: content.FeaturesSequence.f4Title,
+      description: content.FeaturesSequence.f4Desc,
+      cta: content.FeaturesSequence.f4Cta,
       icon: LockKeyholeIcon,
     },
   ];
@@ -51,15 +50,15 @@ const FeaturesSquence = () => {
                   <section className="scroll-mt-[108px] tracking-[0.2px] grid gap-y-6">
                     <header className="gris gap-y-6 max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-16 pl-4 relative grid-cols-[minmax(0,_1fr)]">
                       <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
-                        {t("headerSubtitle")}
+                        {content.FeaturesSequence.headerSubtitle}
                       </h2>
                       <h1 className="relative text-white -tracking-[0.1px] min-[1112px]:-tracking-[0.2px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
-                        {t("headerTitle")}
+                        {content.FeaturesSequence.headerTitle}
                       </h1>
                     </header>
 
                     <div className="pr-4 min-[600px]:pr-16 pl-4 text-[#adbdcc] max-w-[calc(calc(1280px*0.25)*3)] font-light text-lg leading-[1.555555556]">
-                      {t("headerDesc")}
+                      {content.FeaturesSequence.headerDesc}
                     </div>
 
                     <footer className="pr-4 min-[600px]:pr-16 pl-4">
@@ -68,7 +67,7 @@ const FeaturesSquence = () => {
                         className="rounded-full"
                         size={"sm"}
                       >
-                        {t("exploreModules")}
+                        {content.FeaturesSequence.exploreModules}
                       </Button>
                     </footer>
                   </section>
@@ -78,22 +77,22 @@ const FeaturesSquence = () => {
                         <div className="flex items-center justify-between border-b border-[#e6ebf1] pb-4">
                           <div>
                             <p className="text-xs uppercase text-[#727f96]">
-                              {t("todayLabel")}
+                              {content.FeaturesSequence.todayLabel}
                             </p>
                             <h3 className="mt-1 text-2xl font-semibold leading-snug">
-                              {t("clinicDeskTitle")}
+                              {content.FeaturesSequence.clinicDeskTitle}
                             </h3>
                           </div>
                           <span className="rounded bg-[#00d4ff24] px-2 py-1 text-xs text-[#0a728a]">
-                            {t("liveLabel")}
+                            {content.FeaturesSequence.liveLabel}
                           </span>
                         </div>
 
                         <div className="mt-5 grid gap-3">
                           {[
-                            [t("waitingLabel"), t("waitingValue")],
-                            [t("prescriptionsLabel"), t("prescriptionsValue")],
-                            [t("labReportsLabel"), t("labReportsValue")],
+                            [content.FeaturesSequence.waitingLabel, content.FeaturesSequence.waitingValue],
+                            [content.FeaturesSequence.prescriptionsLabel, content.FeaturesSequence.prescriptionsValue],
+                            [content.FeaturesSequence.labReportsLabel, content.FeaturesSequence.labReportsValue],
                           ].map(([label, value]) => (
                             <div
                               key={label}
@@ -111,7 +110,7 @@ const FeaturesSquence = () => {
 
                         <div className="mt-auto rounded-[8px] bg-[#081C4F] p-4 text-white">
                           <p className="text-sm text-gray-300">
-                            {t("nextConsultationLabel")}
+                            {content.FeaturesSequence.nextConsultationLabel}
                           </p>
                           <div className="mt-2 flex items-center justify-between">
                             <span className="font-medium">Riya Patel</span>

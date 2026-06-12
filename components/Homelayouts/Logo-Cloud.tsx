@@ -1,33 +1,32 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
+import content from "@/content/content";
 
 const LogoCloud = () => {
-  const t = useTranslations("LogoCloud");
 
   // Different sets of company logos that cycle through
   const logoSets = [
     [
-      { name: "Clinics", logo: t("l1") },
-      { name: "Hospitals", logo: t("l2") },
-      { name: "Solo Doctors", logo: t("l3") },
-      { name: "Reception Teams", logo: t("l4") },
-      { name: "Care Coordinators", logo: t("l5") },
+      { name: "Clinics", logo: content.LogoCloud.l1 },
+      { name: "Hospitals", logo: content.LogoCloud.l2 },
+      { name: "Solo Doctors", logo: content.LogoCloud.l3 },
+      { name: "Reception Teams", logo: content.LogoCloud.l4 },
+      { name: "Care Coordinators", logo: content.LogoCloud.l5 },
     ],
     [
-      { name: "Patient Records", logo: t("l6") },
-      { name: "Appointments", logo: t("l7") },
-      { name: "Prescriptions", logo: t("l8") },
-      { name: "Lab Requests", logo: t("l9") },
-      { name: "Follow-ups", logo: t("l10") },
+      { name: "Patient Records", logo: content.LogoCloud.l6 },
+      { name: "Appointments", logo: content.LogoCloud.l7 },
+      { name: "Prescriptions", logo: content.LogoCloud.l8 },
+      { name: "Lab Requests", logo: content.LogoCloud.l9 },
+      { name: "Follow-ups", logo: content.LogoCloud.l10 },
     ],
     [
-      { name: "Pharmacies", logo: t("l11") },
-      { name: "Diagnostics", logo: t("l12") },
-      { name: "Specialists", logo: t("l13") },
-      { name: "Medical Staff", logo: t("l14") },
-      { name: "Patients", logo: t("l15") },
+      { name: "Pharmacies", logo: content.LogoCloud.l11 },
+      { name: "Diagnostics", logo: content.LogoCloud.l12 },
+      { name: "Specialists", logo: content.LogoCloud.l13 },
+      { name: "Medical Staff", logo: content.LogoCloud.l14 },
+      { name: "Patients", logo: content.LogoCloud.l15 },
     ],
   ];
 
@@ -45,10 +44,10 @@ const LogoCloud = () => {
     <div className="py-10 px-4 relative">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
-          {t("title")}
+          {content.LogoCloud.title}
         </h2>
         <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-          {t("description")}
+          {content.LogoCloud.description}
         </p>
 
         {/* Logo container with animation */}

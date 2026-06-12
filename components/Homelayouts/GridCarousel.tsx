@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
-import { useTranslations } from "next-intl";
+
 import {
   ActivityIcon,
   Building2Icon,
@@ -15,11 +15,11 @@ import {
   PillIcon,
   StethoscopeIcon,
 } from "lucide-react";
+import content from "@/content/content";
 
 
 
 const GridCarousel = () => {
-  const t = useTranslations("GridCarousel");
 
   const slides: {
     id: number;
@@ -36,70 +36,70 @@ const GridCarousel = () => {
   }[] = [
     {
       id: 0,
-      title: t("s0Title"),
-      stats: t("s0Stats"),
-      description: t("s0Desc"),
-      products: [t("s0P1"), t("s0P2")],
+      title: content.GridCarousel.s0Title,
+      stats: content.GridCarousel.s0Stats,
+      description: content.GridCarousel.s0Desc,
+      products: [content.GridCarousel.s0P1, content.GridCarousel.s0P2],
       color: "#00D4FF",
       icon: Building2Icon,
-      metric: t("s0Metric"),
-      metricLabel: t("s0MetricLabel"),
-      action: t("s0Action"),
+      metric: content.GridCarousel.s0Metric,
+      metricLabel: content.GridCarousel.s0MetricLabel,
+      action: content.GridCarousel.s0Action,
       queue: [
-        [t("s0Q1L"), t("s0Q1V")],
-        [t("s0Q2L"), t("s0Q2V")],
-        [t("s0Q3L"), t("s0Q3V")],
+        [content.GridCarousel.s0Q1L, content.GridCarousel.s0Q1V],
+        [content.GridCarousel.s0Q2L, content.GridCarousel.s0Q2V],
+        [content.GridCarousel.s0Q3L, content.GridCarousel.s0Q3V],
       ],
     },
     {
       id: 1,
-      title: t("s1Title"),
-      stats: t("s1Stats"),
-      description: t("s1Desc"),
-      products: [t("s1P1"), t("s1P2")],
+      title: content.GridCarousel.s1Title,
+      stats: content.GridCarousel.s1Stats,
+      description: content.GridCarousel.s1Desc,
+      products: [content.GridCarousel.s1P1, content.GridCarousel.s1P2],
       color: "#27C17B",
       icon: HospitalIcon,
-      metric: t("s1Metric"),
-      metricLabel: t("s1MetricLabel"),
-      action: t("s1Action"),
+      metric: content.GridCarousel.s1Metric,
+      metricLabel: content.GridCarousel.s1MetricLabel,
+      action: content.GridCarousel.s1Action,
       queue: [
-        [t("s1Q1L"), t("s1Q1V")],
-        [t("s1Q2L"), t("s1Q2V")],
-        [t("s1Q3L"), t("s1Q3V")],
+        [content.GridCarousel.s1Q1L, content.GridCarousel.s1Q1V],
+        [content.GridCarousel.s1Q2L, content.GridCarousel.s1Q2V],
+        [content.GridCarousel.s1Q3L, content.GridCarousel.s1Q3V],
       ],
     },
     {
       id: 2,
-      title: t("s2Title"),
-      stats: t("s2Stats"),
-      description: t("s2Desc"),
-      products: [t("s2P1"), t("s2P2")],
+      title: content.GridCarousel.s2Title,
+      stats: content.GridCarousel.s2Stats,
+      description: content.GridCarousel.s2Desc,
+      products: [content.GridCarousel.s2P1, content.GridCarousel.s2P2],
       color: "#F2B84B",
       icon: FlaskConicalIcon,
-      metric: t("s2Metric"),
-      metricLabel: t("s2MetricLabel"),
-      action: t("s2Action"),
+      metric: content.GridCarousel.s2Metric,
+      metricLabel: content.GridCarousel.s2MetricLabel,
+      action: content.GridCarousel.s2Action,
       queue: [
-        [t("s2Q1L"), t("s2Q1V")],
-        [t("s2Q2L"), t("s2Q2V")],
-        [t("s2Q3L"), t("s2Q3V")],
+        [content.GridCarousel.s2Q1L, content.GridCarousel.s2Q1V],
+        [content.GridCarousel.s2Q2L, content.GridCarousel.s2Q2V],
+        [content.GridCarousel.s2Q3L, content.GridCarousel.s2Q3V],
       ],
     },
     {
       id: 3,
-      title: t("s3Title"),
-      stats: t("s3Stats"),
-      description: t("s3Desc"),
-      products: [t("s3P1"), t("s3P2")],
+      title: content.GridCarousel.s3Title,
+      stats: content.GridCarousel.s3Stats,
+      description: content.GridCarousel.s3Desc,
+      products: [content.GridCarousel.s3P1, content.GridCarousel.s3P2],
       color: "#F26D6D",
       icon: StethoscopeIcon,
-      metric: t("s3Metric"),
-      metricLabel: t("s3MetricLabel"),
-      action: t("s3Action"),
+      metric: content.GridCarousel.s3Metric,
+      metricLabel: content.GridCarousel.s3MetricLabel,
+      action: content.GridCarousel.s3Action,
       queue: [
-        [t("s3Q1L"), t("s3Q1V")],
-        [t("s3Q2L"), t("s3Q2V")],
-        [t("s3Q3L"), t("s3Q3V")],
+        [content.GridCarousel.s3Q1L, content.GridCarousel.s3Q1V],
+        [content.GridCarousel.s3Q2L, content.GridCarousel.s3Q2V],
+        [content.GridCarousel.s3Q3L, content.GridCarousel.s3Q3V],
       ],
     },
   ];
@@ -126,16 +126,16 @@ const GridCarousel = () => {
                   <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                     <header className="grid gap-y-6 max-w-[calc(calc(1280px*0.25)*3)] grid-cols-[minmax(0,_1fr)] pr-4 min-[600px]:pr-8 pl-4">
                       <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">
-                        {t("headerTitle1")}
+                        {content.GridCarousel.headerTitle1}
                       </h2>
                       <h1 className="relative text-white -tracking-[0.2px] wrap-break-word text-4xl md:text-5xl font-extrabold leading-tight">
-                        {t("headerTitle2")}
+                        {content.GridCarousel.headerTitle2}
                       </h1>
                     </header>
 
                     <div className="text-gray-300 font-light text-lg leading-[1.555555556] max-w-[calc(calc(1280px*0.25)*3)] pr-4 min-[600px]:pr-8 pl-4">
                       <p>
-                        {t("headerDescription")}
+                        {content.GridCarousel.headerDescription}
                       </p>
                     </div>
 
@@ -145,7 +145,7 @@ const GridCarousel = () => {
                         size={"sm"}
                         className="rounded-full"
                       >
-                        {t("exploreDardiBookForTeams")} <ChevronRightIcon />
+                        {content.GridCarousel.exploreDardiBookForTeams} <ChevronRightIcon />
                       </Button>
                     </footer>
                   </section>
@@ -182,7 +182,7 @@ const GridCarousel = () => {
                         </header>
 
                         <div className="pl-4 pr-5 text-gray-300 font-light text-base leading-[1.6]">
-                          {t("dardibookWorkflow")}
+                          {content.GridCarousel.dardibookWorkflow}
                         </div>
                       </section>
 
@@ -193,7 +193,7 @@ const GridCarousel = () => {
                               className="block absolute top-[5px] -left-4 w-[1px] h-[15px]"
                               style={{ backgroundColor: active.color }}
                             ></span>
-                            {t("modulesUsed")}
+                            {content.GridCarousel.modulesUsed}
                           </h4>
                         </header>
 
@@ -222,7 +222,7 @@ const GridCarousel = () => {
                               className="block absolute top-[5px] -left-4 w-[1px] h-[15px]"
                               style={{ backgroundColor: active.color }}
                             ></span>
-                            {t("nextBestAction")}
+                            {content.GridCarousel.nextBestAction}
                           </h4>
                         </header>
 
@@ -284,7 +284,7 @@ const GridCarousel = () => {
                                 <div className="grid grid-cols-[1fr_120px] gap-4">
                                   <div className="rounded-[8px] bg-white p-4 shadow-sm">
                                     <p className="text-xs uppercase text-[#727f96]">
-                                      Operational signal
+                                      {content.GridCarousel.operationalSignal}
                                     </p>
                                     <div className="mt-4 flex items-end gap-3">
                                       <span className="text-4xl font-medium">
@@ -301,7 +301,7 @@ const GridCarousel = () => {
                                       size={20} 
                                     />
                                     <span className="self-end text-xs leading-5 text-gray-300">
-                                      {t("careFlowVisible")}
+                                      {content.GridCarousel.careFlowVisible}
                                     </span>
                                   </div>
                                 </div>
@@ -309,7 +309,7 @@ const GridCarousel = () => {
                                 <div className="grid gap-3 min-[700px]:grid-cols-[1.1fr_0.9fr]">
                                   <div className="rounded-[8px] bg-white shadow-sm">
                                     <div className="border-b border-[#e6ebf1] px-4 py-3 text-sm font-medium">
-                                      {t("liveFlow")}
+                                      {content.GridCarousel.liveFlow}
                                     </div>
                                     <div>
                                       {slide.queue.map(([label, value]) => (
@@ -370,7 +370,7 @@ const GridCarousel = () => {
 
                                 <div className="rounded-[8px] bg-[#081C4F] p-4 text-white">
                                   <p className="text-xs uppercase text-gray-300">
-                                    {t("nextBestAction")}
+                                    {content.GridCarousel.nextBestAction}
                                   </p>
                                   <div className="mt-2 flex items-center justify-between gap-4">
                                     <span className="text-sm font-medium">

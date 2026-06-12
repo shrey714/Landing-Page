@@ -16,76 +16,75 @@ import {
   StethoscopeIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import content from "@/content/content";
 
 
 
 
 const CardCarousel = () => {
-  const t = useTranslations("CardCarousel");
 
   const cardsData = [
     {
       id: 1,
-      title: t("c1Title"),
-      eyebrow: t("c1Eyebrow"),
-      description: t("c1Desc"),
-      stat: t("c1Stat"),
-      tags: [t("c1T1"), t("c1T2"), t("c1T3")],
+      title: content.CardCarousel.c1Title,
+      eyebrow: content.CardCarousel.c1Eyebrow,
+      description: content.CardCarousel.c1Desc,
+      stat: content.CardCarousel.c1Stat,
+      tags: [content.CardCarousel.c1T1, content.CardCarousel.c1T2, content.CardCarousel.c1T3],
       icon: HospitalIcon,
     },
     {
       id: 2,
-      title: t("c2Title"),
-      eyebrow: t("c2Eyebrow"),
-      description: t("c2Desc"),
-      stat: t("c2Stat"),
-      tags: [t("c2T1"), t("c2T2"), t("c2T3")],
+      title: content.CardCarousel.c2Title,
+      eyebrow: content.CardCarousel.c2Eyebrow,
+      description: content.CardCarousel.c2Desc,
+      stat: content.CardCarousel.c2Stat,
+      tags: [content.CardCarousel.c2T1, content.CardCarousel.c2T2, content.CardCarousel.c2T3],
       icon: StethoscopeIcon,
     },
     {
       id: 3,
-      title: t("c3Title"),
-      eyebrow: t("c3Eyebrow"),
-      description: t("c3Desc"),
-      stat: t("c3Stat"),
-      tags: [t("c3T1"), t("c3T2"), t("c3T3")],
+      title: content.CardCarousel.c3Title,
+      eyebrow: content.CardCarousel.c3Eyebrow,
+      description: content.CardCarousel.c3Desc,
+      stat: content.CardCarousel.c3Stat,
+      tags: [content.CardCarousel.c3T1, content.CardCarousel.c3T2, content.CardCarousel.c3T3],
       icon: HeartHandshakeIcon,
     },
     {
       id: 4,
-      title: t("c4Title"),
-      eyebrow: t("c4Eyebrow"),
-      description: t("c4Desc"),
-      stat: t("c4Stat"),
-      tags: [t("c4T1"), t("c4T2"), t("c4T3")],
+      title: content.CardCarousel.c4Title,
+      eyebrow: content.CardCarousel.c4Eyebrow,
+      description: content.CardCarousel.c4Desc,
+      stat: content.CardCarousel.c4Stat,
+      tags: [content.CardCarousel.c4T1, content.CardCarousel.c4T2, content.CardCarousel.c4T3],
       icon: PillIcon,
     },
     {
       id: 5,
-      title: t("c5Title"),
-      eyebrow: t("c5Eyebrow"),
-      description: t("c5Desc"),
-      stat: t("c5Stat"),
-      tags: [t("c5T1"), t("c5T2"), t("c5T3")],
+      title: content.CardCarousel.c5Title,
+      eyebrow: content.CardCarousel.c5Eyebrow,
+      description: content.CardCarousel.c5Desc,
+      stat: content.CardCarousel.c5Stat,
+      tags: [content.CardCarousel.c5T1, content.CardCarousel.c5T2, content.CardCarousel.c5T3],
       icon: FlaskConicalIcon,
     },
     {
       id: 6,
-      title: t("c6Title"),
-      eyebrow: t("c6Eyebrow"),
-      description: t("c6Desc"),
-      stat: t("c6Stat"),
-      tags: [t("c6T1"), t("c6T2"), t("c6T3")],
+      title: content.CardCarousel.c6Title,
+      eyebrow: content.CardCarousel.c6Eyebrow,
+      description: content.CardCarousel.c6Desc,
+      stat: content.CardCarousel.c6Stat,
+      tags: [content.CardCarousel.c6T1, content.CardCarousel.c6T2, content.CardCarousel.c6T3],
       icon: Building2Icon,
     },
     {
       id: 7,
-      title: t("c7Title"),
-      eyebrow: t("c7Eyebrow"),
-      description: t("c7Desc"),
-      stat: t("c7Stat"),
-      tags: [t("c7T1"), t("c7T2"), t("c7T3")],
+      title: content.CardCarousel.c7Title,
+      eyebrow: content.CardCarousel.c7Eyebrow,
+      description: content.CardCarousel.c7Desc,
+      stat: content.CardCarousel.c7Stat,
+      tags: [content.CardCarousel.c7T1, content.CardCarousel.c7T2, content.CardCarousel.c7T3],
       icon: GraduationCapIcon,
     },
   ];
@@ -180,12 +179,12 @@ const totalCards = cardsData.length;
                   <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-[108px]">
                     <header className="relative pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 grid gap-y-6 grid-cols-[minmax(0,_1fr)] max-w-[calc(calc(1280px*0.25)*3)]">
                       <h1 className="relative text-4xl md:text-5xl font-extrabold leading-tight -tracking-[0.1px] min-[900px]:-tracking-[0.2px] text-white wrap-break-word">
-                        {t("headerTitle")}
+                        {content.CardCarousel.headerTitle}
                       </h1>
                     </header>
 
                     <div className="pl-4 pr-4 min-[600px]:pr-16 min-[900px]:pr-28 text-gray-300 max-w-[calc(calc(1280px*0.25)*3)] font-light text-lg leading-[1.555555556]">
-                      {t("headerDescription")}
+                      {content.CardCarousel.headerDescription}
                     </div>
                   </section>
 
