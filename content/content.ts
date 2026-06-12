@@ -103,6 +103,41 @@ const content = {
     i4Desc:
       "Works for solo doctors, growing clinics, hospitals, pharmacies, and diagnostics.",
   },
+  ObjectionsAccordion: {
+    title: "Frequently Asked Questions",
+    description: "Everything you need to know about our product, billing, and how we keep your data secure. Select a topic below to explore.",
+    
+    contactTitle: "Still have questions?",
+    contactDesc: "Can't find the answer you're looking for? Our friendly team is ready to help you get the most out of our platform.",
+    contactButton: "Contact Support",
+  },
+  FAQData: [
+    {
+      id: "general",
+      title: "General Questions",
+      items: [
+        { question: "What is this product and how does it work?", answer: "Our platform provides a seamless experience for managing your daily tasks. It connects to your existing tools and automates repetitive workflows." },
+        { question: "Who is this solution built for?", answer: "It is designed for small to medium-sized teams who want to scale their operations without compromising on quality or spending hours on manual data entry." },
+      ]
+    },
+    {
+      id: "pricing",
+      title: "Pricing & Billing",
+      items: [
+        { question: "Is there a free trial available?", answer: "Yes! We offer a 14-day free trial on all of our premium plans. No credit card is required to sign up." },
+        { question: "Can I change my plan later?", answer: "Absolutely. You can upgrade or downgrade your plan at any time directly from your billing dashboard. Changes are prorated automatically." },
+      ]
+    },
+    {
+      id: "support",
+      title: "Support & Security",
+      items: [
+        { question: "How do I contact customer support?", answer: "You can reach out to our support team 24/7 via the live chat widget in the bottom right corner, or by emailing support." },
+        { question: "Is my data secure?", answer: "Security is our top priority. We use industry-standard AES-256 encryption and are fully SOC2 and GDPR compliant." },
+      ]
+    }
+  ],
+
   Workflow: {
     title: "How DardiBook works",
     subtitle: "A complete patient journey from entry to follow-up",
