@@ -16,7 +16,7 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({ children, className }
       whileInView="visible"
       viewport={{ once: true }}
       variants={{
-        visible: { transition: { staggerChildren: 0.015 } },
+        visible: { transition: { staggerChildren: 0.01 } },
         hidden: {},
       }}
     >
