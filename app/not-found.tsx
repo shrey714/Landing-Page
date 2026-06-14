@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Navbar } from "@/components/Homelayouts/Navbar";
 import Footer from "@/components/Homelayouts/Footer";
 import { Button } from "@/components/ui/button";
+import { APP_LINKS } from "@/content/links";
 
 export default function NotFound() {
   return (
@@ -29,7 +30,7 @@ export default function NotFound() {
         </p>
 
         <Button variant={"outline"} asChild size="lg" className="rounded-full">
-          <Link href="/">
+          <Link href={APP_LINKS.HOME}>
             Back to Home
           </Link>
         </Button>

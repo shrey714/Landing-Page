@@ -32,14 +32,15 @@ import {
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import content from "@/content/content";
+import { APP_LINKS } from "@/content/links";
 
 export const Navbar = () => {
 
   const menuItems = [
-    { name: content.Navbar.menuWorkflow, href: "#workflow" },
-    { name: content.Navbar.menuModules, href: "#modules" },
-    { name: content.Navbar.menuTrust, href: "#trust" },
-    { name: content.Navbar.menuDemo, href: "#demo" },
+    { name: content.Navbar.menuWorkflow, href: APP_LINKS.WORKFLOW },
+    { name: content.Navbar.menuModules, href: APP_LINKS.MODULES },
+    { name: content.Navbar.menuTrust, href: APP_LINKS.TRUST },
+    { name: content.Navbar.menuDemo, href: APP_LINKS.DEMO },
   ];
 
 
@@ -71,7 +72,7 @@ export const Navbar = () => {
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-2.5 lg:gap-0">
             <div className="flex w-full justify-between lg:w-auto">
               <Link
-                href="/"
+                href={APP_LINKS.HOME}
                 aria-label="home"
                 className="flex items-center space-x-2"
               >
@@ -121,7 +122,7 @@ export const Navbar = () => {
 
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Button asChild size="sm" className="rounded-full h-9 border-2 border-[#635bff] bg-[#635bff] dark:bg-[#635bff96] text-white hover:bg-[#635bff96] dark:hover:bg-[#635bff] shadow-none" variant={"default"}>
-                  <Link href="#demo" aria-label="Request a demo of DardiBook">
+                  <Link href={APP_LINKS.DEMO} aria-label="Request a demo of DardiBook">
                     <span>{content.Navbar.requestDemo}</span>
                   </Link>
                 </Button>
@@ -173,25 +174,25 @@ function RichNavigationMenu() {
   }[] = [
       {
         title: content.Navbar.modPatientRecordsTitle,
-        href: "#modules",
+        href: APP_LINKS.MODULES,
         description: content.Navbar.modPatientRecordsDesc,
         icon: ClipboardPlusIcon,
       },
       {
         title: content.Navbar.modAppointmentsTitle,
-        href: "#workflow",
+        href: APP_LINKS.WORKFLOW,
         description: content.Navbar.modAppointmentsDesc,
         icon: CalendarDaysIcon,
       },
       {
         title: content.Navbar.modPrescriptionsTitle,
-        href: "#modules",
+        href: APP_LINKS.MODULES,
         description: content.Navbar.modPrescriptionsDesc,
         icon: PillIcon,
       },
       {
         title: content.Navbar.modDiagnosticsTitle,
-        href: "#modules",
+        href: APP_LINKS.MODULES,
         description: content.Navbar.modDiagnosticsDesc,
         icon: FlaskConicalIcon,
       },
@@ -205,25 +206,25 @@ function RichNavigationMenu() {
   }[] = [
       {
         title: content.Navbar.solSoloDoctorsTitle,
-        href: "#workflow",
+        href: APP_LINKS.WORKFLOW,
         description: content.Navbar.solSoloDoctorsDesc,
         icon: StethoscopeIcon,
       },
       {
         title: content.Navbar.solClinicsTitle,
-        href: "#modules",
+        href: APP_LINKS.MODULES,
         description: content.Navbar.solClinicsDesc,
         icon: Building2Icon,
       },
       {
         title: content.Navbar.solHospitalsTitle,
-        href: "#trust",
+        href: APP_LINKS.TRUST,
         description: content.Navbar.solHospitalsDesc,
         icon: HospitalIcon,
       },
       {
         title: content.Navbar.solCareTeamsTitle,
-        href: "#trust",
+        href: APP_LINKS.TRUST,
         description: content.Navbar.solCareTeamsDesc,
         icon: UsersRoundIcon,
       },
@@ -281,13 +282,13 @@ function RichNavigationMenu() {
 
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="#workflow">Workflow</Link>
+            <Link href={APP_LINKS.WORKFLOW}>Workflow</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="#trust">
+            <Link href={APP_LINKS.TRUST}>
               <ShieldCheckIcon className="mr-1 h-4 w-4" />
               Trust
             </Link>

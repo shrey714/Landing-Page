@@ -11,6 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { APP_LINKS } from "@/content/links";
 import {
   Select,
   SelectContent,
@@ -32,7 +33,7 @@ type FAQTopic = {
 
 export default function ObjectionsAccordion() {
   const faqData: FAQTopic[] = content.FAQData;
-  
+
   const allTopic: FAQTopic = {
     id: "all",
     title: "All",
@@ -40,7 +41,7 @@ export default function ObjectionsAccordion() {
   };
 
   const displayTopics = [allTopic, ...faqData];
-  
+
   const [activeTopic, setActiveTopic] = useState<string>(faqData[0].id);
 
   const currentTopicData = displayTopics.find((topic) => topic.id === activeTopic);
@@ -69,8 +70,8 @@ export default function ObjectionsAccordion() {
                     setActiveTopic(topic.id);
                   }}
                   className={`justify-start px-5 py-3  ${activeTopic === topic.id
-                      ? 'font-bold underline'
-                      : 'text-accent-foreground/80'
+                    ? 'font-bold underline'
+                    : 'text-accent-foreground/80'
                     }`}
                 >
                   {topic.title}
@@ -116,7 +117,7 @@ export default function ObjectionsAccordion() {
                 {content.ObjectionsAccordion.contactDesc}
               </p>
               <Button asChild size="lg" className="rounded-full border-2 border-[#635bff] bg-[#635bff] dark:bg-[#635bff96] text-white hover:bg-[#635bff96] dark:hover:bg-[#635bff] shadow-none" variant={"default"}>
-                <Link href="#demo" aria-label="Contact our team">
+                <Link href={APP_LINKS.DEMO} aria-label="Contact our team">
                   <span>{content.ObjectionsAccordion.contactButton}</span>
                 </Link>
               </Button>

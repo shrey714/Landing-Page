@@ -14,57 +14,58 @@ import GoogleTranslate from '@/lib/GoogleTranslate';
 import content from "@/content/content";
 import { Button } from "../ui/button";
 import TypingAnimation from "../ui/typingText";
+import { APP_LINKS } from "@/content/links";
 
 const footerColumns = [
   {
     title: content.Footer.productTitle,
     links: [
-      { title: content.Footer.productPatientRecords, href: "#modules" },
-      { title: content.Footer.productAppointments, href: "#workflow" },
-      { title: content.Footer.productPrescriptions, href: "#modules" },
-      { title: content.Footer.productDiagnostics, href: "#modules" },
+      { title: content.Footer.productPatientRecords, href: APP_LINKS.MODULES },
+      { title: content.Footer.productAppointments, href: APP_LINKS.WORKFLOW },
+      { title: content.Footer.productPrescriptions, href: APP_LINKS.MODULES },
+      { title: content.Footer.productDiagnostics, href: APP_LINKS.MODULES },
     ],
   },
   {
     title: content.Footer.solutionsTitle,
     links: [
-      { title: content.Footer.solutionsSoloDoctors, href: "#workflow" },
-      { title: content.Footer.solutionsClinics, href: "#modules" },
-      { title: content.Footer.solutionsHospitals, href: "#trust" },
-      { title: content.Footer.solutionsCareTeams, href: "#trust" },
+      { title: content.Footer.solutionsSoloDoctors, href: APP_LINKS.WORKFLOW },
+      { title: content.Footer.solutionsClinics, href: APP_LINKS.MODULES },
+      { title: content.Footer.solutionsHospitals, href: APP_LINKS.TRUST },
+      { title: content.Footer.solutionsCareTeams, href: APP_LINKS.TRUST },
     ],
   },
   {
     title: content.Footer.workflowsTitle,
     links: [
-      { title: content.Footer.workflowsPatientJourney, href: "#workflow" },
-      { title: content.Footer.workflowsClinicQueue, href: "#modules" },
-      { title: content.Footer.workflowsLabPharmacy, href: "#workflow" },
-      { title: content.Footer.workflowsFollowups, href: "#demo" },
+      { title: content.Footer.workflowsPatientJourney, href: APP_LINKS.WORKFLOW },
+      { title: content.Footer.workflowsClinicQueue, href: APP_LINKS.MODULES },
+      { title: content.Footer.workflowsLabPharmacy, href: APP_LINKS.WORKFLOW },
+      { title: content.Footer.workflowsFollowups, href: APP_LINKS.DEMO },
     ],
   },
   {
     title: content.Footer.companyTitle,
     links: [
-      { title: content.Footer.companyBookDemo, href: "#demo" },
-      { title: content.Footer.companyImplementation, href: "#demo" },
-      { title: content.Footer.companyTrustAccess, href: "#trust" },
-      { title: content.Footer.companyContact, href: "#demo" },
+      { title: content.Footer.companyBookDemo, href: APP_LINKS.DEMO },
+      { title: content.Footer.companyImplementation, href: APP_LINKS.DEMO },
+      { title: content.Footer.companyTrustAccess, href: APP_LINKS.TRUST },
+      { title: content.Footer.companyContact, href: APP_LINKS.DEMO },
     ],
   },
   {
     title: content.Footer.legalTitle,
     links: [
-      { title: content.Footer.legalAbout, href: "/docs/about-us" },
-      { title: content.Footer.legalPricing, href: "/docs/pricing" },
-      { title: content.Footer.legalPrivacyPolicy, href: "/docs/privacy-policy" },
-      { title: content.Footer.legalTermsConditions, href: "/docs/terms-conditions" },
+      { title: content.Footer.legalAbout, href: APP_LINKS.DOCS.ABOUT_US },
+      { title: content.Footer.legalPricing, href: APP_LINKS.DOCS.PRICING },
+      { title: content.Footer.legalPrivacyPolicy, href: APP_LINKS.DOCS.PRIVACY_POLICY },
+      { title: content.Footer.legalTermsConditions, href: APP_LINKS.DOCS.TERMS_CONDITIONS },
     ],
   },
   {
     title: "",
     links: [
-      { title: content.Footer.legalCancellationPolicy, href: "/docs/cancellation-policy" }
+      { title: content.Footer.legalCancellationPolicy, href: APP_LINKS.DOCS.CANCELLATION_POLICY }
     ],
   },
 ];
@@ -97,7 +98,7 @@ export default function Footer() {
         <div className="grid flex-1 content-center gap-10">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_1.4fr] lg:items-end">
             <section className="grid gap-6">
-              <Link href="/" aria-label="go home" className="block size-fit">
+              <Link href={APP_LINKS.HOME} aria-label="go home" className="block size-fit">
                 <LogoFooter />
               </Link>
 
@@ -112,7 +113,7 @@ export default function Footer() {
 
               <Button asChild variant="outline" size="lg" className="rounded-full w-min">
                 <Link
-                  href="#demo"
+                  href={APP_LINKS.DEMO}
                 >
                   {content.Footer.bookWalkthrough} <ArrowRightIcon size={16} />
                 </Link>
@@ -142,7 +143,7 @@ export default function Footer() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {footerColumns.map((column, index) => (
               <section key={index} className="grid content-start gap-4">
-                <h3 className="text-sm font-medium">
+                <h3 className="text-sm font-medium underline underline-offset-2">
                   {column.title}
                 </h3>
                 <ul className="grid gap-3 text-sm">

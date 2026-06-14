@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import content from "@/content/content";
 import TypingAnimation from "../ui/typingText";
+import { APP_LINKS } from "@/content/links";
 
 export default function Hero() {
 
@@ -25,7 +26,7 @@ export default function Hero() {
 
 
                 <Button asChild size="lg" className="rounded-full px-5 text-base border-2 border-[#635bff] bg-[#635bff] dark:bg-[#635bff96] text-white hover:bg-[#635bff96] dark:hover:bg-[#635bff] shadow-none" variant={"default"}>
-                  <Link href="#demo" aria-label="Request a demo of DardiBook">
+                  <Link href={APP_LINKS.DEMO} aria-label="Request a demo of DardiBook">
                     <span>{content.Hero.requestDemo}</span>
                   </Link>
                 </Button>
@@ -38,7 +39,7 @@ export default function Hero() {
                   variant="link"
                   className="px-5 text-base text-white"
                 >
-                  <Link href="#workflow">
+                  <Link href={APP_LINKS.WORKFLOW}>
                     <span className="text-nowrap">{content.Hero.seeWorkflow}</span>
                   </Link>
                 </Button>

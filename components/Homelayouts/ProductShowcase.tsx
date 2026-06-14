@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import content from "@/content/content";
 import TypingAnimation from "../ui/typingText";
 import Link from "next/link";
+import { APP_LINKS } from "@/content/links";
 
 export default function ProductShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -109,7 +110,7 @@ export default function ProductShowcase() {
                   className="rounded-full px-6 py-4 text-base"
                   asChild
                 >
-                  <Link href="#demo" aria-label="Request a demo of DardiBook">
+                  <Link href={APP_LINKS.DEMO} aria-label="Request a demo of DardiBook">
                     <span>Get Started</span> <ArrowUpRight className="w-4 h-4" />
                   </Link>
                 </Button>
@@ -136,7 +137,7 @@ export default function ProductShowcase() {
             </div>
 
             <Button asChild size="lg" className="mt-10 px-6 py-5 rounded-full text-base h-9 border-2 border-[#635bff] bg-[#635bff] dark:bg-[#635bff96] text-white hover:bg-[#635bff96] dark:hover:bg-[#635bff] shadow-none" variant={"default"}>
-              <Link href="#demo" aria-label="Request a demo of DardiBook">
+              <Link href={APP_LINKS.DEMO} aria-label="Request a demo of DardiBook">
                 <span>Get Started</span> <ArrowUpRight className="w-4 h-4" />
               </Link>
             </Button>
