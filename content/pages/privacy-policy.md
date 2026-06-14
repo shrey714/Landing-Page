@@ -4,8 +4,6 @@ description: "DardiBook's privacy commitment and data handling practices."
 canonical: "/docs/privacy-policy"
 ---
 
-# Privacy Policy
-
 ## Introduction
 
 At DardiBook, we are committed to protecting your privacy. This Privacy Policy
@@ -39,3 +37,6 @@ disclosure, or destruction.
 You have the right to access, correct, or delete your personal information held
 by us. If you wish to exercise these rights, please contact us at
 help@dardibook.in.
+
+---
+*Last Modified: June 14, 2026*

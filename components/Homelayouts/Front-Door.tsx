@@ -325,11 +325,6 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
       stat: "42",
       statLabel: content.FrontDoor.p1StatLabel,
       accent: "#00D4FF",
-      rows: [
-        [content.FrontDoor.p1R1C1, content.FrontDoor.p1R1C2, content.FrontDoor.p1R1C3],
-        [content.FrontDoor.p1R2C1, content.FrontDoor.p1R2C2, content.FrontDoor.p1R2C3],
-        [content.FrontDoor.p1R3C1, content.FrontDoor.p1R3C2, content.FrontDoor.p1R3C3],
-      ],
     },
     {
       title: content.FrontDoor.p2Title,
@@ -338,11 +333,6 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
       stat: "8",
       statLabel: content.FrontDoor.p2StatLabel,
       accent: "#27C17B",
-      rows: [
-        [content.FrontDoor.p2R1C1, content.FrontDoor.p2R1C2, content.FrontDoor.p2R1C3],
-        [content.FrontDoor.p2R2C1, content.FrontDoor.p2R2C2, content.FrontDoor.p2R2C3],
-        [content.FrontDoor.p2R3C1, content.FrontDoor.p2R3C2, content.FrontDoor.p2R3C3],
-      ],
     },
     {
       title: content.FrontDoor.p3Title,
@@ -351,11 +341,6 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
       stat: "14:00",
       statLabel: content.FrontDoor.p3StatLabel,
       accent: "#F2B84B",
-      rows: [
-        [content.FrontDoor.p3R1C1, content.FrontDoor.p3R1C2, content.FrontDoor.p3R1C3],
-        [content.FrontDoor.p3R2C1, content.FrontDoor.p3R2C2, content.FrontDoor.p3R2C3],
-        [content.FrontDoor.p3R3C1, content.FrontDoor.p3R3C2, content.FrontDoor.p3R3C3],
-      ],
     },
     {
       title: content.FrontDoor.p4Title,
@@ -364,11 +349,6 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
       stat: "28",
       statLabel: content.FrontDoor.p4StatLabel,
       accent: "#F26D6D",
-      rows: [
-        [content.FrontDoor.p4R1C1, content.FrontDoor.p4R1C2, content.FrontDoor.p4R1C3],
-        [content.FrontDoor.p4R2C1, content.FrontDoor.p4R2C2, content.FrontDoor.p4R2C3],
-        [content.FrontDoor.p4R3C1, content.FrontDoor.p4R3C2, content.FrontDoor.p4R3C3],
-      ],
     },
     {
       title: content.FrontDoor.p5Title,
@@ -377,113 +357,224 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
       stat: "7",
       statLabel: content.FrontDoor.p5StatLabel,
       accent: "#9B8CFF",
-      rows: [
-        [content.FrontDoor.p5R1C1, content.FrontDoor.p5R1C2, content.FrontDoor.p5R1C3],
-        [content.FrontDoor.p5R2C1, content.FrontDoor.p5R2C2, content.FrontDoor.p5R2C3],
-        [content.FrontDoor.p5R3C1, content.FrontDoor.p5R3C2, content.FrontDoor.p5R3C3],
-      ],
     },
   ];
   const panel = panels[panelNumber - 1] ?? panels[0];
+  const index = panelNumber - 1;
 
   return (
-    <div className="h-full w-full rounded-xl border border-white/10 bg-white/6 p-4 shadow-2xl shadow-black/20">
-      <div className="flex h-full flex-col overflow-hidden rounded-xl bg-[#f6f9fc] text-[#0a2540]">
-        <div
-          className="h-1 w-full"
-          style={{ backgroundColor: panel.accent }}
-        ></div>
+    <div className="h-full w-full min-h-112.5 rounded-3xl overflow-hidden flex items-center justify-center flex-col relative bg-linear-to-br from-white/5 to-white/0 border border-white/10 backdrop-blur-sm">
+      {/* Ambient Glow */}
+      <div
+        className="absolute inset-0 opacity-20 blur-[100px]"
+        style={{ backgroundColor: panel.accent }}
+      />
 
-        <div className="flex items-center justify-between border-b border-[#e6ebf1] bg-white px-5 py-4">
-          <div className="flex items-center gap-3">
-            <div
-              className="grid h-10 w-10 place-items-center rounded-xl"
-              style={{ backgroundColor: `${panel.accent}24`, color: panel.accent }}
-            >
-              <panel.icon size={20} />
-            </div>
-            <div>
-              <h3 className="text-lg font-medium leading-tight">
-                {panel.title}
-              </h3>
-              <p className="mt-1 text-xs text-[#727f96]">{panel.subtitle}</p>
-            </div>
-          </div>
-          <div className="hidden rounded-full bg-[#eef3f8] px-3 py-1 text-xs text-[#425466] min-[480px]:block">
-            {content.FrontDoor.panelLive}
-          </div>
-        </div>
-
-        <div className="grid flex-1 gap-4 p-5">
-          <div className="grid grid-cols-[1fr_auto] gap-4">
-            <div className="rounded-xl bg-white p-4 shadow-sm">
-              <p className="text-xs uppercase text-[#727f96]">{content.FrontDoor.panelFocusMetric}</p>
-              <div className="mt-4 flex items-end gap-3">
-                <span className="text-4xl font-medium">{panel.stat}</span>
-                <span className="pb-1 text-sm text-[#727f96]">
-                  {panel.statLabel}
-                </span>
-              </div>
-            </div>
-            <div className="hidden w-24 rounded-xl bg-[#081C4F] p-4 text-white min-[480px]:grid">
-              <ShieldCheckIcon className="text-[#00d4ff]" size={20} />
-              <span className="self-end text-xs leading-5 text-gray-300">
-                {content.FrontDoor.panelRoleBasedAccess}
-              </span>
-            </div>
-          </div>
-
-          <div className="rounded-xl bg-white shadow-sm">
-            <div className="flex items-center gap-2 border-b border-[#e6ebf1] px-4 py-3 text-sm text-[#727f96]">
-              <SearchIcon size={14} />
-              {content.FrontDoor.panelSearchPlaceholder}
-            </div>
-            <div className="grid">
-              {panel.rows.map(([label, value, meta]) => (
-                <div
-                  key={`${label}-${value}`}
-                  className="grid grid-cols-[1fr_auto] gap-4 border-b border-[#e6ebf1] px-4 py-3 last:border-b-0"
-                >
-                  <div>
-                    <p className="text-sm font-medium text-[#0a2540]">
-                      {label}
-                    </p>
-                    <p className="mt-1 text-xs text-[#727f96]">{value}</p>
-                  </div>
-                  <span className="self-center rounded-full bg-[#eef3f8] px-2 py-1 text-xs text-[#425466]">
-                    {meta}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-3 gap-3">
-            {[
-              [StethoscopeIcon, content.FrontDoor.panelIconDoctor],
-              [FileTextIcon, content.FrontDoor.panelIconRecords],
-              [FlaskConicalIcon, content.FrontDoor.panelIconLabs],
-            ].map(([Icon, label]) => {
-              const IconComponent = Icon as typeof StethoscopeIcon;
-
-              return (
-                <div
-                  key={label as string}
-                  className="grid gap-y-2 rounded-xl bg-white p-3 text-center shadow-sm"
-                >
-                  <IconComponent
-                    className="mx-auto text-[#62788d]"
-                    size={16}
-                  />
-                  <span className="text-xs text-[#425466]">
-                    {label as string}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+            {/* Dynamic Animated Scene */}
+      <div className="z-10 contents items-center">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`scene-${index}`}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: -20 }}
+            transition={{ duration: 0.4 }}
+            className="w-full h-full flex items-center justify-center"
+          >
+            {index === 0 && <RegistrationScene accent={panel.accent} />}
+            {index === 1 && <NetworkScene accent={panel.accent} />}
+            {index === 2 && <QueueScene accent={panel.accent} />}
+            {index === 3 && <RxScene accent={panel.accent} />}
+            {index === 4 && <LabScene accent={panel.accent} />}
+          </motion.div>
+        </AnimatePresence>
       </div>
+
+      {/* Central Glass Info Card (Floating) */}
+      <motion.div
+        className="z-10 m-8 mt-0 w-[stretch] p-5 rounded-2xl bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        key={`text-${index}`}
+      >
+        <div className="flex items-center gap-3 mb-2">
+          <div className="p-2.5 rounded-xl bg-white/50 shadow-sm" style={{ color: panel.accent }}>
+            <panel.icon size={24} />
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-gray-900 leading-tight">{panel.title}</h3>
+            <p className="text-xs text-gray-700 font-medium">{panel.subtitle}</p>
+          </div>
+        </div>
+        <div className="flex items-end gap-2 mt-4 ml-1">
+          <span 
+            className="text-4xl font-black drop-shadow-sm" 
+            style={{ color: panel.accent }}
+          >
+            {panel.stat}
+          </span>
+          <span className="text-sm text-gray-700 font-medium mb-1 tracking-wide uppercase">{panel.statLabel}</span>
+        </div>
+      </motion.div>
     </div>
   );
 };
+
+const RegistrationScene = ({ accent }: { accent: string }) => (
+  <div className="relative w-56 h-64 perspective-1000">
+    <motion.div
+      className="absolute inset-0 bg-white/30 backdrop-blur-lg border border-white/60 rounded-2xl shadow-2xl flex flex-col p-5 gap-4 overflow-hidden"
+      animate={{ rotateY: [-8, 8, -8], rotateX: [4, -4, 4], y: [-10, 10, -10] }}
+      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+    >
+      <div className="w-1/2 h-3 rounded-full bg-gray-400/30" />
+      <div className="w-1/3 h-2 rounded-full bg-gray-400/20 mb-2" />
+      {[1, 2, 3, 4].map((i) => (
+        <motion.div
+          key={i}
+          className="w-full h-2 rounded-full"
+          style={{ transformOrigin: "left", backgroundColor: `${accent}50` }}
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.5, delay: i * 0.2, repeat: Infinity, repeatDelay: 2 }}
+        />
+      ))}
+      <motion.div
+        className="absolute left-0 right-0 h-0.5 shadow-[0_0_12px_2px_currentColor] z-10"
+        style={{ backgroundColor: accent, color: accent }}
+        animate={{ top: ["10%", "90%", "10%"] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+      />
+      <motion.div 
+         className="absolute bottom-4 right-4 w-12 h-12 bg-white/80 rounded-full flex items-center justify-center shadow-lg border-2"
+         style={{ borderColor: accent }}
+         initial={{ scale: 0, opacity: 0 }}
+         animate={{ scale: [0, 1.2, 1], opacity: [0, 1, 1] }}
+         transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+      >
+         <ShieldCheckIcon size={24} style={{ color: accent }} />
+      </motion.div>
+    </motion.div>
+  </div>
+);
+
+const NetworkScene = ({ accent }: { accent: string }) => (
+  <div className="relative w-64 h-64 flex items-center justify-center">
+    <motion.div
+      className="absolute z-20 w-24 h-24 bg-white/50 backdrop-blur-xl border-4 rounded-full shadow-2xl flex items-center justify-center"
+      style={{ borderColor: accent }}
+      animate={{ scale: [1, 1.1, 1], boxShadow: [`0 0 0 0 ${accent}60`, `0 0 0 25px ${accent}00`] }}
+      transition={{ duration: 2, repeat: Infinity }}
+    >
+      <SearchIcon size={40} style={{ color: accent }} />
+    </motion.div>
+    <motion.div
+      className="absolute z-10 w-52 h-52 border-[1.5px] border-dashed rounded-full"
+      style={{ borderColor: `${accent}80` }}
+      animate={{ rotate: 360 }}
+      transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+    >
+      <div className="absolute -top-5 left-1/2 -ml-5 w-10 h-10 bg-white/90 rounded-full shadow-xl flex items-center justify-center border border-gray-100">
+        <UserRoundIcon size={20} style={{ color: accent }} />
+      </div>
+      <div className="absolute -bottom-5 left-1/2 -ml-5 w-10 h-10 bg-white/90 rounded-full shadow-xl flex items-center justify-center border border-gray-100">
+        <StethoscopeIcon size={20} style={{ color: accent }} />
+      </div>
+    </motion.div>
+    <motion.div
+      className="absolute z-10 w-72 h-72 border border-dashed rounded-full opacity-50"
+      style={{ borderColor: accent }}
+      animate={{ rotate: -360 }}
+      transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+    >
+      <div className="absolute top-1/2 -right-5 -mt-5 w-10 h-10 bg-white/90 rounded-full shadow-xl flex items-center justify-center border border-gray-100">
+        <FileTextIcon size={20} style={{ color: accent }} />
+      </div>
+    </motion.div>
+  </div>
+);
+
+const QueueScene = ({ accent }: { accent: string }) => (
+  <div className="relative w-64 h-64 flex flex-col items-center justify-center overflow-hidden" style={{ WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)' }}>
+    <motion.div
+      className="flex flex-col gap-4 absolute w-full px-2"
+      animate={{ y: ["0%", "-33.33%"] }}
+      transition={{ repeat: Infinity, ease: "linear", duration: 3 }}
+    >
+      {[1, 2, 3, 4, 5, 6].map((i) => (
+        <div key={i} className="w-full h-16 bg-white/40 backdrop-blur-md border border-white/60 rounded-xl shadow-md flex items-center px-4 gap-4 shrink-0">
+          <div className="w-10 h-10 rounded-lg flex flex-col items-center justify-center bg-white/70 shadow-inner" style={{ color: accent }}>
+             <CalendarDaysIcon size={20} />
+          </div>
+          <div className="flex-1">
+            <div className="h-2.5 w-3/4 rounded-full mb-2" style={{ backgroundColor: `${accent}60` }} />
+            <div className="h-2 w-1/2 rounded-full" style={{ backgroundColor: `${accent}30` }} />
+          </div>
+        </div>
+      ))}
+    </motion.div>
+  </div>
+);
+
+const RxScene = ({ accent }: { accent: string }) => (
+  <div className="relative w-64 h-64 flex items-center justify-center perspective-1000">
+    <motion.div
+       className="absolute z-20"
+       animate={{ y: [-15, 15, -15], rotate: [0, 15, -10, 0] }}
+       transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+    >
+       <PillIcon size={90} style={{ color: accent }} className="drop-shadow-2xl" />
+    </motion.div>
+    <motion.div
+       className="absolute z-10 w-48 h-64 bg-white/30 backdrop-blur-lg border border-white/60 rounded-2xl shadow-xl p-5"
+       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+    >
+       <div className="text-3xl font-serif italic font-black mb-6" style={{ color: accent }}>Rx</div>
+       <motion.div className="h-2 w-full rounded-full mb-3 origin-left" style={{ backgroundColor: `${accent}40` }} animate={{ scaleX: [0, 1] }} transition={{ duration: 2, repeat: Infinity }} />
+       <motion.div className="h-2 w-5/6 rounded-full mb-3 origin-left" style={{ backgroundColor: `${accent}40` }} animate={{ scaleX: [0, 1] }} transition={{ duration: 2, repeat: Infinity, delay: 0.2 }} />
+       <motion.div className="h-2 w-4/6 rounded-full origin-left" style={{ backgroundColor: `${accent}40` }} animate={{ scaleX: [0, 1] }} transition={{ duration: 2, repeat: Infinity, delay: 0.4 }} />
+    </motion.div>
+    {[1, 2, 3].map(i => (
+       <motion.div key={i} className="absolute text-4xl font-bold z-0" style={{ color: accent }}
+          initial={{ opacity: 0, y: 0, x: (i - 2) * 60 }}
+          animate={{ opacity: [0, 0.6, 0], y: -80, rotate: 180 }}
+          transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.5 }}
+       >
+          +
+       </motion.div>
+    ))}
+  </div>
+);
+
+const LabScene = ({ accent }: { accent: string }) => (
+  <div className="relative w-full h-64 flex items-center justify-center">
+    <svg className="absolute w-full h-40 z-10 opacity-60" viewBox="0 0 200 100" preserveAspectRatio="none">
+      <motion.path
+        d="M 0,50 L 40,50 L 55,20 L 75,90 L 95,10 L 115,80 L 130,50 L 200,50"
+        fill="none"
+        stroke={accent}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+        className="drop-shadow-[0_0_10px_currentColor]"
+      />
+    </svg>
+    <motion.div
+      className="absolute z-20 w-28 h-28 bg-white/40 backdrop-blur-xl border border-white/60 rounded-full shadow-2xl flex flex-col items-center justify-center"
+      animate={{ y: [-12, 12, -12] }}
+      transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+    >
+       <FlaskConicalIcon size={48} style={{ color: accent }} />
+       {[1,2,3,4,5].map(i => (
+          <motion.div key={i} className="absolute w-2 h-2 rounded-full" style={{ backgroundColor: accent }}
+             initial={{ opacity: 0, y: 10, x: (i-3)*10 }}
+             animate={{ opacity: [0, 1, 0], y: -50, scale: [0.5, 1.5, 0.5] }}
+             transition={{ duration: 1.5 + Math.random(), repeat: Infinity, delay: i * 0.3 }}
+          />
+       ))}
+    </motion.div>
+  </div>
+);

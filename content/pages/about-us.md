@@ -4,8 +4,6 @@ description: "Discover DardiBook's mission, team, and healthcare management visi
 canonical: "/docs/about-us"
 ---
 
-# About DardiBook
-
 ## Our Product
 
 DardiBook is a comprehensive healthcare management platform designed to
@@ -40,3 +38,6 @@ combination of features designed specifically for the needs of clinics and
 hospitals. With real-time token management, seamless appointment scheduling, and
 comprehensive patient history tracking, DardiBook ensures that your practice runs
 smoothly and efficiently.
+
+---
+*Last Modified: June 14, 2026*

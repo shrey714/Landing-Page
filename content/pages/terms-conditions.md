@@ -4,8 +4,6 @@ description: "DardiBook's terms of use, liability, and dispute resolution policy
 canonical: "/docs/terms-conditions"
 ---
 
-# Terms and Conditions
-
 ## Proprietary Rights
 
 The content on this website, including text, graphics, logos, images, and
@@ -45,3 +43,6 @@ accordance with the laws of India.
 
 DardiBook reserves the right to modify these Terms and Conditions at any time.
 Any changes will be effective immediately upon posting on the website.
+
+---
+*Last Modified: June 14, 2026*

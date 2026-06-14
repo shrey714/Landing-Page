@@ -4,8 +4,6 @@ description: "Learn about DardiBook's subscription cancellation and reactivation
 canonical: "/docs/cancellation-policy"
 ---
 
-# Cancellation Policy
-
 ## Introduction
 
 At DardiBook, we strive to provide our users with the best possible healthcare
@@ -39,3 +37,6 @@ cancellation, as refunds will not be issued under any circumstances.
 Upon cancellation of a subscription, user data will not be deleted. We retain
 user information securely, allowing users to reactivate their account in the
 future without losing any data.
+
+---
+*Last Modified: June 14, 2026*
