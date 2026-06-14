@@ -11,6 +11,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 type FAQItem = {
   question: string;
@@ -39,9 +46,9 @@ export default function ObjectionsAccordion() {
   const currentTopicData = displayTopics.find((topic) => topic.id === activeTopic);
 
   return (
-    <section id="faq" className="relative scroll-mt-28 py-20 min-[900px]:py-28">
+    <section id="faq" className="relative scroll-mt-28 py-20 min[900px]:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+        <div className="flex flex-col lg:flex-row gap-1 lg:gap-16">
 
           {/* Left Side: Meaningful Content & Topic Selector */}
           <div className="lg:w-1/3 flex flex-col">
@@ -52,7 +59,8 @@ export default function ObjectionsAccordion() {
               {content.ObjectionsAccordion.description}
             </TypingAnimation>
 
-            <div className="flex flex-col space-y-2">
+            {/* Desktop Topic Selector */}
+            <div className="hidden lg:flex flex-col space-y-2">
               {displayTopics.map((topic) => (
                 <Button
                   variant={"link"}
@@ -68,6 +76,22 @@ export default function ObjectionsAccordion() {
                   {topic.title}
                 </Button>
               ))}
+            </div>
+
+            {/* Mobile Topic Selector */}
+            <div className="lg:hidden mb-4">
+              <Select value={activeTopic} onValueChange={setActiveTopic}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select a topic" />
+                </SelectTrigger>
+                <SelectContent>
+                  {displayTopics.map((topic) => (
+                    <SelectItem key={topic.id} value={topic.id}>
+                      {topic.title}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
 
