@@ -430,13 +430,13 @@ const content = {
     h4List1: "Repeat medicine and dosage references",
     h4List2: "Clearer instructions for patients",
     h4List3: "Fewer clarification calls from pharmacies",
-    h5Title: "Diagnostics",
-    h5Subtitle: "Coordinate lab requests and reports smoothly",
+    h5Title: "Billing & Payments",
+    h5Subtitle: "Manage clinic revenue and patient bills easily",
     h5Desc:
-      "Share test recommendations, keep reports attached to the patient record, and help doctors review results with context during the next visit.",
-    h5List1: "Lab requests linked to patient visits",
-    h5List2: "Reports stored alongside medical history",
-    h5List3: "Better coordination between clinics and diagnostics",
+      "Generate clear invoices, track pending payments, and keep financial records tied to the respective patient visits securely.",
+    h5List1: "Invoices linked to patient visits",
+    h5List2: "Track pending and completed payments",
+    h5List3: "Clear, itemized billing for patients",
     p1Title: "Clinic Command Center",
     p1Subtitle: "Today across reception, doctors, pharmacy, and diagnostics",
     p1StatLabel: "scheduled visits",
@@ -504,6 +504,18 @@ const content = {
     panelIconDoctor: "Doctor",
     panelIconRecords: "Records",
     panelIconLabs: "Labs",
+  },
+  ProductShowcase: {
+    title: "Complete Clinic Workflows",
+    subtitle: "Everything you need in one place",
+    description: "Explore the different modules of DardiBook designed to streamline your daily practice operations.",
+    tabs: [
+      { id: "registrations", label: "Registrations", desc: "Manage walk-ins and new patient registrations seamlessly." },
+      { id: "patients", label: "Patients", desc: "Access comprehensive patient history and clinical notes." },
+      { id: "admissions", label: "Admissions", desc: "Track inpatient admissions, bed allocation, and status." },
+      { id: "prescriptions", label: "Prescriptions", desc: "Create and manage digital prescriptions effortlessly." },
+      { id: "bills", label: "Billing", desc: "Generate invoices and track payments accurately." },
+    ]
   },
 };
 

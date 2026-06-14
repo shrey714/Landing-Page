@@ -9,6 +9,7 @@ import LogoCloud from "@/components/Homelayouts/Logo-Cloud";
 import { Navbar } from "@/components/Homelayouts/Navbar";
 import TrustProof from "@/components/Homelayouts/TrustProof";
 import ObjectionsAccordion from "@/components/Homelayouts/ObjectionsAccordion";
+import ProductShowcase from "@/components/Homelayouts/ProductShowcase";
 import Workflow from "@/components/Homelayouts/Workflow";
 import MarqueFrame from "@/components/subs/MarqueFrame";
 
@@ -23,10 +24,11 @@ export default async function IndexPage() {
       <Workflow />
       <StickyScrollReveal />
       <CardCarousel />
+      <ProductShowcase />
       <TrustProof />
-      <ObjectionsAccordion />
       <FeaturesSquence />
       <GridCarousel />
+      <ObjectionsAccordion />
       <CallToAction />
       <Footer />
     </main>
