@@ -11,9 +11,40 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  manifest: "/manifest.json",
   title: "DardiBook",
+  alternates: {
+    canonical: "https://dardibook.in",
+    languages: {
+      "en-US": "https://dardibook.in",
+      // Add other languages as needed
+    },
+    types: {
+      "application/rss+xml": "https://dardibook.in/rss",
+    },
+  },
+  metadataBase: new URL("https://dardibook.in"),
   description:
     "DardiBook is a healthcare practice management platform for doctors and clinic teams to manage appointments, patient records, prescriptions, lab requests, follow-ups, and daily care workflows.",
+  icons: {
+    icon: "/favicon.png",
+  },
+  openGraph: {
+    title: "Welcome to dardibook",
+    description:
+      "Transform Your Medical Practice with DardiBook: The Patient Management Solutionn",
+    url: "https://dardibook.in",
+    type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "open graph image",
+      },
+    ],
+    siteName: "DardiBook",
+  },
 };
 
 export default async function RootLayout({
