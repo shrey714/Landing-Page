@@ -18,6 +18,8 @@ import {
 import content from "@/content/content";
 import TypingAnimation from "../ui/typingText";
 import { motion, AnimatePresence } from "motion/react";
+import Link from "next/link";
+import { APP_LINKS } from "@/content/links";
 
 
 
@@ -122,7 +124,7 @@ const GridCarousel = () => {
       <div className="overflow-hidden">
         <div className="relative z-1 flex justify-center">
           <div className="w-full max-w-7xl mx-4">
-            <div className="py-28">
+            <div className="py-10 md:py-28">
               <div className="grid gap-y-6 min-[600px]:gap-y-8 min-[900px]:gap-y-10 items-start grid-rows-[auto] grid-cols-[minmax(0,1fr)]">
                 <div className="items-start gap-y-8 grid min-[900px]:grid-cols-[3fr_1fr]">
                   <section className="grid gap-y-6 tracking-[0.2px] scroll-mt-27">
@@ -144,10 +146,13 @@ const GridCarousel = () => {
                     <footer className="px-4">
                       <Button
                         variant={"outline"}
-                        size={"sm"}
+                        size={"lg"}
+                        asChild
                         className="rounded-full"
                       >
-                        {content.GridCarousel.exploreDardiBookForTeams} <ChevronRightIcon />
+                        <Link href={APP_LINKS.DARDIBOOK_DASHBOARD} aria-label="Request a demo of DardiBook">
+                        {content.GridCarousel.exploreDardiBook} <ChevronRightIcon />
+                        </Link>
                       </Button>
                     </footer>
                   </section>

@@ -26,8 +26,8 @@ export default function Hero() {
 
 
                 <Button asChild size="lg" className="rounded-full px-5 text-base border-2 border-[#635bff] bg-[#635bff] dark:bg-[#635bff96] text-white hover:bg-[#635bff96] dark:hover:bg-[#635bff] shadow-none" variant={"default"}>
-                  <Link href={APP_LINKS.DEMO} aria-label="Request a demo of DardiBook">
-                    <span>{content.Hero.requestDemo}</span>
+                  <Link href={APP_LINKS.DARDIBOOK_DASHBOARD} aria-label="Request a demo of DardiBook">
+                    <span>{content.Hero.Dashboard}</span>
                   </Link>
                 </Button>
 

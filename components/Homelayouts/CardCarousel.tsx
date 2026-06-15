@@ -180,7 +180,7 @@ const totalCards = cardsData.length;
     <section id="modules" className="scroll-mt-28">
       <div className="overflow-hidden relative z-1 flex justify-center">
         <div className="w-full max-w-7xl mx-auto">
-          <div className="py-28">
+          <div className="pb-10 md:py-28">
             <div className="relative grid">
               <div className="grid items-start grid-rows-[auto] grid-cols-[minmax(0,1fr)] gap-y-8 min-[600px]:gap-y-12 min-[900px]:gap-y-16">
                 {/* carousel header */}

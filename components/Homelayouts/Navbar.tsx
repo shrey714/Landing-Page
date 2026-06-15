@@ -122,7 +122,7 @@ export const Navbar = () => {
 
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Button asChild size="sm" className="rounded-full h-9 border-2 border-[#635bff] bg-[#635bff] dark:bg-[#635bff96] text-white hover:bg-[#635bff96] dark:hover:bg-[#635bff] shadow-none" variant={"default"}>
-                  <Link href={APP_LINKS.DEMO} aria-label="Request a demo of DardiBook">
+                  <Link href={APP_LINKS.DOCS.CONTACT_US} aria-label="Request a demo of DardiBook">
                     <span>{content.Navbar.requestDemo}</span>
                   </Link>
                 </Button>

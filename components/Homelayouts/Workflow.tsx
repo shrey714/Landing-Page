@@ -53,7 +53,7 @@ const Workflow = () => {
     <section id="workflow" className="relative scroll-mt-28">
       <div className="relative z-1 flex justify-center">
         <div className="w-full max-w-7xl mx-4">
-          <div className="py-28">
+          <div className="py-10 md:py-28">
             <div className="grid gap-y-12">
               <section className="grid gap-y-6 max-w-3xl px-4">
                 <h2 className="text-[#00d4ff] text-3xl md:text-4xl font-semibold leading-tight">

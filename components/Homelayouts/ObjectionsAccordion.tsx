@@ -117,7 +117,7 @@ export default function ObjectionsAccordion() {
                 {content.ObjectionsAccordion.contactDesc}
               </p>
               <Button asChild size="lg" className="rounded-full border-2 border-[#635bff] bg-[#635bff] dark:bg-[#635bff96] text-white hover:bg-[#635bff96] dark:hover:bg-[#635bff] shadow-none" variant={"default"}>
-                <Link href={APP_LINKS.DEMO} aria-label="Contact our team">
+                <Link href={APP_LINKS.DOCS.CONTACT_US} aria-label="Contact our team">
                   <span>{content.ObjectionsAccordion.contactButton}</span>
                 </Link>
               </Button>

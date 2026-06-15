@@ -66,7 +66,7 @@ export function StickyScrollReveal() {
     <section className="relative">
       <div className="relative z-1 flex justify-center">
         <div className="w-full max-w-7xl my-0 mx-4">
-          <div className="px-0 py-28">
+          <div className="px-0 py-12 md:py-28">
             <div
               id="heightOfDiv"
               ref={heightOfDivRef}
@@ -363,7 +363,7 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
   const index = panelNumber - 1;
 
   return (
-    <div className="h-full w-full min-h-112.5 rounded-3xl overflow-hidden flex items-center justify-center flex-col relative bg-linear-to-br from-white/5 to-white/0 border border-white/10 backdrop-blur-sm">
+    <div className="h-full w-full rounded-3xl overflow-hidden flex items-center justify-center flex-col relative bg-linear-to-br from-white/5 to-white/0 border border-white/10 backdrop-blur-sm">
       {/* Ambient Glow */}
       <div
         className="absolute inset-0 opacity-20 blur-[100px]"
@@ -392,7 +392,7 @@ const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
 
       {/* Central Glass Info Card (Floating) */}
       <motion.div
-        className="z-10 m-8 mt-0 w-[stretch] p-5 rounded-2xl bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
+        className="hidden min-[900px]:block z-10 m-8 mt-0 w-[stretch] p-5 rounded-2xl bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         key={`text-${index}`}

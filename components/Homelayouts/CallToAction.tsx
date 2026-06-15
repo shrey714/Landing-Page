@@ -3,6 +3,8 @@ import { Button } from "../ui/button";
 import { HeadsetIcon, IndianRupeeIcon } from "lucide-react";
 import content from "@/content/content";
 import TypingAnimation from "../ui/typingText";
+import { APP_LINKS } from "@/content/links";
+import Link from "next/link";
 
 
 const CallToAction = () => {
@@ -12,7 +14,7 @@ const CallToAction = () => {
       <div className="overflow-hidden">
         <div className="relative z-1 flex justify-center">
           <div className="w-full max-w-7xl mx-4">
-            <div className="py-28">
+            <div className="pt-10 pb-20 md:py-28">
               <div className="grid items-start gap-y-8 min-[600px]:grid-cols-2 min-[900px]:grid-cols-[2fr_repeat(2,1fr)]">
                 <section className="scroll-mt-27 tracking-[0.2px] grid gap-y-6">
                   <header className="grid gap-y-6 max-w-240 grid-cols-[minmax(0,1fr)] pr-4 min-[600px]:pr-16 min-[900px]:pr-28 pl-4">
@@ -29,9 +31,12 @@ const CallToAction = () => {
                     <Button
                       className="rounded-full"
                       size={"sm"}
+                      asChild
                       variant={"outline"}
                     >
-                      {content.CallToAction.bookDemo}
+                      <Link href={APP_LINKS.DOCS.CONTACT_US} aria-label="Request a demo of DardiBook">
+                        {content.CallToAction.bookDemo}
+                      </Link>
                     </Button>
                   </footer>
                 </section>

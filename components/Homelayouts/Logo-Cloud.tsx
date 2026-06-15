@@ -42,12 +42,12 @@ const LogoCloud = () => {
   }, [logoSets.length]);
 
   return (
-    <div className="py-10 px-4 relative">
+    <div className="pb-10 md:py-10 px-4 relative">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
           {content.LogoCloud.title}
         </h2>
-        <TypingAnimation className="text-accent-foregroundmb-8 max-w-2xl mx-auto">
+        <TypingAnimation className="text-accent-foregroundmb-8 max-w-2xl mx-auto mb-4">
           {content.LogoCloud.description}
         </TypingAnimation>
 
@@ -56,7 +56,7 @@ const LogoCloud = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSetIndex}
-              className="absolute inset-0 flex justify-center items-center space-x-8 md:space-x-12 lg:space-x-16"
+              className="absolute inset-0 flex justify-center items-center flex-wrap space-x-8 md:space-x-12 lg:space-x-16"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}

@@ -50,7 +50,7 @@ const footerColumns = [
       { title: content.Footer.companyBookDemo, href: APP_LINKS.DEMO },
       { title: content.Footer.companyImplementation, href: APP_LINKS.DEMO },
       { title: content.Footer.companyTrustAccess, href: APP_LINKS.TRUST },
-      { title: content.Footer.companyContact, href: APP_LINKS.DEMO },
+      { title: content.Footer.companyContact, href: APP_LINKS.DOCS.CONTACT_US },
     ],
   },
   {
@@ -113,7 +113,7 @@ export default function Footer() {
 
               <Button asChild variant="outline" size="lg" className="rounded-full w-min">
                 <Link
-                  href={APP_LINKS.DEMO}
+                  href={APP_LINKS.DOCS.CONTACT_US}
                 >
                   {content.Footer.bookWalkthrough} <ArrowRightIcon size={16} />
                 </Link>

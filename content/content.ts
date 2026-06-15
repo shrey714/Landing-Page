@@ -228,7 +228,7 @@ const content = {
     title: "Digitize your medical practice with DardiBook",
     description:
       "Manage appointments, patient records, prescriptions, lab requests, and follow-ups from one secure workspace built for doctors and clinic teams.",
-    requestDemo: "Request Demo",
+    Dashboard: "Access Dashboard",
     seeWorkflow: "See Workflow",
     dummyClinic: "DardiBook Clinic",
   },
@@ -395,7 +395,7 @@ const content = {
     headerTitle2: "Built for clinics that want to grow without chaos",
     headerDescription:
       "DardiBook helps healthcare teams reduce manual work, strengthen patient connect, keep care information secure, and maintain a clear operational rhythm as the practice expands.",
-    exploreDardiBookForTeams: "Explore DardiBook for teams",
+    exploreDardiBook: "Explore DardiBook",
     operationalSignal: "Operational signal",
     careFlowVisible: "Care flow visible",
     liveFlow: "Live flow",

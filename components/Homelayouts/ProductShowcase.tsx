@@ -79,9 +79,9 @@ export default function ProductShowcase() {
   };
 
   return (
-    <section className="relative py-20 min-[900px]:py-32 overflow-hidden" id="product-showcase">
+    <section className="relative py-10 min-[900px]:py-20 overflow-hidden" id="product-showcase">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 items-stretch lg:h-150">
+        <div className="flex flex-col lg:flex-row lg:gap-8 items-stretch lg:h-150">
 
 
           <div className="items-start gap-y-8 w-full lg:w-[38%]">
@@ -110,38 +110,13 @@ export default function ProductShowcase() {
                   className="rounded-full px-6 py-4 text-base"
                   asChild
                 >
-                  <Link href={APP_LINKS.DEMO} aria-label="Request a demo of DardiBook">
+                  <Link href={APP_LINKS.DARDIBOOK_DASHBOARD} aria-label="Request a demo of DardiBook">
                     <span>Get Started</span> <ArrowUpRight className="w-4 h-4" />
                   </Link>
                 </Button>
               </footer>
             </section>
           </div>
-
-
-          {/* Left Text Content */}
-          {/* <div className="w-full lg:w-[38%] flex flex-col items-start pr-4 sm:pr-6 lg:pr-0">
-            <div className="pt-4 lg:pt-8 pr-4 min-[600px]:pr-8 pl-4">
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full text-sm font-medium mb-8 border-2 border-[#635bff] bg-[#635bff] dark:bg-[#635bff96] text-white">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#6f68ff]"></span>
-                {content.ProductShowcase.title}
-              </div>
-
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-[-0.02em] wrap-break-word mb-6">
-                {content.ProductShowcase.subtitle}
-              </h1>
-
-              <TypingAnimation className="font-light text-lg leading-[1.555555556] text-accent-foreground max-w-md">
-                {content.ProductShowcase.description}
-              </TypingAnimation>
-            </div>
-
-            <Button asChild size="lg" className="mt-10 px-6 py-5 rounded-full text-base h-9 border-2 border-[#635bff] bg-[#635bff] dark:bg-[#635bff96] text-white hover:bg-[#635bff96] dark:hover:bg-[#635bff] shadow-none" variant={"default"}>
-              <Link href={APP_LINKS.DEMO} aria-label="Request a demo of DardiBook">
-                <span>Get Started</span> <ArrowUpRight className="w-4 h-4" />
-              </Link>
-            </Button>
-          </div> */}
 
           {/* Right Carousel Content */}
           <div className="w-full lg:w-[62%] flex flex-col justify-between relative min-h-112.5">
