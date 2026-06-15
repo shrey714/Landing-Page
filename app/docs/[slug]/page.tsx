@@ -3,6 +3,7 @@ import path from "path";
 import { marked } from "marked";
 import matter from "gray-matter";
 import type { Metadata } from "next";
+import ContactUsForm from "@/components/subs/ContactForm";
 
 type Props = { params: { slug: string } | Promise<{ slug: string }> };
 
@@ -61,18 +62,27 @@ export default async function DocPage(props: Props) {
 
   return (
     <main className="max-w-6xl mx-auto py-16 px-4">
-        <div className="mb-8 space-y-4">
-          <p className="text-sm uppercase tracking-[0.24em] text-slate-500">Documentation</p>
-          <h1 className="text-4xl font-semibold tracking-tight text-slate-950 dark:text-white">
-            {title}
-          </h1>
-          <p className="max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            {description}
-          </p>
-        </div>
-        <article className="prose prose-slate prose-lg dark:prose-invert max-w-none">
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-        </article>
+      <div className="mb-8 space-y-4">
+        <p className="text-sm uppercase tracking-[0.24em] text-slate-500">Documentation</p>
+        <h1 className="text-4xl font-semibold tracking-tight text-slate-950 dark:text-white">
+          {title}
+        </h1>
+        <p className="max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
+          {description}
+        </p>
+      </div>
+      <article className="prose prose-slate prose-lg dark:prose-invert max-w-none">
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </article>
+
+      {title === "Contact Us" && (
+        <div
+          className="rounded-lg shadow-[0px_0px_0px_1px_#a0aec0] bg-white mt-3"
+          style={{ overflowY: "auto" }}
+        >
+          <ContactUsForm />
+        </div>)}
+
     </main>
   );
 }
