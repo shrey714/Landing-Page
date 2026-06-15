@@ -1,11 +1,19 @@
 export const APP_LINKS = {
-  HOME: "/", //yes
-  DEMO: "#demo",
-  WORKFLOW: "#workflow", //yes
-  TRUST: "#trust", //yes
-  MODULES: "#modules", //yes
+  HOME: "/",
+  DEMO: "/demo",
+  WORKFLOW: "#workflow",
+  TRUST: "#trust",
+  MODULES: "#modules",
+  BLOG: "/blog",
+  PRICING: "/pricing",
+  SECURITY: "/security",
   MAIN_CONTENT: "#main",
-  DARDIBOOK_DASHBOARD: "https://dashboard.dardibook.in/", //yes
+  DARDIBOOK_DASHBOARD: "https://dashboard.dardibook.in/",
+  SOLUTIONS: {
+    SOLO_DOCTORS: "/solutions/solo-doctors",
+    CLINICS: "/solutions/clinics",
+    HOSPITALS: "/solutions/hospitals",
+  },
   DOCS: {
     ABOUT_US: "/docs/about-us",
     PRICING: "/docs/pricing",

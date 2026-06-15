@@ -29,10 +29,13 @@ const footerColumns = [
   {
     title: content.Footer.solutionsTitle,
     links: [
-      { title: content.Footer.solutionsSoloDoctors, href: APP_LINKS.WORKFLOW },
-      { title: content.Footer.solutionsClinics, href: APP_LINKS.MODULES },
-      { title: content.Footer.solutionsHospitals, href: APP_LINKS.TRUST },
-      { title: content.Footer.solutionsCareTeams, href: APP_LINKS.TRUST },
+      { title: "Resources", href: APP_LINKS.BLOG },
+      { title: "Pricing", href: APP_LINKS.PRICING },
+      { title: "Security", href: APP_LINKS.SECURITY },
+      { title: content.Footer.solutionsSoloDoctors, href: APP_LINKS.SOLUTIONS.SOLO_DOCTORS },
+      { title: content.Footer.solutionsClinics, href: APP_LINKS.SOLUTIONS.CLINICS },
+      { title: content.Footer.solutionsHospitals, href: APP_LINKS.SOLUTIONS.HOSPITALS },
+      { title: content.Footer.solutionsCareTeams, href: APP_LINKS.SOLUTIONS.CLINICS },
     ],
   },
   {
@@ -57,7 +60,7 @@ const footerColumns = [
     title: content.Footer.legalTitle,
     links: [
       { title: content.Footer.legalAbout, href: APP_LINKS.DOCS.ABOUT_US },
-      { title: content.Footer.legalPricing, href: APP_LINKS.DOCS.PRICING },
+      { title: content.Footer.legalPricing, href: APP_LINKS.PRICING },
       { title: content.Footer.legalPrivacyPolicy, href: APP_LINKS.DOCS.PRIVACY_POLICY },
       { title: content.Footer.legalTermsConditions, href: APP_LINKS.DOCS.TERMS_CONDITIONS },
     ],

@@ -39,6 +39,8 @@ export const Navbar = () => {
   const menuItems = [
     { name: content.Navbar.menuWorkflow, href: APP_LINKS.WORKFLOW },
     { name: content.Navbar.menuModules, href: APP_LINKS.MODULES },
+    { name: "Resources", href: APP_LINKS.BLOG },
+    { name: "Pricing", href: APP_LINKS.PRICING },
     { name: content.Navbar.menuTrust, href: APP_LINKS.TRUST },
     { name: content.Navbar.menuDemo, href: APP_LINKS.DEMO },
   ];
