@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "../ui/button";
 import {
   CalendarDaysIcon,
@@ -10,32 +9,8 @@ import content from "@/content/content";
 import TypingAnimation from "../ui/typingText";
 
 const FeaturesSquence = () => {
-  const features = [
-    {
-      title: content.FeaturesSequence.f1Title,
-      description: content.FeaturesSequence.f1Desc,
-      cta: content.FeaturesSequence.f1Cta,
-      icon: ClipboardPlusIcon,
-    },
-    {
-      title: content.FeaturesSequence.f2Title,
-      description: content.FeaturesSequence.f2Desc,
-      cta: content.FeaturesSequence.f2Cta,
-      icon: CalendarDaysIcon,
-    },
-    {
-      title: content.FeaturesSequence.f3Title,
-      description: content.FeaturesSequence.f3Desc,
-      cta: content.FeaturesSequence.f3Cta,
-      icon: FlaskConicalIcon,
-    },
-    {
-      title: content.FeaturesSequence.f4Title,
-      description: content.FeaturesSequence.f4Desc,
-      cta: content.FeaturesSequence.f4Cta,
-      icon: LockKeyholeIcon,
-    },
-  ];
+  const features = content.FeaturesSequence.features;
+  const featureIcons = [ClipboardPlusIcon, CalendarDaysIcon, FlaskConicalIcon, LockKeyholeIcon];
 
   return (
     <section className="relative mb-[calc(calc(calc(100vw-17px)*0.106))] my-10 md:my-28">
@@ -125,35 +100,39 @@ const FeaturesSquence = () => {
 
                 <div>
                   <div className="grid gap-y-8 items-start min-[600px]:grid-cols-2 min-[900px]:grid-cols-4">
-                    {features.map((feature, index) => (
-                      <section
-                        key={index}
-                        className="grid gap-y-2 tracking-[0.2px] scroll-mt-27"
-                      >
-                        <header className="relative grid gap-y-2 max-w-240 pr-4 min-[600px]:pr-8 pl-4 grid-cols-[minmax(0,1fr)]">
-                          <div className="min-h-10 flex items-end mb-2">
-                            <div className="rounded p-2 bg-[#00d4ff24] text-[#00d4ff]">
-                              <feature.icon size={24} />
+                    {features.map((feature, index) => {
+                      const Icon = featureIcons[index % featureIcons.length];
+
+                      return (
+                        <section
+                          key={index}
+                          className="grid gap-y-2 tracking-[0.2px] scroll-mt-27"
+                        >
+                          <header className="relative grid gap-y-2 max-w-240 pr-4 min-[600px]:pr-8 pl-4 grid-cols-[minmax(0,1fr)]">
+                            <div className="min-h-10 flex items-end mb-2">
+                              <div className="rounded p-2 bg-[#00d4ff24] text-[#00d4ff]">
+                                <Icon size={24} />
+                              </div>
                             </div>
+                            <h3 className="relative tracking-[0.2px] wrap-break-word text-2xl font-semibold leading-snug">
+                              {feature.title}
+                            </h3>
+                          </header>
+                          <div className="pr-4 min-[600px]:pr-8 pl-4 text-accent-foreground max-w-240 font-light text-base leading-[1.6] line-clamp-4">
+                            {feature.desc}
                           </div>
-                          <h3 className="relative tracking-[0.2px] wrap-break-word text-2xl font-semibold leading-snug">
-                            {feature.title}
-                          </h3>
-                        </header>
-                        <div className="pr-4 min-[600px]:pr-8 pl-4 text-accent-foreground max-w-240 font-light text-base leading-[1.6] line-clamp-4">
-                          {feature.description}
-                        </div>
-                        <footer className="pr-4 min-[600px]:pr-8 pl-4">
-                          <Button
-                            variant={"outline"}
-                            className="rounded-full mt-2"
-                            size={"sm"}
-                          >
-                            {feature.cta}
-                          </Button>
-                        </footer>
-                      </section>
-                    ))}
+                          <footer className="pr-4 min-[600px]:pr-8 pl-4">
+                            <Button
+                              variant={"outline"}
+                              className="rounded-full mt-2"
+                              size={"sm"}
+                            >
+                              {feature.cta}
+                            </Button>
+                          </footer>
+                        </section>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

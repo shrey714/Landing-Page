@@ -1,48 +1,36 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 import content from "@/content/content";
 import TypingAnimation from "../ui/typingText";
+import { useInView } from "@/lib/useInView";
+import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 
 const LogoCloud = () => {
 
-  // Different sets of company logos that cycle through
   const logoSets = [
-    [
-      { name: "Clinics", logo: content.LogoCloud.l1 },
-      { name: "Hospitals", logo: content.LogoCloud.l2 },
-      { name: "Solo Doctors", logo: content.LogoCloud.l3 },
-      { name: "Reception Teams", logo: content.LogoCloud.l4 },
-      { name: "Care Coordinators", logo: content.LogoCloud.l5 },
-    ],
-    [
-      { name: "Patient Records", logo: content.LogoCloud.l6 },
-      { name: "Appointments", logo: content.LogoCloud.l7 },
-      { name: "Prescriptions", logo: content.LogoCloud.l8 },
-      { name: "Lab Requests", logo: content.LogoCloud.l9 },
-      { name: "Follow-ups", logo: content.LogoCloud.l10 },
-    ],
-    [
-      { name: "Pharmacies", logo: content.LogoCloud.l11 },
-      { name: "Diagnostics", logo: content.LogoCloud.l12 },
-      { name: "Specialists", logo: content.LogoCloud.l13 },
-      { name: "Medical Staff", logo: content.LogoCloud.l14 },
-      { name: "Patients", logo: content.LogoCloud.l15 },
-    ],
+    content.LogoCloud.logos.slice(0, 5),
+    content.LogoCloud.logos.slice(5, 10),
+    content.LogoCloud.logos.slice(10),
   ];
 
   const [currentSetIndex, setCurrentSetIndex] = useState(0);
+  const [sectionRef, isInView] = useInView<HTMLDivElement>("0px");
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const shouldCycle = isInView && !prefersReducedMotion;
 
   useEffect(() => {
+    if (!shouldCycle) return;
+
     const interval = setInterval(() => {
       setCurrentSetIndex((prevIndex) => (prevIndex + 1) % logoSets.length);
-    }, 3000); // Change every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, [logoSets.length]);
+  }, [logoSets.length, shouldCycle]);
 
   return (
-    <div className="pb-10 md:py-10 px-4 relative">
+    <div ref={sectionRef} className="pb-10 md:py-10 px-4 relative">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
           {content.LogoCloud.title}
@@ -65,12 +53,12 @@ const LogoCloud = () => {
                 ease: "easeInOut",
               }}
             >
-              {logoSets[currentSetIndex].map((company) => (
+              {logoSets[currentSetIndex].map((logo) => (
                 <div
-                  key={company.name}
+                  key={logo}
                   className="text-accent-foreground text-lg md:text-xl font-semibold opacity-70 hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
                 >
-                  {company.logo}
+                  {logo}
                 </div>
               ))}
             </motion.div>

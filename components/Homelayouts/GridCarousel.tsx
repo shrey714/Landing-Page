@@ -11,7 +11,6 @@ import {
   FileTextIcon,
   FlaskConicalIcon,
   HospitalIcon,
-  LucideIcon,
   PillIcon,
   StethoscopeIcon,
 } from "lucide-react";
@@ -20,107 +19,39 @@ import TypingAnimation from "../ui/typingText";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import { APP_LINKS } from "@/content/links";
+import { useInView } from "@/lib/useInView";
+import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 
 
 
 const GridCarousel = () => {
 
-  const slides: {
-    id: number;
-    title: string;
-    stats: string;
-    description: string;
-    products: string[];
-    color: string;
-    icon: LucideIcon;
-    metric: string;
-    metricLabel: string;
-    action: string;
-    queue: string[][];
-  }[] = [
-      {
-        id: 0,
-        title: content.GridCarousel.s0Title,
-        stats: content.GridCarousel.s0Stats,
-        description: content.GridCarousel.s0Desc,
-        products: [content.GridCarousel.s0P1, content.GridCarousel.s0P2],
-        color: "#00D4FF",
-        icon: Building2Icon,
-        metric: content.GridCarousel.s0Metric,
-        metricLabel: content.GridCarousel.s0MetricLabel,
-        action: content.GridCarousel.s0Action,
-        queue: [
-          [content.GridCarousel.s0Q1L, content.GridCarousel.s0Q1V],
-          [content.GridCarousel.s0Q2L, content.GridCarousel.s0Q2V],
-          [content.GridCarousel.s0Q3L, content.GridCarousel.s0Q3V],
-        ],
-      },
-      {
-        id: 1,
-        title: content.GridCarousel.s1Title,
-        stats: content.GridCarousel.s1Stats,
-        description: content.GridCarousel.s1Desc,
-        products: [content.GridCarousel.s1P1, content.GridCarousel.s1P2],
-        color: "#27C17B",
-        icon: HospitalIcon,
-        metric: content.GridCarousel.s1Metric,
-        metricLabel: content.GridCarousel.s1MetricLabel,
-        action: content.GridCarousel.s1Action,
-        queue: [
-          [content.GridCarousel.s1Q1L, content.GridCarousel.s1Q1V],
-          [content.GridCarousel.s1Q2L, content.GridCarousel.s1Q2V],
-          [content.GridCarousel.s1Q3L, content.GridCarousel.s1Q3V],
-        ],
-      },
-      {
-        id: 2,
-        title: content.GridCarousel.s2Title,
-        stats: content.GridCarousel.s2Stats,
-        description: content.GridCarousel.s2Desc,
-        products: [content.GridCarousel.s2P1, content.GridCarousel.s2P2],
-        color: "#F2B84B",
-        icon: FlaskConicalIcon,
-        metric: content.GridCarousel.s2Metric,
-        metricLabel: content.GridCarousel.s2MetricLabel,
-        action: content.GridCarousel.s2Action,
-        queue: [
-          [content.GridCarousel.s2Q1L, content.GridCarousel.s2Q1V],
-          [content.GridCarousel.s2Q2L, content.GridCarousel.s2Q2V],
-          [content.GridCarousel.s2Q3L, content.GridCarousel.s2Q3V],
-        ],
-      },
-      {
-        id: 3,
-        title: content.GridCarousel.s3Title,
-        stats: content.GridCarousel.s3Stats,
-        description: content.GridCarousel.s3Desc,
-        products: [content.GridCarousel.s3P1, content.GridCarousel.s3P2],
-        color: "#F26D6D",
-        icon: StethoscopeIcon,
-        metric: content.GridCarousel.s3Metric,
-        metricLabel: content.GridCarousel.s3MetricLabel,
-        action: content.GridCarousel.s3Action,
-        queue: [
-          [content.GridCarousel.s3Q1L, content.GridCarousel.s3Q1V],
-          [content.GridCarousel.s3Q2L, content.GridCarousel.s3Q2V],
-          [content.GridCarousel.s3Q3L, content.GridCarousel.s3Q3V],
-        ],
-      },
-    ];
+  const slideIcons = [Building2Icon, HospitalIcon, FlaskConicalIcon, StethoscopeIcon];
+  const slideColors = ["#00D4FF", "#27C17B", "#F2B84B", "#F26D6D"];
+  const slides = content.GridCarousel.slides.map((slide, index) => ({
+    ...slide,
+    color: slideColors[index],
+    icon: slideIcons[index],
+  }));
   const [activeSlide, setActiveSlide] = useState(0);
+  const [sectionRef, isInView] = useInView<HTMLElement>("0px");
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const shouldAutoplay = isInView && !prefersReducedMotion;
 
   useEffect(() => {
+    if (!shouldAutoplay) return;
+
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % slides.length);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [activeSlide]); // Added activeSlide dependency so the 4s timer resets when a user clicks a tab
+  }, [slides.length, shouldAutoplay]);
 
   const active = slides[activeSlide];
 
   return (
-    <section className="relative">
+    <section ref={sectionRef} className="relative">
       <div className="overflow-hidden">
         <div className="relative z-1 flex justify-center">
           <div className="w-full max-w-7xl mx-4">
@@ -185,7 +116,7 @@ const GridCarousel = () => {
                               <span className="text-sm text-gray-400 mb-1">{active.metricLabel}</span>
                             </div>
                             <p className="text-gray-400 font-light text-sm leading-[1.6] line-clamp-2">
-                              {active.description}
+                              {active.desc}
                             </p>
                           </motion.div>
                         </AnimatePresence>
@@ -325,7 +256,7 @@ const GridCarousel = () => {
                                       {slide.title}
                                     </h3>
                                     <p className="mt-1 text-xs text-[#727f96]">
-                                      {slide.description}
+                                      {slide.desc}
                                     </p>
                                   </div>
                                 </div>

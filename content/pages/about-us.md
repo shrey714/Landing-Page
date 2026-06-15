@@ -2,6 +2,7 @@
 title: "About DardiBook"
 description: "Discover DardiBook's mission, team, and healthcare management vision."
 canonical: "/docs/about-us"
+lastModified: "2026-06-14"
 ---
 
 ## Our Product

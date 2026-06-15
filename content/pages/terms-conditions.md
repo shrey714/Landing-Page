@@ -2,6 +2,7 @@
 title: "Terms and Conditions"
 description: "DardiBook's terms of use, liability, and dispute resolution policy."
 canonical: "/docs/terms-conditions"
+lastModified: "2026-06-14"
 ---
 
 ## Proprietary Rights

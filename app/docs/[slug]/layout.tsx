@@ -7,11 +7,9 @@ export default function DocsLayout({
   children: React.ReactNode;
 }) {
   return (
-    /* Added bg-diagonal-hatch and a base bg color (bg-slate-50 / dark:bg-[#0a0a0a]) */
-    <div className="flex min-h-screen flex-col  bg-diagonal-hatch">
-      
+    <div className="flex min-h-screen flex-col bg-diagonal-hatch">
       <Navbar />
-      
+
       <main className="flex-1 mt-20">
         <article className="prose dark:prose-invert prose-blue max-w-none">
           {children}

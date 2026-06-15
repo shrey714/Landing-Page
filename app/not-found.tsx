@@ -26,7 +26,7 @@ export default function NotFound() {
           Page Not Found
         </h1>
         <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-          Sorry, we couldn't find the page you're looking for. It might have been moved or deleted.
+          Sorry, we could not find the page you are looking for. It might have been moved or deleted.
         </p>
 
         <Button variant={"outline"} asChild size="lg" className="rounded-full">

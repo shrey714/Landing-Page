@@ -12,11 +12,10 @@ import {
   GraduationCapIcon,
   HeartHandshakeIcon,
   HospitalIcon,
-  LucideIcon,
   PillIcon,
   StethoscopeIcon,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import content from "@/content/content";
 import TypingAnimation from "../ui/typingText";
 
@@ -25,80 +24,21 @@ import TypingAnimation from "../ui/typingText";
 
 const CardCarousel = () => {
 
-  const cardsData = [
-    {
-      id: 1,
-      title: content.CardCarousel.c1Title,
-      eyebrow: content.CardCarousel.c1Eyebrow,
-      description: content.CardCarousel.c1Desc,
-      stat: content.CardCarousel.c1Stat,
-      tags: [content.CardCarousel.c1T1, content.CardCarousel.c1T2, content.CardCarousel.c1T3],
-      icon: HospitalIcon,
-      color: "#00D4FF",
-    },
-    {
-      id: 2,
-      title: content.CardCarousel.c2Title,
-      eyebrow: content.CardCarousel.c2Eyebrow,
-      description: content.CardCarousel.c2Desc,
-      stat: content.CardCarousel.c2Stat,
-      tags: [content.CardCarousel.c2T1, content.CardCarousel.c2T2, content.CardCarousel.c2T3],
-      icon: StethoscopeIcon,
-      color: "#27C17B",
-    },
-    {
-      id: 3,
-      title: content.CardCarousel.c3Title,
-      eyebrow: content.CardCarousel.c3Eyebrow,
-      description: content.CardCarousel.c3Desc,
-      stat: content.CardCarousel.c3Stat,
-      tags: [content.CardCarousel.c3T1, content.CardCarousel.c3T2, content.CardCarousel.c3T3],
-      icon: HeartHandshakeIcon,
-      color: "#F2B84B",
-    },
-    {
-      id: 4,
-      title: content.CardCarousel.c4Title,
-      eyebrow: content.CardCarousel.c4Eyebrow,
-      description: content.CardCarousel.c4Desc,
-      stat: content.CardCarousel.c4Stat,
-      tags: [content.CardCarousel.c4T1, content.CardCarousel.c4T2, content.CardCarousel.c4T3],
-      icon: PillIcon,
-      color: "#F26D6D",
-    },
-    {
-      id: 5,
-      title: content.CardCarousel.c5Title,
-      eyebrow: content.CardCarousel.c5Eyebrow,
-      description: content.CardCarousel.c5Desc,
-      stat: content.CardCarousel.c5Stat,
-      tags: [content.CardCarousel.c5T1, content.CardCarousel.c5T2, content.CardCarousel.c5T3],
-      icon: FlaskConicalIcon,
-      color: "#9B8CFF",
-    },
-    {
-      id: 6,
-      title: content.CardCarousel.c6Title,
-      eyebrow: content.CardCarousel.c6Eyebrow,
-      description: content.CardCarousel.c6Desc,
-      stat: content.CardCarousel.c6Stat,
-      tags: [content.CardCarousel.c6T1, content.CardCarousel.c6T2, content.CardCarousel.c6T3],
-      icon: Building2Icon,
-      color: "#635BFF",
-    },
-    {
-      id: 7,
-      title: content.CardCarousel.c7Title,
-      eyebrow: content.CardCarousel.c7Eyebrow,
-      description: content.CardCarousel.c7Desc,
-      stat: content.CardCarousel.c7Stat,
-      tags: [content.CardCarousel.c7T1, content.CardCarousel.c7T2, content.CardCarousel.c7T3],
-      icon: GraduationCapIcon,
-      color: "#FF66A1",
-    },
-  ];
+  const cardIcons = [HospitalIcon, StethoscopeIcon, HeartHandshakeIcon, PillIcon, FlaskConicalIcon, Building2Icon, GraduationCapIcon];
+  const cardColors = ["#00D4FF", "#27C17B", "#F2B84B", "#F26D6D", "#9B8CFF", "#635BFF", "#FF66A1"];
 
-const totalCards = cardsData.length;
+  const cardsData = content.CardCarousel.cards.map((card, index) => ({
+    id: index + 1,
+    title: card.title,
+    eyebrow: card.eyebrow,
+    description: card.desc,
+    stat: card.stat,
+    tags: card.tags,
+    icon: cardIcons[index],
+    color: cardColors[index],
+  }));
+
+  const totalCards = cardsData.length;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -122,7 +62,7 @@ const totalCards = cardsData.length;
         setCurrentIndex(newIndex);
       }
     }
-  }, [currentIndex]);
+  }, [currentIndex, totalCards]);
 
   const scrollToCard = (index: number) => {
     if (scrollContainerRef.current) {

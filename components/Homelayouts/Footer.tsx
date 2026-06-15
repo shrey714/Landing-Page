@@ -71,26 +71,25 @@ const footerColumns = [
 ];
 
 const proofItems = [
+  {
+    title: content.Footer.proof1Title,
+    description: content.Footer.proof1Desc,
+    icon: ShieldCheckIcon,
+  },
+  {
+    title: content.Footer.proof2Title,
+    description: content.Footer.proof2Desc,
+    icon: HeadsetIcon,
+  },
+  {
+    title: content.Footer.proof3Title,
+    description: content.Footer.proof3Desc,
+    icon: Clock3Icon,
+  },
 ];
 
 export default function Footer() {
-  const translatedProofItems = [
-    {
-      title: content.Footer.proof1Title,
-      description: content.Footer.proof1Desc,
-      icon: ShieldCheckIcon,
-    },
-    {
-      title: content.Footer.proof2Title,
-      description: content.Footer.proof2Desc,
-      icon: HeadsetIcon,
-    },
-    {
-      title: content.Footer.proof3Title,
-      description: content.Footer.proof3Desc,
-      icon: Clock3Icon,
-    },
-  ];
+  const translatedProofItems = proofItems;
 
   return (
     <footer className="w-full min-h-[calc(100vh-66px)] relative overflow-hidden p-4 sm:p-5 md:p-6 lg:p-10 box-border">

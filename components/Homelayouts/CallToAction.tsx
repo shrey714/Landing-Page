@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "../ui/button";
 import { HeadsetIcon, IndianRupeeIcon } from "lucide-react";
 import content from "@/content/content";

@@ -2,6 +2,7 @@
 title: "Privacy Policy"
 description: "DardiBook's privacy commitment and data handling practices."
 canonical: "/docs/privacy-policy"
+lastModified: "2026-06-14"
 ---
 
 ## Introduction

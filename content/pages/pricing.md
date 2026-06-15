@@ -2,6 +2,7 @@
 title: "Pricing"
 description: "Contact DardiBook for pricing and tailored subscription plans."
 canonical: "/docs/pricing"
+lastModified: "2026-06-14"
 ---
 
 Please contact us for current pricing and subscription plans. We offer tailored

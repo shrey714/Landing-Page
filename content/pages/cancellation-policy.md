@@ -2,6 +2,7 @@
 title: "Cancellation Policy"
 description: "Learn about DardiBook's subscription cancellation and reactivation policies."
 canonical: "/docs/cancellation-policy"
+lastModified: "2026-06-14"
 ---
 
 ## Introduction

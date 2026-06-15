@@ -2,32 +2,42 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { ArrowUpRight, ChevronRightIcon } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import content from "@/content/content";
 import TypingAnimation from "../ui/typingText";
 import Link from "next/link";
 import { APP_LINKS } from "@/content/links";
+import { useInView } from "@/lib/useInView";
+import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 
 export default function ProductShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const images = [
-    { src: "/Registrations.jpg", alt: "Registrations" },
-    { src: "/Patients.jpg", alt: "Patients" },
-    { src: "/Admissions.jpg", alt: "Admissions" },
-    { src: "/Prescriptions.jpg", alt: "Prescriptions" },
-    { src: "/Bills.jpg", alt: "Billing" },
-  ];
+  const imageSources = {
+    Registrations: "/Registrations.jpg",
+    Patients: "/Patients.jpg",
+    Admissions: "/Admissions.jpg",
+    Prescriptions: "/Prescriptions.jpg",
+    Billing: "/Bills.jpg",
+  };
+  const images = content.ProductShowcase.tabs.map((tab) => ({
+    src: imageSources[tab.label as keyof typeof imageSources] ?? "/Registrations.jpg",
+    alt: tab.label,
+  }));
+  const [sectionRef, isInView] = useInView<HTMLElement>("0px");
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const shouldAutoplay = isInView && !prefersReducedMotion;
 
-  // Autoplay functionality
   useEffect(() => {
+    if (!shouldAutoplay) return;
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 2500); // 3 seconds interval
+    }, 2500);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [images.length, shouldAutoplay]);
 
   const getStyles = (index: number) => {
     let diff = (index - currentIndex) % images.length;
@@ -79,7 +89,7 @@ export default function ProductShowcase() {
   };
 
   return (
-    <section className="relative py-10 min-[900px]:py-20 overflow-hidden" id="product-showcase">
+    <section ref={sectionRef} className="relative py-10 min-[900px]:py-20 overflow-hidden" id="product-showcase">
       <div className="max-w-7xl mx-auto w-full">
         <div className="flex flex-col lg:flex-row lg:gap-8 items-stretch lg:h-150">
 
@@ -144,7 +154,7 @@ export default function ProductShowcase() {
             </div>
 
             {/* Pagination Dots */}
-            <div className="flex items-center justify-center lg:justify-end gap-3 pr-4 lg:pr-12 pb-4 lg:pb-8 z-40 relative">
+            <div className="flex items-center justify-center lg:justify-end gap-3 pr-4 lg:pr-12 pb-4 lg:pb-8 z-10 relative">
               {images.map((_, idx) => (
                 <button
                   key={idx}

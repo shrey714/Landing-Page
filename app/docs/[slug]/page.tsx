@@ -3,20 +3,47 @@ import path from "path";
 import { marked } from "marked";
 import matter from "gray-matter";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import ContactUsForm from "@/components/subs/ContactForm";
 
-type Props = { params: { slug: string } | Promise<{ slug: string }> };
+type DocPageData = {
+  data: {
+    title?: string;
+    description?: string;
+    canonical?: string;
+    lastModified?: string;
+  };
+  content: string;
+};
 
-type MetadataProps = { params: Promise<{ slug: string }> };
+type Props = { params: Promise<{ slug: string }> };
 
-async function loadPage(slug: string) {
-  const filePath = path.join(process.cwd(), "content", "pages", `${slug}.md`);
+function sanitizeHtml(html: string) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, "")
+    .replace(/\son\w+\s*=\s*(['"]).*?\1/gi, "")
+    .replace(/javascript:/gi, "");
+}
+
+const pagesDirectory = path.join(process.cwd(), "content", "pages");
+
+async function loadPage(slug: string): Promise<DocPageData> {
+  const filePath = path.join(pagesDirectory, `${slug}.md`);
   const md = await fs.readFile(filePath, "utf8");
   const { data, content } = matter(md);
+
   return { data, content };
 }
 
-export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
+export async function generateStaticParams() {
+  const filenames = await fs.readdir(pagesDirectory);
+
+  return filenames
+    .filter((filename) => filename.endsWith(".md"))
+    .map((filename) => ({ slug: filename.replace(".md", "") }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
     const { slug } = await params;
     const { data } = await loadPage(slug);
@@ -30,6 +57,12 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
       alternates: {
         canonical: `https://dardibook.in${canonical}`,
       },
+      openGraph: {
+        title: `${title} | DardiBook`,
+        description,
+        type: "article",
+        url: `https://dardibook.in${canonical}`,
+      },
     };
   } catch {
     return {
@@ -39,26 +72,23 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
   }
 }
 
-export default async function DocPage(props: Props) {
-  const params = await (props.params as Promise<{ slug: string }> | { slug: string });
-  const { slug } = params as { slug: string };
+export default async function DocPage({ params }: Props) {
+  const { slug } = await params;
+  let pageData: DocPageData;
 
-  let pageData;
   try {
     pageData = await loadPage(slug);
-  } catch (e) {
-    return (
-      <main className="max-w-4xl mx-auto py-24 px-4">
-        <h1 className="text-2xl font-semibold">Page not found</h1>
-        <p className="mt-4">The requested document does not exist.</p>
-      </main>
-    );
+  } catch {
+    notFound();
   }
 
   const { data, content } = pageData;
-  const html = marked.parse(content || "", { mangle: false, headerIds: false });
+  const html = sanitizeHtml(marked.parse(content || "", { mangle: false, headerIds: false }) as string);
   const title = data.title || slug.replace(/-/g, " ");
   const description = data.description || "DardiBook documentation page.";
+  const lastModified = data.lastModified
+    ? new Date(`${data.lastModified}T00:00:00Z`).toISOString()
+    : undefined;
 
   return (
     <main className="max-w-6xl mx-auto py-16 px-4">
@@ -70,6 +100,11 @@ export default async function DocPage(props: Props) {
         <p className="max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
           {description}
         </p>
+        {lastModified && (
+          <p className="text-sm text-muted-foreground">
+            Last updated: {new Date(lastModified).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })}
+          </p>
+        )}
       </div>
       <article className="prose prose-slate prose-lg dark:prose-invert max-w-none">
         <div dangerouslySetInnerHTML={{ __html: html }} />
@@ -81,8 +116,8 @@ export default async function DocPage(props: Props) {
           style={{ overflowY: "auto" }}
         >
           <ContactUsForm />
-        </div>)}
-
+        </div>
+      )}
     </main>
   );
 }

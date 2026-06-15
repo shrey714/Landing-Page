@@ -9,28 +9,11 @@ import TypingAnimation from "../ui/typingText";
 
 const TrustProof = () => {
 
-  const trustItems = [
-    {
-      title: content.TrustProof.i1Title,
-      description: content.TrustProof.i1Desc,
-      icon: ShieldCheckIcon,
-    },
-    {
-      title: content.TrustProof.i2Title,
-      description: content.TrustProof.i2Desc,
-      icon: LockKeyholeIcon,
-    },
-    {
-      title: content.TrustProof.i3Title,
-      description: content.TrustProof.i3Desc,
-      icon: Clock3Icon,
-    },
-    {
-      title: content.TrustProof.i4Title,
-      description: content.TrustProof.i4Desc,
-      icon: UsersRoundIcon,
-    },
-  ];
+  const trustIcons = [ShieldCheckIcon, LockKeyholeIcon, Clock3Icon, UsersRoundIcon];
+  const trustItems = content.TrustProof.items.map((item, index) => ({
+    ...item,
+    icon: trustIcons[index],
+  }));
   return (
     <section id="trust" className="relative scroll-mt-28">
       <div className="relative z-1 flex justify-center">
@@ -62,7 +45,7 @@ const TrustProof = () => {
                       {item.title}
                     </h3>
                     <p className="text-gray-300 font-light text-base leading-[1.6]">
-                      {item.description}
+                      {item.desc}
                     </p>
                   </article>
                 ))}

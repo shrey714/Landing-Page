@@ -46,27 +46,50 @@ export const Navbar = () => {
 
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const menuRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuState(false);
+      }
+    };
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuState(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("mousedown", handleClickOutside);
+    document.body.style.overflow = menuState ? "hidden" : "";
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.body.style.overflow = "";
+    };
+  }, [menuState]);
 
   return (
     <header>
       <nav
         data-state={menuState && "active"}
-        className="fixed z-20 w-full lg:px-2"
+        className="fixed z-40 w-full lg:px-2"
       >
         <div
+          ref={menuRef}
           className={cn(
-            "mx-auto lg:mt-2 max-w-6xl px-6 transition-all lg:rounded-full duration-300 lg:px-10 bg-background/65 dark:bg-transparent",
+            "mx-auto lg:mt-2 lg:max-w-6xl px-6 transition-all lg:rounded-full duration-300 lg:px-10 bg-background/65 dark:bg-transparent",
             isScrolled &&
-            "bg-background/65! max-w-4xl shadow-md backdrop-blur-lg lg:pl-5 lg:pr-2.5"
+            "bg-background/65! lg:max-w-4xl shadow-md backdrop-blur-lg lg:pl-5 lg:pr-2.5"
           )}
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-2.5 lg:gap-0">
@@ -93,7 +116,8 @@ export const Navbar = () => {
 
               <button
                 onClick={() => setMenuState(!menuState)}
-                aria-label={menuState ? "Close Menu" : "Open Menu"}
+                aria-expanded={menuState}
+                aria-controls="mobile-navigation-menu"
                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
               >
                 <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
@@ -103,7 +127,7 @@ export const Navbar = () => {
 
 
 
-            <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+            <div id="mobile-navigation-menu" className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
               <div className="lg:hidden">
                 <ul className="space-y-6 text-base">
                   {menuItems.map((item) => (
@@ -122,7 +146,7 @@ export const Navbar = () => {
 
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Button asChild size="sm" className="rounded-full h-9 border-2 border-[#635bff] bg-[#635bff] dark:bg-[#635bff96] text-white hover:bg-[#635bff96] dark:hover:bg-[#635bff] shadow-none" variant={"default"}>
-                  <Link href={APP_LINKS.DOCS.CONTACT_US} aria-label="Request a demo of DardiBook">
+                    <Link href={APP_LINKS.DEMO} aria-label="Request a demo of DardiBook">
                     <span>{content.Navbar.requestDemo}</span>
                   </Link>
                 </Button>

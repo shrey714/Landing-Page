@@ -2,6 +2,7 @@
 title: "Contact Us"
 description: "Get support or request help from the DardiBook team."
 canonical: "/docs/contact-us"
+lastModified: "2026-06-14"
 ---
 
 ## Email Us or Submit the form

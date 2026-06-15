@@ -1,17 +1,19 @@
+import dynamic from "next/dynamic";
 import CallToAction from "@/components/Homelayouts/CallToAction";
-import CardCarousel from "@/components/Homelayouts/CardCarousel";
 import FeaturesSquence from "@/components/Homelayouts/FeaturesSquence";
 import Footer from "@/components/Homelayouts/Footer";
-import { StickyScrollReveal } from "@/components/Homelayouts/Front-Door";
-import GridCarousel from "@/components/Homelayouts/GridCarousel";
 import Hero from "@/components/Homelayouts/Hero";
 import LogoCloud from "@/components/Homelayouts/Logo-Cloud";
 import { Navbar } from "@/components/Homelayouts/Navbar";
 import TrustProof from "@/components/Homelayouts/TrustProof";
-import ObjectionsAccordion from "@/components/Homelayouts/ObjectionsAccordion";
-import ProductShowcase from "@/components/Homelayouts/ProductShowcase";
 import Workflow from "@/components/Homelayouts/Workflow";
 import MarqueFrame from "@/components/subs/MarqueFrame";
+
+const CardCarousel = dynamic(() => import("@/components/Homelayouts/CardCarousel"));
+const GridCarousel = dynamic(() => import("@/components/Homelayouts/GridCarousel"));
+const ObjectionsAccordion = dynamic(() => import("@/components/Homelayouts/ObjectionsAccordion"));
+const ProductShowcase = dynamic(() => import("@/components/Homelayouts/ProductShowcase"));
+const StickyScrollReveal = dynamic(() => import("@/components/Homelayouts/Front-Door").then((mod) => mod.StickyScrollReveal));
 
 export default async function IndexPage() {
   return (

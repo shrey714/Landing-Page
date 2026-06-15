@@ -30,8 +30,13 @@ const ContactUsForm = () => {
       )}
       <div style={{ position: "relative", minHeight: "100vh" }}>
         <iframe
+          name="dardibook-contact-form"
+          title="DardiBook contact form"
           aria-label="Contact Us"
+          aria-busy={loading}
           frameBorder="0"
+          loading="lazy"
+          referrerPolicy="strict-origin-when-cross-origin"
           style={{ width: "100%", border: "none", minHeight: "100vh" }}
           scrolling="no"
           src="https://forms.zohopublic.in/dardibook/form/ContactUs/formperma/1lNqF48RvRdXaE0Zoq_ICd6DQM9WWESKwRcH28vYHwI"

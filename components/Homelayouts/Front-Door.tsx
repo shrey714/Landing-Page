@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import {
   CalendarDaysIcon,
   ClipboardListIcon,
@@ -150,17 +150,7 @@ export function StickyScrollReveal() {
                     <h1 className="mb-2 text-2xl font-semibold tracking-[-0.2px]">
                       {content.FrontDoor.seeAlso}
                     </h1>
-                    <ul className="list-none">
-                      <TypingAnimation className="my-1 text-accent-foreground">
-                        {content.FrontDoor.h2List1}
-                      </TypingAnimation>
-                      <TypingAnimation className="my-1 text-accent-foreground">
-                        {content.FrontDoor.h2List2}
-                      </TypingAnimation>
-                      <TypingAnimation className="my-1 text-accent-foreground">
-                        {content.FrontDoor.h2List3}
-                      </TypingAnimation>
-                    </ul>
+                    <FeatureList items={content.FrontDoor.h2List} />
                   </footer>
                 </section>
                 <figure className="relative self-start grid min-[900px]:hidden px-4">
@@ -196,17 +186,7 @@ export function StickyScrollReveal() {
                     <h1 className="mb-2 font-[425] tracking-[-0.2px]">
                       {content.FrontDoor.seeAlso}
                     </h1>
-                    <ul className="list-none">
-                      <TypingAnimation className="my-1 text-accent-foreground">
-                        {content.FrontDoor.h3List1}
-                      </TypingAnimation>
-                      <TypingAnimation className="my-1 text-accent-foreground">
-                        {content.FrontDoor.h3List2}
-                      </TypingAnimation>
-                      <TypingAnimation className="my-1 text-accent-foreground">
-                        {content.FrontDoor.h3List3}
-                      </TypingAnimation>
-                    </ul>
+                    <FeatureList items={content.FrontDoor.h3List} />
                   </footer>
                 </section>
                 <figure className="relative self-start grid min-[900px]:hidden px-4">
@@ -242,17 +222,7 @@ export function StickyScrollReveal() {
                     <h1 className="mb-2 font-[425] tracking-[-0.2px]">
                       {content.FrontDoor.seeAlso}
                     </h1>
-                    <ul className="list-none">
-                      <TypingAnimation className="my-1 text-accent-foreground">
-                        {content.FrontDoor.h4List1}
-                      </TypingAnimation>
-                      <TypingAnimation className="my-1 text-accent-foreground">
-                        {content.FrontDoor.h4List2}
-                      </TypingAnimation>
-                      <TypingAnimation className="my-1 text-accent-foreground">
-                        {content.FrontDoor.h4List3}
-                      </TypingAnimation>
-                    </ul>
+                    <FeatureList items={content.FrontDoor.h4List} />
                   </footer>
                 </section>
                 <figure className="relative self-start grid min-[900px]:hidden px-4">
@@ -288,17 +258,7 @@ export function StickyScrollReveal() {
                     <h1 className="mb-2 font-[425] tracking-[-0.2px]">
                       {content.FrontDoor.seeAlso}
                     </h1>
-                    <ul className="list-none">
-                      <TypingAnimation className="my-1 text-accent-foreground">
-                        {content.FrontDoor.h5List1}
-                      </TypingAnimation>
-                      <TypingAnimation className="my-1 text-accent-foreground">
-                        {content.FrontDoor.h5List2}
-                      </TypingAnimation>
-                      <TypingAnimation className="my-1 text-accent-foreground">
-                        {content.FrontDoor.h5List3}
-                      </TypingAnimation>
-                    </ul>
+                    <FeatureList items={content.FrontDoor.h5List} />
                   </footer>
                 </section>
                 <figure className="relative self-start grid min-[900px]:hidden px-4">
@@ -315,50 +275,26 @@ export function StickyScrollReveal() {
   );
 }
 
+const FeatureList = ({ items }: { items: string[] }) => (
+  <ul className="list-none">
+    {items.map((item) => (
+      <TypingAnimation key={item} className="my-1 text-accent-foreground">
+        {item}
+      </TypingAnimation>
+    ))}
+  </ul>
+);
+
 
 const ProductPanel = ({ panelNumber }: { panelNumber: number }) => {
-  const panels = [
-    {
-      title: content.FrontDoor.p1Title,
-      subtitle: content.FrontDoor.p1Subtitle,
-      icon: ClipboardListIcon,
-      stat: "42",
-      statLabel: content.FrontDoor.p1StatLabel,
-      accent: "#00D4FF",
-    },
-    {
-      title: content.FrontDoor.p2Title,
-      subtitle: content.FrontDoor.p2Subtitle,
-      icon: UserRoundIcon,
-      stat: "8",
-      statLabel: content.FrontDoor.p2StatLabel,
-      accent: "#27C17B",
-    },
-    {
-      title: content.FrontDoor.p3Title,
-      subtitle: content.FrontDoor.p3Subtitle,
-      icon: CalendarDaysIcon,
-      stat: "14:00",
-      statLabel: content.FrontDoor.p3StatLabel,
-      accent: "#F2B84B",
-    },
-    {
-      title: content.FrontDoor.p4Title,
-      subtitle: content.FrontDoor.p4Subtitle,
-      icon: PillIcon,
-      stat: "28",
-      statLabel: content.FrontDoor.p4StatLabel,
-      accent: "#F26D6D",
-    },
-    {
-      title: content.FrontDoor.p5Title,
-      subtitle: content.FrontDoor.p5Subtitle,
-      icon: FlaskConicalIcon,
-      stat: "7",
-      statLabel: content.FrontDoor.p5StatLabel,
-      accent: "#9B8CFF",
-    },
-  ];
+  const panelIcons = [ClipboardListIcon, UserRoundIcon, CalendarDaysIcon, PillIcon, FlaskConicalIcon];
+  const panelAccents = ["#00D4FF", "#27C17B", "#F2B84B", "#F26D6D", "#9B8CFF"];
+  const panels = content.FrontDoor.panels.map((panel, index) => ({
+    ...panel,
+    icon: panelIcons[index],
+    accent: panelAccents[index],
+    stat: panel.rows[0]?.[1] ?? "",
+  }));
   const panel = panels[panelNumber - 1] ?? panels[0];
   const index = panelNumber - 1;
 
@@ -572,7 +508,7 @@ const LabScene = ({ accent }: { accent: string }) => (
           <motion.div key={i} className="absolute w-2 h-2 rounded-full" style={{ backgroundColor: accent }}
              initial={{ opacity: 0, y: 10, x: (i-3)*10 }}
              animate={{ opacity: [0, 1, 0], y: -50, scale: [0.5, 1.5, 0.5] }}
-             transition={{ duration: 1.5 + Math.random(), repeat: Infinity, delay: i * 0.3 }}
+             transition={{ duration: 1.5 + (i * 0.37) % 1, repeat: Infinity, delay: i * 0.3 }}
           />
        ))}
     </motion.div>

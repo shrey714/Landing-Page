@@ -4,6 +4,7 @@ import { Outfit } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/wrappers/theme-provider";
+import { StructuredData } from "@/components/structured-data";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -17,13 +18,16 @@ export const metadata: Metadata = {
     canonical: "https://dardibook.in",
     languages: {
       "en-US": "https://dardibook.in",
-      // Add other languages as needed
-    },
-    types: {
-      "application/rss+xml": "https://dardibook.in/rss",
     },
   },
   metadataBase: new URL("https://dardibook.in"),
+  twitter: {
+    card: "summary_large_image",
+    title: "DardiBook",
+    description:
+      "Healthcare practice management platform for doctors and clinic teams.",
+    images: ["/og.png"],
+  },
   description:
     "DardiBook is a healthcare practice management platform for doctors and clinic teams to manage appointments, patient records, prescriptions, lab requests, follow-ups, and daily care workflows.",
   icons: {
@@ -32,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Welcome to dardibook",
     description:
-      "Transform Your Medical Practice with DardiBook: The Patient Management Solutionn",
+      "Transform Your Medical Practice with DardiBook: The Patient Management Solution",
     url: "https://dardibook.in",
     type: "website",
     images: [
@@ -68,6 +72,7 @@ export default async function RootLayout({
           <a href="#main" className="skip-link sr-only">
             Skip to content
           </a>
+          <StructuredData />
           {children}
         </ThemeProvider>
         <Analytics />
